@@ -1,13 +1,16 @@
 User-agent: *
 Allow: /
+Disallow: /Desechos/
+Disallow: /node_modules/
+Disallow: /instagram/
 
-# Sitemaps
-Sitemap: https://tocayopina.es/sitemap.xml
+Sitemap: https://tocayopina.com/sitemap.xml
 
-# Permitir explícitamente blog (cluster SEO principal)
+# Cluster SEO
 Allow: /blog/
+Allow: /calculadora.html
 
-# Crawlers de IA — permitidos por defecto (más superficies de descubrimiento)
+# Crawlers de IA (presencia en AI Overviews / Perplexity / ChatGPT)
 User-agent: GPTBot
 Allow: /
 
@@ -22,3 +25,10 @@ Allow: /
 
 User-agent: Google-Extended
 Allow: /
+
+# SEO crawlers — limitar (cortesía, sin bloquear)
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10

@@ -1,137 +1,93 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemap.org/schemas/sitemap/0.9"
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
   <!-- ========================= CORE ========================= -->
   <url>
-    <loc>https://tocayopina.es/</loc>
-    <lastmod>2026-05-21</lastmod>
+    <loc>https://tocayopina.com/</loc>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://tocayopina.es/assets/img/pro-1stand.jpg</image:loc>
-      <image:title>Stand Toca y Opina — Reseñas en Google</image:title>
+      <image:loc>https://tocayopina.com/assets/img/og-image.jpg</image:loc>
+      <image:title>Toca y Opina — Stand físico NFC + QR para reseñas en Google</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://tocayopina.com/assets/img/hero-stand-granite.jpg</image:loc>
+      <image:title>Stand Toca y Opina sobre mostrador de cafetería</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://tocayopina.es/calculadora.html</loc>
-    <lastmod>2026-05-21</lastmod>
+    <loc>https://tocayopina.com/calculadora.html</loc>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.85</priority>
   </url>
 
-  <!-- ========================= BLOG HUB ========================= -->
+  <!-- ========================= BLOG ========================= -->
   <url>
-    <loc>https://tocayopina.es/blog/</loc>
-    <lastmod>2026-05-21</lastmod>
+    <loc>https://tocayopina.com/blog/</loc>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
-
-  <!-- ========================= PILLAR ========================= -->
   <url>
-    <loc>https://tocayopina.es/blog/como-conseguir-mas-resenas-en-google.html</loc>
-    <lastmod>2026-05-21</lastmod>
+    <loc>https://tocayopina.com/blog/como-conseguir-mas-resenas-en-google.html</loc>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.95</priority>
     <image:image>
-      <image:loc>https://tocayopina.es/assets/img/pro-1stand.jpg</image:loc>
+      <image:loc>https://tocayopina.com/assets/img/og-image.jpg</image:loc>
       <image:title>Cómo conseguir más reseñas en Google: guía 2026</image:title>
     </image:image>
   </url>
-
-  <!-- ========================= CLUSTERS ========================= -->
   <url>
-    <loc>https://tocayopina.es/blog/como-pedir-resenas-a-clientes-sin-parecer-pesado.html</loc>
-    <lastmod>2026-05-21</lastmod>
+    <loc>https://tocayopina.com/blog/como-pedir-resenas-a-clientes-sin-parecer-pesado.html</loc>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
-    <image:image>
-      <image:loc>https://tocayopina.es/assets/img/product-studio.jpg</image:loc>
-      <image:title>Cómo pedir reseñas a clientes sin parecer pesado</image:title>
-    </image:image>
   </url>
   <url>
-    <loc>https://tocayopina.es/blog/plantillas-mensajes-pedir-resenas-google.html</loc>
-    <lastmod>2026-05-21</lastmod>
+    <loc>https://tocayopina.com/blog/plantillas-mensajes-pedir-resenas-google.html</loc>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
-    <image:image>
-      <image:loc>https://tocayopina.es/assets/img/pro-3stands.jpg</image:loc>
-      <image:title>22 plantillas para pedir reseñas en Google</image:title>
-    </image:image>
   </url>
   <url>
-    <loc>https://tocayopina.es/blog/como-responder-resenas-negativas-google.html</loc>
-    <lastmod>2026-05-21</lastmod>
+    <loc>https://tocayopina.com/blog/como-responder-resenas-negativas-google.html</loc>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
-    <image:image>
-      <image:loc>https://tocayopina.es/assets/img/pro-1stand.jpg</image:loc>
-      <image:title>Cómo responder reseñas negativas en Google</image:title>
-    </image:image>
   </url>
   <url>
-    <loc>https://tocayopina.es/blog/qr-vs-nfc-para-resenas-cual-convierte-mas.html</loc>
-    <lastmod>2026-05-21</lastmod>
+    <loc>https://tocayopina.com/blog/qr-vs-nfc-para-resenas-cual-convierte-mas.html</loc>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
-    <image:image>
-      <image:loc>https://tocayopina.es/assets/img/product-studio.jpg</image:loc>
-      <image:title>QR vs NFC para reseñas: cuál convierte más</image:title>
-    </image:image>
   </url>
   <url>
-    <loc>https://tocayopina.es/blog/cuanto-vale-una-resena-en-google.html</loc>
-    <lastmod>2026-05-21</lastmod>
+    <loc>https://tocayopina.com/blog/cuanto-vale-una-resena-en-google.html</loc>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
-    <image:image>
-      <image:loc>https://tocayopina.es/assets/img/pro-1stand.jpg</image:loc>
-      <image:title>Cuánto vale una reseña 5 estrellas en Google</image:title>
-    </image:image>
   </url>
   <url>
-    <loc>https://tocayopina.es/blog/como-aparecer-top-google-maps.html</loc>
-    <lastmod>2026-05-21</lastmod>
+    <loc>https://tocayopina.com/blog/como-aparecer-top-google-maps.html</loc>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
-    <image:image>
-      <image:loc>https://tocayopina.es/assets/img/product-studio.jpg</image:loc>
-      <image:title>Cómo aparecer en el Top 3 de Google Maps</image:title>
-    </image:image>
   </url>
   <url>
-    <loc>https://tocayopina.es/blog/resenas-google-delta-del-ebro.html</loc>
-    <lastmod>2026-05-21</lastmod>
+    <loc>https://tocayopina.com/blog/resenas-google-delta-del-ebro.html</loc>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <image:image>
-      <image:loc>https://tocayopina.es/assets/img/pro-1stand.jpg</image:loc>
-      <image:title>Reseñas Google en el Delta del Ebro</image:title>
-    </image:image>
   </url>
   <url>
-    <loc>https://tocayopina.es/blog/sobre-uriel-historia-toca-y-opina.html</loc>
-    <lastmod>2026-05-21</lastmod>
+    <loc>https://tocayopina.com/blog/sobre-uriel-historia-toca-y-opina.html</loc>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://tocayopina.es/assets/img/founder.jpg</image:loc>
-      <image:title>Uriel, fundador de Toca y Opina</image:title>
-    </image:image>
   </url>
-
-  <!-- ========================= ANCHORS HOME ========================= -->
-  <url><loc>https://tocayopina.es/#como-funciona</loc><priority>0.7</priority></url>
-  <url><loc>https://tocayopina.es/#producto</loc><priority>0.7</priority></url>
-  <url><loc>https://tocayopina.es/#fabricacion</loc><priority>0.6</priority></url>
-  <url><loc>https://tocayopina.es/#sobre-mi</loc><priority>0.5</priority></url>
-  <url><loc>https://tocayopina.es/#sectores</loc><priority>0.6</priority></url>
-  <url><loc>https://tocayopina.es/#negocios-reales</loc><priority>0.6</priority></url>
-  <url><loc>https://tocayopina.es/#precios</loc><priority>0.8</priority></url>
-  <url><loc>https://tocayopina.es/#faq</loc><priority>0.5</priority></url>
-  <url><loc>https://tocayopina.es/#aviso-legal</loc><priority>0.3</priority></url>
-  <url><loc>https://tocayopina.es/#privacidad</loc><priority>0.3</priority></url>
 
 </urlset>

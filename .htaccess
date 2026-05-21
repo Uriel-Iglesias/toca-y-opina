@@ -1,0 +1,125 @@
+# Toca y Opina — .htaccess optimizado para Hostinger
+# Generado el 2026-05-22 · Sprint final
+# ─────────────────────────────────────────────────────
+
+# === 1. Forzar HTTPS ===
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# === 2. Forzar www → sin-www (o al revés, según preferencia) ===
+# Comenta si prefieres dominio con www. Descomenta si prefieres dominio sin www.
+RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+RewriteRule ^(.*)$ https://%1/$1 [L,R=301]
+
+# === 3. Eliminar la extensión .html de las URLs (URLs limpias) ===
+# /blog/articulo → muestra /blog/articulo.html
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.+?)/?$ $1.html [L]
+
+# Redirige /algo.html → /algo (canonicalización)
+RewriteCond %{THE_REQUEST} \s/+(.+?)\.html[\s?] [NC]
+RewriteRule ^ /%1 [R=301,L]
+
+# === 4. Página 404 personalizada ===
+ErrorDocument 404 /404.html
+
+# === 5. Compresión Gzip ===
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html
+  AddOutputFilterByType DEFLATE text/css
+  AddOutputFilterByType DEFLATE text/javascript
+  AddOutputFilterByType DEFLATE application/javascript
+  AddOutputFilterByType DEFLATE application/json
+  AddOutputFilterByType DEFLATE application/xml
+  AddOutputFilterByType DEFLATE application/x-font-ttf
+  AddOutputFilterByType DEFLATE image/svg+xml
+  AddOutputFilterByType DEFLATE text/plain
+  AddOutputFilterByType DEFLATE text/xml
+</IfModule>
+
+# === 6. Cache-Control: cachear assets agresivamente ===
+<IfModule mod_expires.c>
+  ExpiresActive On
+
+  # HTML — sin caché (siempre fresco)
+  ExpiresByType text/html "access plus 0 seconds"
+
+  # CSS / JS — 1 mes
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+  ExpiresByType text/javascript "access plus 1 month"
+
+  # Imágenes — 6 meses
+  ExpiresByType image/jpeg "access plus 6 months"
+  ExpiresByType image/png "access plus 6 months"
+  ExpiresByType image/webp "access plus 6 months"
+  ExpiresByType image/svg+xml "access plus 6 months"
+  ExpiresByType image/x-icon "access plus 1 year"
+
+  # Vídeos — 6 meses
+  ExpiresByType video/mp4 "access plus 6 months"
+  ExpiresByType video/webm "access plus 6 months"
+
+  # Fuentes — 1 año
+  ExpiresByType font/woff "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType application/font-woff "access plus 1 year"
+  ExpiresByType application/font-woff2 "access plus 1 year"
+
+  # JSON / XML — 1 hora
+  ExpiresByType application/json "access plus 1 hour"
+  ExpiresByType application/xml "access plus 1 hour"
+  ExpiresByType text/xml "access plus 1 hour"
+</IfModule>
+
+# === 7. Cabeceras de seguridad ===
+<IfModule mod_headers.c>
+  # Cache assets agresivamente (con immutable cuando es seguro)
+  <FilesMatch "\.(jpg|jpeg|png|webp|gif|ico|svg|woff|woff2|ttf)$">
+    Header set Cache-Control "public, max-age=15552000, immutable"
+  </FilesMatch>
+
+  # HSTS — fuerza HTTPS en futuras visitas
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+
+  # Anti-clickjacking
+  Header set X-Frame-Options "SAMEORIGIN"
+
+  # MIME-sniffing off
+  Header set X-Content-Type-Options "nosniff"
+
+  # Referrer policy razonable
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+
+  # Permisos restrictivos (no necesitamos cámara, micro, geolocalización)
+  Header set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=()"
+</IfModule>
+
+# === 8. MIME types ===
+<IfModule mod_mime.c>
+  AddType image/webp .webp
+  AddType image/svg+xml .svg
+  AddType application/font-woff .woff
+  AddType application/font-woff2 .woff2
+  AddType video/mp4 .mp4
+  AddType video/webm .webm
+</IfModule>
+
+# === 9. Proteger archivos sensibles ===
+<FilesMatch "\.(env|md|gitignore|gitattributes|json|lock|log|sh|bak)$">
+  Order allow,deny
+  Deny from all
+</FilesMatch>
+
+# Excepción: permitir robots.txt y sitemap.xml
+<FilesMatch "^(robots\.txt|sitemap\.xml)$">
+  Order allow,deny
+  Allow from all
+</FilesMatch>
+
+# === 10. Bloquear acceso a directorios ocultos (.git, .claude, Desechos) ===
+RewriteRule "(^|/)\." - [F]
+RewriteRule ^Desechos/ - [F,L]
+RewriteRule ^node_modules/ - [F,L]
