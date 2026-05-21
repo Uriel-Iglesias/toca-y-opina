@@ -408,7 +408,8 @@ nav.glass.dark{
   position:relative;
   background:#0a0a0a;
 }
-.biz picture{ display:block; width:100%; height:100%; }
+/* <picture> wrapper transparente: hereda layout del contenedor */
+picture{ display:block; width:100%; height:100%; }
 .biz img{ width:100%; height:100%; object-fit:cover; transition: transform .8s cubic-bezier(.22,1,.36,1); }
 .biz:hover img{ transform: scale(1.05); }
 .biz .cap{
@@ -632,7 +633,7 @@ details.faq p{ color: var(--muted); margin-top:12px; line-height:1.55; }
 
       <article class="reveal">
         <div class="rounded-2xl sm:rounded-3xl overflow-hidden bg-brand mb-3 sm:mb-4 aspect-[4/5]">
-          <img src="assets/img/paso-1.jpg" alt="Stand sobre mostrador" width="600" height="750" class="w-full h-full object-cover" loading="lazy" decoding="async">
+          <picture><source srcset="assets/img/paso-1.webp" type="image/webp"><img src="assets/img/paso-1.jpg" alt="Stand sobre mostrador" width="600" height="750" class="w-full h-full object-cover" loading="lazy" decoding="async"></picture>
         </div>
         <p class="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-brand mb-1">Paso 1</p>
         <p class="font-display text-[14px] sm:text-[18px] font-extrabold tracking-tightest leading-tight">Coloca el stand.</p>
@@ -640,7 +641,7 @@ details.faq p{ color: var(--muted); margin-top:12px; line-height:1.55; }
 
       <article class="reveal">
         <div class="rounded-2xl sm:rounded-3xl overflow-hidden bg-brand mb-3 sm:mb-4 aspect-[4/5]">
-          <img src="assets/img/paso-2.jpg" alt="Cliente escaneando con el móvil" width="600" height="750" class="w-full h-full object-cover" loading="lazy" decoding="async">
+          <picture><source srcset="assets/img/paso-2.webp" type="image/webp"><img src="assets/img/paso-2.jpg" alt="Cliente escaneando con el móvil" width="600" height="750" class="w-full h-full object-cover" loading="lazy" decoding="async"></picture>
         </div>
         <p class="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-brand mb-1">Paso 2</p>
         <p class="font-display text-[14px] sm:text-[18px] font-extrabold tracking-tightest leading-tight">Toca o escanea.</p>
@@ -648,7 +649,7 @@ details.faq p{ color: var(--muted); margin-top:12px; line-height:1.55; }
 
       <article class="reveal">
         <div class="rounded-2xl sm:rounded-3xl overflow-hidden bg-brand mb-3 sm:mb-4 aspect-[4/5]">
-          <img src="assets/img/paso-3.jpg" alt="Reseña publicada en Google" width="600" height="750" class="w-full h-full object-cover" loading="lazy" decoding="async">
+          <picture><source srcset="assets/img/paso-3.webp" type="image/webp"><img src="assets/img/paso-3.jpg" alt="Reseña publicada en Google" width="600" height="750" class="w-full h-full object-cover" loading="lazy" decoding="async"></picture>
         </div>
         <p class="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-brand mb-1">Paso 3</p>
         <p class="font-display text-[14px] sm:text-[18px] font-extrabold tracking-tightest leading-tight">Reseña publicada.</p>
@@ -1106,7 +1107,7 @@ details.faq p{ color: var(--muted); margin-top:12px; line-height:1.55; }
       <div class="rounded-[28px] overflow-hidden bg-brand text-white shadow-[0_30px_80px_-20px_rgba(16,91,245,.45)]">
         <div class="grid md:grid-cols-2 gap-0 items-stretch">
           <div class="aspect-[4/5] md:aspect-auto md:min-h-[420px] overflow-hidden">
-            <img src="assets/img/paso-nfc.jpg" alt="Móvil acercándose al stand con ondas NFC" width="1200" height="1500" class="w-full h-full object-cover" loading="lazy" decoding="async">
+            <picture><source srcset="assets/img/paso-nfc.webp" type="image/webp"><img src="assets/img/paso-nfc.jpg" alt="Móvil acercándose al stand con ondas NFC" width="1200" height="1500" class="w-full h-full object-cover" loading="lazy" decoding="async"></picture>
           </div>
           <div class="p-7 sm:p-10 flex flex-col justify-center">
             <div class="flex items-center gap-2 mb-4">
