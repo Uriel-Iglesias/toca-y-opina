@@ -1330,7 +1330,13 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
     let pending = false;
 
     function pad(n){ const s = '' + n; return s.length >= PAD ? s : ('000' + s).slice(-PAD); }
-    function pathFor(i){ return 'assets/img/orbit/frame-' + pad(i + 1) + '.jpg'; }
+    // WebP support detection — fallback a JPG si el navegador no soporta WebP (≈3% global)
+    const SUPPORTS_WEBP = (function(){
+      const c = document.createElement('canvas');
+      return !!(c.getContext && c.getContext('2d')) && c.toDataURL('image/webp').indexOf('data:image/webp') === 0;
+    })();
+    const ORBIT_EXT = SUPPORTS_WEBP ? '.webp' : '.jpg';
+    function pathFor(i){ return 'assets/img/orbit/frame-' + pad(i + 1) + ORBIT_EXT; }
 
     function drawFrame(i){
       if (i === currentFrame) return;
