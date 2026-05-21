@@ -1,0 +1,63 @@
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Node
+node_modules/
+package-lock.json
+npm-debug.log*
+
+# Editor / IDE
+.vscode/
+.idea/
+.claude/
+
+# Local env / secrets
+.env
+.env.local
+*.log
+
+# Internal docs & skills (no forman parte del sitio público)
+CLAUDE.md
+NEGOCIOS.md
+Landing Page Pro.md
+SEO Content Machine.md
+SKILL copia.md
+_check_video.js
+_tmp_frames.js
+_tmp_frames2.js
+
+# Backups, screenshots locales y versiones antiguas
+shot-*.png
+index.old.html
+assets/img/_originals/
+assets/img/.tmp/
+
+# Carpetas con material fuente (originales) que no se necesitan online
+extra/
+fotos-producto/
+fotos1,2,3/
+fotos negocios reales/
+presentacion/
+instagram/
+src/
+
+# Fuentes pesadas dentro de assets/img que NO usa index.html
+assets/img/*.heic
+assets/img/*.HEIC
+assets/img/*.MOV
+assets/img/*.mov
+assets/img/foto rebes .png
+assets/img/hero-stand-granite.png
+assets/img/hero-stand-granite-back.png
+assets/img/stand-orbit-granite.mp4.png
+assets/img/step2-nfc-tap.png
+assets/img/step2-nfc-tap-alt.png
+assets/img/orbit-A-front2back.mp4
+assets/img/orbit-B-back2front.mp4
+assets/img/video presentacion .mp4
+assets/img/IMG_*.jpeg
+assets/img/6AB2414A-E3EF-4F6A-80DE-A89D98E17B8F.jpeg
+assets/img/foto jo dibujo .jpeg
+assets/img/founder.jpg
+stand-orbit-granite.mp4.png

@@ -1,0 +1,24 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://tocayopina.es/sitemap.xml
+
+# Permitir explícitamente blog (cluster SEO principal)
+Allow: /blog/
+
+# Crawlers de IA — permitidos por defecto (más superficies de descubrimiento)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /

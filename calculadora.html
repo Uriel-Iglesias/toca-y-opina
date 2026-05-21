@@ -1,0 +1,1830 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0A0A0A">
+
+<title>Calcula l'impacte de més ressenyes a Google · Toca y Opina</title>
+<meta name="description" content="Calcula en 30 segons quants clients i ingressos extra pots aconseguir amb un stand de ressenyes de Google a la teva botiga. Estimació gratuïta i orientativa.">
+<meta name="author" content="Uriel — Toca y Opina">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="language" content="Catalan">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Calcula l'impacte de més ressenyes a Google · Toca y Opina">
+<meta property="og:description" content="Descobreix en 30 segons l'impacte real que tindrien més ressenyes de Google al teu negoci local.">
+<meta property="og:image" content="assets/img/studio-1.jpg">
+<meta property="og:locale" content="ca_ES">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Calcula l'impacte de més ressenyes a Google">
+<meta name="twitter:description" content="Stand físic NFC + QR. Calcula en 30 segons quants clients extra pots aconseguir.">
+<meta name="twitter:image" content="assets/img/studio-1.jpg">
+
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cpath d='M8 4h24a4 4 0 0 1 4 4v16a4 4 0 0 1-4 4H22l-7 6v-6h-7a4 4 0 0 1-4-4V8a4 4 0 0 1 4-4z' fill='%23105BF5'/%3E%3Cpath d='M20 11.5l2.4 5 5.4 0.7-3.9 3.7 1 5.3-4.9-2.7-4.9 2.7 1-5.3-3.9-3.7 5.4-0.7z' fill='%23FFD27A'/%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://unpkg.com" crossorigin>
+<link rel="dns-prefetch" href="https://www.vinted.es">
+<link rel="preconnect" href="https://www.vinted.es">
+<link rel="preload" as="style" href="assets/tailwind.css">
+<link rel="preload" as="image" href="assets/img/pro-2stands.jpg" fetchpriority="high">
+
+<link rel="stylesheet" href="assets/tailwind.css">
+<script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
+<noscript>
+<style>
+  .reveal,.reveal-stagger,.reveal-clip,.reveal-mask,.word-anim,.reveal-stagger>*{opacity:1!important;transform:none!important;clip-path:none!important;}
+  .word-anim .word{opacity:1!important;transform:none!important;}
+</style>
+</noscript>
+
+<style>
+  :root{
+    --brand:#105BF5;
+    --brand-2:#3D7DFF;
+    --brand-3:#6BA4FF;
+    --brand-dark:#0B47C4;
+    --brand-soft:#EAF1FE;
+    --ink:#0A0A0A;
+    --ink-2:#1D1D1F;
+    --ink-3:#3A3A3D;
+    --muted:#6E6E73;
+    --muted-2:#86868B;
+    --line:#E5E5E7;
+    --line-2:#F1F1F3;
+    --gold:#F5B941;
+    --gold-2:#FFD27A;
+    --gold-soft:#FFF6E0;
+    --green:#22C55E;
+    --green-soft:#DCFCE7;
+    --paper:#FAFAFB;
+    --paper-2:#F5F5F7;
+  }
+
+  *{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Inter",system-ui,sans-serif;
+    color:var(--ink);
+    background:#fff;
+    letter-spacing:-0.011em;
+    overflow-x:hidden;
+  }
+
+  /* ================= Type system ================= */
+  .display{font-weight:800;letter-spacing:-0.045em;line-height:0.96;}
+  .display-2xl{font-size:clamp(2.6rem,7.2vw,6.5rem);}
+  .display-xl{font-size:clamp(2.25rem,6vw,5.5rem);}
+  .display-lg{font-size:clamp(1.85rem,4.6vw,4rem);}
+  .display-md{font-size:clamp(1.5rem,3.2vw,2.5rem);}
+  .display-sm{font-size:clamp(1.25rem,2.4vw,1.85rem);}
+
+  .eyebrow{
+    text-transform:uppercase;
+    letter-spacing:0.18em;
+    font-size:0.72rem;
+    font-weight:700;
+    display:inline-flex;
+    align-items:center;
+    gap:0.5em;
+  }
+  .eyebrow::before{
+    content:'';
+    width:5px;height:5px;border-radius:9999px;background:currentColor;
+    animation:eyebrow-pulse 2.6s ease-in-out infinite;
+  }
+  @keyframes eyebrow-pulse{
+    0%,100%{transform:scale(1);opacity:0.45;}
+    50%{transform:scale(1.4);opacity:1;}
+  }
+
+  /* ================= Gradients ================= */
+  .text-gradient-brand{
+    background:linear-gradient(135deg,#105BF5 0%,#3D7DFF 50%,#6BA4FF 100%);
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  }
+  .text-gradient-gold{
+    background:linear-gradient(135deg,#F5B941 0%,#FFD27A 100%);
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  }
+  .text-gradient-green{
+    background:linear-gradient(135deg,#16A34A 0%,#22C55E 100%);
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  }
+
+  /* ================= Glass nav ================= */
+  .glass{
+    background:rgba(255,255,255,0.78);
+    backdrop-filter:saturate(180%) blur(22px);
+    -webkit-backdrop-filter:saturate(180%) blur(22px);
+    border-bottom:1px solid rgba(0,0,0,0.06);
+  }
+
+  /* ================= Backgrounds ================= */
+  .hero-bg{
+    background:
+      radial-gradient(60% 50% at 80% 0%,rgba(16,91,245,0.18) 0%,rgba(16,91,245,0) 60%),
+      radial-gradient(50% 60% at 5% 20%,rgba(245,185,65,0.14) 0%,rgba(245,185,65,0) 60%),
+      linear-gradient(180deg,#FAFBFE 0%,#FFFFFF 60%);
+  }
+  .grid-bg{
+    background-image:
+      linear-gradient(rgba(16,91,245,0.05) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(16,91,245,0.05) 1px,transparent 1px);
+    background-size:64px 64px;
+    mask-image:radial-gradient(ellipse 70% 70% at 50% 30%,black 30%,transparent 80%);
+    -webkit-mask-image:radial-gradient(ellipse 70% 70% at 50% 30%,black 30%,transparent 80%);
+  }
+  .calc-bg{
+    background:
+      radial-gradient(80% 80% at 0% 0%,rgba(16,91,245,0.10) 0%,transparent 60%),
+      radial-gradient(80% 80% at 100% 100%,rgba(245,185,65,0.10) 0%,transparent 60%),
+      linear-gradient(180deg,#0A0A0A 0%,#101117 100%);
+    color:#fff;
+  }
+  .section-paper{background:var(--paper);}
+  .section-paper-2{background:var(--paper-2);}
+  .section-dark{background:linear-gradient(180deg,#0A0A0A 0%,#1D1D1F 100%);color:#fff;}
+
+  /* ================= Animations ================= */
+  @keyframes float{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-14px);}
+  }
+  .float{animation:float 6.5s ease-in-out infinite;}
+
+  @keyframes float-slow{
+    0%,100%{transform:translateY(0) rotate(-2deg);}
+    50%{transform:translateY(-10px) rotate(-2deg);}
+  }
+  .float-slow{animation:float-slow 8s ease-in-out infinite;}
+
+  @keyframes star-twinkle{
+    0%,100%{opacity:1;transform:scale(1);}
+    50%{opacity:0.5;transform:scale(0.92);}
+  }
+  .star-twinkle{animation:star-twinkle 2.4s ease-in-out infinite;}
+  .star-twinkle:nth-child(2){animation-delay:0.3s;}
+  .star-twinkle:nth-child(3){animation-delay:0.6s;}
+  .star-twinkle:nth-child(4){animation-delay:0.9s;}
+  .star-twinkle:nth-child(5){animation-delay:1.2s;}
+
+  @keyframes scan-line{
+    0%{transform:translateY(-50%);opacity:0;}
+    20%{opacity:1;}
+    80%{opacity:1;}
+    100%{transform:translateY(50%);opacity:0;}
+  }
+  .scan-line{animation:scan-line 2.4s ease-in-out infinite;}
+
+  @keyframes pulse-ring{
+    0%{transform:scale(0.7);opacity:0.9;}
+    100%{transform:scale(2.6);opacity:0;}
+  }
+  .pulse-ring::before,.pulse-ring::after{
+    content:'';position:absolute;inset:0;
+    border-radius:9999px;border:2px solid rgba(16,91,245,0.55);
+    animation:pulse-ring 2.4s cubic-bezier(0.4,0,0.6,1) infinite;
+  }
+  .pulse-ring::after{animation-delay:1.2s;}
+
+  @keyframes shine{
+    0%{background-position:200% 0;}
+    100%{background-position:-200% 0;}
+  }
+  .shine{
+    background:linear-gradient(120deg,transparent 0%,rgba(255,255,255,0.55) 50%,transparent 100%);
+    background-size:200% 100%;
+    animation:shine 4s ease-in-out infinite;
+  }
+
+  @keyframes spin-slow{from{transform:rotate(0);}to{transform:rotate(360deg);}}
+  .spin-slow{animation:spin-slow 24s linear infinite;}
+
+  @keyframes count-bar{from{transform:scaleX(0);}to{transform:scaleX(1);}}
+
+  @keyframes badge-pop{
+    0%{transform:scale(0.4);opacity:0;}
+    60%{transform:scale(1.1);opacity:1;}
+    100%{transform:scale(1);opacity:1;}
+  }
+  .badge-pop{animation:badge-pop 0.6s cubic-bezier(0.22,1.2,0.36,1) both;}
+
+  @keyframes value-pulse{
+    0%{transform:scale(1);}
+    40%{transform:scale(1.04);}
+    100%{transform:scale(1);}
+  }
+  .value-pulse{animation:value-pulse 0.45s cubic-bezier(0.22,1.4,0.36,1);}
+
+  @media (prefers-reduced-motion: reduce){
+    *,*::before,*::after{
+      animation-duration:0.01ms !important;
+      animation-iteration-count:1 !important;
+      transition-duration:0.01ms !important;
+      scroll-behavior:auto !important;
+    }
+    .float,.float-slow,.spin-slow,.scan-line,.star-twinkle,.shine,.pulse-ring::before,.pulse-ring::after{
+      animation:none !important;
+    }
+  }
+
+  /* ================= Reveal ================= */
+  .reveal{
+    opacity:0;transform:translateY(36px);
+    transition:opacity 1s cubic-bezier(0.22,1,0.36,1),transform 1s cubic-bezier(0.22,1,0.36,1);
+  }
+  .reveal.in{opacity:1;transform:translateY(0);}
+
+  .reveal-clip{
+    clip-path:inset(0 100% 0 0);
+    transition:clip-path 1.4s cubic-bezier(0.77,0,0.175,1);
+  }
+  .reveal-clip.in{clip-path:inset(0 0 0 0);}
+
+  .reveal-stagger>*{
+    opacity:0;transform:translateY(36px);
+    transition:opacity 0.9s cubic-bezier(0.22,1,0.36,1),transform 0.9s cubic-bezier(0.22,1,0.36,1);
+  }
+  .reveal-stagger.in>*{opacity:1;transform:translateY(0);}
+  .reveal-stagger.in>*:nth-child(1){transition-delay:0ms;}
+  .reveal-stagger.in>*:nth-child(2){transition-delay:80ms;}
+  .reveal-stagger.in>*:nth-child(3){transition-delay:160ms;}
+  .reveal-stagger.in>*:nth-child(4){transition-delay:240ms;}
+  .reveal-stagger.in>*:nth-child(5){transition-delay:320ms;}
+  .reveal-stagger.in>*:nth-child(6){transition-delay:400ms;}
+  .reveal-stagger.in>*:nth-child(7){transition-delay:480ms;}
+  .reveal-stagger.in>*:nth-child(8){transition-delay:560ms;}
+
+  .word-anim .word{
+    display:inline-block;
+    opacity:0;transform:translateY(40%);
+    transition:opacity 0.8s cubic-bezier(0.22,1,0.36,1),transform 0.8s cubic-bezier(0.22,1,0.36,1);
+  }
+  .word-anim.in .word{opacity:1;transform:translateY(0);}
+  /* Word spans inside gradient text need to re-inherit the gradient clip,
+     because inline-block creates a new context that breaks -webkit-text-fill-color:transparent */
+  .text-gradient-brand .word{
+    background:linear-gradient(135deg,#105BF5 0%,#3D7DFF 50%,#6BA4FF 100%);
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  }
+  .text-gradient-gold .word{
+    background:linear-gradient(135deg,#F5B941 0%,#FFD27A 100%);
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  }
+  .text-gradient-green .word{
+    background:linear-gradient(135deg,#16A34A 0%,#22C55E 100%);
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  }
+
+  /* ================= Buttons ================= */
+  .btn-primary{
+    background:var(--ink);color:#fff;padding:14px 28px;border-radius:9999px;
+    font-weight:600;display:inline-flex;align-items:center;gap:8px;
+    transition:transform 0.3s cubic-bezier(0.22,1,0.36,1),background 0.3s ease,box-shadow 0.3s ease;
+    box-shadow:0 8px 24px -8px rgba(0,0,0,0.3);
+  }
+  .btn-primary:hover{background:var(--ink-2);transform:translateY(-2px);box-shadow:0 14px 30px -8px rgba(0,0,0,0.35);}
+
+  .btn-vinted{
+    background:#09B1BA;color:#fff;padding:16px 30px;border-radius:9999px;
+    font-weight:700;display:inline-flex;align-items:center;gap:10px;
+    transition:transform 0.3s cubic-bezier(0.22,1,0.36,1),box-shadow 0.3s ease,background 0.3s ease;
+    box-shadow:0 10px 28px -8px rgba(9,177,186,0.5);
+  }
+  .btn-vinted:hover{transform:translateY(-2px);background:#089ba2;box-shadow:0 16px 36px -8px rgba(9,177,186,0.6);}
+
+  .btn-brand{
+    background:linear-gradient(135deg,#105BF5 0%,#3D7DFF 100%);color:#fff;
+    padding:16px 30px;border-radius:9999px;font-weight:700;
+    display:inline-flex;align-items:center;gap:10px;
+    transition:transform 0.3s cubic-bezier(0.22,1,0.36,1),box-shadow 0.3s ease;
+    box-shadow:0 12px 30px -8px rgba(16,91,245,0.55);
+  }
+  .btn-brand:hover{transform:translateY(-2px);box-shadow:0 18px 38px -8px rgba(16,91,245,0.65);}
+
+  .btn-ghost{
+    color:var(--ink);padding:14px 26px;border-radius:9999px;
+    font-weight:600;border:1px solid var(--line);background:#fff;
+    display:inline-flex;align-items:center;gap:8px;
+    transition:all 0.3s ease;
+  }
+  .btn-ghost:hover{border-color:var(--ink);transform:translateY(-2px);}
+
+  .magnetic{will-change:transform;transition:transform 0.18s cubic-bezier(0.22,1,0.36,1);}
+
+  /* ================= Card system ================= */
+  .card-subtle{
+    background:#fff;border:1px solid var(--line);border-radius:28px;
+    transition:border-color 0.4s ease,transform 0.4s cubic-bezier(0.22,1,0.36,1),box-shadow 0.4s ease;
+    position:relative;overflow:hidden;
+  }
+  .card-subtle:hover{border-color:rgba(16,91,245,0.35);transform:translateY(-4px);box-shadow:0 24px 48px -24px rgba(16,91,245,0.18);}
+
+  .card-glow{position:relative;overflow:hidden;}
+  .card-glow::before{
+    content:'';position:absolute;width:280px;height:280px;
+    background:radial-gradient(circle,rgba(16,91,245,0.18) 0%,transparent 70%);
+    border-radius:50%;
+    pointer-events:none;opacity:0;
+    transition:opacity 0.4s ease;
+    transform:translate(-50%,-50%);
+    left:var(--x,50%);top:var(--y,50%);
+  }
+  .card-glow:hover::before{opacity:1;}
+
+  /* ================= Pricing ================= */
+  .pricing-card{
+    transition:transform 0.5s cubic-bezier(0.22,1,0.36,1),box-shadow 0.5s cubic-bezier(0.22,1,0.36,1);
+  }
+  .pricing-card.featured{
+    box-shadow:0 30px 60px -20px rgba(16,91,245,0.4),0 0 0 1px rgba(16,91,245,0.25);
+    position:relative;
+  }
+  .pricing-card.featured::before{
+    content:'';
+    position:absolute;
+    inset:-12px;
+    background:radial-gradient(60% 70% at 50% 50%, rgba(16,91,245,0.2) 0%, rgba(16,91,245,0) 70%);
+    border-radius:36px;
+    z-index:-1;
+    animation:pricing-aura 4.2s ease-in-out infinite;
+    pointer-events:none;
+  }
+  @keyframes pricing-aura{
+    0%,100%{opacity:0.6;transform:scale(1);}
+    50%{opacity:1;transform:scale(1.04);}
+  }
+
+  /* ================= FAQ ================= */
+  .faq-item summary{list-style:none;cursor:pointer;}
+  .faq-item summary::-webkit-details-marker{display:none;}
+  .faq-item .chevron{transition:transform 0.4s cubic-bezier(0.22,1,0.36,1);}
+  .faq-item[open] .chevron{transform:rotate(45deg);}
+  .faq-item .faq-content{overflow:hidden;max-height:0;transition:max-height 0.5s cubic-bezier(0.22,1,0.36,1);}
+  .faq-item[open] .faq-content{max-height:600px;}
+
+  /* ================= Sections ================= */
+  .section{padding-top:clamp(72px,8vw,128px);padding-bottom:clamp(72px,8vw,128px);}
+  .section-tight{padding-top:clamp(48px,5vw,80px);padding-bottom:clamp(48px,5vw,80px);}
+
+  .num-large{font-variant-numeric:tabular-nums;font-weight:800;letter-spacing:-0.045em;}
+
+  /* ================= Calculator-specific ================= */
+  .calc-shell{
+    background:linear-gradient(180deg,rgba(255,255,255,0.04) 0%,rgba(255,255,255,0.02) 100%);
+    border:1px solid rgba(255,255,255,0.10);
+    border-radius:36px;
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+    box-shadow:0 50px 100px -40px rgba(0,0,0,0.6),inset 0 1px 0 rgba(255,255,255,0.05);
+  }
+  .calc-input-group{
+    background:rgba(255,255,255,0.04);
+    border:1px solid rgba(255,255,255,0.10);
+    border-radius:20px;
+    transition:border-color 0.3s ease,background 0.3s ease;
+  }
+  .calc-input-group:focus-within{
+    border-color:rgba(16,91,245,0.6);
+    background:rgba(16,91,245,0.06);
+  }
+  .calc-label{
+    color:#A1A1A6;font-size:0.78rem;font-weight:600;
+    letter-spacing:0.04em;text-transform:uppercase;
+  }
+  .calc-input{
+    background:transparent;color:#fff;border:none;outline:none;
+    font-size:1.65rem;font-weight:700;letter-spacing:-0.02em;
+    width:100%;font-variant-numeric:tabular-nums;
+  }
+  .calc-input::placeholder{color:#52525B;}
+  .calc-suffix{color:#86868B;font-weight:600;font-size:1rem;}
+
+  .calc-slider{
+    -webkit-appearance:none;appearance:none;
+    width:100%;height:6px;border-radius:9999px;
+    background:linear-gradient(90deg,#105BF5 var(--p,50%),rgba(255,255,255,0.12) var(--p,50%));
+    outline:none;cursor:pointer;
+  }
+  .calc-slider::-webkit-slider-thumb{
+    -webkit-appearance:none;appearance:none;
+    width:24px;height:24px;border-radius:9999px;
+    background:#fff;border:3px solid #105BF5;
+    box-shadow:0 6px 18px -4px rgba(16,91,245,0.55);
+    cursor:pointer;transition:transform 0.2s ease;
+  }
+  .calc-slider::-webkit-slider-thumb:hover{transform:scale(1.15);}
+  .calc-slider::-moz-range-thumb{
+    width:24px;height:24px;border-radius:9999px;
+    background:#fff;border:3px solid #105BF5;
+    box-shadow:0 6px 18px -4px rgba(16,91,245,0.55);cursor:pointer;
+  }
+
+  .result-card{
+    background:linear-gradient(160deg,rgba(255,255,255,0.06) 0%,rgba(255,255,255,0.02) 100%);
+    border:1px solid rgba(255,255,255,0.10);
+    border-radius:24px;
+    padding:24px;
+    position:relative;overflow:hidden;
+    transition:transform 0.4s cubic-bezier(0.22,1,0.36,1),border-color 0.4s ease;
+  }
+  .result-card:hover{transform:translateY(-4px);border-color:rgba(16,91,245,0.4);}
+  .result-card::after{
+    content:'';position:absolute;inset:0;
+    background:radial-gradient(60% 60% at 100% 0%,rgba(16,91,245,0.18) 0%,transparent 60%);
+    opacity:0.7;pointer-events:none;
+  }
+  .result-card.gold::after{
+    background:radial-gradient(60% 60% at 100% 0%,rgba(245,185,65,0.22) 0%,transparent 60%);
+  }
+  .result-card.green::after{
+    background:radial-gradient(60% 60% at 100% 0%,rgba(34,197,94,0.22) 0%,transparent 60%);
+  }
+
+  .result-value{
+    font-size:clamp(2rem,5vw,3.25rem);
+    font-weight:800;letter-spacing:-0.04em;
+    font-variant-numeric:tabular-nums;
+    line-height:1;
+  }
+
+  .result-bar{
+    height:6px;border-radius:9999px;background:rgba(255,255,255,0.08);
+    overflow:hidden;margin-top:14px;
+  }
+  .result-bar > span{
+    display:block;height:100%;border-radius:9999px;
+    background:linear-gradient(90deg,#105BF5 0%,#3D7DFF 100%);
+    transform:scaleX(0);transform-origin:left;
+    transition:transform 1.2s cubic-bezier(0.22,1,0.36,1);
+  }
+  .result-bar.gold > span{background:linear-gradient(90deg,#F5B941 0%,#FFD27A 100%);}
+  .result-bar.green > span{background:linear-gradient(90deg,#16A34A 0%,#22C55E 100%);}
+
+  /* ================= Stand mockup ================= */
+  .stand-mockup{
+    position:relative;
+    width:200px;height:280px;
+    border-radius:18px;
+    background:linear-gradient(160deg,#FFFFFF 0%,#E5E5E7 100%);
+    box-shadow:0 30px 60px -20px rgba(0,0,0,0.45),0 0 0 1px rgba(0,0,0,0.05);
+    display:flex;flex-direction:column;align-items:center;justify-content:flex-start;
+    padding:22px 18px 18px;
+    transform:rotate(-3deg);
+  }
+  .stand-mockup::before{
+    content:'';position:absolute;left:50%;top:50%;
+    transform:translate(-50%,-50%);
+    width:118%;height:118%;
+    background:radial-gradient(60% 60% at 50% 30%,rgba(16,91,245,0.25) 0%,transparent 70%);
+    z-index:-1;filter:blur(20px);
+  }
+  .stand-logo{font-size:0.62rem;font-weight:800;letter-spacing:0.1em;color:var(--ink);}
+  .stand-headline{font-size:0.78rem;font-weight:700;color:var(--ink);text-align:center;line-height:1.15;margin-top:6px;}
+  .stand-stars{display:flex;gap:3px;margin-top:8px;}
+  .stand-stars svg{width:14px;height:14px;color:#F5B941;}
+  .stand-qr{
+    width:120px;height:120px;border-radius:12px;
+    background:#fff;
+    background-image:
+      linear-gradient(45deg,#0A0A0A 25%,transparent 25%),
+      linear-gradient(-45deg,#0A0A0A 25%,transparent 25%),
+      linear-gradient(45deg,transparent 75%,#0A0A0A 75%),
+      linear-gradient(-45deg,transparent 75%,#0A0A0A 75%);
+    background-size:11px 11px;
+    background-position:0 0,0 5.5px,5.5px -5.5px,-5.5px 0;
+    margin-top:14px;
+    border:6px solid #fff;
+    box-shadow:0 8px 18px -4px rgba(0,0,0,0.2),0 0 0 1px rgba(0,0,0,0.06);
+    position:relative;
+  }
+  .stand-qr::after{
+    content:'';position:absolute;inset:0;
+    background:linear-gradient(180deg,transparent 0%,rgba(16,91,245,0.5) 50%,transparent 100%);
+    height:6px;
+    animation:scan-line 2.4s ease-in-out infinite;
+  }
+  .stand-foot{font-size:0.55rem;font-weight:600;color:var(--muted);margin-top:8px;text-align:center;}
+
+  /* ================= Phone scan ================= */
+  .phone-tap{
+    position:relative;
+    width:90px;height:170px;
+    border-radius:14px;padding:5px;
+    background:linear-gradient(180deg,#1D1D1F 0%,#0A0A0A 100%);
+    box-shadow:0 30px 60px -20px rgba(0,0,0,0.5);
+    transform:rotate(8deg);
+  }
+  .phone-tap-screen{
+    width:100%;height:100%;border-radius:10px;
+    background:linear-gradient(180deg,#FFFFFF 0%,#F2F2F4 100%);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    overflow:hidden;position:relative;
+  }
+  .phone-tap-screen .g-logo{
+    font-weight:800;font-size:1.5rem;
+    letter-spacing:-0.04em;
+  }
+  .phone-tap-screen .g-stars{display:flex;gap:2px;margin-top:8px;}
+  .phone-tap-screen .g-stars svg{width:12px;height:12px;color:#F5B941;}
+
+  /* ================= Use cases marquee ================= */
+  @keyframes marquee{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+  .marquee{display:flex;width:max-content;animation:marquee 38s linear infinite;}
+  .marquee:hover{animation-play-state:paused;}
+  .chip{
+    background:#fff;border:1px solid var(--line);border-radius:9999px;
+    padding:10px 18px;font-weight:500;font-size:0.95rem;
+    color:var(--ink-2);white-space:nowrap;
+    display:inline-flex;align-items:center;gap:8px;
+  }
+
+  /* ================= Mobile sticky CTA ================= */
+  .mobile-cta{box-shadow:0 -10px 30px -10px rgba(0,0,0,0.18);}
+
+  /* Selection */
+  ::selection{background:rgba(16,91,245,0.85);color:#fff;}
+
+  /* Hide scrollbar utility */
+  .no-scrollbar::-webkit-scrollbar{display:none;}
+  .no-scrollbar{scrollbar-width:none;}
+
+  a,button{-webkit-tap-highlight-color:transparent;}
+  a:focus-visible,button:focus-visible{outline:2px solid var(--brand);outline-offset:3px;border-radius:8px;}
+
+  /* Recommendation banner */
+  .reco-banner{
+    background:linear-gradient(135deg,rgba(16,91,245,0.12) 0%,rgba(245,185,65,0.10) 100%);
+    border:1px solid rgba(255,255,255,0.12);
+    border-radius:24px;
+    padding:24px;
+    position:relative;overflow:hidden;
+  }
+  .reco-banner::before{
+    content:'';position:absolute;inset:-1px;
+    background:linear-gradient(90deg,transparent,rgba(255,255,255,0.4),transparent);
+    background-size:200% 100%;
+    animation:shine 5s linear infinite;
+    border-radius:24px;
+    pointer-events:none;
+    opacity:0.35;
+  }
+
+  /* Use-case card */
+  .use-card{
+    background:#fff;border:1px solid var(--line);border-radius:24px;
+    padding:24px;transition:transform 0.4s cubic-bezier(0.22,1,0.36,1),box-shadow 0.4s ease,border-color 0.4s ease;
+    position:relative;overflow:hidden;
+  }
+  .use-card:hover{transform:translateY(-6px);border-color:rgba(16,91,245,0.4);box-shadow:0 30px 60px -25px rgba(16,91,245,0.18);}
+  .use-card .icon{
+    width:48px;height:48px;border-radius:14px;
+    background:var(--brand-soft);color:var(--brand);
+    display:inline-flex;align-items:center;justify-content:center;
+    margin-bottom:16px;
+  }
+
+  /* Step card */
+  .step-card{
+    background:#fff;border:1px solid var(--line);border-radius:28px;
+    padding:32px;transition:transform 0.4s ease,border-color 0.4s ease;
+    position:relative;
+  }
+  .step-card:hover{transform:translateY(-4px);border-color:rgba(16,91,245,0.35);}
+  .step-num{
+    position:absolute;top:24px;right:28px;
+    font-size:3.5rem;font-weight:900;letter-spacing:-0.05em;
+    background:linear-gradient(180deg,rgba(16,91,245,0.16) 0%,rgba(16,91,245,0.04) 100%);
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+    line-height:1;pointer-events:none;
+  }
+
+  /* Benefit grid icon */
+  .benefit-icon{
+    width:44px;height:44px;border-radius:12px;
+    background:linear-gradient(135deg,#105BF5 0%,#3D7DFF 100%);
+    color:#fff;display:inline-flex;align-items:center;justify-content:center;
+    box-shadow:0 8px 18px -6px rgba(16,91,245,0.5);
+  }
+
+  /* Trust pill */
+  .trust-pill{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:10px 16px;border-radius:9999px;
+    background:#fff;border:1px solid var(--line);
+    font-weight:600;font-size:0.9rem;color:var(--ink-2);
+    transition:transform 0.3s ease,border-color 0.3s ease;
+  }
+  .trust-pill:hover{transform:translateY(-2px);border-color:var(--brand);}
+
+  @media(max-width:640px){
+    .display-2xl,.display-xl{line-height:1;}
+    .pricing-card.featured{transform:none;}
+    .stand-mockup{transform:rotate(-2deg) scale(0.9);}
+  }
+</style>
+</head>
+<body>
+
+<a href="#calculadora" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:bg-[var(--ink)] focus:text-white focus:px-4 focus:py-2 focus:rounded-full focus:font-semibold focus:shadow-xl">Salta al contingut</a>
+
+<!-- ============================================ NAV ============================================ -->
+<header class="fixed top-0 inset-x-0 z-50" x-data="{open:false}">
+  <div class="h-0.5 bg-transparent">
+    <div id="scroll-progress" class="h-full bg-gradient-to-r from-[var(--brand)] via-[var(--brand-2)] to-[var(--gold)]" style="width:0%"></div>
+  </div>
+  <div class="glass">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2.5 group" aria-label="Toca y Opina">
+        <span class="w-10 h-10 inline-flex rounded-xl overflow-hidden transition-transform group-hover:scale-105 shadow-sm">
+          <img src="assets/img/logo.jpg" alt="Toca y Opina" width="800" height="584" class="w-full h-full object-cover">
+        </span>
+        <span class="font-bold tracking-tight text-[15px]">Toca <span class="text-[var(--brand)]">y</span> Opina</span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-7 text-[14px] text-[var(--ink-2)] font-medium">
+        <a href="#problema" class="hover:text-[var(--brand)] transition-colors">El problema</a>
+        <a href="#solucio" class="hover:text-[var(--brand)] transition-colors">Solució</a>
+        <a href="#calculadora" class="hover:text-[var(--brand)] transition-colors">Calculadora</a>
+        <a href="#com-funciona" class="hover:text-[var(--brand)] transition-colors">Com funciona</a>
+        <a href="#preus" class="hover:text-[var(--brand)] transition-colors">Preus</a>
+        <a href="#faq" class="hover:text-[var(--brand)] transition-colors">FAQ</a>
+      </nav>
+
+      <a href="#" data-vinted="pack2" class="hidden md:inline-flex magnetic items-center gap-2 bg-[var(--ink)] text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-[var(--ink-2)] transition">
+        Vull el meu stand
+        <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+
+      <button @click="open=!open" class="md:hidden inline-flex w-10 h-10 items-center justify-center rounded-xl border border-[var(--line)] bg-white" aria-label="Menú">
+        <svg x-show="!open" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        <svg x-show="open" x-cloak class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <div x-show="open" x-cloak x-transition class="md:hidden border-t border-[var(--line)] bg-white">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8 py-4 flex flex-col gap-1 text-[15px] font-medium">
+        <a @click="open=false" href="#problema" class="py-3 min-h-[44px] flex items-center">El problema</a>
+        <a @click="open=false" href="#solucio" class="py-3 min-h-[44px] flex items-center">Solució</a>
+        <a @click="open=false" href="#calculadora" class="py-3 min-h-[44px] flex items-center">Calculadora</a>
+        <a @click="open=false" href="#com-funciona" class="py-3 min-h-[44px] flex items-center">Com funciona</a>
+        <a @click="open=false" href="#preus" class="py-3 min-h-[44px] flex items-center">Preus</a>
+        <a @click="open=false" href="#faq" class="py-3 min-h-[44px] flex items-center">FAQ</a>
+        <a @click="open=false" href="#" data-vinted="pack2" class="bg-[var(--ink)] text-white px-5 py-3.5 rounded-full text-center font-semibold mt-3 min-h-[48px] flex items-center justify-center">Vull el meu stand</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============================================ HERO ============================================ -->
+<section id="top" class="hero-bg relative overflow-hidden pt-28 sm:pt-32 pb-16 sm:pb-24">
+  <div class="absolute inset-0 grid-bg pointer-events-none"></div>
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 relative">
+    <div class="grid lg:grid-cols-12 gap-10 items-center">
+      <div class="lg:col-span-7">
+        <span class="eyebrow text-[var(--brand)] reveal">Calculadora gratuïta · 30 segons</span>
+        <h1 class="display display-2xl mt-4 word-anim reveal" data-split>
+          Calcula quants
+          <span class="text-gradient-brand">clients extra</span>
+          tindries amb
+          <span class="text-gradient-gold">més ressenyes</span>
+          a Google.
+        </h1>
+        <p class="mt-6 text-lg sm:text-xl text-[var(--ink-3)] max-w-2xl leading-relaxed reveal">
+          Fes-ho en 30 segons. Posa les dades del teu negoci i descobreix el negoci real que estàs deixant passar cada mes per no demanar ressenyes.
+        </p>
+        <div class="mt-8 flex flex-wrap items-center gap-3 reveal">
+          <a href="#calculadora" class="btn-brand magnetic">
+            Calcular ara
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href="#solucio" class="btn-ghost magnetic">Veure el producte</a>
+        </div>
+
+        <div class="mt-10 grid grid-cols-3 gap-4 max-w-xl reveal-stagger reveal">
+          <div class="flex flex-col">
+            <span class="num-large text-2xl sm:text-3xl">+5★</span>
+            <span class="text-xs sm:text-sm text-[var(--muted)] mt-1">Mitjana real dels clients</span>
+          </div>
+          <div class="flex flex-col">
+            <span class="num-large text-2xl sm:text-3xl">5s</span>
+            <span class="text-xs sm:text-sm text-[var(--muted)] mt-1">Temps per ressenya</span>
+          </div>
+          <div class="flex flex-col">
+            <span class="num-large text-2xl sm:text-3xl">0€</span>
+            <span class="text-xs sm:text-sm text-[var(--muted)] mt-1">Quotes mensuals</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-5 relative">
+        <div class="relative w-full max-w-md mx-auto aspect-square flex items-center justify-center">
+          <div class="absolute inset-0 -z-10 rounded-full" style="background:radial-gradient(circle at 50% 50%,rgba(16,91,245,0.18) 0%,transparent 60%);filter:blur(30px);"></div>
+          <div class="absolute -top-2 left-6 sm:-top-4 sm:left-2 z-20 float-slow">
+            <div class="bg-white rounded-2xl shadow-xl border border-[var(--line)] px-4 py-3 flex items-center gap-2.5">
+              <span class="w-9 h-9 rounded-full bg-[var(--green-soft)] text-[var(--green)] inline-flex items-center justify-center">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M5 12l5 5L20 7"/></svg>
+              </span>
+              <div>
+                <div class="text-[13px] font-bold leading-tight">+1 ressenya</div>
+                <div class="text-[11px] text-[var(--muted)]">Fa 4 segons</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="absolute -bottom-2 right-2 sm:-bottom-4 sm:right-0 z-20 float">
+            <div class="bg-white rounded-2xl shadow-xl border border-[var(--line)] px-4 py-3 flex items-center gap-2.5">
+              <div class="flex">
+                <svg class="w-4 h-4 text-[var(--gold)] star-twinkle" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg>
+                <svg class="w-4 h-4 text-[var(--gold)] star-twinkle" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg>
+                <svg class="w-4 h-4 text-[var(--gold)] star-twinkle" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg>
+                <svg class="w-4 h-4 text-[var(--gold)] star-twinkle" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg>
+                <svg class="w-4 h-4 text-[var(--gold)] star-twinkle" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg>
+              </div>
+              <div>
+                <div class="text-[13px] font-bold leading-tight">4,9 / 5</div>
+                <div class="text-[11px] text-[var(--muted)]">Google · 47 ressenyes</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="relative z-10 flex items-center gap-4">
+            <div class="stand-mockup">
+              <div class="stand-logo">TOCA <span class="text-[var(--brand)]">·</span> OPINA</div>
+              <div class="stand-headline">Deixa'ns la teva ressenya</div>
+              <div class="stand-stars">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg>
+              </div>
+              <div class="stand-qr"></div>
+              <div class="stand-foot">Acosta el mòbil · NFC + QR</div>
+            </div>
+
+            <div class="phone-tap relative">
+              <div class="phone-tap-screen">
+                <span class="g-logo">
+                  <span style="color:#4285F4">G</span><span style="color:#EA4335">o</span><span style="color:#FBBC04">o</span><span style="color:#4285F4">g</span><span style="color:#34A853">l</span><span style="color:#EA4335">e</span>
+                </span>
+                <div class="g-stars">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg>
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg>
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg>
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg>
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg>
+                </div>
+                <div class="text-[8px] mt-2 font-semibold text-[var(--muted)]">Escriu la teva ressenya</div>
+              </div>
+              <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-white border border-[var(--line)] shadow-lg flex items-center justify-center pulse-ring">
+                <svg class="w-4 h-4 text-[var(--brand)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12c2-2 5-2 7 0s5 2 7 0M7 8c3-3 7-3 10 0M9 16c1.5-1.5 4.5-1.5 6 0"/></svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ PROBLEMA ============================================ -->
+<section id="problema" class="section section-paper">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8">
+    <div class="max-w-3xl">
+      <span class="eyebrow text-[var(--brand)] reveal">El problema</span>
+      <h2 class="display display-lg mt-4 reveal">
+        Tens bons clients,<br>
+        però <span class="text-gradient-brand">poques ressenyes.</span>
+      </h2>
+      <p class="mt-6 text-lg sm:text-xl text-[var(--ink-3)] leading-relaxed reveal">
+        Cada dia entren persones contentes a la teva botiga. La majoria marxa sense deixar ressenya. No perquè no els hagi agradat — sinó perquè no els ho has demanat al moment exacte i amb la manera correcta.
+      </p>
+    </div>
+
+    <div class="mt-12 grid md:grid-cols-3 gap-5 reveal-stagger reveal">
+      <div class="card-subtle p-7">
+        <div class="w-12 h-12 rounded-2xl bg-[var(--brand-soft)] text-[var(--brand)] inline-flex items-center justify-center mb-5">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        </div>
+        <h3 class="text-lg font-bold">El moment es perd</h3>
+        <p class="mt-2 text-[var(--ink-3)] leading-relaxed">El client surt content, puja al cotxe i s'oblida. Demanar-li la ressenya 3 dies després ja no funciona.</p>
+      </div>
+      <div class="card-subtle p-7">
+        <div class="w-12 h-12 rounded-2xl bg-[var(--gold-soft)] text-[var(--gold)] inline-flex items-center justify-center mb-5">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9c2.5 0 4.77 1.02 6.4 2.66"/><path d="M21 4v5h-5"/></svg>
+        </div>
+        <h3 class="text-lg font-bold">Demanar-ho és incòmode</h3>
+        <p class="mt-2 text-[var(--ink-3)] leading-relaxed">Dir "deixa'ns una ressenya" sona forçat. I el client es queda mirant-te sense saber on entrar.</p>
+      </div>
+      <div class="card-subtle p-7">
+        <div class="w-12 h-12 rounded-2xl bg-[#FEE7E7] text-[#DC2626] inline-flex items-center justify-center mb-5">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 17l6-6 4 4 8-8"/><path d="M17 7h4v4"/></svg>
+        </div>
+        <h3 class="text-lg font-bold">El competidor en té més</h3>
+        <p class="mt-2 text-[var(--ink-3)] leading-relaxed">Google posa primer els negocis amb més ressenyes. Cada setmana sense fer res, perds posicions.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ SOLUCIÓ ============================================ -->
+<section id="solucio" class="section">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <div class="reveal">
+        <span class="eyebrow text-[var(--brand)]">La solució</span>
+        <h2 class="display display-lg mt-4">
+          Un stand físic,<br>
+          <span class="text-gradient-brand">sense apps</span>, sense fricció.
+        </h2>
+        <p class="mt-6 text-lg text-[var(--ink-3)] leading-relaxed">
+          Toca y Opina és un stand de sobretaula amb NFC + QR. El poses on cobres. El client acosta el mòbil. En 5 segons és a la teva fitxa de Google escrivint la ressenya. Tu no fas res. Mai més.
+        </p>
+
+        <ul class="mt-8 space-y-4">
+          <li class="flex items-start gap-3">
+            <span class="w-6 h-6 rounded-full bg-[var(--brand)] text-white inline-flex items-center justify-center flex-none mt-0.5">
+              <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>
+            </span>
+            <div>
+              <strong class="block text-[var(--ink)]">Pagament únic, sense quotes.</strong>
+              <span class="text-[var(--ink-3)]">El compres una vegada i el fas servir per sempre.</span>
+            </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="w-6 h-6 rounded-full bg-[var(--brand)] text-white inline-flex items-center justify-center flex-none mt-0.5">
+              <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>
+            </span>
+            <div>
+              <strong class="block text-[var(--ink)]">Personalitzat amb la teva fitxa.</strong>
+              <span class="text-[var(--ink-3)]">Arriba ja configurat amb la URL de Google del teu negoci.</span>
+            </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="w-6 h-6 rounded-full bg-[var(--brand)] text-white inline-flex items-center justify-center flex-none mt-0.5">
+              <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>
+            </span>
+            <div>
+              <strong class="block text-[var(--ink)]">Funciona amb iPhone i Android.</strong>
+              <span class="text-[var(--ink-3)]">QR per a tots i NFC per als mòbils moderns.</span>
+            </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="w-6 h-6 rounded-full bg-[var(--brand)] text-white inline-flex items-center justify-center flex-none mt-0.5">
+              <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>
+            </span>
+            <div>
+              <strong class="block text-[var(--ink)]">Entrega ràpida a tota Espanya.</strong>
+              <span class="text-[var(--ink-3)]">Habitualment 24-72 hores via Vinted amb seguiment.</span>
+            </div>
+          </li>
+        </ul>
+
+        <div class="mt-8">
+          <a href="#calculadora" class="btn-brand magnetic">
+            Calcula el teu impacte
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <div class="rounded-3xl overflow-hidden shadow-2xl border border-[var(--line)] aspect-[4/5]">
+          <img src="assets/img/negocio-4.jpg" alt="Stand Toca y Opina al costat del datàfon en una pastisseria" width="900" height="1125" class="w-full h-full object-cover" loading="lazy" decoding="async">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ CALCULADORA ============================================ -->
+<section id="calculadora" class="section calc-bg relative overflow-hidden">
+  <div class="absolute inset-0 grid-bg opacity-40 pointer-events-none"></div>
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 relative" x-data="calculator()">
+    <div class="text-center max-w-2xl mx-auto">
+      <span class="eyebrow text-[var(--brand-3)] reveal" style="color:#6BA4FF;">Calculadora interactiva</span>
+      <h2 class="display display-lg mt-4 text-white reveal">
+        Quants <span class="text-gradient-brand">euros extra</span><br>
+        pots fer cada mes?
+      </h2>
+      <p class="mt-5 text-lg text-[#A1A1A6] reveal">
+        Posa les dades del teu negoci. La calculadora et mostrarà una estimació orientativa del que pots aconseguir amb un stand de Toca y Opina.
+      </p>
+    </div>
+
+    <div class="mt-14 calc-shell p-6 sm:p-10 reveal">
+      <div class="grid lg:grid-cols-2 gap-8 lg:gap-12">
+
+        <!-- INPUTS -->
+        <div class="space-y-5">
+          <div>
+            <h3 class="text-white text-lg font-bold flex items-center gap-2">
+              <span class="w-7 h-7 rounded-full bg-[var(--brand)] text-white inline-flex items-center justify-center text-sm font-bold">1</span>
+              Sobre el teu negoci
+            </h3>
+            <p class="text-sm text-[#86868B] mt-1 ml-9">Necessitem només cinc dades senzilles.</p>
+          </div>
+
+          <div class="calc-input-group p-5">
+            <label class="calc-label" for="i-clients">Clients aproximats al mes</label>
+            <div class="flex items-baseline gap-2 mt-1">
+              <input id="i-clients" class="calc-input" type="number" inputmode="numeric" min="0" max="100000" x-model.number="clients" @input="onInput($event,'clients')">
+              <span class="calc-suffix">clients/mes</span>
+            </div>
+            <input type="range" min="20" max="3000" step="10" class="calc-slider mt-4" x-model.number="clients" :style="`--p:${(clients-20)/29.8}%`">
+          </div>
+
+          <div class="calc-input-group p-5">
+            <label class="calc-label" for="i-ticket">Tiquet mitjà</label>
+            <div class="flex items-baseline gap-2 mt-1">
+              <input id="i-ticket" class="calc-input" type="number" inputmode="decimal" min="0" max="2000" step="0.5" x-model.number="ticket">
+              <span class="calc-suffix">€</span>
+            </div>
+            <input type="range" min="5" max="200" step="1" class="calc-slider mt-4" x-model.number="ticket" :style="`--p:${(ticket-5)/1.95}%`">
+          </div>
+
+          <div class="grid grid-cols-2 gap-4">
+            <div class="calc-input-group p-5">
+              <label class="calc-label" for="i-resenyes">Ressenyes ara</label>
+              <div class="flex items-baseline gap-2 mt-1">
+                <input id="i-resenyes" class="calc-input" type="number" inputmode="numeric" min="0" max="100000" x-model.number="resenyes">
+              </div>
+            </div>
+            <div class="calc-input-group p-5">
+              <label class="calc-label" for="i-valoracio">Valoració actual</label>
+              <div class="flex items-baseline gap-2 mt-1">
+                <input id="i-valoracio" class="calc-input" type="number" inputmode="decimal" min="1" max="5" step="0.1" x-model.number="valoracio">
+                <span class="calc-suffix">★ / 5</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="calc-input-group p-5">
+            <label class="calc-label" for="i-pct">Clients que farien servir l'stand</label>
+            <div class="flex items-baseline gap-2 mt-1">
+              <span class="calc-input" x-text="pct + '%'"></span>
+            </div>
+            <input id="i-pct" type="range" min="3" max="40" step="1" class="calc-slider mt-4" x-model.number="pct" :style="`--p:${(pct-3)/0.37}%`">
+            <p class="text-xs text-[#86868B] mt-3">Estimació prudent: 8-15% per a la majoria de negocis.</p>
+          </div>
+
+          <div class="flex items-center gap-3 pt-2">
+            <button @click="reset()" class="text-sm text-[#86868B] hover:text-white transition flex items-center gap-1.5">
+              <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 4v5h-5"/></svg>
+              Reinicia valors
+            </button>
+          </div>
+        </div>
+
+        <!-- RESULTS -->
+        <div class="space-y-4">
+          <div class="flex items-center justify-between">
+            <h3 class="text-white text-lg font-bold flex items-center gap-2">
+              <span class="w-7 h-7 rounded-full bg-[var(--gold)] text-[var(--ink)] inline-flex items-center justify-center text-sm font-bold">2</span>
+              Resultat estimat
+            </h3>
+            <span class="text-xs text-[#86868B] flex items-center gap-1.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-[var(--green)] animate-pulse"></span>
+              En viu
+            </span>
+          </div>
+
+          <div class="result-card" :class="{'value-pulse': pulse}">
+            <div class="flex items-center gap-3 text-[#A1A1A6] text-sm">
+              <span class="w-8 h-8 rounded-lg bg-[rgba(16,91,245,0.18)] text-[var(--brand-3)] inline-flex items-center justify-center">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 20V10M18 20V4M6 20v-6"/></svg>
+              </span>
+              <span>Noves ressenyes estimades / mes</span>
+            </div>
+            <div class="result-value text-white mt-3">+<span x-text="formatInt(novesResenyes)"></span></div>
+            <div class="text-sm text-[#86868B] mt-1">Multipliques x<span x-text="(novesResenyes / Math.max(1, resenyes/12)).toFixed(1)"></span> el teu ritme actual.</div>
+            <div class="result-bar"><span :style="`transform:scaleX(${barNovesResenyes})`"></span></div>
+          </div>
+
+          <div class="result-card gold" :class="{'value-pulse': pulse}">
+            <div class="flex items-center gap-3 text-[#A1A1A6] text-sm">
+              <span class="w-8 h-8 rounded-lg bg-[rgba(245,185,65,0.20)] text-[var(--gold-2)] inline-flex items-center justify-center">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg>
+              </span>
+              <span>Nova valoració estimada</span>
+            </div>
+            <div class="result-value text-white mt-3"><span x-text="novaValoracio.toFixed(2)"></span><span class="text-2xl text-[var(--gold)] ml-2">★</span></div>
+            <div class="text-sm text-[#86868B] mt-1" x-text="diffValoracioText()"></div>
+            <div class="result-bar gold"><span :style="`transform:scaleX(${(novaValoracio-1)/4})`"></span></div>
+          </div>
+
+          <div class="result-card green" :class="{'value-pulse': pulse}">
+            <div class="flex items-center gap-3 text-[#A1A1A6] text-sm">
+              <span class="w-8 h-8 rounded-lg bg-[rgba(34,197,94,0.20)] text-[#86EFAC] inline-flex items-center justify-center">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 17l6-6 4 4 8-8"/><path d="M17 7h4v4"/></svg>
+              </span>
+              <span>Possible augment de clients / mes</span>
+            </div>
+            <div class="result-value text-white mt-3">+<span x-text="formatInt(novsClientsMin)"></span>–<span x-text="formatInt(novsClientsMax)"></span> <span class="text-lg text-[#86868B] font-semibold">clients</span></div>
+            <div class="text-sm text-[#86868B] mt-1">Rang orientatiu segons visibilitat i confiança a Google.</div>
+            <div class="result-bar green"><span :style="`transform:scaleX(${barClients})`"></span></div>
+          </div>
+
+          <div class="result-card" :class="{'value-pulse': pulse}">
+            <div class="flex items-center gap-3 text-[#A1A1A6] text-sm">
+              <span class="w-8 h-8 rounded-lg bg-[rgba(16,91,245,0.18)] text-[var(--brand-3)] inline-flex items-center justify-center">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+              </span>
+              <span>Impacte econòmic potencial / mes <span class="text-[#5A5A60]">(rang)</span></span>
+            </div>
+            <div class="result-value text-gradient-brand mt-3 leading-tight">
+              +<span x-text="formatInt(impacteEconomicMin)"></span><span class="text-2xl text-[#86868B]">–</span><span x-text="formatEuros(impacteEconomicMax)"></span>
+            </div>
+            <div class="text-sm text-[#86868B] mt-1">Escenari baix–alt. No és una promesa d'ingressos.</div>
+            <div class="result-bar"><span :style="`transform:scaleX(${barImpacte})`"></span></div>
+          </div>
+
+          <div class="reco-banner mt-2">
+            <div class="flex items-start gap-3">
+              <span class="w-9 h-9 rounded-xl bg-white/10 text-white flex-none inline-flex items-center justify-center">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3l2.39 4.84L20 9l-4 3.9.94 5.5L12 16l-4.94 2.4L8 12.9 4 9l5.61-1.16z"/></svg>
+              </span>
+              <div>
+                <div class="text-white font-bold" x-text="recoTitle()"></div>
+                <p class="text-[#C7C7CC] text-sm mt-1" x-text="recoText()"></p>
+              </div>
+            </div>
+            <a href="#preus" class="btn-vinted magnetic mt-4 w-full justify-center">
+              Vull començar amb un stand
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <p class="text-[11px] text-[#7A7A82] mt-3 text-center">Estimació orientativa. Els resultats reals depenen del teu negoci, ubicació i ús de l'stand.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- AVÍS LEGAL — destacat -->
+      <div class="mt-10 reveal">
+        <div class="bg-amber-50 border-2 border-amber-300 rounded-2xl p-6 sm:p-7">
+          <div class="flex items-start gap-4">
+            <div class="flex-shrink-0 w-10 h-10 rounded-full bg-amber-200 flex items-center justify-center">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#92400E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            </div>
+            <div class="flex-1">
+              <p class="font-bold text-amber-900 text-base sm:text-lg mb-2">Això és una estimació orientativa, no una garantia d'ingressos.</p>
+              <p class="text-amber-900/85 text-sm leading-relaxed mb-2">
+                Els números d'aquesta calculadora són una <strong>simulació matemàtica</strong> basada en mitjanes del sector i estudis publicats. <strong>No constitueixen una oferta, promesa ni garantia contractual</strong> de resultats.
+              </p>
+              <p class="text-amber-900/85 text-sm leading-relaxed mb-2">
+                El teu resultat real depèn de factors que aquesta eina no pot mesurar: la qualitat del teu servei, ubicació, competència local, estacionalitat, equip, hàbits dels teus clients i quant recordis ensenyar l'stand al cobrar. Hi ha negocis que superen aquestes xifres i negocis que es queden per sota — fins i tot a zero.
+              </p>
+              <p class="text-amber-900/85 text-sm leading-relaxed">
+                <strong>L'única cosa que et garanteixo</strong> és que reps l'stand físic funcional, connectat a la teva fitxa de Google, llest per fer servir. Si arriba defectuós o no funciona, te'l reimprimeixo gratis. La resta depèn de com el facis servir tu.
+              </p>
+              <p class="text-amber-900/60 text-[11px] leading-relaxed mt-3 pt-3 border-t border-amber-300">
+                En fer servir aquesta calculadora acceptes que els seus resultats són il·lustratius i que l'única obligació contractual de Toca y Opina és el lliurament del producte físic descrit a la secció de preus.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ COM FUNCIONA ============================================ -->
+<section id="com-funciona" class="section section-paper-2">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8">
+    <div class="text-center max-w-2xl mx-auto">
+      <span class="eyebrow text-[var(--brand)] reveal">Com funciona</span>
+      <h2 class="display display-lg mt-4 reveal">
+        Tres passos. <span class="text-gradient-brand">Cinc segons.</span>
+      </h2>
+      <p class="mt-5 text-lg text-[var(--ink-3)] reveal">
+        Sense apps, sense formularis, sense fricció. El client només acosta el mòbil.
+      </p>
+    </div>
+
+    <div class="mt-14 grid md:grid-cols-3 gap-5 reveal-stagger reveal">
+      <div class="step-card">
+        <div class="step-num">01</div>
+        <div class="w-12 h-12 rounded-2xl bg-[var(--brand-soft)] text-[var(--brand)] inline-flex items-center justify-center mb-5">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="3"/><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/></svg>
+        </div>
+        <h3 class="text-xl font-bold">El client veu l'stand</h3>
+        <p class="mt-2 text-[var(--ink-3)] leading-relaxed">El poses on cobres. La gent el veu just quan ha tingut una bona experiència. Crida l'atenció sense ser invasiu.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">02</div>
+        <div class="w-12 h-12 rounded-2xl bg-[var(--brand-soft)] text-[var(--brand)] inline-flex items-center justify-center mb-5">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 7h2v2H7zM15 7h2v2h-2zM7 15h2v2H7zM15 15h2v2h-2zM12 12h.01M21 12c0 4.97-4.03 9-9 9"/><path d="M3 7h4V3M21 7V3h-4M3 17v4h4M17 21h4v-4"/></svg>
+        </div>
+        <h3 class="text-xl font-bold">Acosta el mòbil o escaneja</h3>
+        <p class="mt-2 text-[var(--ink-3)] leading-relaxed">Toca amb NFC o escaneja el QR. Funciona en iPhone i Android, sense instal·lar res.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">03</div>
+        <div class="w-12 h-12 rounded-2xl bg-[var(--brand-soft)] text-[var(--brand)] inline-flex items-center justify-center mb-5">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg>
+        </div>
+        <h3 class="text-xl font-bold">Deixa la ressenya a Google</h3>
+        <p class="mt-2 text-[var(--ink-3)] leading-relaxed">S'obre directament la teva fitxa. Estrelles, text i publica. La ressenya entra a Google a l'instant.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ BENEFICIS ============================================ -->
+<section id="beneficis" class="section">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8">
+    <div class="max-w-3xl">
+      <span class="eyebrow text-[var(--brand)] reveal">Beneficis</span>
+      <h2 class="display display-lg mt-4 reveal">
+        Tot el que <span class="text-gradient-brand">guanyes</span><br>
+        amb un sol stand.
+      </h2>
+    </div>
+
+    <div class="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-5 reveal-stagger reveal">
+      <div class="card-subtle p-7 card-glow">
+        <div class="benefit-icon">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg>
+        </div>
+        <h3 class="text-lg font-bold mt-4">Més ressenyes reals</h3>
+        <p class="mt-2 text-[var(--ink-3)]">Multiplica el teu ritme actual sense haver de demanar res.</p>
+      </div>
+      <div class="card-subtle p-7 card-glow">
+        <div class="benefit-icon">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s8-4 8-12V5l-8-3-8 3v5c0 8 8 12 8 12z"/></svg>
+        </div>
+        <h3 class="text-lg font-bold mt-4">Més confiança</h3>
+        <p class="mt-2 text-[var(--ink-3)]">Una mitjana de 4,7-5 estrelles converteix més que la millor publicitat.</p>
+      </div>
+      <div class="card-subtle p-7 card-glow">
+        <div class="benefit-icon">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+        </div>
+        <h3 class="text-lg font-bold mt-4">Més visibilitat</h3>
+        <p class="mt-2 text-[var(--ink-3)]">Google Maps prioritza els negocis amb més ressenyes recents.</p>
+      </div>
+      <div class="card-subtle p-7 card-glow">
+        <div class="benefit-icon">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 11l-3 3-2-2"/></svg>
+        </div>
+        <h3 class="text-lg font-bold mt-4">Més clients nous</h3>
+        <p class="mt-2 text-[var(--ink-3)]">El que et busca per Google és el client més valuós. Capta'l abans que la competència.</p>
+      </div>
+      <div class="card-subtle p-7 card-glow">
+        <div class="benefit-icon">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 12l2-2 4 4 8-8 4 4"/></svg>
+        </div>
+        <h3 class="text-lg font-bold mt-4">Millor imatge</h3>
+        <p class="mt-2 text-[var(--ink-3)]">Un objecte premium a la teva botiga diu que cuides cada detall.</p>
+      </div>
+      <div class="card-subtle p-7 card-glow">
+        <div class="benefit-icon">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </div>
+        <h3 class="text-lg font-bold mt-4">Sistema sense fricció</h3>
+        <p class="mt-2 text-[var(--ink-3)]">Sense apps, sense logins, sense cuotes. Compres una vegada i ja està.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ CASOS D'ÚS ============================================ -->
+<section id="casos" class="section section-paper">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8">
+    <div class="max-w-3xl">
+      <span class="eyebrow text-[var(--brand)] reveal">Per a qui</span>
+      <h2 class="display display-lg mt-4 reveal">
+        Funciona per a <span class="text-gradient-brand">qualsevol negoci</span><br>
+        amb client a peu de carrer.
+      </h2>
+    </div>
+
+    <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-5 reveal-stagger reveal">
+      <div class="use-card">
+        <div class="icon"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 11h18M5 11V7a3 3 0 0 1 3-3h8a3 3 0 0 1 3 3v4M5 19h14M5 11v8M19 11v8"/></svg></div>
+        <h3 class="font-bold text-lg">Restaurants</h3>
+        <p class="text-[var(--ink-3)] text-sm mt-1">A la barra, al taulell o amb la nota.</p>
+      </div>
+      <div class="use-card">
+        <div class="icon"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 4l3 6M18 4l-3 6M6 4h12M9 10h6M12 10v10"/></svg></div>
+        <h3 class="font-bold text-lg">Perruqueries</h3>
+        <p class="text-[var(--ink-3)] text-sm mt-1">Just després del tall, l'efecte uau funciona.</p>
+      </div>
+      <div class="use-card">
+        <div class="icon"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2c2 2 3 4 3 6s-1 4-3 4-3-2-3-4 1-4 3-6zM4 22h16M6 22v-4h12v4"/></svg></div>
+        <h3 class="font-bold text-lg">Centres d'estètica</h3>
+        <p class="text-[var(--ink-3)] text-sm mt-1">A recepció, mentre paguen la sessió.</p>
+      </div>
+      <div class="use-card">
+        <div class="icon"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 21V8l9-5 9 5v13M9 21V12h6v9"/></svg></div>
+        <h3 class="font-bold text-lg">Hotels i allotjaments</h3>
+        <p class="text-[var(--ink-3)] text-sm mt-1">Al check-out, mentre signa la sortida.</p>
+      </div>
+      <div class="use-card">
+        <div class="icon"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 7h18l-1 13H4L3 7zM8 7V5a4 4 0 0 1 8 0v2"/></svg></div>
+        <h3 class="font-bold text-lg">Botigues físiques</h3>
+        <p class="text-[var(--ink-3)] text-sm mt-1">Junt al datàfon, abans que el client marxi.</p>
+      </div>
+      <div class="use-card">
+        <div class="icon"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 21V8l7-5 7 5v13M9 21v-6h6v6"/></svg></div>
+        <h3 class="font-bold text-lg">Cafeteries</h3>
+        <p class="text-[var(--ink-3)] text-sm mt-1">A la barra, mentre paguen.</p>
+      </div>
+      <div class="use-card">
+        <div class="icon"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 8v8M8 12h8"/><circle cx="12" cy="12" r="9"/></svg></div>
+        <h3 class="font-bold text-lg">Clíniques i odontòlegs</h3>
+        <p class="text-[var(--ink-3)] text-sm mt-1">Després de la visita, a recepció.</p>
+      </div>
+      <div class="use-card">
+        <div class="icon"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2l9 4-9 4-9-4 9-4zM3 10v6l9 4 9-4v-6"/></svg></div>
+        <h3 class="font-bold text-lg">Negocis locals</h3>
+        <p class="text-[var(--ink-3)] text-sm mt-1">Tallers, gimnasos, escoles, autoescoles…</p>
+      </div>
+    </div>
+
+    <div class="mt-10 overflow-hidden reveal">
+      <div class="marquee gap-3">
+        <span class="chip">📍 Restaurants</span>
+        <span class="chip">✂️ Perruqueries</span>
+        <span class="chip">💆 Estètica</span>
+        <span class="chip">🏨 Hotels</span>
+        <span class="chip">🛍️ Botigues</span>
+        <span class="chip">☕ Cafeteries</span>
+        <span class="chip">🦷 Dentistes</span>
+        <span class="chip">🏋️ Gimnasos</span>
+        <span class="chip">🚗 Tallers</span>
+        <span class="chip">🍞 Forns</span>
+        <span class="chip">🍕 Pizzeries</span>
+        <span class="chip">🎓 Acadèmies</span>
+        <span class="chip">📍 Restaurants</span>
+        <span class="chip">✂️ Perruqueries</span>
+        <span class="chip">💆 Estètica</span>
+        <span class="chip">🏨 Hotels</span>
+        <span class="chip">🛍️ Botigues</span>
+        <span class="chip">☕ Cafeteries</span>
+        <span class="chip">🦷 Dentistes</span>
+        <span class="chip">🏋️ Gimnasos</span>
+        <span class="chip">🚗 Tallers</span>
+        <span class="chip">🍞 Forns</span>
+        <span class="chip">🍕 Pizzeries</span>
+        <span class="chip">🎓 Acadèmies</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ PREUS ============================================ -->
+<section id="preus" class="section">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8">
+    <div class="text-center max-w-2xl mx-auto">
+      <span class="eyebrow text-[var(--brand)] reveal">Preus simples</span>
+      <h2 class="display display-lg mt-4 reveal">
+        Pagament <span class="text-gradient-brand">únic</span>.<br>
+        Sense quotes. Per sempre.
+      </h2>
+      <p class="mt-5 text-lg text-[var(--ink-3)] reveal">
+        Compra'l una vegada i fes-lo servir tota la vida. Sense renovacions, sense subscripcions.
+      </p>
+    </div>
+
+    <div class="mt-14 grid md:grid-cols-3 gap-6 reveal-stagger reveal">
+      <!-- Pack 1 -->
+      <div class="pricing-card card-subtle p-7 sm:p-8 flex flex-col">
+        <div class="flex items-center justify-between">
+          <span class="text-sm font-bold text-[var(--ink-2)]">1 stand</span>
+          <span class="text-xs font-semibold text-[var(--muted)] bg-[var(--paper-2)] px-3 py-1 rounded-full">Per provar</span>
+        </div>
+        <div class="mt-5 flex items-baseline gap-1">
+          <span class="display display-md">30€</span>
+          <span class="text-[var(--muted)] text-sm ml-1">pagament únic</span>
+        </div>
+        <ul class="mt-6 space-y-3 text-[var(--ink-2)] flex-1">
+          <li class="flex gap-2 items-start"><svg class="w-4 h-4 text-[var(--brand)] flex-none mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>1 stand físic NFC + QR</li>
+          <li class="flex gap-2 items-start"><svg class="w-4 h-4 text-[var(--brand)] flex-none mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>Personalitzat amb la teva fitxa</li>
+          <li class="flex gap-2 items-start"><svg class="w-4 h-4 text-[var(--brand)] flex-none mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>Llest per usar des del primer dia</li>
+          <li class="flex gap-2 items-start"><svg class="w-4 h-4 text-[var(--brand)] flex-none mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>Enviament 24-72h amb seguiment</li>
+        </ul>
+        <a href="#" data-vinted="pack1" class="mt-7 block w-full bg-white text-[var(--ink)] border border-[var(--ink)] hover:bg-[var(--ink)] hover:text-white text-center py-3.5 rounded-full font-semibold transition">Veure a Vinted</a>
+      </div>
+
+      <!-- Pack 2 (featured) -->
+      <div class="pricing-card featured card-subtle p-7 sm:p-8 flex flex-col relative">
+        <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-[var(--brand)] text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider shadow-lg">Més venut</div>
+        <div class="flex items-center justify-between">
+          <span class="text-sm font-bold text-[var(--brand)]">2 stands</span>
+          <span class="text-xs font-semibold text-[var(--brand)] bg-[var(--brand-soft)] px-3 py-1 rounded-full">Estalvies 10€</span>
+        </div>
+        <div class="mt-5 flex items-baseline gap-2">
+          <span class="display display-md text-gradient-brand">50€</span>
+          <span class="text-[var(--muted)] text-sm line-through">60€</span>
+        </div>
+        <ul class="mt-6 space-y-3 text-[var(--ink-2)] flex-1">
+          <li class="flex gap-2 items-start"><svg class="w-4 h-4 text-[var(--brand)] flex-none mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>2 stands físics NFC + QR</li>
+          <li class="flex gap-2 items-start"><svg class="w-4 h-4 text-[var(--brand)] flex-none mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>Ideal per a 2 espais o 2 negocis</li>
+          <li class="flex gap-2 items-start"><svg class="w-4 h-4 text-[var(--brand)] flex-none mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>Personalitzats amb la teva fitxa</li>
+          <li class="flex gap-2 items-start"><svg class="w-4 h-4 text-[var(--brand)] flex-none mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>Enviament prioritari</li>
+        </ul>
+        <a href="#" data-vinted="pack2" class="mt-7 block w-full bg-[var(--brand)] text-white hover:bg-[var(--brand-dark)] text-center py-3.5 rounded-full font-semibold transition">Comprar a Vinted</a>
+      </div>
+
+      <!-- Pack 3 -->
+      <div class="pricing-card card-subtle p-7 sm:p-8 flex flex-col">
+        <div class="flex items-center justify-between">
+          <span class="text-sm font-bold text-[var(--ink-2)]">3 stands</span>
+          <span class="text-xs font-semibold text-[var(--gold)] bg-[var(--gold-soft)] px-3 py-1 rounded-full">Estalvies 30€</span>
+        </div>
+        <div class="mt-5 flex items-baseline gap-2">
+          <span class="display display-md">60€</span>
+          <span class="text-[var(--muted)] text-sm line-through">90€</span>
+        </div>
+        <ul class="mt-6 space-y-3 text-[var(--ink-2)] flex-1">
+          <li class="flex gap-2 items-start"><svg class="w-4 h-4 text-[var(--brand)] flex-none mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>3 stands físics NFC + QR</li>
+          <li class="flex gap-2 items-start"><svg class="w-4 h-4 text-[var(--brand)] flex-none mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>Per a cadenes o múltiples seus</li>
+          <li class="flex gap-2 items-start"><svg class="w-4 h-4 text-[var(--brand)] flex-none mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>Tots personalitzats</li>
+          <li class="flex gap-2 items-start"><svg class="w-4 h-4 text-[var(--brand)] flex-none mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>Cost per stand: 20€</li>
+        </ul>
+        <a href="#" data-vinted="pack3" class="mt-7 block w-full bg-white text-[var(--ink)] border border-[var(--ink)] hover:bg-[var(--ink)] hover:text-white text-center py-3.5 rounded-full font-semibold transition">Veure a Vinted</a>
+      </div>
+    </div>
+
+    <p class="mt-10 text-center text-[var(--muted)] text-sm">
+      Necessites més de 3 stands o un acord per a una cadena? <a href="#" data-vinted="profile" class="text-[var(--brand)] font-semibold hover:underline">Parla amb mi a Vinted →</a>
+    </p>
+  </div>
+</section>
+
+<!-- ============================================ CONFIANÇA ============================================ -->
+<section id="confianca" class="section section-dark relative overflow-hidden">
+  <div class="absolute inset-0 grid-bg opacity-20 pointer-events-none"></div>
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 relative">
+    <div class="text-center max-w-3xl mx-auto">
+      <span class="eyebrow text-[var(--gold)] reveal">Per què confiar-hi</span>
+      <h2 class="display display-lg mt-4 text-white reveal">
+        Pensat per a <span class="text-gradient-gold">negocis locals</span>.<br>
+        Fet a mà, amb cura.
+      </h2>
+    </div>
+
+    <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-5 reveal-stagger reveal">
+      <div class="bg-white/5 border border-white/10 rounded-3xl p-7">
+        <div class="text-[var(--gold)] mb-4">
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s8-4 8-12V5l-8-3-8 3v5c0 8 8 12 8 12z"/></svg>
+        </div>
+        <h3 class="text-white text-lg font-bold">Producte físic real</h3>
+        <p class="text-[#A1A1A6] mt-2">No és un PDF ni una app. És un objecte que pots tocar, ensenyar i posar al taulell.</p>
+      </div>
+      <div class="bg-white/5 border border-white/10 rounded-3xl p-7">
+        <div class="text-[var(--gold)] mb-4">
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        </div>
+        <h3 class="text-white text-lg font-bold">Entrega ràpida</h3>
+        <p class="text-[#A1A1A6] mt-2">Habitualment en 24-72 hores via Vinted, amb seguiment fins a la teva porta.</p>
+      </div>
+      <div class="bg-white/5 border border-white/10 rounded-3xl p-7">
+        <div class="text-[var(--gold)] mb-4">
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 12l2-2 4 4 8-8 4 4"/></svg>
+        </div>
+        <h3 class="text-white text-lg font-bold">Personalització inclosa</h3>
+        <p class="text-[#A1A1A6] mt-2">Cada stand surt configurat amb la URL exacta de la fitxa de Google del teu negoci.</p>
+      </div>
+      <div class="bg-white/5 border border-white/10 rounded-3xl p-7">
+        <div class="text-[var(--gold)] mb-4">
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </div>
+        <h3 class="text-white text-lg font-bold">Sistema simple i directe</h3>
+        <p class="text-[#A1A1A6] mt-2">Sense apps, sense logins, sense formació. El client només hi acosta el mòbil.</p>
+      </div>
+      <div class="bg-white/5 border border-white/10 rounded-3xl p-7">
+        <div class="text-[var(--gold)] mb-4">
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+        </div>
+        <h3 class="text-white text-lg font-bold">Per millorar el teu Google</h3>
+        <p class="text-[#A1A1A6] mt-2">Pensat específicament per fer pujar la teva fitxa local i les teves estrelles.</p>
+      </div>
+      <div class="bg-white/5 border border-white/10 rounded-3xl p-7">
+        <div class="text-[var(--gold)] mb-4">
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg>
+        </div>
+        <h3 class="text-white text-lg font-bold">Mitjana de 5★ a Vinted</h3>
+        <p class="text-[#A1A1A6] mt-2">+47 ressenyes de negocis locals que ja l'utilitzen cada dia.</p>
+      </div>
+    </div>
+
+    <div class="mt-12 flex flex-wrap justify-center gap-3 reveal">
+      <span class="trust-pill !bg-white/5 !border-white/10 !text-white">
+        <svg class="w-4 h-4 text-[var(--green)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M5 12l5 5L20 7"/></svg>
+        Fet a Espanya
+      </span>
+      <span class="trust-pill !bg-white/5 !border-white/10 !text-white">
+        <svg class="w-4 h-4 text-[var(--green)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M5 12l5 5L20 7"/></svg>
+        Pagament segur via Vinted
+      </span>
+      <span class="trust-pill !bg-white/5 !border-white/10 !text-white">
+        <svg class="w-4 h-4 text-[var(--green)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M5 12l5 5L20 7"/></svg>
+        Sense quotes mensuals
+      </span>
+      <span class="trust-pill !bg-white/5 !border-white/10 !text-white">
+        <svg class="w-4 h-4 text-[var(--green)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M5 12l5 5L20 7"/></svg>
+        Compatible amb iPhone i Android
+      </span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ FAQ ============================================ -->
+<section id="faq" class="section section-paper">
+  <div class="max-w-3xl mx-auto px-5 sm:px-8">
+    <div class="text-center mb-12">
+      <span class="eyebrow text-[var(--brand)] reveal">Preguntes freqüents</span>
+      <h2 class="display display-lg mt-4 reveal">
+        Tot el que <span class="text-gradient-brand">vols saber</span>.
+      </h2>
+    </div>
+
+    <div class="space-y-3 reveal">
+      <details class="faq-item group bg-white border border-[var(--line)] rounded-2xl p-6 hover:border-[var(--brand)]/40 transition-colors">
+        <summary class="flex items-center justify-between gap-4">
+          <span class="font-bold text-[var(--ink)] text-base sm:text-lg">Com funciona exactament l'stand?</span>
+          <span class="chevron w-9 h-9 rounded-full bg-[var(--paper-2)] inline-flex items-center justify-center flex-none">
+            <svg class="w-4 h-4 text-[var(--ink-2)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg>
+          </span>
+        </summary>
+        <div class="faq-content"><p class="text-[var(--ink-3)] mt-4 leading-relaxed">L'stand és un objecte de sobretaula amb un xip NFC i un codi QR. El poses on cobres. Quan el client acosta el mòbil o escaneja el QR, se li obre directament la fitxa de Google del teu negoci, llesta per deixar la ressenya. Funciona en 5 segons.</p></div>
+      </details>
+
+      <details class="faq-item group bg-white border border-[var(--line)] rounded-2xl p-6 hover:border-[var(--brand)]/40 transition-colors">
+        <summary class="flex items-center justify-between gap-4">
+          <span class="font-bold text-[var(--ink)] text-base sm:text-lg">Necessita instal·lació o configuració?</span>
+          <span class="chevron w-9 h-9 rounded-full bg-[var(--paper-2)] inline-flex items-center justify-center flex-none">
+            <svg class="w-4 h-4 text-[var(--ink-2)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg>
+          </span>
+        </summary>
+        <div class="faq-content"><p class="text-[var(--ink-3)] mt-4 leading-relaxed">No. Arriba ja personalitzat amb la URL exacta de la teva fitxa de Google. El treus de la caixa, el poses on vols i ja funciona. Ni tu ni el client necessiteu cap app.</p></div>
+      </details>
+
+      <details class="faq-item group bg-white border border-[var(--line)] rounded-2xl p-6 hover:border-[var(--brand)]/40 transition-colors">
+        <summary class="flex items-center justify-between gap-4">
+          <span class="font-bold text-[var(--ink)] text-base sm:text-lg">Funciona realment amb Google?</span>
+          <span class="chevron w-9 h-9 rounded-full bg-[var(--paper-2)] inline-flex items-center justify-center flex-none">
+            <svg class="w-4 h-4 text-[var(--ink-2)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg>
+          </span>
+        </summary>
+        <div class="faq-content"><p class="text-[var(--ink-3)] mt-4 leading-relaxed">Sí. Google anima els negocis a demanar ressenyes als seus clients. El que prohibeixen són les ressenyes falses o pagades. Toca y Opina només facilita el camí als teus clients reals perquè deixin la seva opinió real.</p></div>
+      </details>
+
+      <details class="faq-item group bg-white border border-[var(--line)] rounded-2xl p-6 hover:border-[var(--brand)]/40 transition-colors">
+        <summary class="flex items-center justify-between gap-4">
+          <span class="font-bold text-[var(--ink)] text-base sm:text-lg">Quant tarda en arribar?</span>
+          <span class="chevron w-9 h-9 rounded-full bg-[var(--paper-2)] inline-flex items-center justify-center flex-none">
+            <svg class="w-4 h-4 text-[var(--ink-2)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg>
+          </span>
+        </summary>
+        <div class="faq-content"><p class="text-[var(--ink-3)] mt-4 leading-relaxed">Habitualment entre 24 i 72 hores des de la compra. L'enviament és via Vinted amb seguiment, així pots veure on és el teu paquet en cada moment.</p></div>
+      </details>
+
+      <details class="faq-item group bg-white border border-[var(--line)] rounded-2xl p-6 hover:border-[var(--brand)]/40 transition-colors">
+        <summary class="flex items-center justify-between gap-4">
+          <span class="font-bold text-[var(--ink)] text-base sm:text-lg">Es pot personalitzar amb el meu logo o colors?</span>
+          <span class="chevron w-9 h-9 rounded-full bg-[var(--paper-2)] inline-flex items-center justify-center flex-none">
+            <svg class="w-4 h-4 text-[var(--ink-2)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg>
+          </span>
+        </summary>
+        <div class="faq-content"><p class="text-[var(--ink-3)] mt-4 leading-relaxed">Per defecte, l'stand ja ve configurat amb la fitxa de Google del teu negoci. Si vols una personalització visual concreta (logo, color, format especial), parla amb mi a Vinted abans de comprar i busquem una solució per al teu cas.</p></div>
+      </details>
+
+      <details class="faq-item group bg-white border border-[var(--line)] rounded-2xl p-6 hover:border-[var(--brand)]/40 transition-colors">
+        <summary class="flex items-center justify-between gap-4">
+          <span class="font-bold text-[var(--ink)] text-base sm:text-lg">Què passa si el meu negoci té poques ressenyes ara mateix?</span>
+          <span class="chevron w-9 h-9 rounded-full bg-[var(--paper-2)] inline-flex items-center justify-center flex-none">
+            <svg class="w-4 h-4 text-[var(--ink-2)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg>
+          </span>
+        </summary>
+        <div class="faq-content"><p class="text-[var(--ink-3)] mt-4 leading-relaxed">Encara millor. Justament l'stand està pensat per a aquesta situació: tens clients contents que mai t'han deixat ressenya. A menys ressenyes inicials, més impacte té cada nova ressenya nova en la teva mitjana i en la teva visibilitat a Google.</p></div>
+      </details>
+
+      <details class="faq-item group bg-white border border-[var(--line)] rounded-2xl p-6 hover:border-[var(--brand)]/40 transition-colors">
+        <summary class="flex items-center justify-between gap-4">
+          <span class="font-bold text-[var(--ink)] text-base sm:text-lg">Serveix per a qualsevol tipus de negoci?</span>
+          <span class="chevron w-9 h-9 rounded-full bg-[var(--paper-2)] inline-flex items-center justify-center flex-none">
+            <svg class="w-4 h-4 text-[var(--ink-2)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg>
+          </span>
+        </summary>
+        <div class="faq-content"><p class="text-[var(--ink-3)] mt-4 leading-relaxed">Funciona per a pràcticament qualsevol negoci local que vegi els clients en persona: restaurants, perruqueries, estètica, hotels, botigues, cafeteries, clíniques, gimnasos, tallers… Sempre que tinguis un punt físic on passi el client.</p></div>
+      </details>
+
+      <details class="faq-item group bg-white border border-[var(--line)] rounded-2xl p-6 hover:border-[var(--brand)]/40 transition-colors">
+        <summary class="flex items-center justify-between gap-4">
+          <span class="font-bold text-[var(--ink)] text-base sm:text-lg">Hauré de pagar res més després?</span>
+          <span class="chevron w-9 h-9 rounded-full bg-[var(--paper-2)] inline-flex items-center justify-center flex-none">
+            <svg class="w-4 h-4 text-[var(--ink-2)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg>
+          </span>
+        </summary>
+        <div class="faq-content"><p class="text-[var(--ink-3)] mt-4 leading-relaxed">No. El pagament és únic. Pagues el preu de l'stand una vegada i el fas servir per sempre. Sense subscripcions, sense renovacions, sense quotes ocultes.</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ CTA FINAL ============================================ -->
+<section id="cta-final" class="section section-dark relative overflow-hidden">
+  <div class="absolute inset-0 grid-bg opacity-25 pointer-events-none"></div>
+  <div class="absolute -top-32 -right-32 w-96 h-96 rounded-full" style="background:radial-gradient(circle,rgba(16,91,245,0.4) 0%,transparent 70%);filter:blur(40px);"></div>
+  <div class="absolute -bottom-32 -left-32 w-96 h-96 rounded-full" style="background:radial-gradient(circle,rgba(245,185,65,0.35) 0%,transparent 70%);filter:blur(40px);"></div>
+
+  <div class="max-w-4xl mx-auto px-5 sm:px-8 text-center relative">
+    <span class="eyebrow text-[var(--gold)] reveal">Última cosa</span>
+    <h2 class="display display-xl mt-4 text-white reveal">
+      Cada dia sense l'stand,<br>
+      <span class="text-gradient-gold">deixes ressenyes pel camí.</span>
+    </h2>
+    <p class="mt-6 text-lg sm:text-xl text-[#A1A1A6] max-w-2xl mx-auto reveal">
+      Fes el càlcul real del que perds cada mes. Si t'encaixa, et porto un stand a casa en 24-72 hores.
+    </p>
+    <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3 reveal">
+      <a href="#" data-vinted="pack2" class="btn-vinted magnetic justify-center text-base">
+        Vull el meu stand
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <a href="#calculadora" class="bg-white/10 hover:bg-white/15 text-white border border-white/20 px-7 py-4 rounded-full font-semibold transition magnetic flex items-center gap-2">
+        Tornar a la calculadora
+      </a>
+    </div>
+    <p class="mt-6 text-sm text-[#7A7A82] reveal">Pagament únic · Sense quotes · Enviament 24-72h</p>
+  </div>
+</section>
+
+<!-- ============================================ FOOTER ============================================ -->
+<footer class="bg-[var(--ink)] text-[#A1A1A6] py-12">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div>
+        <a href="index.html" class="flex items-center gap-2.5">
+          <span class="w-9 h-9 inline-flex rounded-xl overflow-hidden">
+            <img src="assets/img/logo.jpg" alt="Toca y Opina" width="800" height="584" class="w-full h-full object-cover">
+          </span>
+          <span class="font-bold tracking-tight text-white text-[15px]">Toca <span class="text-[var(--brand-3)]">y</span> Opina</span>
+        </a>
+        <p class="text-sm mt-4 max-w-xs">Stands físics NFC + QR per multiplicar les ressenyes a Google del teu negoci local.</p>
+      </div>
+      <div>
+        <h4 class="text-white font-bold text-sm mb-4">Producte</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="#solucio" class="hover:text-white transition">Què és</a></li>
+          <li><a href="#com-funciona" class="hover:text-white transition">Com funciona</a></li>
+          <li><a href="#preus" class="hover:text-white transition">Preus</a></li>
+          <li><a href="#calculadora" class="hover:text-white transition">Calculadora</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-bold text-sm mb-4">Compra</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="#" data-vinted="pack1" class="hover:text-white transition">1 stand · 30€</a></li>
+          <li><a href="#" data-vinted="pack2" class="hover:text-white transition">2 stands · 50€</a></li>
+          <li><a href="#" data-vinted="pack3" class="hover:text-white transition">3 stands · 60€</a></li>
+          <li><a href="#" data-vinted="profile" class="hover:text-white transition">El meu Vinted</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-bold text-sm mb-4">Més</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="index.html" class="hover:text-white transition">Web principal</a></li>
+          <li><a href="#faq" class="hover:text-white transition">Preguntes freqüents</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="mt-12 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs">
+      <p>© <span id="year"></span> Toca y Opina · Fet a mà a Catalunya per Uriel.</p>
+      <p>Estimacions orientatives, no garanteixen resultats reals.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================ MOBILE STICKY CTA ============================================ -->
+<div class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-white border-t border-[var(--line)] mobile-cta px-4 py-3">
+  <a href="#" data-vinted="pack2" class="btn-vinted w-full justify-center text-base">
+    Vull el meu stand · 30€
+    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+  </a>
+</div>
+<div class="md:hidden h-[80px]"></div>
+
+<!-- ============================================ JS ============================================ -->
+<script>
+const VINTED = {
+  profile: 'https://www.vinted.es/items/8737450242-pack-2-stands-resenas-google-nfc-qr-personalizado',
+  pack1:   'https://www.vinted.es/items/8737424361-stand-resenas-google-nfc-qr-personalizado',
+  pack2:   'https://www.vinted.es/items/8737450242-pack-2-stands-resenas-google-nfc-qr-personalizado',
+  pack3:   'https://www.vinted.es/items/8799503624-pack-3-stands-resenas-google-nfc-qr-personalizado'
+};
+const prefetchedVinted = new Set();
+function prefetchVinted(url){
+  if (prefetchedVinted.has(url)) return;
+  prefetchedVinted.add(url);
+  const link = document.createElement('link');
+  link.rel = 'prefetch';
+  link.href = url;
+  link.crossOrigin = 'anonymous';
+  document.head.appendChild(link);
+}
+document.querySelectorAll('[data-vinted]').forEach(el=>{
+  const key = el.getAttribute('data-vinted');
+  if (VINTED[key]) {
+    el.setAttribute('href', VINTED[key]);
+    el.setAttribute('target', '_blank');
+    el.setAttribute('rel', 'noopener');
+    el.addEventListener('mouseenter', ()=>prefetchVinted(VINTED[key]), { once:true });
+    el.addEventListener('touchstart', ()=>prefetchVinted(VINTED[key]), { once:true, passive:true });
+  }
+});
+
+/* word-by-word headline */
+document.querySelectorAll('[data-split]').forEach(el=>{
+  const walk = (node)=>{
+    [...node.childNodes].forEach(child=>{
+      if (child.nodeType === Node.TEXT_NODE) {
+        const frag = document.createDocumentFragment();
+        child.textContent.split(/(\s+)/).forEach(word=>{
+          if (/^\s+$/.test(word)) frag.appendChild(document.createTextNode(word));
+          else if (word) {
+            const span = document.createElement('span');
+            span.className = 'word';
+            span.textContent = word;
+            frag.appendChild(span);
+          }
+        });
+        child.parentNode.replaceChild(frag, child);
+      } else if (child.nodeType === Node.ELEMENT_NODE && child.tagName !== 'BR') {
+        walk(child);
+      }
+    });
+  };
+  walk(el);
+  el.querySelectorAll('.word').forEach((w,i)=>{
+    w.style.transitionDelay = (60 + i*55) + 'ms';
+  });
+});
+
+/* Reveal observer */
+const revealItems = document.querySelectorAll('.reveal,.reveal-stagger,.reveal-clip,.reveal-mask,.word-anim');
+const revealIO = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if (e.isIntersecting) {
+      e.target.classList.add('in');
+      revealIO.unobserve(e.target);
+    }
+  });
+}, { threshold:0.12, rootMargin:'0px 0px -40px 0px' });
+revealItems.forEach(el=>revealIO.observe(el));
+requestAnimationFrame(()=>{
+  const vh = window.innerHeight;
+  revealItems.forEach(el=>{
+    const r = el.getBoundingClientRect();
+    if (r.top < vh && r.bottom > 0) {
+      el.classList.add('in');
+      revealIO.unobserve(el);
+    }
+  });
+});
+
+/* Magnetic buttons */
+document.querySelectorAll('.magnetic').forEach(el=>{
+  el.addEventListener('mousemove', (e)=>{
+    const r = el.getBoundingClientRect();
+    const mx = e.clientX - r.left - r.width/2;
+    const my = e.clientY - r.top - r.height/2;
+    el.style.transform = `translate(${mx*0.12}px, ${my*0.12}px)`;
+  });
+  el.addEventListener('mouseleave', ()=>{ el.style.transform = ''; });
+});
+
+/* Card glow follow */
+document.querySelectorAll('.card-glow').forEach(el=>{
+  el.addEventListener('mousemove', (e)=>{
+    const r = el.getBoundingClientRect();
+    el.style.setProperty('--x', `${e.clientX - r.left}px`);
+    el.style.setProperty('--y', `${e.clientY - r.top}px`);
+  });
+});
+
+/* Scroll progress */
+const sp = document.getElementById('scroll-progress');
+function updateSP(){
+  const h = document.documentElement.scrollHeight - window.innerHeight;
+  const pct = h > 0 ? (window.scrollY / h) * 100 : 0;
+  if (sp) sp.style.width = pct + '%';
+}
+window.addEventListener('scroll', updateSP, { passive:true });
+updateSP();
+
+/* Year */
+document.getElementById('year').textContent = new Date().getFullYear();
+
+/* ──────── CALCULATOR (Alpine) ──────── */
+function calculator(){
+  return {
+    clients: 600,
+    ticket: 22,
+    resenyes: 18,
+    valoracio: 4.3,
+    pct: 12,
+    pulse: false,
+    _pulseT: null,
+
+    init(){
+      this.$watch('clients', ()=>this.triggerPulse());
+      this.$watch('ticket', ()=>this.triggerPulse());
+      this.$watch('resenyes', ()=>this.triggerPulse());
+      this.$watch('valoracio', ()=>this.triggerPulse());
+      this.$watch('pct', ()=>this.triggerPulse());
+    },
+    triggerPulse(){
+      this.pulse = false;
+      clearTimeout(this._pulseT);
+      requestAnimationFrame(()=>{ this.pulse = true; });
+      this._pulseT = setTimeout(()=>{ this.pulse = false; }, 460);
+    },
+    onInput(ev, key){
+      const v = parseFloat(ev.target.value);
+      if (Number.isNaN(v)) return;
+      this[key] = v;
+    },
+    reset(){
+      this.clients = 600;
+      this.ticket = 22;
+      this.resenyes = 18;
+      this.valoracio = 4.3;
+      this.pct = 12;
+    },
+
+    /* ───────── derived metrics ───────── */
+    get novesResenyes(){
+      const c = Math.max(0, this.clients);
+      const p = Math.max(0, Math.min(100, this.pct));
+      return Math.round(c * (p/100));
+    },
+    /* New average rating: assume new reviews lean ~4.7 (real world for happy customers passing through stand) */
+    get novaValoracio(){
+      const oldN = Math.max(0, this.resenyes);
+      const newN = this.novesResenyes;
+      const oldAvg = Math.max(1, Math.min(5, this.valoracio));
+      const newAvg = 4.7;
+      const total = oldN + newN;
+      if (total === 0) return oldAvg;
+      const v = (oldAvg*oldN + newAvg*newN) / total;
+      return Math.max(1, Math.min(5, v));
+    },
+    /* Estimated extra customers — MODEL CONSERVADOR.
+       Coeficients recalibrats a la baixa per no generar expectatives
+       impossibles. Ajustats ~60% sobre el model anterior. */
+    get novsClients(){
+      const ratingDelta = Math.max(0, this.novaValoracio - this.valoracio);
+      const reviewBoost = Math.min(0.08, Math.log10(1 + this.novesResenyes/Math.max(5,this.resenyes||5)) * 0.05);
+      const factor = ratingDelta * 0.03 + reviewBoost;
+      return Math.round(this.clients * factor);
+    },
+    get impacteEconomic(){
+      return Math.round(this.novsClients * Math.max(0, this.ticket));
+    },
+    /* Rang (terra–sostre): mostrem un sòl al 40% del càlcul base
+       per ser honestos amb la incertesa real. */
+    get impacteEconomicMin(){ return Math.round(this.impacteEconomic * 0.40); },
+    get impacteEconomicMax(){ return this.impacteEconomic; },
+    get novsClientsMin(){ return Math.round(this.novsClients * 0.40); },
+    get novsClientsMax(){ return this.novsClients; },
+
+    /* ───────── bars ───────── */
+    get barNovesResenyes(){ return Math.min(1, this.novesResenyes / 200); },
+    get barClients(){ return Math.min(1, this.novsClients / 150); },
+    get barImpacte(){ return Math.min(1, this.impacteEconomic / 5000); },
+
+    /* ───────── helpers ───────── */
+    formatInt(n){ return new Intl.NumberFormat('ca-ES').format(Math.round(n||0)); },
+    formatEuros(n){ return new Intl.NumberFormat('ca-ES',{maximumFractionDigits:0}).format(Math.round(n||0)) + '€'; },
+    diffValoracioText(){
+      const d = this.novaValoracio - this.valoracio;
+      if (d <= 0.01) return 'Mantens la teva mitjana actual.';
+      return '+' + d.toFixed(2) + '★ respecte a la teva mitjana actual.';
+    },
+
+    /* ───────── recommendation ───────── */
+    recoTitle(){
+      if (this.impacteEconomicMax >= 800) return 'Hi ha marge per recuperar l\'stand amb molta facilitat.';
+      if (this.impacteEconomicMax >= 250) return 'L\'stand es pot amortitzar en pocs dies.';
+      if (this.novesResenyes >= 30)       return 'Pots reforçar la teva visibilitat a Google ràpidament.';
+      return 'Fins amb xifres prudents, l\'stand sol recuperar-se en poques setmanes.';
+    },
+    recoText(){
+      if (this.impacteEconomicMax >= 250) {
+        return `Estimem un rang de ${this.formatInt(this.impacteEconomicMin)}–${this.formatEuros(this.impacteEconomicMax)} extra al mes en l'escenari baix–alt. L'stand de 33€ es paga una sola vegada.`;
+      }
+      return `L'stand costa 33€ una sola vegada. Amb els clients extra que pot captar la millora de visibilitat, sol recuperar-se en poques setmanes.`;
+    }
+  };
+}
+</script>
+
+</body>
+</html>
