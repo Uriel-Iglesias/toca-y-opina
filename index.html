@@ -208,8 +208,10 @@ nav.glass.dark{
 .hero-orbit-track{ order: 1; position: relative; width: 100%; }
 .hero-copy{ order: 2; }
 @media (max-width: 879px){
-  /* En móvil NO usamos scroll-scrub — auto-play (ver JS). El orbit queda compacto, sin huecos. */
-  .hero-orbit-track{ min-height: 0; }
+  /* Móvil: scroll-scrub compacto (100vh) sobre orbit sticky. Sin huecos blancos. */
+  .hero-grid{ gap: 14px; }
+  .hero-orbit-track{ min-height: 100vh; }
+  .hero-stage{ position: sticky; top: 76px; }
   .hero-copy{ order: 1; }
   .hero-orbit-track{ order: 2; }
 }
@@ -228,14 +230,13 @@ nav.glass.dark{
   position: relative;
   isolation: isolate;
   margin-inline: auto;
-  max-width: 280px;
-  padding-block: 12px 18px;
+  max-width: 340px;
+  padding-block: 6px 10px;
   perspective: 1400px;
   width: 100%;
 }
-@media (min-width:480px){ .hero-stage{ max-width: 320px; } }
+@media (min-width:480px){ .hero-stage{ max-width: 380px; } }
 @media (min-width:880px){ .hero-stage{ max-width: 440px; padding-block: 0; margin-inline: auto; } }
-/* Mobile: NO sticky — orbit es estático y auto-play (sin scroll-scrub) */
 
 .hero-halo{
   position: absolute;
@@ -507,71 +508,54 @@ details.faq p{ color: var(--muted); margin-top:12px; line-height:1.55; }
   </div>
 </nav>
 
-<!-- ===== HERO ===== -->
-<section id="top" class="pt-20 sm:pt-28 pb-10 sm:pb-20">
+<!-- ===== HERO (mobile: headline → orbit scroll-scrub → BIG CTA below) ===== -->
+<section id="top" class="pt-14 sm:pt-24">
   <div class="wrap">
     <div class="hero-grid">
 
-      <!-- LEFT: copy -->
+      <!-- LEFT (desktop) / FIRST (mobile): copy minimalista -->
       <div class="hero-copy">
-        <div class="reveal flex items-center gap-2 mb-6">
+        <div class="reveal flex items-center gap-2 mb-4 sm:mb-6">
           <span class="inline-flex items-center gap-1.5 text-[12px] font-semibold text-ink2 bg-paper border border-line rounded-full px-3 py-1.5">
             <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-            Hecho a mano en el Delta del Ebro · Disponible en Vinted
+            Hecho a mano · 47 reseñas ★ · 0 devoluciones
           </span>
         </div>
 
-        <h1 class="display display-xl reveal mb-5">
+        <h1 class="display reveal mb-4 sm:mb-5" style="font-size:clamp(38px,9vw,82px); font-weight:800; letter-spacing:-0.045em; line-height:1.0;">
           Más reseñas<br>en Google.<br>
           <span class="text-brand">Un solo gesto.</span>
         </h1>
 
-        <p class="body-lg muted reveal max-w-[560px] mb-9">
-          El stand físico que pones en tu mostrador. Tu cliente acerca el móvil y la reseña se publica en 5 segundos.
+        <p class="reveal text-[16px] sm:text-[19px] muted leading-snug max-w-[480px] mb-3 sm:mb-9">
+          El stand que pones en tu mostrador. Tu cliente acerca el móvil y la reseña se publica en 5 segundos.
         </p>
 
-        <div class="reveal flex flex-wrap items-center gap-3 mb-10">
+        <!-- CTA DESKTOP (visible solo desktop, abajo del copy) -->
+        <div class="reveal mt-7 hidden md:flex flex-wrap items-center gap-3">
           <a href="https://www.vinted.es/items/8737424361-stand-resenas-google-nfc-qr-personalizado" target="_blank" rel="noopener" class="cta-hero">
-            Pedir el mío
+            Pedir el mío · 33 €
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </a>
-          <a href="#como" class="cta-ghost">
-            Ver cómo funciona
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-          </a>
-        </div>
-
-        <div class="reveal grid grid-cols-3 gap-4 max-w-[480px]">
-          <div>
-            <div class="font-display font-extrabold text-[24px] sm:text-[34px] tracking-tightest leading-none">5s</div>
-            <p class="text-[12px] muted mt-1">la reseña ya está publicada</p>
-          </div>
-          <div>
-            <div class="font-display font-extrabold text-[24px] sm:text-[34px] tracking-tightest leading-none text-brand">47</div>
-            <p class="text-[12px] muted mt-1">reseñas ★ en Vinted</p>
-          </div>
-          <div>
-            <div class="font-display font-extrabold text-[24px] sm:text-[34px] tracking-tightest leading-none">0</div>
-            <p class="text-[12px] muted mt-1">devoluciones · 0 quejas</p>
-          </div>
+          <p class="text-[13px] muted">Envío 24–72 h · pago Vinted</p>
         </div>
       </div>
 
-      <!-- RIGHT: rotating 360° stand — scroll-scrubbed, sticky on mobile -->
+      <!-- RIGHT (desktop) / SECOND (mobile): 360° orbit scroll-scrub -->
       <div class="hero-orbit-track" id="hero-orbit-track">
         <div class="reveal hero-stage" id="hero-stage" data-orbit-frames="97" data-orbit-pad="3">
           <div class="hero-halo" aria-hidden="true"></div>
           <div class="hero-frame">
             <canvas class="hero-vid" id="orbit-canvas"
                     width="720" height="1280"
-                    aria-label="Stand Toca y Opina girando 360 grados sobre mostrador de granito de cafetería"></canvas>
+                    aria-label="Stand Toca y Opina girando 360°"></canvas>
             <img class="hero-vid orbit-fallback" src="assets/img/orbit/frame-001.jpg" alt="" width="720" height="1280" aria-hidden="true">
             <div class="hero-glare" aria-hidden="true"></div>
             <div class="hero-badge-360" aria-hidden="true">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M21 12a9 9 0 1 1-3-6.7"/><path d="m21 3-3 4-4-1"/>
               </svg>
-              <span>360°</span>
+              <span>Desliza para girarlo</span>
             </div>
           </div>
         </div>
@@ -581,126 +565,141 @@ details.faq p{ color: var(--muted); margin-top:12px; line-height:1.55; }
   </div>
 </section>
 
-<!-- ===== PROBLEM HOOK ===== -->
-<section class="section bg-paper border-y border-line">
-  <div class="wrap">
-    <p class="eyebrow text-brand mb-5 reveal">El problema invisible</p>
-    <h2 class="display display-lg reveal mb-8 max-w-[760px]">
-      El 92% de tus clientes felices<br>
-      <span class="muted">nunca te deja reseña.</span>
-    </h2>
-    <p class="body-lg muted reveal max-w-[640px]">
-      No es porque no les guste. Es porque dejar una reseña en Google requiere
-      sacar el móvil, buscar tu ficha, escribir tu nombre, pulsar estrellas… y nadie tiene tiempo en la cola.
+<!-- ===== BIG CTA después del scroll-scrub (mobile-first) ===== -->
+<section class="md:hidden pt-2 pb-14">
+  <div class="wrap text-center">
+    <a href="https://www.vinted.es/items/8737424361-stand-resenas-google-nfc-qr-personalizado" target="_blank" rel="noopener" class="cta-hero w-full" style="max-width: 360px;">
+      Pedir el mío · 33 €
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a>
+    <p class="text-[12.5px] muted mt-4">
+      Envío 24–72 h · pago protegido por Vinted · sin app, sin cuotas
     </p>
   </div>
 </section>
-
-<!-- ===== HOW IT WORKS (3 steps) ===== -->
-<section id="como" class="section">
+<!-- ===== HOW IT WORKS (compact) ===== -->
+<section id="como" class="pt-14 pb-16 sm:pt-20 sm:pb-24">
   <div class="wrap">
-    <p class="eyebrow text-brand reveal mb-5">Cómo funciona</p>
-    <h2 class="display display-lg reveal mb-12 max-w-[760px]">
-      Tres pasos.<br>Cinco segundos.
+    <p class="eyebrow text-brand reveal mb-4 text-center">Cómo funciona</p>
+    <h2 class="display reveal mb-3 text-center" style="font-size:clamp(28px,6vw,46px); font-weight:800; letter-spacing:-0.04em; line-height:1.05;">
+      Más reseñas en Google,<br>
+      <span class="text-brand">con un solo gesto.</span>
     </h2>
+    <p class="reveal text-center text-[14.5px] muted mb-10 sm:mb-12">
+      Sin app · iPhone y Android · 5 segundos
+    </p>
 
-    <div class="grid md:grid-cols-3 gap-5 sm:gap-7">
+    <div class="grid grid-cols-3 gap-3 sm:gap-5 max-w-[920px] mx-auto">
 
       <article class="reveal">
-        <div class="rounded-3xl overflow-hidden bg-brand mb-5 aspect-[4/5]">
-          <img src="assets/img/paso-1.jpg" alt="Ilustración del stand Toca y Opina colocado sobre una mesa de madera" width="1200" height="1500" class="w-full h-full object-cover" loading="lazy">
+        <div class="rounded-2xl sm:rounded-3xl overflow-hidden bg-brand mb-3 sm:mb-4 aspect-[4/5]">
+          <img src="assets/img/paso-1.jpg" alt="Stand sobre mostrador" width="600" height="750" class="w-full h-full object-cover" loading="lazy">
         </div>
-        <p class="eyebrow text-brand mb-2">Paso 01</p>
-        <h3 class="font-display text-[24px] sm:text-[26px] font-extrabold tracking-tightest leading-tight mb-2">Coloca el stand en tu mostrador.</h3>
-        <p class="text-[15px] muted leading-snug">7 × 7 cm. Donde tus clientes paguen. Listo en 30 segundos, sin app ni instalación.</p>
+        <p class="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-brand mb-1">Paso 1</p>
+        <p class="font-display text-[14px] sm:text-[18px] font-extrabold tracking-tightest leading-tight">Coloca el stand.</p>
       </article>
 
       <article class="reveal">
-        <div class="rounded-3xl overflow-hidden bg-brand mb-5 aspect-[4/5]">
-          <img src="assets/img/paso-2.jpg" alt="Ilustración de un móvil mostrando el formulario de reseña con 5 estrellas" width="1200" height="1500" class="w-full h-full object-cover" loading="lazy">
+        <div class="rounded-2xl sm:rounded-3xl overflow-hidden bg-brand mb-3 sm:mb-4 aspect-[4/5]">
+          <img src="assets/img/paso-2.jpg" alt="Cliente escaneando con el móvil" width="600" height="750" class="w-full h-full object-cover" loading="lazy">
         </div>
-        <p class="eyebrow text-brand mb-2">Paso 02</p>
-        <h3 class="font-display text-[24px] sm:text-[26px] font-extrabold tracking-tightest leading-tight mb-2">Escanea y puntúa.</h3>
-        <p class="text-[15px] muted leading-snug">El cliente escanea el QR con la cámara (lo conoce todo el mundo) o toca con el móvil si tiene NFC. Pulsa estrellas. Listo.</p>
+        <p class="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-brand mb-1">Paso 2</p>
+        <p class="font-display text-[14px] sm:text-[18px] font-extrabold tracking-tightest leading-tight">Toca o escanea.</p>
       </article>
 
       <article class="reveal">
-        <div class="rounded-3xl overflow-hidden bg-brand mb-5 aspect-[4/5]">
-          <img src="assets/img/paso-3.jpg" alt="Ilustración de un móvil con check verde y confeti mostrando 'Publicado'" width="1200" height="1500" class="w-full h-full object-cover" loading="lazy">
+        <div class="rounded-2xl sm:rounded-3xl overflow-hidden bg-brand mb-3 sm:mb-4 aspect-[4/5]">
+          <img src="assets/img/paso-3.jpg" alt="Reseña publicada en Google" width="600" height="750" class="w-full h-full object-cover" loading="lazy">
         </div>
-        <p class="eyebrow text-brand mb-2">Paso 03</p>
-        <h3 class="font-display text-[24px] sm:text-[26px] font-extrabold tracking-tightest leading-tight mb-2">Reseña publicada.</h3>
-        <p class="text-[15px] muted leading-snug">En 5 segundos. Entra en tu ficha de Google y mejora tu ranking en Google Maps.</p>
+        <p class="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-brand mb-1">Paso 3</p>
+        <p class="font-display text-[14px] sm:text-[18px] font-extrabold tracking-tightest leading-tight">Reseña publicada.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+<!-- ===== PRICING ===== -->
+<section id="precios" class="section bg-paper border-y border-line">
+  <div class="wrap">
+    <p class="eyebrow text-brand reveal mb-5">Precios</p>
+    <h2 class="display display-lg reveal mb-3 max-w-[760px]">
+      Pago único.<br><span class="muted">Sin cuotas. Para siempre.</span>
+    </h2>
+    <p class="body muted reveal mb-12 max-w-[640px]">
+      La mayoría de mis clientes pide el <strong class="text-ink">Pack 2</strong>: cubre caja + barra al mismo precio que un stand suelto + un par de cafés.
+    </p>
+
+    <div class="grid md:grid-cols-3 gap-4 sm:gap-5 items-stretch">
+
+      <!-- Pack 1 — anchor, smaller visual weight -->
+      <article class="price-card reveal opacity-95 md:scale-[0.97] md:origin-top">
+        <p class="font-semibold text-[14px] muted">Para empezar</p>
+        <p class="font-display text-[19px] font-extrabold tracking-tightest">Pack 1 stand</p>
+        <p class="euros">34,90<span class="text-2xl font-normal align-top">€</span></p>
+        <p class="text-[14px] muted -mt-3">1 stand · pago único</p>
+        <ul class="text-[14.5px] space-y-2 text-ink2 mt-2">
+          <li class="flex gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="mt-1 flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg> 1 stand para tu caja</li>
+          <li class="flex gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="mt-1 flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg> Envío 24–72 h vía Vinted</li>
+          <li class="flex gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="mt-1 flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg> Si te llega defectuoso, te lo reimprimo</li>
+        </ul>
+        <a href="https://www.vinted.es/items/8737424361-stand-resenas-google-nfc-qr-personalizado" target="_blank" rel="noopener" class="cta w-full mt-auto" style="background:#fff;color:#0A0A0A;border:1px solid var(--line);">Pedir 1 → Vinted</a>
+      </article>
+
+      <!-- Pack 2 — HERO -->
+      <article class="price-card feat reveal md:scale-[1.04] md:-mt-2 md:shadow-2xl">
+        <span class="badge">★ EL MÁS ELEGIDO · 7 de cada 10</span>
+        <p class="font-semibold text-[14px] text-gold">El que más recomiendo</p>
+        <p class="font-display text-[19px] font-extrabold tracking-tightest text-white">Pack 2 stands</p>
+        <div class="flex items-baseline gap-3 flex-wrap">
+          <p class="euros">54,90<span class="text-2xl font-normal align-top">€</span></p>
+          <p class="text-white/40 line-through text-[18px]">69,80€</p>
+        </div>
+        <p class="text-[14px] text-gold -mt-3">27,45 €/stand · ahorras 14,90 €</p>
+        <ul class="text-[14.5px] space-y-2 text-white/90 mt-2">
+          <li class="flex gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F5B941" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="mt-1 flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg> <strong class="text-white">Caja + barra</strong> · doble cobertura</li>
+          <li class="flex gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F5B941" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="mt-1 flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg> <strong class="text-white">2× más reseñas</strong> al mes vs Pack 1</li>
+          <li class="flex gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F5B941" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="mt-1 flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg> Misma URL en los dos · envío incluido</li>
+          <li class="flex gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F5B941" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="mt-1 flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg> Si te llega defectuoso, te lo reimprimo</li>
+        </ul>
+        <a href="https://www.vinted.es/items/8737450242-pack-2-stands-resenas-google-nfc-qr-personalizado" target="_blank" rel="noopener" class="cta w-full mt-auto" style="background:#F5B941;color:#0A0A0A;">Pedir 2 → Vinted</a>
+      </article>
+
+      <!-- Pack 3 — for big places -->
+      <article class="price-card reveal opacity-95 md:scale-[0.97] md:origin-top">
+        <p class="font-semibold text-[14px] muted">Para locales grandes</p>
+        <p class="font-display text-[19px] font-extrabold tracking-tightest">Pack 3 stands</p>
+        <div class="flex items-baseline gap-3 flex-wrap">
+          <p class="euros">74,90<span class="text-2xl font-normal align-top">€</span></p>
+          <p class="text-[var(--muted)] line-through text-[17px]">104,70€</p>
+        </div>
+        <p class="text-[14px] muted -mt-3">24,97 €/stand · ahorras 29,80 €</p>
+        <ul class="text-[14.5px] space-y-2 text-ink2 mt-2">
+          <li class="flex gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="mt-1 flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg> Entrada + caja + salida</li>
+          <li class="flex gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="mt-1 flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg> Triple cobertura · ideal hoteles, hostelería</li>
+          <li class="flex gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="mt-1 flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg> Si te llega defectuoso, te lo reimprimo</li>
+        </ul>
+        <a href="https://www.vinted.es/items/8799503624-pack-3-stands-resenas-google-nfc-qr-personalizado" target="_blank" rel="noopener" class="cta w-full mt-auto" style="background:#fff;color:#0A0A0A;border:1px solid var(--line);">Pedir 3 → Vinted</a>
       </article>
 
     </div>
 
-    <p class="reveal mt-10 text-center text-[14px] muted">
-      Sin app · sin formación · sin cuotas · funciona en iPhone y Android
-    </p>
-
-    <!-- NFC highlight — siempre visible, destacado en azul -->
-    <div class="reveal mt-14 relative">
-      <div class="absolute -top-3 left-1/2 -translate-x-1/2 z-10">
-        <span class="inline-flex items-center gap-1.5 bg-gold text-ink rounded-full px-3.5 py-1.5 text-[11px] font-extrabold tracking-wider uppercase shadow-lg">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-          Aún más rápido
-        </span>
-      </div>
-      <div class="rounded-[28px] overflow-hidden bg-brand text-white shadow-[0_30px_80px_-20px_rgba(16,91,245,.45)]">
-        <div class="grid md:grid-cols-2 gap-0 items-stretch">
-          <div class="aspect-[4/5] md:aspect-auto md:min-h-[440px] overflow-hidden">
-            <img src="assets/img/paso-nfc.jpg" alt="Móvil acercándose al stand con ondas NFC y notificación abierta" width="1200" height="1500" class="w-full h-full object-cover" loading="lazy">
-          </div>
-          <div class="p-7 sm:p-10 flex flex-col justify-center">
-            <div class="flex items-center gap-2 mb-4">
-              <span class="w-10 h-10 rounded-xl bg-white/15 grid place-items-center shrink-0">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>
-              </span>
-              <span class="text-[12px] font-bold uppercase tracking-wider text-white/70">Modo NFC</span>
-            </div>
-            <h3 class="font-display text-[28px] sm:text-[36px] font-extrabold tracking-tightest leading-[1.05] mb-4">
-              Acerca el móvil.<br>
-              <span class="text-gold">Y ya.</span>
-            </h3>
-            <p class="text-[15.5px] text-white/90 leading-relaxed mb-3 max-w-[380px]">
-              iPhone 7+ y casi todos los Android tienen NFC. El cliente acerca el móvil, le sale la notificación, pulsa las estrellas y listo. Sin escanear nada.
-            </p>
-            <p class="text-[13px] text-white/65 max-w-[380px]">
-              ¿Sin NFC? Usa el QR del mismo stand. Cubres a todo el mundo.
-            </p>
-          </div>
-        </div>
-      </div>
+    <!-- Contact for more than 3 -->
+    <div class="mt-10 reveal max-w-[640px] mx-auto bg-white border border-line rounded-3xl px-6 py-7 text-center">
+      <p class="font-display text-[22px] sm:text-[26px] font-extrabold tracking-tightest mb-2">¿Necesitas más de 3 stands?</p>
+      <p class="text-[14.5px] muted mb-5 max-w-[480px] mx-auto">Para cadenas, franquicias o pedidos grandes te hago un presupuesto a medida. Te respondo yo mismo, normalmente en menos de 24 h. Sin formularios.</p>
+      <a href="https://www.vinted.es/items/8799503624-pack-3-stands-resenas-google-nfc-qr-personalizado" target="_blank" rel="noopener" class="cta cta-blue inline-flex">
+        Hablar conmigo en Vinted
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
     </div>
   </div>
 </section>
 
-<!-- ===== STATS WITH CONTEXT ===== -->
+<!-- ===== PRODUCCIÓN → TU NEGOCIO (visual, sin textos) ===== -->
 <section class="section bg-ink text-white">
-  <div class="wrap">
-    <p class="eyebrow text-gold reveal mb-5">Por qué importa</p>
-    <h2 class="display display-lg reveal mb-12 max-w-[760px] text-white">
-      Más reseñas no son vanidad.<br>
-      <span class="text-white/55">Son más clientes nuevos.</span>
-    </h2>
-
-    <div class="grid md:grid-cols-3 gap-4">
-      <div class="stat stat-dark reveal">
-        <div class="num">+62%</div>
-        <p class="mt-3 text-[15px] text-white/80 leading-snug">de reseñas/mes en tiendas reales tras colocar el stand 30 días.</p>
-        <p class="text-[11px] text-white/45 mt-3">Promedio de 14 clientes propios entre julio y diciembre 2025.</p>
-      </div>
-      <div class="stat stat-dark reveal">
-        <div class="num">×2</div>
-        <p class="mt-3 text-[15px] text-white/80 leading-snug">más visibilidad en Google Maps con +30 reseñas frescas recientes.</p>
-        <p class="text-[11px] text-white/45 mt-3">BrightLocal · Local Consumer Review Survey 2024.</p>
-      </div>
-      <div class="stat stat-dark reveal">
-        <div class="num">+14%</div>
-        <p class="mt-3 text-[15px] text-white/80 leading-snug">de aumento de ventas tras 3 meses con reseñas constantes.</p>
-        <p class="text-[11px] text-white/45 mt-3">Harvard Business School · Luca, 2016.</p>
-      </div>
+  <div class="wrap reveal">
+    <div class="rounded-3xl overflow-hidden border border-white/10 shadow-2xl bg-[#0F1733]">
+      <img src="assets/img/produccion-tu.jpg" alt="Uriel imprimiendo el stand y el stand sobre la barra de un negocio" width="1600" height="900" class="w-full h-auto block" loading="lazy">
     </div>
   </div>
 </section>
@@ -859,114 +858,30 @@ details.faq p{ color: var(--muted); margin-top:12px; line-height:1.55; }
   </div>
 </section>
 
-<!-- ===== MANUFACTURING ===== -->
-<section id="fabricacion" class="section bg-paper border-y border-line">
+<!-- ===== STATS WITH CONTEXT ===== -->
+<section class="section bg-ink text-white">
   <div class="wrap">
-    <p class="eyebrow text-brand reveal mb-5">Fabricación</p>
-    <h2 class="display display-lg reveal mb-6 max-w-[760px]">
-      Lo imprimo yo,<br>
-      <span class="muted">en mi taller del Delta del Ebro.</span>
-    </h2>
-    <p class="body muted reveal mb-10 max-w-[640px]">
-      Bambu Lab A1 + H2D · PLA Premium · capa 0,16 mm · color real. Cada chip NFC se graba con la URL de tu ficha de Google y se prueba con un iPhone y un Android antes de salir del taller.
-    </p>
-
-    <div class="manu-video aspect-video reveal mb-10">
-      <video src="assets/img/maquina-a1-1.mp4" poster="assets/img/maquina-a1-1-poster.jpg" muted loop playsinline autoplay preload="metadata"></video>
-      <div class="absolute bottom-4 left-4 right-4 sm:left-6 sm:right-auto bg-black/60 backdrop-blur-md rounded-2xl px-4 py-3 sm:max-w-md">
-        <p class="text-white font-semibold text-[15px] leading-tight">36 stands en una tirada.</p>
-        <p class="text-white/70 text-[12px] mt-0.5">Bambu Lab A1 · plato 350×320 mm.</p>
-      </div>
-      <span class="absolute top-4 left-4 bg-red-500 text-white text-[10px] font-bold px-2.5 py-1 rounded-full flex items-center gap-1.5">
-        <span class="w-1.5 h-1.5 bg-white rounded-full animate-pulse"></span>
-        LOTE EN CURSO
-      </span>
-    </div>
-
-    <!-- 4 specs strip -->
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
-      <div class="bg-white border border-line rounded-2xl px-5 py-4 reveal">
-        <p class="text-[11px] eyebrow text-brand mb-1">Material</p>
-        <p class="font-semibold text-[15px]">PLA Premium</p>
-      </div>
-      <div class="bg-white border border-line rounded-2xl px-5 py-4 reveal">
-        <p class="text-[11px] eyebrow text-brand mb-1">Capa</p>
-        <p class="font-semibold text-[15px]">0,16 mm</p>
-      </div>
-      <div class="bg-white border border-line rounded-2xl px-5 py-4 reveal">
-        <p class="text-[11px] eyebrow text-brand mb-1">Tiempo</p>
-        <p class="font-semibold text-[15px]">24–72 h envío</p>
-      </div>
-      <div class="bg-white border border-line rounded-2xl px-5 py-4 reveal">
-        <p class="text-[11px] eyebrow text-brand mb-1">Garantía</p>
-        <p class="font-semibold text-[15px]">Llega bien o lo reimprimo</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== FOUNDER ===== -->
-<section class="section">
-  <div class="wrap grid md:grid-cols-2 gap-10 items-center">
-    <div class="reveal">
-      <p class="eyebrow text-brand mb-5">Quién está detrás</p>
-      <h2 class="display display-md mb-6">
-        Soy Uriel, <span class="muted">18 años.</span>
-      </h2>
-      <p class="body muted mb-5 max-w-[520px]">
-        Lo diseño, lo imprimo y lo envío yo desde mi taller en el Delta del Ebro. No hay distribuidor en medio. Si te llega defectuoso, te lo reimprimo sin preguntas.
-      </p>
-      <p class="body muted max-w-[520px]">
-        Empecé vendiendo puerta a puerta. Cada stand que ves en este sitio está sobre un mostrador real de un negocio del Delta del Ebro.
-      </p>
-    </div>
-    <div class="reveal">
-      <div class="rounded-[28px] overflow-hidden aspect-[2/3] sm:aspect-[3/4] bg-paper border border-line relative">
-        <img src="assets/img/founder-uriel.jpg" alt="Uriel, fundador de Toca y Opina" class="w-full h-full object-cover" style="object-position: 50% 35%;" loading="lazy">
-        <div class="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md rounded-2xl px-4 py-3 border border-line">
-          <p class="font-semibold text-[14px] leading-tight text-ink">Uriel · Delta del Ebro</p>
-          <p class="text-[12px] muted">Diseña, imprime y envía cada stand</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== COMPARISON ===== -->
-<section class="section bg-paper border-y border-line">
-  <div class="wrap">
-    <p class="eyebrow text-brand reveal mb-5">Comparativa honesta</p>
-    <h2 class="display display-lg reveal mb-12 max-w-[760px]">
-      Toca y Opina<br><span class="muted">vs todo lo demás.</span>
+    <p class="eyebrow text-gold reveal mb-5">Por qué importa</p>
+    <h2 class="display display-lg reveal mb-12 max-w-[760px] text-white">
+      Más reseñas no son vanidad.<br>
+      <span class="text-white/55">Son más clientes nuevos.</span>
     </h2>
 
-    <div class="grid md:grid-cols-2 gap-4">
-      <div class="cmp cmp-good reveal">
-        <div class="flex items-center gap-3 mb-5">
-          <span class="w-8 h-8 rounded-xl bg-brand grid place-items-center">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-          </span>
-          <p class="font-display text-[22px] font-extrabold tracking-tightest">Toca y Opina</p>
-        </div>
-        <div class="row"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Físico sobre el mostrador, visible</div>
-        <div class="row"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Sin app · sin cuentas · sin búsquedas</div>
-        <div class="row"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 33€ pago único · sin cuotas mensuales</div>
-        <div class="row"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Reseña real en 5 segundos</div>
-        <div class="row"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Hecho a mano en España</div>
+    <div class="grid md:grid-cols-3 gap-4">
+      <div class="stat stat-dark reveal">
+        <div class="num">+62%</div>
+        <p class="mt-3 text-[15px] text-white/80 leading-snug">de reseñas/mes en tiendas reales tras colocar el stand 30 días.</p>
+        <p class="text-[11px] text-white/45 mt-3">Promedio de 14 clientes propios entre julio y diciembre 2025.</p>
       </div>
-
-      <div class="cmp cmp-bad reveal">
-        <div class="flex items-center gap-3 mb-5">
-          <span class="w-8 h-8 rounded-xl bg-paper border border-line grid place-items-center">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-          </span>
-          <p class="font-display text-[22px] font-extrabold tracking-tightest muted">Las alternativas</p>
-        </div>
-        <div class="row muted"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Tarjetas de cartón que nadie escanea</div>
-        <div class="row muted"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Apps de reseñas con cuota mensual</div>
-        <div class="row muted"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Pegatinas que ensucian el mostrador</div>
-        <div class="row muted"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Pedir reseñas verbalmente (rara vez funciona)</div>
-        <div class="row muted"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Comprar reseñas falsas (te penaliza Google)</div>
+      <div class="stat stat-dark reveal">
+        <div class="num">×2</div>
+        <p class="mt-3 text-[15px] text-white/80 leading-snug">más visibilidad en Google Maps con +30 reseñas frescas recientes.</p>
+        <p class="text-[11px] text-white/45 mt-3">BrightLocal · Local Consumer Review Survey 2024.</p>
+      </div>
+      <div class="stat stat-dark reveal">
+        <div class="num">+14%</div>
+        <p class="mt-3 text-[15px] text-white/80 leading-snug">de aumento de ventas tras 3 meses con reseñas constantes.</p>
+        <p class="text-[11px] text-white/45 mt-3">Harvard Business School · Luca, 2016.</p>
       </div>
     </div>
   </div>
@@ -1062,88 +977,153 @@ details.faq p{ color: var(--muted); margin-top:12px; line-height:1.55; }
   </div>
 </section>
 
-<!-- ===== PRODUCCIÓN → TU NEGOCIO (visual, sin textos) ===== -->
-<section class="section bg-ink text-white">
-  <div class="wrap reveal">
-    <div class="rounded-3xl overflow-hidden border border-white/10 shadow-2xl bg-[#0F1733]">
-      <img src="assets/img/produccion-tu.jpg" alt="Uriel imprimiendo el stand y el stand sobre la barra de un negocio" width="1600" height="900" class="w-full h-auto block" loading="lazy">
+<!-- ===== FOUNDER ===== -->
+<section class="section">
+  <div class="wrap grid md:grid-cols-2 gap-10 items-center">
+    <div class="reveal">
+      <p class="eyebrow text-brand mb-5">Quién está detrás</p>
+      <h2 class="display display-md mb-6">
+        Soy Uriel, <span class="muted">18 años.</span>
+      </h2>
+      <p class="body muted mb-5 max-w-[520px]">
+        Lo diseño, lo imprimo y lo envío yo desde mi taller en el Delta del Ebro. No hay distribuidor en medio. Si te llega defectuoso, te lo reimprimo sin preguntas.
+      </p>
+      <p class="body muted max-w-[520px]">
+        Empecé vendiendo puerta a puerta. Cada stand que ves en este sitio está sobre un mostrador real de un negocio del Delta del Ebro.
+      </p>
+    </div>
+    <div class="reveal">
+      <div class="rounded-[28px] overflow-hidden aspect-[2/3] sm:aspect-[3/4] bg-paper border border-line relative">
+        <img src="assets/img/founder-uriel.jpg" alt="Uriel, fundador de Toca y Opina" class="w-full h-full object-cover" style="object-position: 50% 35%;" loading="lazy">
+        <div class="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md rounded-2xl px-4 py-3 border border-line">
+          <p class="font-semibold text-[14px] leading-tight text-ink">Uriel · Delta del Ebro</p>
+          <p class="text-[12px] muted">Diseña, imprime y envía cada stand</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ===== PRICING ===== -->
-<section id="precios" class="section bg-paper border-y border-line">
+<!-- ===== MANUFACTURING ===== -->
+<section id="fabricacion" class="section bg-paper border-y border-line">
   <div class="wrap">
-    <p class="eyebrow text-brand reveal mb-5">Precios</p>
-    <h2 class="display display-lg reveal mb-3 max-w-[760px]">
-      Pago único.<br><span class="muted">Sin cuotas. Para siempre.</span>
+    <p class="eyebrow text-brand reveal mb-5">Fabricación</p>
+    <h2 class="display display-lg reveal mb-6 max-w-[760px]">
+      Lo imprimo yo,<br>
+      <span class="muted">en mi taller del Delta del Ebro.</span>
     </h2>
-    <p class="body muted reveal mb-12 max-w-[640px]">
-      La mayoría de mis clientes pide el <strong class="text-ink">Pack 2</strong>: cubre caja + barra al mismo precio que un stand suelto + un par de cafés.
+    <p class="body muted reveal mb-10 max-w-[640px]">
+      Bambu Lab A1 + H2D · PLA Premium · capa 0,16 mm · color real. Cada chip NFC se graba con la URL de tu ficha de Google y se prueba con un iPhone y un Android antes de salir del taller.
     </p>
 
-    <div class="grid md:grid-cols-3 gap-4 sm:gap-5 items-stretch">
-
-      <!-- Pack 1 — anchor, smaller visual weight -->
-      <article class="price-card reveal opacity-95 md:scale-[0.97] md:origin-top">
-        <p class="font-semibold text-[14px] muted">Para empezar</p>
-        <p class="font-display text-[19px] font-extrabold tracking-tightest">Pack 1 stand</p>
-        <p class="euros">34,90<span class="text-2xl font-normal align-top">€</span></p>
-        <p class="text-[14px] muted -mt-3">1 stand · pago único</p>
-        <ul class="text-[14.5px] space-y-2 text-ink2 mt-2">
-          <li class="flex gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="mt-1 flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg> 1 stand para tu caja</li>
-          <li class="flex gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="mt-1 flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg> Envío 24–72 h vía Vinted</li>
-          <li class="flex gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="mt-1 flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg> Si te llega defectuoso, te lo reimprimo</li>
-        </ul>
-        <a href="https://www.vinted.es/items/8737424361-stand-resenas-google-nfc-qr-personalizado" target="_blank" rel="noopener" class="cta w-full mt-auto" style="background:#fff;color:#0A0A0A;border:1px solid var(--line);">Pedir 1 → Vinted</a>
-      </article>
-
-      <!-- Pack 2 — HERO -->
-      <article class="price-card feat reveal md:scale-[1.04] md:-mt-2 md:shadow-2xl">
-        <span class="badge">★ EL MÁS ELEGIDO · 7 de cada 10</span>
-        <p class="font-semibold text-[14px] text-gold">El que más recomiendo</p>
-        <p class="font-display text-[19px] font-extrabold tracking-tightest text-white">Pack 2 stands</p>
-        <div class="flex items-baseline gap-3 flex-wrap">
-          <p class="euros">54,90<span class="text-2xl font-normal align-top">€</span></p>
-          <p class="text-white/40 line-through text-[18px]">69,80€</p>
-        </div>
-        <p class="text-[14px] text-gold -mt-3">27,45 €/stand · ahorras 14,90 €</p>
-        <ul class="text-[14.5px] space-y-2 text-white/90 mt-2">
-          <li class="flex gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F5B941" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="mt-1 flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg> <strong class="text-white">Caja + barra</strong> · doble cobertura</li>
-          <li class="flex gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F5B941" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="mt-1 flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg> <strong class="text-white">2× más reseñas</strong> al mes vs Pack 1</li>
-          <li class="flex gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F5B941" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="mt-1 flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg> Misma URL en los dos · envío incluido</li>
-          <li class="flex gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F5B941" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="mt-1 flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg> Si te llega defectuoso, te lo reimprimo</li>
-        </ul>
-        <a href="https://www.vinted.es/items/8737450242-pack-2-stands-resenas-google-nfc-qr-personalizado" target="_blank" rel="noopener" class="cta w-full mt-auto" style="background:#F5B941;color:#0A0A0A;">Pedir 2 → Vinted</a>
-      </article>
-
-      <!-- Pack 3 — for big places -->
-      <article class="price-card reveal opacity-95 md:scale-[0.97] md:origin-top">
-        <p class="font-semibold text-[14px] muted">Para locales grandes</p>
-        <p class="font-display text-[19px] font-extrabold tracking-tightest">Pack 3 stands</p>
-        <div class="flex items-baseline gap-3 flex-wrap">
-          <p class="euros">74,90<span class="text-2xl font-normal align-top">€</span></p>
-          <p class="text-[var(--muted)] line-through text-[17px]">104,70€</p>
-        </div>
-        <p class="text-[14px] muted -mt-3">24,97 €/stand · ahorras 29,80 €</p>
-        <ul class="text-[14.5px] space-y-2 text-ink2 mt-2">
-          <li class="flex gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="mt-1 flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg> Entrada + caja + salida</li>
-          <li class="flex gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="mt-1 flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg> Triple cobertura · ideal hoteles, hostelería</li>
-          <li class="flex gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="mt-1 flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg> Si te llega defectuoso, te lo reimprimo</li>
-        </ul>
-        <a href="https://www.vinted.es/items/8799503624-pack-3-stands-resenas-google-nfc-qr-personalizado" target="_blank" rel="noopener" class="cta w-full mt-auto" style="background:#fff;color:#0A0A0A;border:1px solid var(--line);">Pedir 3 → Vinted</a>
-      </article>
-
+    <div class="manu-video aspect-video reveal mb-10">
+      <video src="assets/img/maquina-a1-1.mp4" poster="assets/img/maquina-a1-1-poster.jpg" muted loop playsinline autoplay preload="metadata"></video>
+      <div class="absolute bottom-4 left-4 right-4 sm:left-6 sm:right-auto bg-black/60 backdrop-blur-md rounded-2xl px-4 py-3 sm:max-w-md">
+        <p class="text-white font-semibold text-[15px] leading-tight">36 stands en una tirada.</p>
+        <p class="text-white/70 text-[12px] mt-0.5">Bambu Lab A1 · plato 350×320 mm.</p>
+      </div>
+      <span class="absolute top-4 left-4 bg-red-500 text-white text-[10px] font-bold px-2.5 py-1 rounded-full flex items-center gap-1.5">
+        <span class="w-1.5 h-1.5 bg-white rounded-full animate-pulse"></span>
+        LOTE EN CURSO
+      </span>
     </div>
 
-    <!-- Contact for more than 3 -->
-    <div class="mt-10 reveal max-w-[640px] mx-auto bg-white border border-line rounded-3xl px-6 py-7 text-center">
-      <p class="font-display text-[22px] sm:text-[26px] font-extrabold tracking-tightest mb-2">¿Necesitas más de 3 stands?</p>
-      <p class="text-[14.5px] muted mb-5 max-w-[480px] mx-auto">Para cadenas, franquicias o pedidos grandes te hago un presupuesto a medida. Te respondo yo mismo, normalmente en menos de 24 h. Sin formularios.</p>
-      <a href="https://www.vinted.es/items/8799503624-pack-3-stands-resenas-google-nfc-qr-personalizado" target="_blank" rel="noopener" class="cta cta-blue inline-flex">
-        Hablar conmigo en Vinted
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-      </a>
+    <!-- 4 specs strip -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+      <div class="bg-white border border-line rounded-2xl px-5 py-4 reveal">
+        <p class="text-[11px] eyebrow text-brand mb-1">Material</p>
+        <p class="font-semibold text-[15px]">PLA Premium</p>
+      </div>
+      <div class="bg-white border border-line rounded-2xl px-5 py-4 reveal">
+        <p class="text-[11px] eyebrow text-brand mb-1">Capa</p>
+        <p class="font-semibold text-[15px]">0,16 mm</p>
+      </div>
+      <div class="bg-white border border-line rounded-2xl px-5 py-4 reveal">
+        <p class="text-[11px] eyebrow text-brand mb-1">Tiempo</p>
+        <p class="font-semibold text-[15px]">24–72 h envío</p>
+      </div>
+      <div class="bg-white border border-line rounded-2xl px-5 py-4 reveal">
+        <p class="text-[11px] eyebrow text-brand mb-1">Garantía</p>
+        <p class="font-semibold text-[15px]">Llega bien o lo reimprimo</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== NFC HIGHLIGHT (sin gesto ni escaneo) ===== -->
+<section class="pt-4 pb-16 sm:pt-8 sm:pb-24">
+  <div class="wrap">
+    <div class="reveal relative max-w-[940px] mx-auto">
+      <div class="absolute -top-3 left-1/2 -translate-x-1/2 z-10">
+        <span class="inline-flex items-center gap-1.5 bg-gold text-ink rounded-full px-3.5 py-1.5 text-[11px] font-extrabold tracking-wider uppercase shadow-lg">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          Aún más rápido
+        </span>
+      </div>
+      <div class="rounded-[28px] overflow-hidden bg-brand text-white shadow-[0_30px_80px_-20px_rgba(16,91,245,.45)]">
+        <div class="grid md:grid-cols-2 gap-0 items-stretch">
+          <div class="aspect-[4/5] md:aspect-auto md:min-h-[420px] overflow-hidden">
+            <img src="assets/img/paso-nfc.jpg" alt="Móvil acercándose al stand con ondas NFC" width="1200" height="1500" class="w-full h-full object-cover" loading="lazy">
+          </div>
+          <div class="p-7 sm:p-10 flex flex-col justify-center">
+            <div class="flex items-center gap-2 mb-4">
+              <span class="w-10 h-10 rounded-xl bg-white/15 grid place-items-center shrink-0">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>
+              </span>
+              <span class="text-[12px] font-bold uppercase tracking-wider text-white/70">Modo NFC</span>
+            </div>
+            <h3 class="font-display text-[28px] sm:text-[36px] font-extrabold tracking-tightest leading-[1.05] mb-4">
+              Acerca el móvil.<br>
+              <span class="text-gold">Y ya.</span>
+            </h3>
+            <p class="text-[15.5px] text-white/90 leading-relaxed mb-3 max-w-[380px]">
+              iPhone 7+ y casi todos los Android tienen NFC. El cliente acerca el móvil, le sale la notificación, pulsa las estrellas y listo. Sin escanear.
+            </p>
+            <p class="text-[13px] text-white/65 max-w-[380px]">
+              ¿Sin NFC? Usa el QR del mismo stand. Cubres a todo el mundo.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ===== COMPARISON ===== -->
+<section class="section bg-paper border-y border-line">
+  <div class="wrap">
+    <p class="eyebrow text-brand reveal mb-5">Comparativa honesta</p>
+    <h2 class="display display-lg reveal mb-12 max-w-[760px]">
+      Toca y Opina<br><span class="muted">vs todo lo demás.</span>
+    </h2>
+
+    <div class="grid md:grid-cols-2 gap-4">
+      <div class="cmp cmp-good reveal">
+        <div class="flex items-center gap-3 mb-5">
+          <span class="w-8 h-8 rounded-xl bg-brand grid place-items-center">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          <p class="font-display text-[22px] font-extrabold tracking-tightest">Toca y Opina</p>
+        </div>
+        <div class="row"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Físico sobre el mostrador, visible</div>
+        <div class="row"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Sin app · sin cuentas · sin búsquedas</div>
+        <div class="row"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 33€ pago único · sin cuotas mensuales</div>
+        <div class="row"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Reseña real en 5 segundos</div>
+        <div class="row"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Hecho a mano en España</div>
+      </div>
+
+      <div class="cmp cmp-bad reveal">
+        <div class="flex items-center gap-3 mb-5">
+          <span class="w-8 h-8 rounded-xl bg-paper border border-line grid place-items-center">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </span>
+          <p class="font-display text-[22px] font-extrabold tracking-tightest muted">Las alternativas</p>
+        </div>
+        <div class="row muted"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Tarjetas de cartón que nadie escanea</div>
+        <div class="row muted"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Apps de reseñas con cuota mensual</div>
+        <div class="row muted"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Pegatinas que ensucian el mostrador</div>
+        <div class="row muted"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Pedir reseñas verbalmente (rara vez funciona)</div>
+        <div class="row muted"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Comprar reseñas falsas (te penaliza Google)</div>
+      </div>
     </div>
   </div>
 </section>
@@ -1298,7 +1278,6 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
   if (canvas){
     const FRAMES = parseInt(stage.dataset.orbitFrames || '97', 10);
     const PAD = parseInt(stage.dataset.orbitPad || '3', 10);
-    const isMobile = window.matchMedia('(max-width: 879px)').matches;
     const track = document.getElementById('hero-orbit-track') || stage;
     const ctx = canvas.getContext('2d', { alpha: false });
     const images = new Array(FRAMES);
@@ -1365,45 +1344,11 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
       drawFrame(idx);
     }
 
-    // Kick off
+    // Kick off — scroll-scrub en móvil y desktop (con track de 100vh en móvil compacto)
     preload();
-
-    if (isMobile){
-      // Auto-play loop suave — ~14s para giro completo (slower, smoother feel)
-      const FRAME_MS = 145; // 97 frames * 145ms ≈ 14s
-      let autoIdx = 0;
-      let lastTs = 0;
-      let acc = 0;
-      function loop(ts){
-        if (!lastTs) lastTs = ts;
-        acc += (ts - lastTs);
-        lastTs = ts;
-        while (acc >= FRAME_MS){
-          autoIdx = (autoIdx + 1) % FRAMES;
-          if (images[autoIdx] && images[autoIdx].complete && images[autoIdx].naturalWidth){
-            drawFrame(autoIdx);
-          }
-          acc -= FRAME_MS;
-        }
-        requestAnimationFrame(loop);
-      }
-      // Espera a tener al menos el frame 0 cargado, luego empieza el loop
-      const startWhenReady = () => {
-        if (images[0] && images[0].complete && images[0].naturalWidth){
-          drawFrame(0);
-          requestAnimationFrame(loop);
-        } else {
-          setTimeout(startWhenReady, 50);
-        }
-      };
-      startWhenReady();
-      // No scroll listener en móvil
-      window.addEventListener('resize', scheduleUpdate, { passive: true });
-    } else {
-      window.addEventListener('scroll', scheduleUpdate, { passive: true });
-      window.addEventListener('resize', scheduleUpdate, { passive: true });
-      scheduleUpdate();
-    }
+    window.addEventListener('scroll', scheduleUpdate, { passive: true });
+    window.addEventListener('resize', scheduleUpdate, { passive: true });
+    scheduleUpdate();
   }
 
   // 3D parallax tilt — desktop only, not when reduced motion
