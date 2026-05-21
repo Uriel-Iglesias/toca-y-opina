@@ -208,9 +208,10 @@ nav.glass.dark{
 .hero-orbit-track{ order: 1; position: relative; width: 100%; }
 .hero-copy{ order: 2; }
 @media (max-width: 879px){
-  /* Tall track on mobile so the canvas pins and the rotation has scroll distance to play */
-  .hero-orbit-track{ min-height: 180vh; }
-  .hero-stage{ position: sticky; top: 68px; }
+  /* En móvil NO usamos scroll-scrub — auto-play (ver JS). El orbit queda compacto, sin huecos. */
+  .hero-orbit-track{ min-height: 0; }
+  .hero-copy{ order: 1; }
+  .hero-orbit-track{ order: 2; }
 }
 @media (min-width:880px){
   .hero-grid{
@@ -234,10 +235,7 @@ nav.glass.dark{
 }
 @media (min-width:480px){ .hero-stage{ max-width: 320px; } }
 @media (min-width:880px){ .hero-stage{ max-width: 440px; padding-block: 0; margin-inline: auto; } }
-/* Sticky behavior must come AFTER the default position rule so it wins on mobile */
-@media (max-width: 879px){
-  .hero-stage{ position: sticky; top: 68px; }
-}
+/* Mobile: NO sticky — orbit es estático y auto-play (sin scroll-scrub) */
 
 .hero-halo{
   position: absolute;
@@ -641,36 +639,40 @@ details.faq p{ color: var(--muted); margin-top:12px; line-height:1.55; }
       Sin app · sin formación · sin cuotas · funciona en iPhone y Android
     </p>
 
-    <!-- NFC expandable -->
-    <details class="reveal mt-10 max-w-[820px] mx-auto group border border-line rounded-3xl bg-paper overflow-hidden">
-      <summary class="cursor-pointer list-none flex items-center justify-between gap-4 px-6 py-5 sm:px-7 sm:py-6">
-        <div class="flex items-center gap-3 min-w-0">
-          <span class="w-9 h-9 rounded-xl bg-brand/10 grid place-items-center shrink-0">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#105BF5" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>
-          </span>
-          <div class="min-w-0">
-            <p class="font-display text-[17px] sm:text-[19px] font-extrabold tracking-tightest leading-tight">¿Y si quiero usar el NFC?</p>
-            <p class="text-[13px] muted">El stand también funciona con un solo gesto, sin escanear.</p>
+    <!-- NFC highlight — siempre visible, destacado en azul -->
+    <div class="reveal mt-14 relative">
+      <div class="absolute -top-3 left-1/2 -translate-x-1/2 z-10">
+        <span class="inline-flex items-center gap-1.5 bg-gold text-ink rounded-full px-3.5 py-1.5 text-[11px] font-extrabold tracking-wider uppercase shadow-lg">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          Aún más rápido
+        </span>
+      </div>
+      <div class="rounded-[28px] overflow-hidden bg-brand text-white shadow-[0_30px_80px_-20px_rgba(16,91,245,.45)]">
+        <div class="grid md:grid-cols-2 gap-0 items-stretch">
+          <div class="aspect-[4/5] md:aspect-auto md:min-h-[440px] overflow-hidden">
+            <img src="assets/img/paso-nfc.jpg" alt="Móvil acercándose al stand con ondas NFC y notificación abierta" width="1200" height="1500" class="w-full h-full object-cover" loading="lazy">
+          </div>
+          <div class="p-7 sm:p-10 flex flex-col justify-center">
+            <div class="flex items-center gap-2 mb-4">
+              <span class="w-10 h-10 rounded-xl bg-white/15 grid place-items-center shrink-0">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>
+              </span>
+              <span class="text-[12px] font-bold uppercase tracking-wider text-white/70">Modo NFC</span>
+            </div>
+            <h3 class="font-display text-[28px] sm:text-[36px] font-extrabold tracking-tightest leading-[1.05] mb-4">
+              Acerca el móvil.<br>
+              <span class="text-gold">Y ya.</span>
+            </h3>
+            <p class="text-[15.5px] text-white/90 leading-relaxed mb-3 max-w-[380px]">
+              iPhone 7+ y casi todos los Android tienen NFC. El cliente acerca el móvil, le sale la notificación, pulsa las estrellas y listo. Sin escanear nada.
+            </p>
+            <p class="text-[13px] text-white/65 max-w-[380px]">
+              ¿Sin NFC? Usa el QR del mismo stand. Cubres a todo el mundo.
+            </p>
           </div>
         </div>
-        <svg class="shrink-0 transition-transform duration-300 group-open:rotate-45" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-      </summary>
-
-      <div class="grid md:grid-cols-2 gap-6 sm:gap-8 px-6 sm:px-7 pb-7 pt-2 items-center">
-        <div class="rounded-2xl overflow-hidden bg-brand aspect-[4/5]">
-          <img src="assets/img/paso-nfc.jpg" alt="Ilustración de un móvil acercándose al stand con ondas NFC y notificación de enlace abierto" width="1200" height="1500" class="w-full h-full object-cover" loading="lazy">
-        </div>
-        <div>
-          <p class="font-display text-[22px] sm:text-[26px] font-extrabold tracking-tightest leading-tight mb-3">Acerca el móvil. Y ya.</p>
-          <p class="body muted mb-4">
-            Los iPhone (modelo 7 o posterior) y casi todos los Android tienen lector NFC integrado. El cliente acerca el móvil al stand, le sale una notificación abriendo tu ficha de Google, pulsa las estrellas y publica. Sin abrir cámara, sin escanear nada.
-          </p>
-          <p class="text-[13px] muted">
-            ¿Su móvil es antiguo y no tiene NFC? No importa — usa el QR del mismo stand con la cámara. Cubres a todo el mundo.
-          </p>
-        </div>
       </div>
-    </details>
+    </div>
   </div>
 </section>
 
@@ -919,8 +921,8 @@ details.faq p{ color: var(--muted); margin-top:12px; line-height:1.55; }
       </p>
     </div>
     <div class="reveal">
-      <div class="rounded-[28px] overflow-hidden aspect-[4/5] bg-paper border border-line relative">
-        <img src="assets/img/founder-uriel.jpg" alt="Uriel, fundador de Toca y Opina" class="w-full h-full object-cover" style="object-position: 50% 30%;" loading="lazy">
+      <div class="rounded-[28px] overflow-hidden aspect-[2/3] sm:aspect-[3/4] bg-paper border border-line relative">
+        <img src="assets/img/founder-uriel.jpg" alt="Uriel, fundador de Toca y Opina" class="w-full h-full object-cover" style="object-position: 50% 35%;" loading="lazy">
         <div class="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md rounded-2xl px-4 py-3 border border-line">
           <p class="font-semibold text-[14px] leading-tight text-ink">Uriel · Delta del Ebro</p>
           <p class="text-[12px] muted">Diseña, imprime y envía cada stand</p>
@@ -1060,184 +1062,11 @@ details.faq p{ color: var(--muted); margin-top:12px; line-height:1.55; }
   </div>
 </section>
 
-<!-- ===== WHY THIS PRICE — supply chain ===== -->
+<!-- ===== PRODUCCIÓN → TU NEGOCIO (visual, sin textos) ===== -->
 <section class="section bg-ink text-white">
-  <div class="wrap">
-    <p class="eyebrow text-gold reveal mb-5">Por qué cuesta lo que cuesta</p>
-    <h2 class="display display-lg reveal mb-5 max-w-[760px] text-white">
-      Cero intermediarios.<br>
-      <span class="text-white/55">Por eso no pagas su margen.</span>
-    </h2>
-    <p class="body text-white/70 reveal mb-10 max-w-[640px]">
-      Las marcas que venden estos stands online suelen ser revendedores: importan, distribuyen, marcan y te lo cobran con 4 márgenes encima. Yo no.
-    </p>
-
-    <!-- Other brands: visual flow -->
-    <div class="reveal mb-6">
-      <p class="eyebrow text-red-400 mb-3">Otras marcas</p>
-      <div class="bg-[#0F1733] border border-white/10 rounded-3xl p-3 sm:p-4 overflow-hidden">
-        <img src="assets/img/supply-chain.jpg" alt="Diagrama: fábrica China 3€ → importador EU +8€ → mayorista España +10€ → marca online +25€ → tú pagas 46-79€" width="1600" height="900" class="w-full rounded-2xl" loading="lazy">
-      </div>
-      <p class="text-[12px] text-white/45 mt-3 text-center">Cuatro manos, cuatro márgenes, cero contacto con quien lo hace.</p>
-    </div>
-
-    <!-- Toca y Opina: just me — production illustration mirroring 'Otras marcas' -->
-    <div class="reveal">
-      <p class="eyebrow text-gold mb-3">Toca y Opina</p>
-      <div class="bg-[#0F1733] rounded-3xl p-3 sm:p-4 overflow-hidden border border-white/10">
-        <img src="assets/img/produccion-tu.jpg" alt="Diagrama: producción (impresora 3D imprimiendo stands) → tú (cliente), sin intermediarios" width="1600" height="900" class="w-full rounded-2xl" loading="lazy">
-      </div>
-      <p class="text-[12px] text-white/55 mt-3 text-center">Una sola mano: la mía. Cero márgenes que paguen otros antes que tú.</p>
-    </div>
-
-    <p class="text-[13px] text-white/55 mt-8 text-center reveal max-w-[640px] mx-auto">
-      Mismo NFC. Misma calidad. Misma garantía. Solo que sin pagarle 4 márgenes a nadie.
-    </p>
-  </div>
-</section>
-
-<!-- ===== VERIFY BUSINESS IS ON GOOGLE ===== -->
-<section id="verifica" class="section bg-paper border-y border-line">
-  <div class="wrap">
-    <p class="eyebrow text-brand reveal mb-5">Compatibilidad</p>
-    <h2 class="display display-lg reveal mb-5 max-w-[760px]">
-      ¿Tu negocio está<br>
-      <span class="muted">en Google Maps?</span>
-    </h2>
-    <p class="body muted reveal mb-12 max-w-[600px]">
-      El stand redirige a tu ficha de Google. Compruébalo en 5 segundos.
-    </p>
-
-    <div class="grid lg:grid-cols-5 gap-6 sm:gap-8 items-start">
-
-      <!-- LEFT: Phone preview mockup -->
-      <div class="reveal lg:col-span-2 order-2 lg:order-1">
-        <div class="relative mx-auto max-w-[300px]">
-          <!-- iPhone-style mockup -->
-          <div class="relative bg-ink rounded-[42px] p-2.5 shadow-[0_30px_80px_-20px_rgba(16,91,245,.35),0_8px_24px_rgba(0,0,0,.18)]">
-            <div class="bg-white rounded-[34px] overflow-hidden aspect-[9/19]">
-              <!-- Status bar -->
-              <div class="flex items-center justify-between px-6 pt-3 pb-1 text-[11px] font-semibold text-ink">
-                <span>9:41</span>
-                <span class="flex items-center gap-1">
-                  <svg width="14" height="10" viewBox="0 0 18 12" fill="currentColor"><rect x="0" y="6" width="3" height="5" rx="1"/><rect x="5" y="3" width="3" height="8" rx="1"/><rect x="10" y="0" width="3" height="11" rx="1"/></svg>
-                  <svg width="14" height="10" viewBox="0 0 18 12" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="0.5" y="2.5" width="14" height="7" rx="1.5"/><rect x="2" y="4" width="9" height="4" rx="0.5" fill="currentColor"/></svg>
-                </span>
-              </div>
-              <!-- Google search bar -->
-              <div class="px-3 pt-2 pb-3">
-                <div class="flex items-center gap-2 border border-line rounded-full px-3 py-2 bg-white shadow-sm">
-                  <svg width="16" height="16" viewBox="0 0 48 48">
-                    <path fill="#4285F4" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
-                    <path fill="#34A853" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
-                    <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
-                    <path fill="#EA4335" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
-                  </svg>
-                  <span id="phone-q" class="text-[11px] text-ink2 font-medium truncate">tu negocio</span>
-                </div>
-              </div>
-              <!-- Map area -->
-              <div class="relative bg-[#E5EBF1] h-44 overflow-hidden">
-                <!-- Stylized map -->
-                <svg class="absolute inset-0 w-full h-full" viewBox="0 0 300 180" preserveAspectRatio="xMidYMid slice">
-                  <rect width="300" height="180" fill="#E8EEF2"/>
-                  <path d="M0 60 L300 80" stroke="#fff" stroke-width="6"/>
-                  <path d="M0 130 L300 110" stroke="#fff" stroke-width="6"/>
-                  <path d="M120 0 L140 180" stroke="#fff" stroke-width="5"/>
-                  <path d="M220 0 L210 180" stroke="#fff" stroke-width="5"/>
-                  <rect x="20" y="10" width="60" height="35" fill="#D5DCE2" rx="2"/>
-                  <rect x="90" y="100" width="40" height="40" fill="#D5DCE2" rx="2"/>
-                  <rect x="160" y="20" width="40" height="50" fill="#D5DCE2" rx="2"/>
-                  <rect x="230" y="120" width="50" height="40" fill="#D5DCE2" rx="2"/>
-                  <circle cx="60" cy="125" r="20" fill="#C8E6C9" opacity="0.6"/>
-                  <circle cx="250" cy="50" r="14" fill="#C8E6C9" opacity="0.6"/>
-                </svg>
-                <!-- Pin -->
-                <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-full" id="phone-pin">
-                  <svg width="36" height="46" viewBox="0 0 36 46" class="drop-shadow-lg">
-                    <path d="M18 0C8.06 0 0 8.06 0 18c0 13.5 18 28 18 28s18-14.5 18-28C36 8.06 27.94 0 18 0z" fill="#EA4335"/>
-                    <circle cx="18" cy="18" r="6" fill="#fff"/>
-                  </svg>
-                </div>
-              </div>
-              <!-- Business card -->
-              <div class="px-4 py-3 border-t border-line">
-                <p id="phone-name" class="font-bold text-[13px] text-ink truncate">Tu negocio</p>
-                <div class="flex items-center gap-1.5 mt-1">
-                  <span class="font-bold text-[12px] text-ink">4,8</span>
-                  <span class="stars">
-                    <svg width="11" height="11" viewBox="0 0 24 24" fill="#F5B941"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                    <svg width="11" height="11" viewBox="0 0 24 24" fill="#F5B941"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                    <svg width="11" height="11" viewBox="0 0 24 24" fill="#F5B941"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                    <svg width="11" height="11" viewBox="0 0 24 24" fill="#F5B941"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                    <svg width="11" height="11" viewBox="0 0 24 24" fill="#F5B941"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                  </span>
-                  <span class="text-[11px] muted">(<span id="phone-count">47</span>)</span>
-                </div>
-                <p class="text-[11px] muted mt-1">Abierto · Local de tu ciudad</p>
-                <div class="mt-2 inline-flex items-center gap-1 text-brand text-[11px] font-semibold">
-                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                  Escribir una reseña
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Floating verified badge -->
-          <div class="absolute -top-3 -right-3 bg-emerald-500 text-white rounded-full px-3 py-1.5 text-[11px] font-bold flex items-center gap-1.5 shadow-lg shadow-emerald-500/40">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            En Google
-          </div>
-        </div>
-      </div>
-
-      <!-- RIGHT: Form + states -->
-      <div class="reveal lg:col-span-3 order-1 lg:order-2">
-        <div class="bg-white border border-line rounded-3xl p-6 sm:p-8">
-          <p class="text-[12px] eyebrow text-brand mb-3">Comprueba tu ficha</p>
-          <p class="font-display text-[22px] sm:text-[26px] font-extrabold tracking-tightest leading-tight mb-5">
-            Escribe el nombre de tu negocio.
-          </p>
-
-          <form id="biz-form" class="flex flex-col sm:flex-row gap-3 mb-4" onsubmit="event.preventDefault(); checkBusiness();">
-            <label class="flex-1 relative">
-              <span class="absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6B6B70" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-              </span>
-              <input id="biz-q" type="text" placeholder="Ej: Salon Epic Amposta" class="w-full bg-paper border border-line rounded-2xl pl-11 pr-4 h-14 text-[15px] font-medium text-ink focus:outline-none focus:border-brand transition" autocomplete="off">
-            </label>
-            <button type="submit" class="cta cta-blue flex-shrink-0">
-              Buscar
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            </button>
-          </form>
-
-          <p class="text-[12px] muted mb-7">Se abre Google Maps en una pestaña nueva. No guardamos tu búsqueda.</p>
-
-          <!-- Two outcomes — visually balanced -->
-          <div class="grid sm:grid-cols-2 gap-3">
-            <div class="border border-line rounded-2xl p-4 bg-paper">
-              <div class="flex items-center gap-2 mb-2">
-                <span class="w-7 h-7 rounded-full bg-emerald-100 grid place-items-center flex-shrink-0">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                </span>
-                <p class="font-semibold text-[14px] text-ink leading-tight">Aparece tu ficha</p>
-              </div>
-              <p class="text-[12.5px] muted leading-snug">Listo. El stand te llegará configurado y funcionará desde el primer cliente.</p>
-            </div>
-            <div class="border border-line rounded-2xl p-4 bg-paper">
-              <div class="flex items-center gap-2 mb-2">
-                <span class="w-7 h-7 rounded-full bg-brand/10 grid place-items-center flex-shrink-0">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#105BF5" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                </span>
-                <p class="font-semibold text-[14px] text-ink leading-tight">Aún no tienes ficha</p>
-              </div>
-              <p class="text-[12.5px] muted leading-snug">10 minutos. Dímelo por Vinted antes del envío y te paso los pasos exactos.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
+  <div class="wrap reveal">
+    <div class="rounded-3xl overflow-hidden border border-white/10 shadow-2xl bg-[#0F1733]">
+      <img src="assets/img/produccion-tu.jpg" alt="Uriel imprimiendo el stand y el stand sobre la barra de un negocio" width="1600" height="900" class="w-full h-auto block" loading="lazy">
     </div>
   </div>
 </section>
@@ -1469,6 +1298,7 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
   if (canvas){
     const FRAMES = parseInt(stage.dataset.orbitFrames || '97', 10);
     const PAD = parseInt(stage.dataset.orbitPad || '3', 10);
+    const isMobile = window.matchMedia('(max-width: 879px)').matches;
     const track = document.getElementById('hero-orbit-track') || stage;
     const ctx = canvas.getContext('2d', { alpha: false });
     const images = new Array(FRAMES);
@@ -1537,9 +1367,43 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
     // Kick off
     preload();
-    window.addEventListener('scroll', scheduleUpdate, { passive: true });
-    window.addEventListener('resize', scheduleUpdate, { passive: true });
-    scheduleUpdate();
+
+    if (isMobile){
+      // Auto-play loop suave — ~14s para giro completo (slower, smoother feel)
+      const FRAME_MS = 145; // 97 frames * 145ms ≈ 14s
+      let autoIdx = 0;
+      let lastTs = 0;
+      let acc = 0;
+      function loop(ts){
+        if (!lastTs) lastTs = ts;
+        acc += (ts - lastTs);
+        lastTs = ts;
+        while (acc >= FRAME_MS){
+          autoIdx = (autoIdx + 1) % FRAMES;
+          if (images[autoIdx] && images[autoIdx].complete && images[autoIdx].naturalWidth){
+            drawFrame(autoIdx);
+          }
+          acc -= FRAME_MS;
+        }
+        requestAnimationFrame(loop);
+      }
+      // Espera a tener al menos el frame 0 cargado, luego empieza el loop
+      const startWhenReady = () => {
+        if (images[0] && images[0].complete && images[0].naturalWidth){
+          drawFrame(0);
+          requestAnimationFrame(loop);
+        } else {
+          setTimeout(startWhenReady, 50);
+        }
+      };
+      startWhenReady();
+      // No scroll listener en móvil
+      window.addEventListener('resize', scheduleUpdate, { passive: true });
+    } else {
+      window.addEventListener('scroll', scheduleUpdate, { passive: true });
+      window.addEventListener('resize', scheduleUpdate, { passive: true });
+      scheduleUpdate();
+    }
   }
 
   // 3D parallax tilt — desktop only, not when reduced motion
