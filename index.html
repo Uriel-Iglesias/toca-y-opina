@@ -246,9 +246,9 @@ nav.glass.dark{
 .hero-orbit-track{ order: 1; position: relative; width: 100%; }
 .hero-copy{ order: 2; }
 @media (max-width: 879px){
-  /* Móvil: 73 frames sobre 280vh = ~32px por frame, scroll fluido sin huecos */
+  /* Móvil: 73 frames sobre 200vh = ~21px por frame, scroll compacto */
   .hero-grid{ gap: 14px; }
-  .hero-orbit-track{ min-height: 280vh; order: 2; }
+  .hero-orbit-track{ min-height: 200vh; order: 2; }
   .hero-copy{ order: 1; }
 }
 @media (min-width:880px){
@@ -258,7 +258,7 @@ nav.glass.dark{
     align-items: start;
   }
   .hero-copy{ order: 1; }
-  .hero-orbit-track{ order: 2; min-height: 200vh; }
+  .hero-orbit-track{ order: 2; min-height: 160vh; }
 }
 
 /* ===== Hero stage (rotating 360° product video) ===== */
@@ -560,6 +560,52 @@ details.faq p{ color: var(--muted); margin-top:12px; line-height:1.55; }
 /* Star rating tiny */
 .stars{ display:inline-flex; gap:2px; }
 .stars svg{ width:14px; height:14px; }
+
+/* NFC accordion (debajo de los 3 pasos) */
+.nfc-accordion{
+  border-radius: 18px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #F5B941 0%, #E89A1F 100%);
+  box-shadow: 0 12px 30px -10px rgba(245,185,65,0.55);
+}
+.nfc-accordion > summary{
+  list-style: none;
+  cursor: pointer;
+  padding: 0;
+}
+.nfc-accordion > summary::-webkit-details-marker{ display:none; }
+.nfc-accordion__bar{
+  display:flex; align-items:center; justify-content:space-between;
+  gap: 12px;
+  padding: 16px 20px;
+  color: #0A0A0A;
+}
+.nfc-accordion__label{
+  display:flex; align-items:center; gap:10px;
+  font-family: -apple-system,BlinkMacSystemFont,"SF Pro Display","Inter",sans-serif;
+  font-weight: 800;
+  font-size: 15px;
+  letter-spacing: -0.01em;
+}
+.nfc-accordion__hint{
+  font-weight: 600;
+  opacity: 0.75;
+  font-size: 13px;
+}
+.nfc-accordion__chevron{
+  transition: transform .3s ease;
+  flex-shrink: 0;
+}
+.nfc-accordion[open] .nfc-accordion__chevron{ transform: rotate(180deg); }
+.nfc-accordion__panel{
+  background: #fff;
+  padding: 22px 20px;
+}
+@media (min-width:640px){
+  .nfc-accordion__bar{ padding: 18px 24px; }
+  .nfc-accordion__label{ font-size: 16px; }
+  .nfc-accordion__panel{ padding: 28px; }
+}
 </style>
 
 <!-- JSON-LD: Product + Organization + FAQ -->
@@ -707,6 +753,37 @@ details.faq p{ color: var(--muted); margin-top:12px; line-height:1.55; }
       </article>
 
     </div>
+
+    <!-- NFC accordion debajo de los 3 pasos -->
+    <div class="max-w-[920px] mx-auto mt-8 sm:mt-10 reveal">
+      <details class="group nfc-accordion">
+        <summary>
+          <span class="nfc-accordion__bar">
+            <span class="nfc-accordion__label">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12.55a11 11 0 0 1 14 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/>
+              </svg>
+              <span>¿Cómo funciona con NFC? <span class="nfc-accordion__hint">(aún más rápido)</span></span>
+            </span>
+            <svg class="nfc-accordion__chevron" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </span>
+        </summary>
+        <div class="nfc-accordion__panel">
+          <div class="grid sm:grid-cols-2 gap-5 items-center">
+            <div class="rounded-2xl overflow-hidden">
+              <picture><source srcset="assets/img/paso-nfc.webp" type="image/webp"><img src="assets/img/paso-nfc.jpg" alt="Móvil acercándose al stand con ondas NFC" width="800" height="1000" class="w-full h-auto block" loading="lazy" decoding="async"></picture>
+            </div>
+            <div>
+              <p class="font-display text-[22px] sm:text-[26px] font-extrabold tracking-tightest leading-[1.05] mb-3 text-ink">Acerca el móvil. <span class="text-brand">Y ya.</span></p>
+              <p class="text-[15px] muted leading-relaxed mb-3">iPhone 7+ y casi todos los Android tienen NFC. Tu cliente acerca el móvil al stand, le sale la notificación, pulsa las estrellas y listo. <strong class="text-ink">Sin escanear nada.</strong></p>
+              <p class="text-[13px] muted">¿Sin NFC? El QR del mismo stand cubre el resto. <a href="blog/qr-vs-nfc-para-resenas-cual-convierte-mas.html" class="text-brand underline decoration-brand/30 hover:decoration-brand">Comparativa QR vs NFC →</a></p>
+            </div>
+          </div>
+        </div>
+      </details>
+    </div>
   </div>
 </section>
 <!-- ===== PRICING ===== -->
@@ -811,21 +888,27 @@ details.faq p{ color: var(--muted); margin-top:12px; line-height:1.55; }
 
     <div class="grid md:grid-cols-2 gap-4 sm:gap-6 max-w-[1100px] mx-auto">
       <!-- LEFT: Toca y Opina -->
-      <article class="reveal relative rounded-3xl overflow-hidden border-2 border-gold/40 shadow-[0_24px_60px_-20px_rgba(245,185,65,0.35)] bg-[#0F1733]">
-        <div class="absolute top-4 left-4 z-10 inline-flex items-center gap-1.5 bg-gold text-ink rounded-full px-3 py-1.5 text-[11px] font-extrabold tracking-wider uppercase shadow-lg">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          Toca y Opina
-        </div>
+      <article class="reveal rounded-3xl overflow-hidden border-2 border-gold/50 shadow-[0_24px_60px_-20px_rgba(245,185,65,0.35)] bg-[#0F1733]">
         <picture><source srcset="assets/img/produccion-tu.webp" type="image/webp"><img src="assets/img/produccion-tu.jpg" alt="Uriel imprimiendo el stand y el stand sobre la barra de un negocio del Delta del Ebro" width="1400" height="788" class="w-full h-auto block" loading="lazy" decoding="async"></picture>
+        <div class="px-5 py-4 flex items-center justify-between gap-3 border-t border-gold/30">
+          <p class="font-display text-[16px] font-extrabold tracking-tight text-white flex items-center gap-2">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#F5B941"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            Toca y Opina
+          </p>
+          <p class="font-display text-gold text-[18px] font-extrabold tracking-tight">33 €</p>
+        </div>
       </article>
 
       <!-- RIGHT: Otras empresas -->
-      <article class="reveal relative rounded-3xl overflow-hidden border border-white/10 bg-[#0F1733] opacity-90">
-        <div class="absolute top-4 left-4 z-10 inline-flex items-center gap-1.5 bg-white/15 text-white/85 rounded-full px-3 py-1.5 text-[11px] font-extrabold tracking-wider uppercase backdrop-blur">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-          Otras empresas
-        </div>
+      <article class="reveal rounded-3xl overflow-hidden border border-white/10 bg-[#0F1733] opacity-90">
         <picture><source srcset="assets/img/supply-chain.webp" type="image/webp"><img src="assets/img/supply-chain.jpg" alt="Cadena de suministro tradicional: fábrica en China → importador → mayorista → marca online, con sobrecoste acumulado" width="1400" height="788" class="w-full h-auto block" loading="lazy" decoding="async"></picture>
+        <div class="px-5 py-4 flex items-center justify-between gap-3 border-t border-white/10">
+          <p class="font-display text-[16px] font-extrabold tracking-tight text-white/70 flex items-center gap-2">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            Otras empresas
+          </p>
+          <p class="font-display text-white/60 text-[18px] font-extrabold tracking-tight">46-79 €</p>
+        </div>
       </article>
     </div>
   </div>
@@ -1181,44 +1264,6 @@ details.faq p{ color: var(--muted); margin-top:12px; line-height:1.55; }
   </div>
 </section>
 
-<!-- ===== NFC HIGHLIGHT (sin gesto ni escaneo) ===== -->
-<section class="pt-4 pb-16 sm:pt-8 sm:pb-24">
-  <div class="wrap">
-    <div class="reveal relative max-w-[940px] mx-auto">
-      <div class="absolute -top-3 left-1/2 -translate-x-1/2 z-10">
-        <span class="inline-flex items-center gap-1.5 bg-gold text-ink rounded-full px-3.5 py-1.5 text-[11px] font-extrabold tracking-wider uppercase shadow-lg">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-          Aún más rápido
-        </span>
-      </div>
-      <div class="rounded-[28px] overflow-hidden bg-brand text-white shadow-[0_30px_80px_-20px_rgba(16,91,245,.45)]">
-        <div class="grid md:grid-cols-2 gap-0 items-stretch">
-          <div class="aspect-[4/5] md:aspect-auto md:min-h-[420px] overflow-hidden">
-            <picture><source srcset="assets/img/paso-nfc.webp" type="image/webp"><img src="assets/img/paso-nfc.jpg" alt="Móvil acercándose al stand con ondas NFC" width="1200" height="1500" class="w-full h-full object-cover" loading="lazy" decoding="async"></picture>
-          </div>
-          <div class="p-7 sm:p-10 flex flex-col justify-center">
-            <div class="flex items-center gap-2 mb-4">
-              <span class="w-10 h-10 rounded-xl bg-white/15 grid place-items-center shrink-0">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>
-              </span>
-              <span class="text-[12px] font-bold uppercase tracking-wider text-white/70">Modo NFC</span>
-            </div>
-            <h3 class="font-display text-[28px] sm:text-[36px] font-extrabold tracking-tightest leading-[1.05] mb-4">
-              Acerca el móvil.<br>
-              <span class="text-gold">Y ya.</span>
-            </h3>
-            <p class="text-[15.5px] text-white/90 leading-relaxed mb-3 max-w-[380px]">
-              iPhone 7+ y casi todos los Android tienen NFC. El cliente acerca el móvil, le sale la notificación, pulsa las estrellas y listo. Sin escanear.
-            </p>
-            <p class="text-[13px] text-white/65 max-w-[380px]">
-              ¿Sin NFC? Usa el QR del mismo stand. Cubres a todo el mundo. <a href="blog/qr-vs-nfc-para-resenas-cual-convierte-mas.html" class="underline decoration-white/30 hover:decoration-white hover:text-white transition">Comparativa QR vs NFC →</a>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 <!-- ===== COMPARISON ===== -->
 <section class="section bg-paper border-y border-line">
   <div class="wrap">
@@ -1360,7 +1405,7 @@ details.faq p{ color: var(--muted); margin-top:12px; line-height:1.55; }
         <ul class="space-y-2">
           <li><a href="blog/como-conseguir-mas-resenas-en-google.html" class="hover:text-white">Guía completa de reseñas</a></li>
           <li><a href="blog/resenas-google-delta-del-ebro.html" class="hover:text-white">Para negocios del Delta del Ebro</a></li>
-          <li><a href="blog/sobre-uriel-historia-toca-y-opina.html" class="hover:text-white">Sobre mí (Uriel)</a></li>
+          <li><a href="blog/sobre-uriel-historia-toca-y-opina.html" class="hover:text-white">Sobre nosotros (Uriel y Joselí)</a></li>
           <li><a href="blog/qr-vs-nfc-para-resenas-cual-convierte-mas.html" class="hover:text-white">QR vs NFC</a></li>
           <li><a href="blog/cuanto-vale-una-resena-en-google.html" class="hover:text-white">ROI de una reseña</a></li>
         </ul>
@@ -1413,7 +1458,8 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
     const ctx = canvas.getContext('2d', { alpha: false });
     const images = new Array(FRAMES);
     let loadedCount = 0;
-    let currentFrame = -1;
+    let drawnIdx = -1;       // índice de la imagen REALMENTE dibujada
+    let lastTarget = -1;     // último frame pedido por el scroll
     let pending = false;
 
     function pad(n){ const s = '' + n; return s.length >= PAD ? s : ('000' + s).slice(-PAD); }
@@ -1429,21 +1475,21 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
       const img = images[i];
       return (img && img.complete && img.naturalWidth) ? img : null;
     }
-    function nearestLoaded(i){
-      // Exact match first, then walk outward to find any loaded neighbour
-      let img = loadedAt(i);
-      if (img) return img;
+    function nearestLoadedIdx(i){
+      // Devuelve el índice del frame cargado más cercano (preferido: el exacto)
+      if (loadedAt(i)) return i;
       for (let d = 1; d < FRAMES; d++){
-        img = loadedAt(i - d) || loadedAt(i + d);
-        if (img) return img;
+        if (loadedAt(i - d)) return i - d;
+        if (loadedAt(i + d)) return i + d;
       }
-      return null;
+      return -1;
     }
-    function drawFrame(i){
-      if (i === currentFrame) return;
-      const img = nearestLoaded(i);
-      if (!img) return;
-      // Cover-fit draw
+    function drawFrame(target){
+      lastTarget = target;
+      const idx = nearestLoadedIdx(target);
+      if (idx < 0) return;
+      if (idx === drawnIdx) return;   // ya estamos mostrando esta imagen
+      const img = images[idx];
       const cw = canvas.width, ch = canvas.height;
       const iw = img.naturalWidth, ih = img.naturalHeight;
       const cR = cw / ch, iR = iw / ih;
@@ -1456,7 +1502,7 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
         sx = 0; sy = (ih - sh) / 2;
       }
       ctx.drawImage(img, sx, sy, sw, sh, 0, 0, cw, ch);
-      currentFrame = i;
+      drawnIdx = idx;
       if (fallback && !fallback.classList.contains('is-hidden')) fallback.classList.add('is-hidden');
     }
 
@@ -1480,9 +1526,11 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
         img.onload = () => {
           loadedCount++;
           if (loadedCount === 1) drawFrame(0);
-          // Re-render current target — if it was waiting for this neighbour,
-          // we want the frame to refresh now that it's available.
-          scheduleUpdate();
+          // Si el frame que acaba de cargar está más cerca del target actual
+          // que el que tenemos dibujado, redibuja.
+          if (lastTarget >= 0 && Math.abs(i - lastTarget) < Math.abs(drawnIdx - lastTarget)){
+            drawFrame(lastTarget);
+          }
         };
         images[i] = img;
       }
