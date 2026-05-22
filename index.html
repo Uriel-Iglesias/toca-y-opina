@@ -41,8 +41,14 @@
 <!-- Performance hints -->
 <link rel="dns-prefetch" href="https://www.vinted.es">
 <link rel="preconnect" href="https://www.vinted.es">
-<link rel="preload" as="video" href="assets/img/stand-orbit.mp4" type="video/mp4">
 <link rel="preload" as="image" href="assets/img/orbit/frame-001.webp" fetchpriority="high" type="image/webp">
+<link rel="preload" as="image" href="assets/img/orbit/frame-020.webp" fetchpriority="high" type="image/webp">
+<link rel="preload" as="image" href="assets/img/orbit/frame-040.webp" fetchpriority="high" type="image/webp">
+<link rel="preload" as="image" href="assets/img/orbit/frame-060.webp" fetchpriority="high" type="image/webp">
+<link rel="preload" as="image" href="assets/img/orbit/frame-080.webp" fetchpriority="high" type="image/webp">
+<link rel="preload" as="image" href="assets/img/orbit/frame-100.webp" fetchpriority="high" type="image/webp">
+<link rel="preload" as="image" href="assets/img/orbit/frame-120.webp" fetchpriority="high" type="image/webp">
+<link rel="preload" as="image" href="assets/img/orbit/frame-145.webp" fetchpriority="high" type="image/webp">
 <link rel="preload" as="image" href="assets/img/paso-1.webp" type="image/webp">
 <link rel="preload" as="image" href="assets/img/paso-2.webp" type="image/webp">
 <link rel="preload" as="image" href="assets/img/paso-3.webp" type="image/webp">
@@ -82,8 +88,9 @@ tailwind.config = {
 }
 *{ -webkit-tap-highlight-color: transparent; box-sizing: border-box; }
 html{
+  /* IMPORTANT: usar overflow-x: clip (no hidden) para no romper position:sticky en iOS */
   scroll-behavior: smooth;
-  overflow-x: hidden;
+  overflow-x: clip;
   max-width: 100vw;
   width: 100%;
 }
@@ -94,7 +101,7 @@ body{
   text-rendering: optimizeLegibility;
   color: var(--ink);
   background:#fff;
-  overflow-x: hidden;
+  overflow-x: clip;
   max-width: 100vw;
   width: 100%;
   position: relative;
@@ -106,11 +113,12 @@ body{
     overscroll-behavior-x: none;
   }
   footer{ padding-bottom: 30px !important; }
-  /* Bloquea cualquier overflow horizontal posible en móvil */
-  section, .wrap, .hero-grid, .hero-copy, .hero-orbit-track{
+  /* Bloquea cualquier overflow horizontal pero NO en ancestros del sticky */
+  section, .wrap, .hero-copy{
     max-width: 100%;
     overflow-x: clip;
   }
+  /* .hero-grid y .hero-orbit-track NO deben tener overflow-x clip — rompe sticky en iOS */
 }
 /* Nada en la página debe poder forzar ancho mayor al viewport */
 img, video, canvas{ max-width: 100%; }
@@ -230,33 +238,36 @@ nav.glass.dark{
 }
 .hero-img img{ width:100%; height:100%; object-fit:cover; }
 
-/* ===== Hero layout: 2-col on desktop, stacked on mobile (vídeo FIRST en móvil) ===== */
+/* ===== Hero layout: scroll-scrub frame-by-frame ===== */
 .hero-grid{
   display: grid;
   gap: 24px;
   grid-template-columns: 1fr;
-  align-items: center;
+  align-items: start;
 }
-.hero-orbit-track{ order: 2; position: relative; width: 100%; }
+.hero-orbit-track{
+  order: 2;
+  position: relative;
+  width: 100%;
+}
 .hero-copy{ order: 1; }
 @media (max-width: 879px){
+  /* Móvil: pista alta = scroll distance; stage sticky dentro */
   .hero-grid{ gap: 18px; }
-  .hero-copy{ order: 1; }
-  .hero-orbit-track{ order: 2; }
+  .hero-orbit-track{ min-height: 320vh; }
 }
 @media (min-width:880px){
   .hero-grid{
     grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
     gap: 56px;
-    align-items: center;
+    align-items: start;
   }
-  .hero-copy{ order: 1; }
-  .hero-orbit-track{ order: 2; }
+  .hero-orbit-track{ min-height: 240vh; }
 }
 
-/* ===== Hero stage (vídeo del stand) ===== */
+/* ===== Hero stage ===== */
 .hero-stage{
-  position: relative;
+  position: relative;   /* default; sticky se aplica en media queries más abajo */
   isolation: isolate;
   margin-inline: auto;
   max-width: 340px;
@@ -266,6 +277,14 @@ nav.glass.dark{
 }
 @media (min-width:480px){ .hero-stage{ max-width: 380px; } }
 @media (min-width:880px){ .hero-stage{ max-width: 440px; padding-block: 0; margin-inline: auto; } }
+
+/* STICKY: declarado DESPUÉS del base para que gane en cascade */
+@media (max-width: 879px){
+  .hero-stage{ position: sticky; top: 80px; }
+}
+@media (min-width:880px){
+  .hero-stage{ position: sticky; top: 92px; align-self: start; }
+}
 
 .hero-halo{
   position: absolute;
@@ -663,22 +682,20 @@ details.faq p{ color: var(--muted); margin-top:12px; line-height:1.55; }
         </div>
       </div>
 
-      <!-- RIGHT (desktop) / SECOND (mobile): vídeo del stand (autoplay + swipe) -->
+      <!-- RIGHT (desktop) / SECOND (mobile): scroll-scrub frame-by-frame -->
       <div class="hero-orbit-track" id="hero-orbit-track">
-        <div class="reveal hero-stage" id="hero-stage">
+        <div class="hero-stage" id="hero-stage" data-orbit-frames="145" data-orbit-pad="3">
           <div class="hero-halo" aria-hidden="true"></div>
           <div class="hero-frame">
-            <video class="hero-vid" id="orbit-video"
-                   src="assets/img/stand-orbit.mp4"
-                   poster="assets/img/orbit/frame-001.jpg"
-                   muted autoplay loop playsinline preload="auto"
-                   aria-label="Stand Toca y Opina sobre el mostrador"></video>
+            <canvas class="hero-vid" id="orbit-canvas" width="360" height="640"
+                    aria-label="Stand Toca y Opina girando al hacer scroll"></canvas>
+            <img class="hero-vid orbit-fallback" src="assets/img/orbit/frame-001.jpg" alt="" width="360" height="640" aria-hidden="true">
             <div class="hero-glare" aria-hidden="true"></div>
             <div class="hero-badge-360" aria-hidden="true">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="15 18 9 12 15 6"/><polyline points="9 18 15 12 9 6" transform="translate(8 0)"/>
+                <polyline points="7 13 12 18 17 13"/><polyline points="7 6 12 11 17 6"/>
               </svg>
-              <span>Desliza para girarlo</span>
+              <span>Baja para girarlo</span>
             </div>
           </div>
         </div>
@@ -1397,6 +1414,21 @@ details.faq p{ color: var(--muted); margin-top:12px; line-height:1.55; }
         </ul>
       </div>
       <div>
+        <p class="text-white font-semibold mb-3">Por sector</p>
+        <ul class="space-y-2 text-[13px]">
+          <li><a href="blog/resenas-google-para-restaurantes.html" class="hover:text-white">🍽️ Restaurantes</a></li>
+          <li><a href="blog/resenas-google-para-peluquerias-y-barberias.html" class="hover:text-white">💇 Peluquerías y barberías</a></li>
+          <li><a href="blog/resenas-google-para-talleres-mecanicos.html" class="hover:text-white">🔧 Talleres mecánicos</a></li>
+          <li><a href="blog/resenas-google-para-clinicas-dentales.html" class="hover:text-white">🦷 Clínicas dentales</a></li>
+          <li><a href="blog/resenas-google-para-hoteles-y-casas-rurales.html" class="hover:text-white">🏨 Hoteles y rurales</a></li>
+          <li><a href="blog/resenas-google-para-centros-esteticos.html" class="hover:text-white">💅 Centros estéticos</a></li>
+          <li><a href="blog/resenas-google-para-fisioterapeutas-y-clinicas.html" class="hover:text-white">🧘 Fisios y clínicas</a></li>
+          <li><a href="blog/resenas-google-para-asesorias-y-abogados.html" class="hover:text-white">⚖️ Asesorías y abogados</a></li>
+          <li><a href="blog/resenas-google-para-comercios-de-barrio.html" class="hover:text-white">🥖 Comercios de barrio</a></li>
+          <li><a href="blog/resenas-google-para-servicios-a-domicilio.html" class="hover:text-white">🔌 Servicios a domicilio</a></li>
+        </ul>
+      </div>
+      <div>
         <p class="text-white font-semibold mb-3">Contacto</p>
         <p class="text-[13px]">Delta del Ebro · España<br>Vía chat de Vinted</p>
       </div>
@@ -1428,118 +1460,123 @@ const io = new IntersectionObserver((entries)=>{
 }, { rootMargin: '-10% 0px' });
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-// Hero video: autoplay loop + swipe horizontal manual para girar
+// Hero scroll-scrub: 145 frames sobre canvas, stage sticky, scroll → gira
 (function(){
-  const video = document.getElementById('orbit-video');
-  if (!video) return;
   const stage = document.getElementById('hero-stage');
-  const frame = stage && stage.querySelector('.hero-frame');
-  const badge = stage && stage.querySelector('.hero-badge-360');
-  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const canvas = document.getElementById('orbit-canvas');
+  const track = document.getElementById('hero-orbit-track');
+  if (!stage || !canvas || !track) return;
+  const fallback = stage.querySelector('.orbit-fallback');
+  const frame = stage.querySelector('.hero-frame');
+  const FRAMES = parseInt(stage.dataset.orbitFrames || '145', 10);
+  const PAD = parseInt(stage.dataset.orbitPad || '3', 10);
+  const ctx = canvas.getContext('2d', { alpha: false });
+  const images = new Array(FRAMES);
+  let drawnIdx = -1;
+  let lastTarget = 0;
+  let pending = false;
 
-  // Hint para iOS: cuando entra en viewport, asegurar play()
-  const tryPlay = () => {
-    if (video.paused){
-      const p = video.play();
-      if (p && typeof p.catch === 'function') p.catch(()=>{});
+  function pad(n){ const s = ''+n; return s.length >= PAD ? s : ('000'+s).slice(-PAD); }
+  const SUPPORTS_WEBP = (function(){
+    const c = document.createElement('canvas');
+    try { return !!c.toDataURL && c.toDataURL('image/webp').indexOf('data:image/webp') === 0; }
+    catch(e){ return false; }
+  })();
+  const EXT = SUPPORTS_WEBP ? '.webp' : '.jpg';
+  function pathFor(i){ return 'assets/img/orbit/frame-' + pad(i + 1) + EXT; }
+
+  function loadedAt(i){ const im = images[i]; return (im && im.complete && im.naturalWidth) ? im : null; }
+  function nearestLoadedIdx(t){
+    if (loadedAt(t)) return t;
+    for (let d = 1; d < FRAMES; d++){
+      if (loadedAt(t - d)) return t - d;
+      if (loadedAt(t + d)) return t + d;
     }
-  };
-  if (document.readyState !== 'loading') tryPlay();
-  else document.addEventListener('DOMContentLoaded', tryPlay, { once:true });
-  video.addEventListener('loadedmetadata', tryPlay, { once:true });
-  // Re-arrancar autoplay al volver al tab
-  document.addEventListener('visibilitychange', () => { if (!document.hidden) tryPlay(); });
+    return -1;
+  }
+  function drawFrame(target){
+    lastTarget = target;
+    const idx = nearestLoadedIdx(target);
+    if (idx < 0) return;
+    if (idx === drawnIdx) return;
+    const img = images[idx];
+    const cw = canvas.width, ch = canvas.height;
+    const iw = img.naturalWidth, ih = img.naturalHeight;
+    const cR = cw / ch, iR = iw / ih;
+    let sx, sy, sw, sh;
+    if (iR > cR){ sh = ih; sw = ih * cR; sx = (iw - sw)/2; sy = 0; }
+    else        { sw = iw; sh = iw / cR; sx = 0; sy = (ih - sh)/2; }
+    ctx.drawImage(img, sx, sy, sw, sh, 0, 0, cw, ch);
+    drawnIdx = idx;
+    if (fallback && !fallback.classList.contains('is-hidden')) fallback.classList.add('is-hidden');
+  }
 
-  // Swipe horizontal: el dedo desplaza el video.currentTime (gira el stand)
-  let touchActive = false;
-  let touchStartX = 0;
-  let touchStartT = 0;
-  let resumeTimer = 0;
-  const SWIPE_PIXELS_PER_LOOP = 240; // 240px de swipe = 1 loop completo del vídeo
+  function preload(){
+    const order = [];
+    const seen = new Set();
+    const push = n => { if (n>=0 && n<FRAMES && !seen.has(n)) { seen.add(n); order.push(n); } };
+    push(0); push(FRAMES - 1);
+    for (let step = FRAMES/2; step >= 1; step /= 2){
+      const s = Math.max(1, Math.round(step));
+      for (let n = s; n < FRAMES; n += s*2) push(n);
+    }
+    for (let i = 0; i < FRAMES; i++) push(i);
+    for (const i of order){
+      const img = new Image();
+      img.decoding = 'async';
+      img.src = pathFor(i);
+      img.onload = () => {
+        if (drawnIdx === -1) drawFrame(0);
+        if (Math.abs(i - lastTarget) < Math.abs(drawnIdx - lastTarget)){
+          drawFrame(lastTarget);
+        }
+      };
+      images[i] = img;
+    }
+  }
 
-  const onDown = (clientX) => {
-    if (!video.duration) return;
-    touchActive = true;
-    touchStartX = clientX;
-    touchStartT = video.currentTime;
-    video.pause();
-    if (resumeTimer){ clearTimeout(resumeTimer); resumeTimer = 0; }
-    if (badge) badge.style.opacity = '0';
-  };
-  const onMove = (clientX, ev) => {
-    if (!touchActive || !video.duration) return;
-    const dx = clientX - touchStartX;
-    const dt = (dx / SWIPE_PIXELS_PER_LOOP) * video.duration;
-    let t = touchStartT + dt;
-    // Loop wrap-around
-    const dur = video.duration;
-    t = ((t % dur) + dur) % dur;
-    video.currentTime = t;
-    if (Math.abs(dx) > 6 && ev && ev.cancelable) ev.preventDefault();
-  };
-  const onUp = () => {
-    if (!touchActive) return;
-    touchActive = false;
-    // Volver a autoplay tras un breve momento
-    resumeTimer = setTimeout(() => {
-      tryPlay();
-      if (badge) badge.style.opacity = '';
-    }, 400);
-  };
+  function update(){
+    const r = track.getBoundingClientRect();
+    const vh = window.innerHeight || document.documentElement.clientHeight;
+    const total = Math.max(1, r.height - vh);
+    const passed = -r.top;
+    let p = passed / total;
+    if (p < 0) p = 0; else if (p > 1) p = 1;
+    const idx = Math.min(FRAMES - 1, Math.max(0, Math.round(p * (FRAMES - 1))));
+    drawFrame(idx);
+  }
+  function schedule(){
+    if (pending) return;
+    pending = true;
+    requestAnimationFrame(() => { update(); pending = false; });
+  }
 
-  // Touch events
-  frame && frame.addEventListener('touchstart', (e) => {
-    if (e.touches.length !== 1) return;
-    onDown(e.touches[0].clientX);
-  }, { passive: true });
-  frame && frame.addEventListener('touchmove', (e) => {
-    if (e.touches.length !== 1) return;
-    onMove(e.touches[0].clientX, e);
-  }, { passive: false });
-  frame && frame.addEventListener('touchend', onUp, { passive: true });
-  frame && frame.addEventListener('touchcancel', onUp, { passive: true });
+  preload();
+  window.addEventListener('scroll', schedule, { passive: true });
+  window.addEventListener('resize', schedule, { passive: true });
+  schedule();
 
-  // Mouse drag (desktop)
-  let mouseDown = false;
-  frame && frame.addEventListener('mousedown', (e) => {
-    mouseDown = true;
-    onDown(e.clientX);
-  });
-  window.addEventListener('mousemove', (e) => {
-    if (!mouseDown) return;
-    onMove(e.clientX, e);
-  });
-  window.addEventListener('mouseup', () => {
-    if (!mouseDown) return;
-    mouseDown = false;
-    onUp();
-  });
-
-  // 3D parallax tilt — desktop only, not when reduced motion, not while dragging
+  // Parallax 3D — solo desktop con ratón fino
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (reduced || !frame || !window.matchMedia('(pointer:fine)').matches) return;
-  let rafId = 0, targetX = 0, targetY = 0, curX = 0, curY = 0;
+  let rafId = 0, tx = 0, ty = 0, cx = 0, cy = 0;
   const MAX = 6;
   function tick(){
-    curX += (targetX - curX) * 0.10;
-    curY += (targetY - curY) * 0.10;
-    frame.style.transform = `perspective(1400px) rotateX(${curX.toFixed(2)}deg) rotateY(${curY.toFixed(2)}deg)`;
-    if (Math.abs(targetX - curX) > 0.04 || Math.abs(targetY - curY) > 0.04){
-      rafId = requestAnimationFrame(tick);
-    } else { rafId = 0; }
+    cx += (tx - cx) * 0.10;
+    cy += (ty - cy) * 0.10;
+    frame.style.transform = `perspective(1400px) rotateX(${cx.toFixed(2)}deg) rotateY(${cy.toFixed(2)}deg)`;
+    if (Math.abs(tx - cx) > 0.04 || Math.abs(ty - cy) > 0.04) rafId = requestAnimationFrame(tick);
+    else rafId = 0;
   }
-  stage.addEventListener('mousemove', (e)=>{
-    if (mouseDown) return;
+  stage.addEventListener('mousemove', (e) => {
     const r = stage.getBoundingClientRect();
     const dx = (e.clientX - (r.left + r.width/2)) / (r.width/2);
     const dy = (e.clientY - (r.top + r.height/2)) / (r.height/2);
-    targetX = Math.max(-1, Math.min(1, -dy)) * MAX;
-    targetY = Math.max(-1, Math.min(1, dx)) * MAX;
+    tx = Math.max(-1, Math.min(1, -dy)) * MAX;
+    ty = Math.max(-1, Math.min(1, dx)) * MAX;
     if (!rafId) tick();
-  }, { passive:true });
-  stage.addEventListener('mouseleave', ()=>{
-    targetX = 0; targetY = 0;
-    if (!rafId) tick();
-  }, { passive:true });
+  }, { passive: true });
+  stage.addEventListener('mouseleave', () => { tx = 0; ty = 0; if (!rafId) tick(); }, { passive: true });
 })();
 
 // Nav becomes dark over dark sections
