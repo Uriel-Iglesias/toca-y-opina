@@ -39,7 +39,9 @@ fotos-producto/
 fotos1,2,3/
 fotos negocios reales/
 presentacion/
-instagram/
+instagram/*
+# Excepto las creatividades listas para publicar (sí se versionan)
+!instagram/creatividades-listas/
 src/
 
 # Fuentes pesadas dentro de assets/img que NO usa index.html
