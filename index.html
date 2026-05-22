@@ -41,14 +41,8 @@
 <!-- Performance hints -->
 <link rel="dns-prefetch" href="https://www.vinted.es">
 <link rel="preconnect" href="https://www.vinted.es">
+<link rel="preload" as="video" href="assets/img/stand-orbit.mp4" type="video/mp4">
 <link rel="preload" as="image" href="assets/img/orbit/frame-001.webp" fetchpriority="high" type="image/webp">
-<link rel="preload" as="image" href="assets/img/orbit/frame-010.webp" fetchpriority="high" type="image/webp">
-<link rel="preload" as="image" href="assets/img/orbit/frame-020.webp" fetchpriority="high" type="image/webp">
-<link rel="preload" as="image" href="assets/img/orbit/frame-030.webp" fetchpriority="high" type="image/webp">
-<link rel="preload" as="image" href="assets/img/orbit/frame-040.webp" fetchpriority="high" type="image/webp">
-<link rel="preload" as="image" href="assets/img/orbit/frame-050.webp" fetchpriority="high" type="image/webp">
-<link rel="preload" as="image" href="assets/img/orbit/frame-060.webp" fetchpriority="high" type="image/webp">
-<link rel="preload" as="image" href="assets/img/orbit/frame-073.webp" fetchpriority="high" type="image/webp">
 <link rel="preload" as="image" href="assets/img/paso-1.webp" type="image/webp">
 <link rel="preload" as="image" href="assets/img/paso-2.webp" type="image/webp">
 <link rel="preload" as="image" href="assets/img/paso-3.webp" type="image/webp">
@@ -236,32 +230,31 @@ nav.glass.dark{
 }
 .hero-img img{ width:100%; height:100%; object-fit:cover; }
 
-/* ===== Hero layout: 2-col on desktop, stacked on mobile (video FIRST on mobile for impact) ===== */
+/* ===== Hero layout: 2-col on desktop, stacked on mobile (vídeo FIRST en móvil) ===== */
 .hero-grid{
   display: grid;
-  gap: 28px;
+  gap: 24px;
   grid-template-columns: 1fr;
-  align-items: start;
+  align-items: center;
 }
-.hero-orbit-track{ order: 1; position: relative; width: 100%; }
-.hero-copy{ order: 2; }
+.hero-orbit-track{ order: 2; position: relative; width: 100%; }
+.hero-copy{ order: 1; }
 @media (max-width: 879px){
-  /* Móvil: 73 frames sobre 200vh = ~21px por frame, scroll compacto */
-  .hero-grid{ gap: 14px; }
-  .hero-orbit-track{ min-height: 200vh; order: 2; }
+  .hero-grid{ gap: 18px; }
   .hero-copy{ order: 1; }
+  .hero-orbit-track{ order: 2; }
 }
 @media (min-width:880px){
   .hero-grid{
     grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
     gap: 56px;
-    align-items: start;
+    align-items: center;
   }
   .hero-copy{ order: 1; }
-  .hero-orbit-track{ order: 2; min-height: 160vh; }
+  .hero-orbit-track{ order: 2; }
 }
 
-/* ===== Hero stage (rotating 360° product video) ===== */
+/* ===== Hero stage (vídeo del stand) ===== */
 .hero-stage{
   position: relative;
   isolation: isolate;
@@ -273,14 +266,6 @@ nav.glass.dark{
 }
 @media (min-width:480px){ .hero-stage{ max-width: 380px; } }
 @media (min-width:880px){ .hero-stage{ max-width: 440px; padding-block: 0; margin-inline: auto; } }
-/* Sticky behavior must come AFTER the default position rule so it wins on mobile + desktop */
-@media (max-width: 879px){
-  .hero-stage{ position: sticky; top: 76px; }
-}
-@media (min-width:880px){
-  .hero-stage{ position: sticky; top: 88px; align-self: start; }
-  .hero-copy{ position: sticky; top: 96px; align-self: start; padding-top: 8px; }
-}
 
 .hero-halo{
   position: absolute;
@@ -645,8 +630,8 @@ details.faq p{ color: var(--muted); margin-top:12px; line-height:1.55; }
   </div>
 </nav>
 
-<!-- ===== HERO (mobile: headline → orbit scroll-scrub → BIG CTA below) ===== -->
-<section id="top" class="pt-14 sm:pt-24">
+<!-- ===== HERO (mobile: headline → vídeo del stand → BIG CTA) ===== -->
+<section id="top" class="pt-20 sm:pt-28">
   <div class="wrap">
     <div class="hero-grid">
 
@@ -678,21 +663,22 @@ details.faq p{ color: var(--muted); margin-top:12px; line-height:1.55; }
         </div>
       </div>
 
-      <!-- RIGHT (desktop) / SECOND (mobile): 360° orbit scroll-scrub -->
+      <!-- RIGHT (desktop) / SECOND (mobile): vídeo del stand (autoplay + swipe) -->
       <div class="hero-orbit-track" id="hero-orbit-track">
-        <div class="reveal hero-stage" id="hero-stage" data-orbit-frames="73" data-orbit-pad="3">
+        <div class="reveal hero-stage" id="hero-stage">
           <div class="hero-halo" aria-hidden="true"></div>
           <div class="hero-frame">
-            <canvas class="hero-vid" id="orbit-canvas"
-                    width="414" height="736"
-                    aria-label="Vídeo del stand Toca y Opina sobre el mostrador"></canvas>
-            <img class="hero-vid orbit-fallback" src="assets/img/orbit/frame-001.jpg" alt="" width="720" height="1280" aria-hidden="true">
+            <video class="hero-vid" id="orbit-video"
+                   src="assets/img/stand-orbit.mp4"
+                   poster="assets/img/orbit/frame-001.jpg"
+                   muted autoplay loop playsinline preload="auto"
+                   aria-label="Stand Toca y Opina sobre el mostrador"></video>
             <div class="hero-glare" aria-hidden="true"></div>
             <div class="hero-badge-360" aria-hidden="true">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="7 13 12 18 17 13"/><polyline points="7 6 12 11 17 6"/>
+                <polyline points="15 18 9 12 15 6"/><polyline points="9 18 15 12 9 6" transform="translate(8 0)"/>
               </svg>
-              <span>Desliza para verlo</span>
+              <span>Desliza para girarlo</span>
             </div>
           </div>
         </div>
@@ -1442,132 +1428,97 @@ const io = new IntersectionObserver((entries)=>{
 }, { rootMargin: '-10% 0px' });
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-// Hero 360° stage: scroll-driven frame scrubbing + mouse parallax
+// Hero video: autoplay loop + swipe horizontal manual para girar
 (function(){
+  const video = document.getElementById('orbit-video');
+  if (!video) return;
   const stage = document.getElementById('hero-stage');
-  if (!stage) return;
-  const frame = stage.querySelector('.hero-frame');
-  const canvas = stage.querySelector('#orbit-canvas');
-  const fallback = stage.querySelector('.orbit-fallback');
+  const frame = stage && stage.querySelector('.hero-frame');
+  const badge = stage && stage.querySelector('.hero-badge-360');
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  if (canvas){
-    const FRAMES = parseInt(stage.dataset.orbitFrames || '97', 10);
-    const PAD = parseInt(stage.dataset.orbitPad || '3', 10);
-    const track = document.getElementById('hero-orbit-track') || stage;
-    const ctx = canvas.getContext('2d', { alpha: false });
-    const images = new Array(FRAMES);
-    let loadedCount = 0;
-    let drawnIdx = -1;       // índice de la imagen REALMENTE dibujada
-    let lastTarget = -1;     // último frame pedido por el scroll
-    let pending = false;
-
-    function pad(n){ const s = '' + n; return s.length >= PAD ? s : ('000' + s).slice(-PAD); }
-    // WebP support detection — fallback a JPG si el navegador no soporta WebP (≈3% global)
-    const SUPPORTS_WEBP = (function(){
-      const c = document.createElement('canvas');
-      return !!(c.getContext && c.getContext('2d')) && c.toDataURL('image/webp').indexOf('data:image/webp') === 0;
-    })();
-    const ORBIT_EXT = SUPPORTS_WEBP ? '.webp' : '.jpg';
-    function pathFor(i){ return 'assets/img/orbit/frame-' + pad(i + 1) + ORBIT_EXT; }
-
-    function loadedAt(i){
-      const img = images[i];
-      return (img && img.complete && img.naturalWidth) ? img : null;
+  // Hint para iOS: cuando entra en viewport, asegurar play()
+  const tryPlay = () => {
+    if (video.paused){
+      const p = video.play();
+      if (p && typeof p.catch === 'function') p.catch(()=>{});
     }
-    function nearestLoadedIdx(i){
-      // Devuelve el índice del frame cargado más cercano (preferido: el exacto)
-      if (loadedAt(i)) return i;
-      for (let d = 1; d < FRAMES; d++){
-        if (loadedAt(i - d)) return i - d;
-        if (loadedAt(i + d)) return i + d;
-      }
-      return -1;
-    }
-    function drawFrame(target){
-      lastTarget = target;
-      const idx = nearestLoadedIdx(target);
-      if (idx < 0) return;
-      if (idx === drawnIdx) return;   // ya estamos mostrando esta imagen
-      const img = images[idx];
-      const cw = canvas.width, ch = canvas.height;
-      const iw = img.naturalWidth, ih = img.naturalHeight;
-      const cR = cw / ch, iR = iw / ih;
-      let sx, sy, sw, sh;
-      if (iR > cR){
-        sh = ih; sw = ih * cR;
-        sx = (iw - sw) / 2; sy = 0;
-      } else {
-        sw = iw; sh = iw / cR;
-        sx = 0; sy = (ih - sh) / 2;
-      }
-      ctx.drawImage(img, sx, sy, sw, sh, 0, 0, cw, ch);
-      drawnIdx = idx;
-      if (fallback && !fallback.classList.contains('is-hidden')) fallback.classList.add('is-hidden');
-    }
+  };
+  if (document.readyState !== 'loading') tryPlay();
+  else document.addEventListener('DOMContentLoaded', tryPlay, { once:true });
+  video.addEventListener('loadedmetadata', tryPlay, { once:true });
+  // Re-arrancar autoplay al volver al tab
+  document.addEventListener('visibilitychange', () => { if (!document.hidden) tryPlay(); });
 
-    function preload(){
-      // Interleaved order: 0, last, mid, quarters, eighths… so the canvas has
-      // rough coverage of the full video while higher-density fill catches up.
-      const order = [];
-      const seen = new Set();
-      const push = n => { if (n >= 0 && n < FRAMES && !seen.has(n)) { seen.add(n); order.push(n); } };
-      push(0); push(FRAMES - 1);
-      for (let step = FRAMES / 2; step >= 1; step /= 2){
-        for (let n = Math.round(step); n < FRAMES; n += Math.max(1, Math.round(step * 2))){
-          push(n);
-        }
-      }
-      for (let i = 0; i < FRAMES; i++) push(i); // any remainder
-      for (const i of order){
-        const img = new Image();
-        img.decoding = 'async';
-        img.src = pathFor(i);
-        img.onload = () => {
-          loadedCount++;
-          if (loadedCount === 1) drawFrame(0);
-          // Si el frame que acaba de cargar está más cerca del target actual
-          // que el que tenemos dibujado, redibuja.
-          if (lastTarget >= 0 && Math.abs(i - lastTarget) < Math.abs(drawnIdx - lastTarget)){
-            drawFrame(lastTarget);
-          }
-        };
-        images[i] = img;
-      }
-    }
+  // Swipe horizontal: el dedo desplaza el video.currentTime (gira el stand)
+  let touchActive = false;
+  let touchStartX = 0;
+  let touchStartT = 0;
+  let resumeTimer = 0;
+  const SWIPE_PIXELS_PER_LOOP = 240; // 240px de swipe = 1 loop completo del vídeo
 
-    function scheduleUpdate(){
-      if (pending) return;
-      pending = true;
-      requestAnimationFrame(() => {
-        update();
-        pending = false;
-      });
-    }
+  const onDown = (clientX) => {
+    if (!video.duration) return;
+    touchActive = true;
+    touchStartX = clientX;
+    touchStartT = video.currentTime;
+    video.pause();
+    if (resumeTimer){ clearTimeout(resumeTimer); resumeTimer = 0; }
+    if (badge) badge.style.opacity = '0';
+  };
+  const onMove = (clientX, ev) => {
+    if (!touchActive || !video.duration) return;
+    const dx = clientX - touchStartX;
+    const dt = (dx / SWIPE_PIXELS_PER_LOOP) * video.duration;
+    let t = touchStartT + dt;
+    // Loop wrap-around
+    const dur = video.duration;
+    t = ((t % dur) + dur) % dur;
+    video.currentTime = t;
+    if (Math.abs(dx) > 6 && ev && ev.cancelable) ev.preventDefault();
+  };
+  const onUp = () => {
+    if (!touchActive) return;
+    touchActive = false;
+    // Volver a autoplay tras un breve momento
+    resumeTimer = setTimeout(() => {
+      tryPlay();
+      if (badge) badge.style.opacity = '';
+    }, 400);
+  };
 
-    function update(){
-      const r = track.getBoundingClientRect();
-      const vh = window.innerHeight || document.documentElement.clientHeight;
-      // Progress 0..1 across the whole track (which is tall on mobile so the scroll-scrub plays smoothly)
-      const total = Math.max(1, r.height - vh);
-      const passed = -r.top;
-      let p = passed / total;
-      if (p < 0) p = 0; else if (p > 1) p = 1;
-      const idx = Math.min(FRAMES - 1, Math.max(0, Math.round(p * (FRAMES - 1))));
-      drawFrame(idx);
-    }
+  // Touch events
+  frame && frame.addEventListener('touchstart', (e) => {
+    if (e.touches.length !== 1) return;
+    onDown(e.touches[0].clientX);
+  }, { passive: true });
+  frame && frame.addEventListener('touchmove', (e) => {
+    if (e.touches.length !== 1) return;
+    onMove(e.touches[0].clientX, e);
+  }, { passive: false });
+  frame && frame.addEventListener('touchend', onUp, { passive: true });
+  frame && frame.addEventListener('touchcancel', onUp, { passive: true });
 
-    // Kick off — scroll-scrub en móvil y desktop (con track de 100vh en móvil compacto)
-    preload();
-    window.addEventListener('scroll', scheduleUpdate, { passive: true });
-    window.addEventListener('resize', scheduleUpdate, { passive: true });
-    scheduleUpdate();
-  }
+  // Mouse drag (desktop)
+  let mouseDown = false;
+  frame && frame.addEventListener('mousedown', (e) => {
+    mouseDown = true;
+    onDown(e.clientX);
+  });
+  window.addEventListener('mousemove', (e) => {
+    if (!mouseDown) return;
+    onMove(e.clientX, e);
+  });
+  window.addEventListener('mouseup', () => {
+    if (!mouseDown) return;
+    mouseDown = false;
+    onUp();
+  });
 
-  // 3D parallax tilt — desktop only, not when reduced motion
+  // 3D parallax tilt — desktop only, not when reduced motion, not while dragging
   if (reduced || !frame || !window.matchMedia('(pointer:fine)').matches) return;
   let rafId = 0, targetX = 0, targetY = 0, curX = 0, curY = 0;
-  const MAX = 7; // degrees
+  const MAX = 6;
   function tick(){
     curX += (targetX - curX) * 0.10;
     curY += (targetY - curY) * 0.10;
@@ -1577,6 +1528,7 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
     } else { rafId = 0; }
   }
   stage.addEventListener('mousemove', (e)=>{
+    if (mouseDown) return;
     const r = stage.getBoundingClientRect();
     const dx = (e.clientX - (r.left + r.width/2)) / (r.width/2);
     const dy = (e.clientY - (r.top + r.height/2)) / (r.height/2);
