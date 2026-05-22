@@ -236,21 +236,19 @@ nav.glass.dark{
 .hero-orbit-track{ order: 1; position: relative; width: 100%; }
 .hero-copy{ order: 2; }
 @media (max-width: 879px){
-  /* Móvil: scroll-scrub compacto (100vh) sobre orbit sticky. Sin huecos blancos. */
+  /* Móvil: track enorme (800vh) → 145 frames giran a ritmo Apple-style */
   .hero-grid{ gap: 14px; }
-  .hero-orbit-track{ min-height: 100vh; }
-  .hero-stage{ position: sticky; top: 76px; }
+  .hero-orbit-track{ min-height: 800vh; order: 2; }
   .hero-copy{ order: 1; }
-  .hero-orbit-track{ order: 2; }
 }
 @media (min-width:880px){
   .hero-grid{
     grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
     gap: 56px;
-    align-items: center;
+    align-items: start;
   }
   .hero-copy{ order: 1; }
-  .hero-orbit-track{ order: 2; }
+  .hero-orbit-track{ order: 2; min-height: 520vh; }
 }
 
 /* ===== Hero stage (rotating 360° product video) ===== */
@@ -265,6 +263,14 @@ nav.glass.dark{
 }
 @media (min-width:480px){ .hero-stage{ max-width: 380px; } }
 @media (min-width:880px){ .hero-stage{ max-width: 440px; padding-block: 0; margin-inline: auto; } }
+/* Sticky behavior must come AFTER the default position rule so it wins on mobile + desktop */
+@media (max-width: 879px){
+  .hero-stage{ position: sticky; top: 76px; }
+}
+@media (min-width:880px){
+  .hero-stage{ position: sticky; top: 88px; align-self: start; }
+  .hero-copy{ position: sticky; top: 96px; align-self: start; padding-top: 8px; }
+}
 
 .hero-halo{
   position: absolute;
@@ -462,6 +468,41 @@ picture{ display:block; width:100%; height:100%; }
   font-size:11px; font-weight:800; padding: 5px 12px; border-radius:999px;
   letter-spacing:.06em; text-transform:uppercase;
 }
+/* "7 de cada 10" hero block inside Pack 2 */
+.pop-stat{
+  background: linear-gradient(135deg, rgba(245,185,65,.18) 0%, rgba(245,185,65,.06) 100%);
+  border: 1px solid rgba(245,185,65,.35);
+  border-radius: 18px;
+  padding: 14px 16px;
+  display:flex; align-items:center; gap: 14px;
+}
+.pop-stat-num{
+  font-family: -apple-system,"SF Pro Display",Inter,sans-serif;
+  font-weight: 800;
+  font-size: 42px;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: var(--gold);
+  flex-shrink: 0;
+  font-variant-numeric: tabular-nums;
+}
+.pop-stat-num .of{ font-size: 14px; color: rgba(255,255,255,.55); font-weight: 600; }
+.pop-stat-body{ display:flex; flex-direction:column; gap: 6px; min-width: 0; flex: 1; }
+.pop-stat-label{
+  font-size: 12.5px; font-weight: 700; color: #fff;
+  letter-spacing: -0.005em; line-height: 1.25;
+}
+.pop-stat-dots{
+  display:flex; gap: 4px; align-items:center;
+}
+.pop-stat-dots .d{
+  width: 9px; height: 9px; border-radius: 999px;
+  background: var(--gold);
+  box-shadow: 0 0 0 1px rgba(245,185,65,.45);
+}
+.pop-stat-dots .d.off{
+  background: transparent; box-shadow: 0 0 0 1px rgba(255,255,255,.18);
+}
 
 /* Calculator */
 .calc{
@@ -583,7 +624,7 @@ details.faq p{ color: var(--muted); margin-top:12px; line-height:1.55; }
 
       <!-- RIGHT (desktop) / SECOND (mobile): 360° orbit scroll-scrub -->
       <div class="hero-orbit-track" id="hero-orbit-track">
-        <div class="reveal hero-stage" id="hero-stage" data-orbit-frames="97" data-orbit-pad="3">
+        <div class="reveal hero-stage" id="hero-stage" data-orbit-frames="145" data-orbit-pad="3">
           <div class="hero-halo" aria-hidden="true"></div>
           <div class="hero-frame">
             <canvas class="hero-vid" id="orbit-canvas"
@@ -687,7 +728,7 @@ details.faq p{ color: var(--muted); margin-top:12px; line-height:1.55; }
 
       <!-- Pack 2 — HERO -->
       <article class="price-card feat reveal md:scale-[1.04] md:-mt-2 md:shadow-2xl">
-        <span class="badge">★ EL MÁS ELEGIDO · 7 de cada 10</span>
+        <span class="badge">★ EL MÁS RECOMENDADO</span>
         <p class="font-semibold text-[14px] text-gold">El que más recomiendo</p>
         <p class="font-display text-[19px] font-extrabold tracking-tightest text-white">Pack 2 stands</p>
         <div class="flex items-baseline gap-3 flex-wrap">
@@ -695,6 +736,17 @@ details.faq p{ color: var(--muted); margin-top:12px; line-height:1.55; }
           <p class="text-white/40 line-through text-[18px]">69,80€</p>
         </div>
         <p class="text-[14px] text-gold -mt-3">27,45 €/stand · ahorras 14,90 €</p>
+
+        <!-- 7 de cada 10 — banner visible -->
+        <div class="pop-stat" aria-label="7 de cada 10 clientes eligen el Pack 2">
+          <p class="pop-stat-num">7<span class="of">/10</span></p>
+          <div class="pop-stat-body">
+            <p class="pop-stat-label">clientes lo eligen sobre el Pack 1 o el 3</p>
+            <div class="pop-stat-dots" aria-hidden="true">
+              <span class="d"></span><span class="d"></span><span class="d"></span><span class="d"></span><span class="d"></span><span class="d"></span><span class="d"></span><span class="d off"></span><span class="d off"></span><span class="d off"></span>
+            </div>
+          </div>
+        </div>
         <ul class="text-[14.5px] space-y-2 text-white/90 mt-2">
           <li class="flex gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F5B941" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="mt-1 flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg> <strong class="text-white">Caja + barra</strong> · doble cobertura</li>
           <li class="flex gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F5B941" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="mt-1 flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg> <strong class="text-white">2× más reseñas</strong> al mes vs Pack 1</li>
@@ -1037,11 +1089,11 @@ details.faq p{ color: var(--muted); margin-top:12px; line-height:1.55; }
       </p>
     </div>
     <div class="reveal">
-      <div class="rounded-[28px] overflow-hidden aspect-[2/3] sm:aspect-[3/4] bg-paper border border-line relative">
-        <picture><source srcset="assets/img/founder-uriel.webp" type="image/webp"><img src="assets/img/founder-uriel.jpg" alt="Uriel, fundador de Toca y Opina" width="460" height="690" class="w-full h-full object-cover" style="object-position: 50% 35%;" loading="lazy" decoding="async"></picture>
+      <div class="rounded-[28px] overflow-hidden bg-paper border border-line relative">
+        <picture><source srcset="assets/img/founder.webp" type="image/webp"><img src="assets/img/founder.jpg" alt="Uriel y Joselí, fundadores de Toca y Opina, sonriendo en el taller" width="760" height="1100" class="w-full h-auto block" loading="lazy" decoding="async"></picture>
         <div class="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md rounded-2xl px-4 py-3 border border-line">
-          <p class="font-semibold text-[14px] leading-tight text-ink">Uriel · Delta del Ebro</p>
-          <p class="text-[12px] muted">Diseña, imprime y envía cada stand</p>
+          <p class="font-semibold text-[14px] leading-tight text-ink">Uriel y Joselí · Delta del Ebro</p>
+          <p class="text-[12px] muted">Diseñan, imprimen y envían cada stand</p>
         </div>
       </div>
     </div>
