@@ -30,8 +30,19 @@ _tmp_frames2.js
 # Backups, screenshots locales y versiones antiguas
 shot-*.png
 index.old.html
+*.bak-prevpivot
 assets/img/_originals/
 assets/img/.tmp/
+
+# Bundle de deploy (se regenera con build-hostinger.sh)
+toca-y-opina-hostinger.zip
+toca-y-opina-hostinger/
+
+# Fotos crudas y duplicados locales
+fotos-new/
+*.heic
+*.HEIC
+joieria-nova-joia 2/
 
 # Carpetas con material fuente (originales) que no se necesitan online
 extra/

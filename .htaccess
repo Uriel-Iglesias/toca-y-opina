@@ -2,6 +2,11 @@
 # Generado el 2026-05-22 · Sprint final
 # ─────────────────────────────────────────────────────
 
+# === 0. Índice de directorio ===
+# Prioriza index.html sobre cualquier index.php sobrante de Hostinger.
+# Arregla: raíz 500 (index.php roto del hosting) y subcarpetas 403 (p.ej. /joieria-nova-joia/).
+DirectoryIndex index.html index.htm index.php
+
 # === 1. Forzar HTTPS ===
 RewriteEngine On
 RewriteCond %{HTTPS} off
@@ -18,9 +23,9 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}.html -f
 RewriteRule ^(.+?)/?$ $1.html [L]
 
-# Redirige /algo.html → /algo (canonicalización)
-RewriteCond %{THE_REQUEST} \s/+(.+?)\.html[\s?] [NC]
-RewriteRule ^ /%1 [R=301,L]
+# (Desactivado) Redirect .html -> limpio: chocaba con los canonical .html del sitemap.
+# RewriteCond %{THE_REQUEST} \s/+(.+?)\.html[\s?] [NC]
+# RewriteRule ^ /%1 [R=301,L]
 
 # === 4. Página 404 personalizada ===
 ErrorDocument 404 /404.html

@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Brand kit · toca y opina</title>
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/brand/favicon-32.png">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Inter","Segoe UI",sans-serif;
+    background:#FAFAFA;color:#0A0A0A;-webkit-font-smoothing:antialiased;
+    letter-spacing:-0.011em;
+  }
+  .container{max-width:1180px;margin:0 auto;padding:0 24px}
+
+  /* HERO */
+  .hero{padding:80px 0 64px}
+  .eyebrow{font-size:13px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:#6B6B70;margin-bottom:16px}
+  h1{font-size:clamp(38px,7vw,72px);font-weight:800;letter-spacing:-0.045em;line-height:1;margin-bottom:16px}
+  .sub{font-size:clamp(17px,2.4vw,22px);color:#6B6B70;max-width:680px;line-height:1.5}
+
+  /* SECTION */
+  section{padding:48px 0;border-top:1px solid #E5E5E7}
+  h2{font-size:clamp(28px,5vw,44px);font-weight:800;letter-spacing:-0.035em;line-height:1.05;margin-bottom:12px}
+  h2 .num{color:#6B6B70;font-weight:700;margin-right:14px}
+  .lead{font-size:17px;color:#6B6B70;margin-bottom:40px;max-width:680px;line-height:1.5}
+  h3{font-size:14px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:#1D1D1F;margin-bottom:8px}
+  .caption{font-size:13px;color:#6B6B70;line-height:1.5}
+  .file{font-size:11px;color:#9CA3AF;font-family:"SF Mono",ui-monospace,monospace;margin-top:6px;display:block;word-break:break-all}
+
+  /* CARDS / GRID */
+  .grid{display:grid;gap:24px}
+  .grid-2{grid-template-columns:repeat(auto-fit,minmax(420px,1fr))}
+  .grid-3{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+  .grid-4{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+  .card{
+    background:#fff;border-radius:24px;overflow:hidden;
+    box-shadow:0 1px 2px rgba(0,0,0,.06),0 8px 24px rgba(0,0,0,.06);
+    display:flex;flex-direction:column;
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .card:hover{transform:translateY(-2px);box-shadow:0 1px 2px rgba(0,0,0,.06),0 16px 40px rgba(0,0,0,.10)}
+  .card-img{aspect-ratio:16/9;background:#F0F0F2;display:flex;align-items:center;justify-content:center;overflow:hidden}
+  .card-img img{width:100%;height:100%;object-fit:cover;display:block}
+  .card-img.contain img{object-fit:contain;padding:16px}
+  .card-img.square{aspect-ratio:1/1}
+  .card-img.story{aspect-ratio:9/16}
+  .card-img.wide{aspect-ratio:21/9}
+  .card-img.card-3-2{aspect-ratio:3/2}
+  .card-body{padding:20px 24px 24px}
+  .card-body .row{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+
+  /* PALETA */
+  .palette{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px}
+  .swatch{border-radius:20px;overflow:hidden;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.06),0 4px 16px rgba(0,0,0,.06)}
+  .swatch-color{height:120px}
+  .swatch-body{padding:14px 16px 16px}
+  .swatch-name{font-size:13px;font-weight:700;color:#0A0A0A}
+  .swatch-hex{font-size:12px;color:#6B6B70;font-family:"SF Mono",ui-monospace,monospace;margin-top:2px}
+  .swatch-role{font-size:11px;color:#9CA3AF;margin-top:6px;line-height:1.4}
+
+  /* TIPOGRAFÍA */
+  .type-spec{background:#fff;border-radius:24px;padding:40px;box-shadow:0 1px 2px rgba(0,0,0,.06),0 8px 24px rgba(0,0,0,.06)}
+  .type-sample{font-size:clamp(36px,7vw,80px);font-weight:800;letter-spacing:-0.04em;line-height:1;margin-bottom:24px}
+  .type-sample .y{color:#105BF5}
+  .type-sample .i-star{position:relative;display:inline-block}
+  .type-sample .i-star::after{
+    content:"★";position:absolute;left:50%;top:-0.55em;transform:translateX(-50%) rotate(-8deg);
+    color:#F5B941;font-size:0.42em;line-height:1
+  }
+  .type-detail{font-size:13px;color:#6B6B70;line-height:1.7;font-family:"SF Mono",ui-monospace,monospace}
+
+  /* FAVICONS */
+  .favicons{display:flex;gap:32px;align-items:flex-end;flex-wrap:wrap;background:#fff;padding:32px;border-radius:24px;box-shadow:0 1px 2px rgba(0,0,0,.06),0 8px 24px rgba(0,0,0,.06)}
+  .fav-item{display:flex;flex-direction:column;align-items:center;gap:10px}
+  .fav-item img{border-radius:8px}
+  .fav-label{font-size:11px;color:#6B6B70;font-family:"SF Mono",ui-monospace,monospace}
+
+  /* CTA / FOOTER */
+  .button{
+    display:inline-block;background:#105BF5;color:#fff;padding:12px 22px;
+    border-radius:999px;font-weight:700;font-size:14px;text-decoration:none;
+    margin-top:12px;
+  }
+  .button:hover{background:#0B47C4}
+  .button.ghost{background:transparent;color:#0A0A0A;border:1px solid #E5E5E7;margin-left:8px}
+  .button.ghost:hover{background:#F0F0F2}
+
+  /* CODE */
+  pre{background:#0A0A0A;color:#fff;padding:24px;border-radius:16px;overflow-x:auto;font-family:"SF Mono",ui-monospace,monospace;font-size:13px;line-height:1.6}
+
+  footer{padding:64px 0;text-align:center;color:#6B6B70;font-size:13px;border-top:1px solid #E5E5E7;margin-top:48px}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<!-- HERO -->
+<section class="hero" style="border:0">
+  <div class="eyebrow">Brand kit · v4 · 23 mayo 2026</div>
+  <h1>toca <span style="color:#105BF5">y</span> opina<span style="color:#F5B941">★</span></h1>
+  <p class="sub">Sistema de marca completo. Logo maestro aprobado, paleta oficial, avatar para redes, portadas IG · YouTube · X, tarjeta de visita y favicons. Todo derivado de un único maestro — imposible que ningún asset futuro se invente nada distinto.</p>
+</section>
+
+<!-- 1. LOGO MAESTRO -->
+<section>
+  <h2><span class="num">01</span>Logo maestro</h2>
+  <p class="lead">Esta es la pieza canónica. Toda imagen futura — web, papelería, redes, render del stand — se deriva de aquí.</p>
+
+  <div class="grid grid-2">
+    <div class="card">
+      <div class="card-img contain" style="background:#fff"><img src="assets/img/brand/logo-master-v4-star-i.png" alt="Logo principal sobre claro"></div>
+      <div class="card-body">
+        <div class="row"><h3>Principal · sobre claro</h3></div>
+        <p class="caption">Para fondos blancos o cremas. "toca" y "opina" en tinta `#0A0A0A`, "y" en azul marca, estrella dorada.</p>
+        <span class="file">assets/img/brand/logo-master-v4-star-i.png</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-img contain" style="background:#0F1733"><img src="assets/img/brand/logo-master-v4-negative-navy.png" alt="Logo negativo sobre oscuro"></div>
+      <div class="card-body">
+        <div class="row"><h3>Negativo · sobre oscuro</h3></div>
+        <p class="caption">Sobre navy / azul oscuro. "toca" y "opina" en blanco, "y" en azul claro `#3D7DFF`, estrella dorada igual.</p>
+        <span class="file">assets/img/brand/logo-master-v4-negative-navy.png</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2. PALETA -->
+<section>
+  <h2><span class="num">02</span>Paleta oficial</h2>
+  <p class="lead">Nueve tokens. Nada más. Si un color no está aquí, no es marca.</p>
+
+  <div class="palette">
+    <div class="swatch"><div class="swatch-color" style="background:#105BF5"></div><div class="swatch-body"><div class="swatch-name">Brand</div><div class="swatch-hex">#105BF5</div><div class="swatch-role">azul marca · CTAs · "y" sobre claro</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#3D7DFF"></div><div class="swatch-body"><div class="swatch-name">Brand bright</div><div class="swatch-hex">#3D7DFF</div><div class="swatch-role">"y" sobre fondos oscuros</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#F5B941"></div><div class="swatch-body"><div class="swatch-name">Gold</div><div class="swatch-hex">#F5B941</div><div class="swatch-role">estrella · acento</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#0A0A0A"></div><div class="swatch-body"><div class="swatch-name">Ink</div><div class="swatch-hex">#0A0A0A</div><div class="swatch-role">texto principal · "toca" y "opina"</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#1D1D1F"></div><div class="swatch-body"><div class="swatch-name">Ink 2</div><div class="swatch-hex">#1D1D1F</div><div class="swatch-role">texto secundario</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#0F1733"></div><div class="swatch-body"><div class="swatch-name">Navy</div><div class="swatch-hex">#0F1733</div><div class="swatch-role">fondos premium oscuros</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#FAFAFA;border:1px solid #E5E5E7"></div><div class="swatch-body"><div class="swatch-name">Paper</div><div class="swatch-hex">#FAFAFA</div><div class="swatch-role">fondo secciones alternas</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#E5E5E7"></div><div class="swatch-body"><div class="swatch-name">Line</div><div class="swatch-hex">#E5E5E7</div><div class="swatch-role">bordes · divisores</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#6B6B70"></div><div class="swatch-body"><div class="swatch-name">Muted</div><div class="swatch-hex">#6B6B70</div><div class="swatch-role">captions · taglines</div></div></div>
+  </div>
+</section>
+
+<!-- 3. TIPOGRAFÍA -->
+<section>
+  <h2><span class="num">03</span>Tipografía</h2>
+  <p class="lead">SF Pro Display (sistema). Lowercase humanista heavy. Letter-spacing apretado. Esto es lo que hace que el logo no parezca un template.</p>
+
+  <div class="type-spec">
+    <div class="type-sample">toca <span class="y">y</span> op<span class="i-star">i</span>na</div>
+    <div class="type-detail">
+      font-family: -apple-system, "SF Pro Display", "Inter", sans-serif<br>
+      font-weight: 800<br>
+      letter-spacing: -0.04em<br>
+      text-transform: lowercase<br>
+      color: "toca" + "opina" → #0A0A0A · "y" → #105BF5 · ★ → #F5B941
+    </div>
+  </div>
+</section>
+
+<!-- 4. REDES SOCIALES -->
+<section>
+  <h2><span class="num">04</span>Redes sociales</h2>
+  <p class="lead">Avatar único para todas las plataformas (Instagram lo recorta a círculo automáticamente, igual que TikTok, YouTube, X). Portadas dimensionadas para cada red.</p>
+
+  <h3 style="margin-top:32px">Avatar · todas las redes</h3>
+  <div class="grid grid-2" style="margin-top:16px">
+    <div class="card">
+      <div class="card-img square" style="background:#105BF5"><img src="assets/img/brand/avatar-social-wordmark.png" alt="Avatar redes"></div>
+      <div class="card-body">
+        <div class="row"><h3>Avatar 2048 × 2048</h3></div>
+        <p class="caption">Lo subes igual a Instagram, TikTok, YouTube, X, Threads, Facebook. Cada plataforma lo recorta a círculo automáticamente.</p>
+        <span class="file">assets/img/brand/avatar-social-wordmark.png</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-img" style="aspect-ratio:auto"><img src="assets/img/brand/avatar-social-preview.png" alt="Preview en cada plataforma" style="height:auto"></div>
+      <div class="card-body">
+        <div class="row"><h3>Vista previa por plataforma</h3></div>
+        <p class="caption">Cómo se ve recortado en círculo desde 180 px (Instagram) hasta 16 px (favicon).</p>
+        <span class="file">assets/img/brand/avatar-social-preview.png</span>
+      </div>
+    </div>
+  </div>
+
+  <h3 style="margin-top:48px">Portadas</h3>
+  <div class="grid grid-3" style="margin-top:16px">
+    <div class="card">
+      <div class="card-img story" style="background:#105BF5"><img src="assets/img/brand/cover-ig-stories.png" alt="IG Stories"></div>
+      <div class="card-body">
+        <div class="row"><h3>Stories IG · 9:16</h3></div>
+        <p class="caption">Wordmark arriba, dos tercios libres para que pongas texto / CTA / oferta.</p>
+        <span class="file">assets/img/brand/cover-ig-stories.png</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-img" style="aspect-ratio:16/9"><img src="assets/img/brand/cover-youtube.png" alt="YouTube"></div>
+      <div class="card-body">
+        <div class="row"><h3>YouTube banner · 16:9</h3></div>
+        <p class="caption">Wordmark + tagline "más reseñas en google. un solo gesto." dentro de la safe-area TV.</p>
+        <span class="file">assets/img/brand/cover-youtube.png</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-img wide"><img src="assets/img/brand/cover-x-twitter.png" alt="X header"></div>
+      <div class="card-body">
+        <div class="row"><h3>X · header 21:9</h3></div>
+        <p class="caption">Wordmark a la derecha (el avatar circular ocupa la zona inferior izquierda).</p>
+        <span class="file">assets/img/brand/cover-x-twitter.png</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. PUERTA A PUERTA -->
+<section>
+  <h2><span class="num">05</span>Material físico</h2>
+  <p class="lead">Para tu venta puerta a puerta. Render fotorrealista para enseñar al impresor exactamente cómo la quieres.</p>
+
+  <div class="grid grid-2">
+    <div class="card">
+      <div class="card-img card-3-2"><img src="assets/img/brand/card-business-mockup.png" alt="Tarjeta de visita"></div>
+      <div class="card-body">
+        <div class="row"><h3>Tarjeta de visita · 85 × 55 mm</h3></div>
+        <p class="caption">Papel uncoated mate 350 g · esquinas redondeadas 2 mm · impresión a 3 tintas (#0A0A0A negro · #105BF5 azul · #F5B941 dorado). Coste habitual en España: <strong>~20–30 €</strong> por 250 unidades.</p>
+        <span class="file">assets/img/brand/card-business-mockup.png</span>
+      </div>
+    </div>
+    <div class="card" style="background:#FAFAFA">
+      <div class="card-body" style="padding:32px">
+        <h3>Briefing para el impresor</h3>
+        <p class="caption" style="line-height:1.7;margin-top:12px">
+          <strong>Llévales:</strong><br>
+          1. Este mockup como referencia visual<br>
+          2. El archivo <code>logo-master-v4-star-i.png</code> en alta resolución<br>
+          3. Estas especificaciones:<br>
+          <br>
+          • Tamaño: 85 × 55 mm<br>
+          • Esquinas: redondeadas 2 mm<br>
+          • Papel: uncoated mate 350 g<br>
+          • Tintas CMYK: negro #0A0A0A, azul #105BF5, dorado #F5B941<br>
+          • Sangrado: 3 mm<br>
+          • Solo cara frontal impresa (back en blanco)<br>
+          <br>
+          Si te piden vectores, el wordmark se puede regenerar en SVG cuando tengas el presupuesto del impresor.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. WEB -->
+<section>
+  <h2><span class="num">06</span>Web · favicons</h2>
+  <p class="lead">A 16 píxeles el wordmark no se lee, así que el favicon es solo la estrella sobre azul. Eso sí está bien — los favicons no se registran como marca.</p>
+
+  <div class="favicons">
+    <div class="fav-item"><img src="assets/img/brand/favicon-16.png" alt="16" width="16" height="16"><div class="fav-label">16 × 16</div></div>
+    <div class="fav-item"><img src="assets/img/brand/favicon-32.png" alt="32" width="32" height="32"><div class="fav-label">32 × 32</div></div>
+    <div class="fav-item"><img src="assets/img/brand/favicon-48.png" alt="48" width="48" height="48"><div class="fav-label">48 × 48</div></div>
+    <div class="fav-item"><img src="assets/img/brand/favicon-96.png" alt="96" width="96" height="96"><div class="fav-label">96 × 96</div></div>
+    <div class="fav-item"><img src="assets/img/brand/apple-touch-icon.png" alt="180" width="180" height="180"><div class="fav-label">180 × 180<br>apple-touch-icon</div></div>
+    <div class="fav-item"><img src="assets/img/brand/favicon-192.png" alt="192" width="120" height="120" style="opacity:.5"><div class="fav-label">192 (escalado)</div></div>
+  </div>
+
+  <h3 style="margin-top:40px;margin-bottom:12px">HTML para meter en el `&lt;head&gt;` de tu web</h3>
+  <pre>&lt;link rel="icon" type="image/png" sizes="32x32" href="/assets/img/brand/favicon-32.png"&gt;
+&lt;link rel="icon" type="image/png" sizes="192x192" href="/assets/img/brand/favicon-192.png"&gt;
+&lt;link rel="apple-touch-icon" sizes="180x180" href="/assets/img/brand/apple-touch-icon.png"&gt;</pre>
+</section>
+
+<!-- 7. SIGUIENTE -->
+<section>
+  <h2><span class="num">07</span>Siguiente</h2>
+  <p class="lead">Lo que puedo derivar ahora mismo, en cuanto me lo digas — todo manteniendo coherencia perfecta con este sistema.</p>
+
+  <ul style="font-size:16px;color:#1D1D1F;line-height:2;max-width:680px;list-style:none">
+    <li>· Render del stand físico con el logo grabado a un lado</li>
+    <li>· Sticker NFC circular 35 mm para el dorso del móvil del cliente</li>
+    <li>· Plantilla post Instagram feed 1080 × 1350</li>
+    <li>· Imagen Open Graph 1200 × 630 (preview WhatsApp / FB cuando compartes el link)</li>
+    <li>· Versión vectorial SVG del wordmark (para impresores que la pidan)</li>
+    <li>· Lockup vertical (mark arriba, wordmark abajo)</li>
+  </ul>
+</section>
+
+<footer>
+  Brand kit · toca y opina · v4 · generado 2026-05-23<br>
+  archivos en <code>/assets/img/brand/</code> · sistema completo guardado en memoria persistente
+</footer>
+
+</div>
+</body>
+</html>

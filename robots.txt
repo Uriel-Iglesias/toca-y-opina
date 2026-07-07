@@ -4,7 +4,7 @@ Disallow: /Desechos/
 Disallow: /node_modules/
 Disallow: /instagram/
 
-Sitemap: https://tocayopina.com/sitemap.xml
+Sitemap: https://tocayopina.es/sitemap.xml
 
 # Cluster SEO
 Allow: /blog/

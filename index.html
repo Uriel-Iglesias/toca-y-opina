@@ -1,1665 +1,513 @@
 <!doctype html>
-<html lang="es-ES">
+<html lang="es">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#105BF5">
-<title>Toca y Opina — Más reseñas en Google con un solo gesto · 34,90€</title>
-<meta name="description" content="Stand físico NFC + QR para mostradores. Tu cliente toca con el móvil y la reseña en Google se publica en 5 segundos. 34,90€ pago único.">
-<meta name="author" content="Uriel Iglesias Segura">
+<title>Reseñas en Google y seguidores en Instagram en Andorra · Toca y Opina</title>
+<meta name="description" content="Expositor NFC + QR para negocios de Andorra: tu cliente acerca el móvil y deja su reseña en Google o te sigue en Instagram en 5 segundos, sin app. Desde 34,90 €.">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="format-detection" content="telephone=no">
 
-<!-- Icons -->
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23105BF5'/%3E%3Ctext x='32' y='44' text-anchor='middle' font-family='-apple-system,SF Pro Display,Helvetica' font-size='32' font-weight='800' fill='%23fff'%3ET%3C/text%3E%3C/svg%3E">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="canonical" href="https://tocayopina.es/">
 
-<!-- Canonical & i18n -->
-<link rel="canonical" href="https://tocayopina.com/">
-<link rel="alternate" hreflang="es-ES" href="https://tocayopina.com/">
-<link rel="alternate" hreflang="x-default" href="https://tocayopina.com/">
-
-<!-- Open Graph -->
 <meta property="og:site_name" content="Toca y Opina">
 <meta property="og:locale" content="es_ES">
 <meta property="og:title" content="Toca y Opina · Más reseñas en Google en 5 segundos">
-<meta property="og:description" content="Stand físico NFC + QR para mostradores. 34,90€ pago único. Hecho a mano en España.">
-<meta property="og:image" content="https://tocayopina.com/assets/img/og-image.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Stand Toca y Opina sobre mostrador de cafetería con código QR y NFC para reseñas en Google">
-<meta property="og:url" content="https://tocayopina.com/">
+<meta property="og:description" content="Stand NFC + QR. Tu cliente acerca el móvil y deja su reseña. 34,90 € · Andorra.">
+<meta property="og:image" content="https://tocayopina.es/assets/img/productos/hero-mix.jpg">
+<meta property="og:url" content="https://tocayopina.es/">
 <meta property="og:type" content="website">
-
-<!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Toca y Opina · Más reseñas en Google en 5 segundos">
-<meta name="twitter:description" content="Stand físico NFC + QR. 34,90€ pago único.">
-<meta name="twitter:image" content="https://tocayopina.com/assets/img/og-image.jpg">
+<meta name="twitter:description" content="Stand NFC + QR. 34,90 €. Andorra.">
+<meta name="twitter:image" content="https://tocayopina.es/assets/img/productos/hero-mix.jpg">
 
-<!-- Performance hints -->
-<link rel="dns-prefetch" href="https://www.vinted.es">
-<link rel="preconnect" href="https://www.vinted.es">
-<link rel="preload" as="image" href="assets/img/orbit/frame-001.webp" fetchpriority="high" type="image/webp">
-<link rel="preload" as="image" href="assets/img/orbit/frame-013.webp" fetchpriority="high" type="image/webp">
-<link rel="preload" as="image" href="assets/img/orbit/frame-025.webp" fetchpriority="high" type="image/webp">
-<link rel="preload" as="image" href="assets/img/orbit/frame-037.webp" fetchpriority="high" type="image/webp">
-<link rel="preload" as="image" href="assets/img/orbit/frame-049.webp" fetchpriority="high" type="image/webp">
-<link rel="preload" as="image" href="assets/img/orbit/frame-061.webp" fetchpriority="high" type="image/webp">
-<link rel="preload" as="image" href="assets/img/orbit/frame-073.webp" fetchpriority="high" type="image/webp">
-<link rel="preload" as="image" href="assets/img/orbit/frame-085.webp" fetchpriority="high" type="image/webp">
-<link rel="preload" as="image" href="assets/img/orbit/frame-096.webp" fetchpriority="high" type="image/webp">
-<link rel="preload" as="image" href="assets/img/paso-1.webp" type="image/webp">
-<link rel="preload" as="image" href="assets/img/paso-2.webp" type="image/webp">
-<link rel="preload" as="image" href="assets/img/paso-3.webp" type="image/webp">
+<link rel="preload" as="image" href="assets/img/productos/hero-mix.jpg" fetchpriority="high">
 
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-tailwind.config = {
-  theme: {
-    extend: {
-      fontFamily: {
-        display: ['-apple-system','BlinkMacSystemFont','"SF Pro Display"','"Inter"','"Segoe UI"','Helvetica','Arial','sans-serif'],
-      },
-      colors: {
-        ink: '#0A0A0A',
-        ink2: '#1D1D1F',
-        brand: '#105BF5',
-        brand2: '#3D7DFF',
-        gold: '#F5B941',
-        paper: '#FAFAFA',
-        line: '#E5E5E7',
-      },
-      letterSpacing: { tightest: '-0.045em' },
-    }
-  }
-}
-</script>
+
 <style>
-:root{
-  --ink:#0A0A0A;
-  --ink2:#1D1D1F;
-  --muted:#6B6B70;
-  --brand:#105BF5;
-  --gold:#F5B941;
-  --paper:#FAFAFA;
-  --line:#E5E5E7;
-  --vh: 100vh;
-}
-*{ -webkit-tap-highlight-color: transparent; box-sizing: border-box; }
-html{
-  /* IMPORTANT: usar overflow-x: clip (no hidden) para no romper position:sticky en iOS */
-  scroll-behavior: smooth;
-  overflow-x: clip;
-  max-width: 100vw;
-  width: 100%;
-}
-body{
-  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", "Segoe UI", Helvetica, Arial, sans-serif;
-  font-feature-settings: "ss01","ss02","cv01","cv03";
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-  color: var(--ink);
-  background:#fff;
-  overflow-x: clip;
-  max-width: 100vw;
-  width: 100%;
-  position: relative;
-}
-@media(max-width:767px){
-  body{
-    padding-bottom: 84px;
-    touch-action: pan-y;
-    overscroll-behavior-x: none;
-  }
-  footer{ padding-bottom: 30px !important; }
-  /* Bloquea cualquier overflow horizontal pero NO en ancestros del sticky */
-  section, .wrap, .hero-copy{
-    max-width: 100%;
-    overflow-x: clip;
-  }
-  /* .hero-grid y .hero-orbit-track NO deben tener overflow-x clip — rompe sticky en iOS */
-}
-/* Nada en la página debe poder forzar ancho mayor al viewport */
-img, video, canvas{ max-width: 100%; }
-
-/* Typography — Apple-style display sizes */
-.display{
-  font-weight: 800;
-  letter-spacing: -0.045em;
-  line-height: 0.96;
-}
-.display-xl{ font-size: clamp(48px, 11vw, 96px); }
-.display-lg{ font-size: clamp(38px, 8.5vw, 72px); }
-.display-md{ font-size: clamp(30px, 6.5vw, 52px); }
-.eyebrow{
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-}
-.body-lg{ font-size: clamp(17px, 4.4vw, 22px); line-height: 1.45; color: var(--ink2); }
-.body{ font-size: 17px; line-height: 1.55; color: var(--ink2); }
-.muted{ color: var(--muted); }
-
-/* Containers + section rhythm */
-.wrap{ max-width: 1180px; margin-inline:auto; padding-inline: 20px; }
-@media(min-width:640px){ .wrap{ padding-inline: 32px; } }
-.section{ padding-block: 88px; }
-@media(min-width:768px){ .section{ padding-block: 140px; } }
-
-/* CTA */
-.cta{
-  display:inline-flex; align-items:center; justify-content:center; gap:10px;
-  height:56px; padding-inline:28px;
-  background: var(--ink); color:#fff;
-  border-radius:999px;
-  font-weight:600; font-size:17px;
-  transition: transform .25s ease, background .25s ease, box-shadow .25s ease;
-  box-shadow: 0 1px 2px rgba(0,0,0,.08), 0 8px 24px rgba(0,0,0,.10);
-}
-.cta:hover{ transform: translateY(-1px); background:#000; box-shadow: 0 2px 4px rgba(0,0,0,.12), 0 14px 30px rgba(0,0,0,.16); }
-.cta-ghost{
-  display:inline-flex; align-items:center; gap:8px;
-  height:56px; padding-inline:24px;
-  color:var(--ink); font-weight:600; font-size:17px;
-  border-radius:999px;
-  transition: color .2s;
-}
-.cta-ghost:hover{ color: var(--brand); }
-.cta-blue{ background: var(--brand); }
-.cta-blue:hover{ background:#0B47C4; }
-
-/* CTA Hero XL — botón principal grande y muy visible */
-.cta-hero{
-  display:inline-flex; align-items:center; justify-content:center; gap:12px;
-  height:64px; padding-inline:36px;
-  background: var(--brand);
-  color:#fff;
-  border-radius:999px;
-  font-weight:700; font-size:18px;
-  letter-spacing:-0.01em;
-  transition: transform .25s ease, background .25s ease, box-shadow .25s ease;
-  box-shadow:
-    0 2px 4px rgba(16,91,245,.20),
-    0 14px 36px rgba(16,91,245,.35),
-    inset 0 1px 0 rgba(255,255,255,.18);
-  position: relative;
-  overflow: hidden;
-}
-.cta-hero::before{
-  content:''; position:absolute; inset:0;
-  background: linear-gradient(115deg, transparent 35%, rgba(255,255,255,.28) 50%, transparent 65%);
-  transform: translateX(-110%);
-  animation: cta-sheen 4.5s ease-in-out 2s infinite;
-  pointer-events:none;
-}
-@keyframes cta-sheen{
-  0%, 40%   { transform: translateX(-110%); }
-  60%, 100% { transform: translateX(110%); }
-}
-.cta-hero:hover{
-  transform: translateY(-2px);
-  background:#0B47C4;
-  box-shadow:
-    0 4px 8px rgba(16,91,245,.25),
-    0 22px 50px rgba(16,91,245,.45),
-    inset 0 1px 0 rgba(255,255,255,.22);
-}
-.cta-hero:active{ transform: translateY(0); }
-@media (max-width: 480px){
-  .cta-hero{ height:60px; padding-inline:28px; font-size:17px; width:100%; }
-}
-
-/* Sticky nav blur */
-nav.glass{
-  background: rgba(255,255,255,.72);
-  -webkit-backdrop-filter: saturate(180%) blur(20px);
-  backdrop-filter: saturate(180%) blur(20px);
-  border-bottom: 1px solid rgba(0,0,0,.06);
-}
-nav.glass.dark{
-  background: rgba(10,10,10,.72);
-  border-bottom-color: rgba(255,255,255,.08);
-  color:#fff;
-}
-
-/* Reveal animation */
-.reveal{ opacity:0; transform: translateY(20px); transition: opacity .9s cubic-bezier(.22,1,.36,1), transform .9s cubic-bezier(.22,1,.36,1); }
-.reveal.in{ opacity:1; transform: none; }
-@media (prefers-reduced-motion: reduce){ .reveal{ opacity:1; transform:none; } }
-
-/* Hero */
-.hero-img{
-  width:100%; aspect-ratio: 4/5;
-  border-radius: 28px;
-  overflow:hidden;
-  background:#111;
-}
-.hero-img img{ width:100%; height:100%; object-fit:cover; }
-
-/* ===== Hero layout: scroll-scrub frame-by-frame ===== */
-.hero-grid{
-  display: grid;
-  gap: 24px;
-  grid-template-columns: 1fr;
-  align-items: start;
-}
-.hero-orbit-track{
-  order: 2;
-  position: relative;
-  width: 100%;
-}
-.hero-copy{ order: 1; }
-@media (max-width: 879px){
-  /* Móvil: pista alta = scroll distance; stage sticky dentro */
-  .hero-grid{ gap: 18px; }
-  .hero-orbit-track{ min-height: 320vh; }
-}
-@media (min-width:880px){
-  .hero-grid{
-    grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
-    gap: 56px;
-    align-items: start;
-  }
-  .hero-orbit-track{ min-height: 240vh; }
-}
-
-/* ===== Hero stage ===== */
-.hero-stage{
-  position: relative;   /* default; sticky se aplica en media queries más abajo */
-  isolation: isolate;
-  margin-inline: auto;
-  max-width: 340px;
-  padding-block: 6px 10px;
-  perspective: 1400px;
-  width: 100%;
-}
-@media (min-width:480px){ .hero-stage{ max-width: 380px; } }
-@media (min-width:880px){ .hero-stage{ max-width: 440px; padding-block: 0; margin-inline: auto; } }
-
-/* STICKY: declarado DESPUÉS del base para que gane en cascade */
-@media (max-width: 879px){
-  .hero-stage{ position: sticky; top: 80px; }
-}
-@media (min-width:880px){
-  .hero-stage{ position: sticky; top: 92px; align-self: start; }
-}
-
-.hero-halo{
-  position: absolute;
-  inset: -12% -10%;
-  z-index: -1;
-  background:
-    radial-gradient(60% 50% at 50% 45%, rgba(16,91,245,.42) 0%, rgba(16,91,245,0) 60%),
-    radial-gradient(45% 35% at 28% 82%, rgba(245,185,65,.34) 0%, rgba(245,185,65,0) 70%),
-    radial-gradient(40% 30% at 76% 22%, rgba(255,255,255,.55) 0%, rgba(255,255,255,0) 70%);
-  filter: blur(28px);
-  animation: halo-breathe 7s ease-in-out infinite;
-  pointer-events: none;
-}
-@keyframes halo-breathe{
-  0%,100%{ transform: scale(1) rotate(0deg); opacity:.85; }
-  50%   { transform: scale(1.07) rotate(2deg); opacity:1; }
-}
-
-.hero-frame{
-  position: relative;
-  width: 100%;
-  aspect-ratio: 9/16;
-  border-radius: 36px;
-  overflow: hidden;
-  background:#0a0a0a;
-  box-shadow:
-    0 1px 2px rgba(0,0,0,.06),
-    0 8px 24px rgba(0,0,0,.14),
-    0 40px 80px -20px rgba(16,91,245,.30),
-    inset 0 0 0 1px rgba(255,255,255,.08);
-  transform-style: preserve-3d;
-  transform: perspective(1400px) rotateX(0) rotateY(0);
-  transition: box-shadow .6s ease;
-  will-change: transform;
-  animation: hero-enter 1.5s cubic-bezier(.22,1,.36,1) both;
-}
-.hero-frame:hover{
-  box-shadow:
-    0 1px 2px rgba(0,0,0,.06),
-    0 14px 32px rgba(0,0,0,.18),
-    0 50px 100px -20px rgba(16,91,245,.42),
-    inset 0 0 0 1px rgba(255,255,255,.12);
-}
-@keyframes hero-enter{
-  0%  { opacity:0; transform: perspective(1400px) translateY(46px) rotateX(10deg) scale(.9); filter: blur(10px); }
-  55% { filter: blur(0); }
-  100%{ opacity:1; transform: perspective(1400px) translateY(0) rotateX(0) scale(1); filter: blur(0); }
-}
-
-.hero-vid{
-  position: absolute; inset: 0;
-  width:100%; height:100%; object-fit: cover;
-  display: block;
-  transition: opacity .15s linear;
-}
-.hero-vid.is-hidden{ opacity: 0; pointer-events: none; }
-
-/* Direct-buy CTA inside the hero frame, bottom-right */
-.hero-direct-cta{
-  position: absolute;
-  left: 50%; transform: translateX(-50%);
-  bottom: 14px;
-  display: inline-flex; align-items: center; gap: 8px;
-  background: rgba(16,91,245,0.96);
-  color: #fff; font-weight: 600; font-size: 14px;
-  padding: 10px 18px;
-  border-radius: 999px;
-  box-shadow: 0 8px 24px rgba(0,0,0,.35), 0 0 0 1px rgba(255,255,255,.12) inset;
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  transition: transform .25s ease, background .25s ease;
-  white-space: nowrap;
-}
-.hero-direct-cta:hover{ transform: translateX(-50%) translateY(-2px); background: #0B47C4; }
-
-.hero-glare{
-  position: absolute; inset:0;
-  background: linear-gradient(115deg, transparent 30%, rgba(255,255,255,.22) 50%, transparent 70%);
-  mix-blend-mode: screen;
-  transform: translateX(-110%);
-  animation: hero-sheen 5.5s ease-in-out 1.6s infinite;
-  pointer-events: none;
-}
-@keyframes hero-sheen{
-  0%, 30%   { transform: translateX(-110%); }
-  55%, 100% { transform: translateX(110%); }
-}
-
-.hero-badge-360{
-  position: absolute; bottom: 16px; left: 50%; transform: translateX(-50%);
-  display:inline-flex; align-items:center; gap:8px;
-  background: rgba(255,255,255,.94);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  color: var(--ink);
-  font-size: 10.5px; font-weight: 800;
-  padding: 7px 12px 7px 10px; border-radius: 999px;
-  letter-spacing: .10em; text-transform: uppercase;
-  box-shadow: 0 8px 22px rgba(0,0,0,.20);
-}
-.hero-badge-360::before{
-  content:''; width: 6px; height: 6px; border-radius: 999px;
-  background: var(--brand);
-  box-shadow: 0 0 0 0 rgba(16,91,245,.55);
-  animation: badge-dot 1.8s ease-in-out infinite;
-  flex-shrink: 0;
-}
-@keyframes badge-dot{
-  0%   { box-shadow: 0 0 0 0 rgba(16,91,245,.55); }
-  70%  { box-shadow: 0 0 0 8px rgba(16,91,245,0); }
-  100% { box-shadow: 0 0 0 0 rgba(16,91,245,0); }
-}
-.hero-badge-360 svg{ animation: badge-spin 14s linear infinite; }
-@keyframes badge-spin{ to{ transform: rotate(360deg); } }
-
-@media (prefers-reduced-motion: reduce){
-  .hero-frame, .hero-halo, .hero-glare, .hero-badge-360 svg{ animation: none !important; }
-}
-
-/* Step cards */
-.step-card{
-  background: var(--ink); color:#fff;
-  border-radius: 28px;
-  overflow:hidden;
-  position:relative;
-}
-.step-card .step-num{
-  font-size: clamp(160px, 36vw, 280px);
-  font-weight:800; line-height:.8;
-  letter-spacing: -0.05em;
-  color: rgba(255,255,255,.06);
-  position:absolute; top: -16px; right: -12px;
-  pointer-events:none;
-}
-
-/* Negocios grid photo card */
-.biz{
-  aspect-ratio: 4/5;
-  border-radius: 22px;
-  overflow:hidden;
-  position:relative;
-  background:#0a0a0a;
-}
-/* <picture> wrapper transparente: hereda layout del contenedor */
-picture{ display:block; width:100%; height:100%; }
-.biz img{ width:100%; height:100%; object-fit:cover; transition: transform .8s cubic-bezier(.22,1,.36,1); }
-.biz:hover img{ transform: scale(1.05); }
-.biz .cap{
-  position:absolute; inset:auto 0 0 0;
-  padding: 18px;
-  background: linear-gradient(to top, rgba(0,0,0,.78) 0%, rgba(0,0,0,.35) 60%, transparent 100%);
-  color:#fff;
-}
-
-/* Stat panel */
-.stat{
-  background:#fff; border:1px solid var(--line);
-  border-radius: 22px; padding: 24px;
-}
-.stat .num{
-  font-size: clamp(40px, 10vw, 64px);
-  font-weight:800; letter-spacing: -0.04em; line-height:1;
-  color: var(--brand);
-}
-.stat-dark{ background:#0F0F10; border-color:#222; color:#fff; }
-.stat-dark .num{ color: var(--gold); }
-
-/* Compare card */
-.cmp{ border-radius:24px; padding: 26px; }
-.cmp-good{ background: var(--ink); color:#fff; border:1px solid #222; }
-.cmp-bad{ background:#fff; color: var(--ink); border:1px solid var(--line); }
-.cmp .row{ display:flex; align-items:center; gap:10px; padding-block: 8px; font-size:15px; }
-
-/* Manufacturing video */
-.manu-video{
-  position:relative;
-  border-radius: 28px;
-  overflow:hidden;
-  background:#0a0a0a;
-}
-.manu-video video{ width:100%; height:100%; object-fit:cover; }
-
-/* Pricing cards */
-.price-card{
-  border-radius:28px; padding:32px;
-  background:#fff; border:1px solid var(--line);
-  display:flex; flex-direction:column; gap:18px;
-}
-.price-card.feat{ background: var(--ink); color:#fff; border-color: #222; position:relative; }
-.price-card .euros{ font-size: 56px; font-weight:800; letter-spacing:-0.04em; line-height:1; }
-.price-card.feat .euros{ color: var(--gold); }
-.price-card .badge{
-  position:absolute; top:-12px; left:50%; transform:translateX(-50%);
-  background: var(--gold); color: #1D1D1F;
-  font-size:11px; font-weight:800; padding: 5px 12px; border-radius:999px;
-  letter-spacing:.06em; text-transform:uppercase;
-}
-/* "7 de cada 10" hero block inside Pack 2 */
-.pop-stat{
-  background: linear-gradient(135deg, rgba(245,185,65,.18) 0%, rgba(245,185,65,.06) 100%);
-  border: 1px solid rgba(245,185,65,.35);
-  border-radius: 18px;
-  padding: 14px 16px;
-  display:flex; align-items:center; gap: 14px;
-}
-.pop-stat-num{
-  font-family: -apple-system,"SF Pro Display",Inter,sans-serif;
-  font-weight: 800;
-  font-size: 42px;
-  letter-spacing: -0.04em;
-  line-height: 1;
-  color: var(--gold);
-  flex-shrink: 0;
-  font-variant-numeric: tabular-nums;
-}
-.pop-stat-num .of{ font-size: 14px; color: rgba(255,255,255,.55); font-weight: 600; }
-.pop-stat-body{ display:flex; flex-direction:column; gap: 6px; min-width: 0; flex: 1; }
-.pop-stat-label{
-  font-size: 12.5px; font-weight: 700; color: #fff;
-  letter-spacing: -0.005em; line-height: 1.25;
-}
-.pop-stat-dots{
-  display:flex; gap: 4px; align-items:center;
-}
-.pop-stat-dots .d{
-  width: 9px; height: 9px; border-radius: 999px;
-  background: var(--gold);
-  box-shadow: 0 0 0 1px rgba(245,185,65,.45);
-}
-.pop-stat-dots .d.off{
-  background: transparent; box-shadow: 0 0 0 1px rgba(255,255,255,.18);
-}
-
-/* Calculator */
-.calc{
-  background: linear-gradient(180deg, var(--paper) 0%, #fff 100%);
-  border:1px solid var(--line);
-  border-radius:28px; padding: 24px;
-}
-.range-input{ -webkit-appearance:none; appearance:none; width:100%; height:6px; background: var(--line); border-radius:999px; outline:none; }
-.range-input::-webkit-slider-thumb{ -webkit-appearance:none; appearance:none; width:24px; height:24px; border-radius:50%; background: var(--brand); cursor:pointer; box-shadow: 0 1px 4px rgba(0,0,0,.2); }
-.range-input::-moz-range-thumb{ width:24px; height:24px; border-radius:50%; background: var(--brand); border:none; cursor:pointer; }
-
-/* FAQ */
-details.faq{ border-bottom:1px solid var(--line); padding-block: 18px; }
-details.faq[open] summary svg{ transform: rotate(45deg); }
-details.faq summary{ display:flex; justify-content:space-between; align-items:center; gap:12px; cursor:pointer; list-style:none; font-weight:600; font-size:18px; }
-details.faq summary::-webkit-details-marker{ display:none; }
-details.faq summary svg{ transition: transform .25s ease; flex-shrink:0; }
-details.faq p{ color: var(--muted); margin-top:12px; line-height:1.55; }
-
-/* Sticky mobile CTA bar */
-.sticky-cta{
-  position: fixed; left: 12px; right: 12px; bottom: 12px;
-  background: var(--brand);
-  color:#fff;
-  border-radius: 999px;
-  padding: 16px 22px;
-  display:flex; align-items:center; justify-content:space-between; gap:12px;
-  box-shadow:
-    0 4px 8px rgba(16,91,245,.18),
-    0 18px 44px rgba(16,91,245,.40),
-    inset 0 1px 0 rgba(255,255,255,.18);
-  z-index: 80;
-  font-weight:700;
-  font-size:16px;
-  letter-spacing:-0.01em;
-  transition: transform .2s ease, background .2s ease;
-}
-.sticky-cta:active{ transform: translateY(1px); background:#0B47C4; }
-@media(min-width:768px){ .sticky-cta{ display:none; } }
-
-/* Hide scrollbar on horizontal scroll containers */
-.hide-scroll::-webkit-scrollbar{ display:none; }
-.hide-scroll{ scrollbar-width: none; -ms-overflow-style: none; }
-
-/* Star rating tiny */
+:root{ --ink:#0A0A0A; --ink2:#1D1D1F; --muted:#6B6B70; --brand:#105BF5; --gold:#F5B941; --paper:#FAFAFA; --line:#E5E5E7; }
+*{ -webkit-tap-highlight-color:transparent; box-sizing:border-box; }
+html{ scroll-behavior:smooth; overflow-x:clip; }
+body{ font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Inter","Segoe UI",Helvetica,Arial,sans-serif; color:var(--ink); background:#fff; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; overflow-x:clip; }
+@media(max-width:767px){ body{ padding-bottom:86px; } }
+img{ max-width:100%; display:block; }
+.wrap{ max-width:1180px; margin-inline:auto; padding-inline:20px; }
+@media(min-width:640px){ .wrap{ padding-inline:32px; } }
+.section{ padding-block:64px; }
+@media(min-width:768px){ .section{ padding-block:104px; } }
+.display{ font-weight:800; letter-spacing:-0.045em; line-height:1.0; }
+.eyebrow{ font-size:12.5px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; }
+.muted{ color:var(--muted); }
+.cta{ display:inline-flex; align-items:center; justify-content:center; gap:10px; height:54px; padding-inline:26px; background:var(--ink); color:#fff; border-radius:999px; font-weight:600; font-size:16.5px; transition:transform .25s,background .25s,box-shadow .25s; box-shadow:0 1px 2px rgba(0,0,0,.08),0 8px 24px rgba(0,0,0,.10); }
+.cta:hover{ transform:translateY(-1px); background:#000; }
+.cta-wa{ background:#25D366; color:#06351A; }
+.cta-wa:hover{ background:#1FB855; }
+.cta-hero{ display:inline-flex; align-items:center; justify-content:center; gap:10px; height:62px; padding-inline:30px; white-space:nowrap; background:#25D366; color:#06351A; border-radius:999px; font-weight:800; font-size:18px; letter-spacing:-0.01em; box-shadow:0 2px 4px rgba(37,211,102,.25),0 16px 38px rgba(37,211,102,.40); transition:transform .25s,background .25s; position:relative; overflow:hidden; }
+.cta-hero:hover{ transform:translateY(-2px); background:#1FB855; }
+.cta-hero::before{ content:''; position:absolute; inset:0; background:linear-gradient(115deg,transparent 35%,rgba(255,255,255,.35) 50%,transparent 65%); transform:translateX(-110%); animation:sheen 4.5s ease-in-out 2s infinite; }
+@keyframes sheen{ 0%,40%{transform:translateX(-110%)} 60%,100%{transform:translateX(120%)} }
+@media(max-width:480px){ .cta-hero{ width:100%; height:58px; font-size:16px; padding-inline:16px; } }
+.price-card{ border-radius:26px; background:#fff; border:1px solid var(--line); overflow:hidden; display:flex; flex-direction:column; }
+.price-card.feat{ border:2px solid var(--gold); box-shadow:0 26px 60px -22px rgba(245,185,65,.55); }
+.badge{ background:var(--gold); color:#1D1D1F; font-size:11px; font-weight:800; padding:5px 12px; border-radius:999px; letter-spacing:.05em; text-transform:uppercase; }
+.reveal{ opacity:0; transform:translateY(18px); transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1); }
+.reveal.in{ opacity:1; transform:none; }
+@media(prefers-reduced-motion:reduce){ .reveal{ opacity:1!important; transform:none!important; } }
+nav.glass{ background:rgba(255,255,255,.82); -webkit-backdrop-filter:saturate(180%) blur(20px); backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid rgba(0,0,0,.06); }
 .stars{ display:inline-flex; gap:2px; }
-.stars svg{ width:14px; height:14px; }
-
-/* NFC accordion (debajo de los 3 pasos) */
-.nfc-accordion{
-  border-radius: 18px;
-  overflow: hidden;
-  background: linear-gradient(135deg, #F5B941 0%, #E89A1F 100%);
-  box-shadow: 0 12px 30px -10px rgba(245,185,65,0.55);
-}
-.nfc-accordion > summary{
-  list-style: none;
-  cursor: pointer;
-  padding: 0;
-}
-.nfc-accordion > summary::-webkit-details-marker{ display:none; }
-.nfc-accordion__bar{
-  display:flex; align-items:center; justify-content:space-between;
-  gap: 12px;
-  padding: 16px 20px;
-  color: #0A0A0A;
-}
-.nfc-accordion__label{
-  display:flex; align-items:center; gap:10px;
-  font-family: -apple-system,BlinkMacSystemFont,"SF Pro Display","Inter",sans-serif;
-  font-weight: 800;
-  font-size: 15px;
-  letter-spacing: -0.01em;
-}
-.nfc-accordion__hint{
-  font-weight: 600;
-  opacity: 0.75;
-  font-size: 13px;
-}
-.nfc-accordion__chevron{
-  transition: transform .3s ease;
-  flex-shrink: 0;
-}
-.nfc-accordion[open] .nfc-accordion__chevron{ transform: rotate(180deg); }
-.nfc-accordion__panel{
-  background: #fff;
-  padding: 22px 20px;
-}
-@media (min-width:640px){
-  .nfc-accordion__bar{ padding: 18px 24px; }
-  .nfc-accordion__label{ font-size: 16px; }
-  .nfc-accordion__panel{ padding: 28px; }
-}
+.stars svg{ width:18px; height:18px; }
+.sticky-cta{ position:fixed; left:12px; right:12px; bottom:12px; background:#25D366; color:#06351A; border-radius:999px; padding:15px 22px; display:flex; align-items:center; justify-content:center; gap:10px; box-shadow:0 16px 40px rgba(37,211,102,.45); z-index:80; font-weight:800; font-size:15.5px; white-space:nowrap; }
+@media(min-width:768px){ .sticky-cta{ display:none; } }
+.langbtn summary{ list-style:none; } .langbtn summary::-webkit-details-marker{ display:none; }
+  @media(max-width:640px){ .price-card .aspect-\[4\/5\]{aspect-ratio:4/3;} }
+  .price-card .font-display{ white-space:nowrap; }
 </style>
 
-<!-- JSON-LD: Product + Organization + FAQ -->
-<!-- JSON-LD: Product -->
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Product","name":"Toca y Opina — Stand NFC + QR para reseñas en Google","image":["https://tocayopina.com/assets/img/hero-stand-granite.jpg","https://tocayopina.com/assets/img/og-image.jpg"],"description":"Stand físico de sobremesa con código QR y chip NFC que dirige al cliente a la página de reseñas de Google del negocio en 5 segundos.","brand":{"@type":"Brand","name":"Toca y Opina"},"sku":"TYO-STAND-NFC-001","gtin":"","manufacturer":{"@type":"Organization","name":"Toca y Opina"},"offers":{"@type":"Offer","price":"34.90","priceCurrency":"EUR","availability":"https://schema.org/InStock","priceValidUntil":"2027-12-31","url":"https://www.vinted.es/items/8737424361-stand-resenas-google-nfc-qr-personalizado","itemCondition":"https://schema.org/NewCondition","seller":{"@type":"Organization","name":"Toca y Opina"}},"aggregateRating":{"@type":"AggregateRating","ratingValue":"5","reviewCount":"47","bestRating":"5","worstRating":"1"}}</script>
-
-<!-- JSON-LD: Organization -->
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Toca y Opina","alternateName":"Toca-y-Opina","url":"https://tocayopina.com/","logo":"https://tocayopina.com/assets/img/logo-200.jpg","image":"https://tocayopina.com/assets/img/og-image.jpg","description":"Stand físico NFC + QR para reseñas en Google. Hecho a mano en España.","founder":{"@type":"Person","name":"Uriel Iglesias Segura"},"foundingDate":"2026-04","foundingLocation":{"@type":"Place","name":"Delta del Ebro, Tarragona, España"},"areaServed":{"@type":"Country","name":"España"},"sameAs":["https://www.vinted.es/member/uriel-iglesias-segura"]}</script>
-
-<!-- JSON-LD: LocalBusiness -->
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Toca y Opina","image":"https://tocayopina.com/assets/img/og-image.jpg","url":"https://tocayopina.com/","priceRange":"€€","address":{"@type":"PostalAddress","addressLocality":"Delta del Ebro","addressRegion":"Tarragona","addressCountry":"ES"},"areaServed":["Delta del Ebro","Tarragona","Cataluña","España"]}</script>
-
-<!-- JSON-LD: FAQPage -->
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Necesito instalar una app o algún software?","acceptedAnswer":{"@type":"Answer","text":"No. Ni tú ni tus clientes. El stand redirige automáticamente a la ficha de Google de tu negocio en el navegador del móvil. Funciona desde el primer día sin configuración."}},{"@type":"Question","name":"¿Funciona con iPhone y Android?","acceptedAnswer":{"@type":"Answer","text":"Sí. El QR funciona con cualquier móvil con cámara. El NFC funciona en iPhone desde el modelo 7 (2016) y en prácticamente todos los Android modernos."}},{"@type":"Question","name":"¿Es legal? ¿Lo permite Google?","acceptedAnswer":{"@type":"Answer","text":"Sí. Google anima a los negocios a pedir reseñas a sus clientes reales. Lo que prohíbe es pagar reseñas falsas. Toca y Opina solo facilita el camino a tus clientes reales."}},{"@type":"Question","name":"¿En cuánto tiempo lo recibo?","acceptedAnswer":{"@type":"Answer","text":"Habitualmente 24–72 h tras recibir tu pedido en Vinted. Lo imprimo, grabo el chip, lo pruebo y lo envío el mismo día o el siguiente."}},{"@type":"Question","name":"¿Y si me llega defectuoso?","acceptedAnswer":{"@type":"Answer","text":"Te lo reimprimo gratis sin preguntas. Llevo 47 reseñas en Vinted y 0 devoluciones, pero si pasa, te cubro."}},{"@type":"Question","name":"¿Mis clientes mayores van a saber usarlo?","acceptedAnswer":{"@type":"Answer","text":"Sí. Solo dices 'acerca el móvil al cuadrado' y se abre solo. No tienen que tocar ningún botón ni saber qué es un QR."}}]}</script>
+<!-- JSON-LD -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Product","name":"Toca y Opina — Stand NFC + QR para reseñas en Google","image":["https://tocayopina.es/assets/img/productos/estudio-google-1.jpg"],"description":"Stand físico de sobremesa con código QR y chip NFC que lleva al cliente a dejar su reseña en Google en 5 segundos.","brand":{"@type":"Brand","name":"Toca y Opina"},"offers":{"@type":"Offer","price":"34.90","priceCurrency":"EUR","availability":"https://schema.org/InStock","url":"https://tocayopina.es/","itemCondition":"https://schema.org/NewCondition"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "LocalBusiness", "name": "Toca y Opina", "url": "https://tocayopina.es/", "image": "https://tocayopina.es/assets/img/productos/estudio-google-1.jpg", "logo": "https://tocayopina.es/assets/img/logo-200.jpg", "telephone": "+34690390557", "priceRange": "34,90 €–74,90 €", "address": {"@type": "PostalAddress", "addressLocality": "Andorra la Vella", "addressCountry": "AD"}, "areaServed": {"@type": "Country", "name": "Andorra"}, "founder": [{"@type": "Person", "name": "Uriel Iglesias Segura"}, {"@type": "Person", "name": "Joselí"}], "sameAs": ["https://www.instagram.com/tocayopina"]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Cómo funciona el expositor de Toca y Opina?", "acceptedAnswer": {"@type": "Answer", "text": "Lo pones en tu mostrador. Tu cliente acerca el móvil (NFC) o escanea el código QR y deja su reseña en Google o te sigue en Instagram en 5 segundos. Sin app y sin registrarse."}}, {"@type": "Question", "name": "¿Hacéis envíos en Andorra?", "acceptedAnswer": {"@type": "Answer", "text": "Sí, enviamos a toda Andorra. Te lo entregamos configurado con tu enlace de Google, listo para usar."}}, {"@type": "Question", "name": "¿Cuánto cuesta el expositor?", "acceptedAnswer": {"@type": "Answer", "text": "34,90 € por expositor con pago único, sin cuotas. El combo Google + Instagram cuesta 54,90 €."}}, {"@type": "Question", "name": "¿Funciona con iPhone y Android?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. Funciona con iPhone y Android, por NFC o por el código QR. No hace falta instalar ninguna aplicación."}}, {"@type": "Question", "name": "¿Necesito conocimientos técnicos?", "acceptedAnswer": {"@type": "Answer", "text": "No. Te lo dejamos configurado con tu enlace de Google. Solo tienes que ponerlo en el mostrador."}}]}</script>
+  <link rel="stylesheet" href="assets/app.css">
 </head>
 
 <body>
 
 <!-- ===== NAV ===== -->
 <nav class="glass fixed top-0 inset-x-0 z-50">
+  <div class="text-center text-[12px] font-bold py-1.5" style="background:var(--gold);color:#1D1D1F;">📦 Envíos solo a Andorra</div>
   <div class="wrap flex items-center justify-between h-14 sm:h-16">
-    <a href="#top" class="flex items-center gap-2.5 font-display font-extrabold tracking-tightest" aria-label="Toca y Opina — inicio">
-      <img src="assets/img/logo-200.jpg" alt="" width="40" height="40" class="w-9 h-9 sm:w-10 sm:h-10 rounded-[10px] shrink-0">
-      <span class="text-[16px] sm:text-[17px]">Toca <span class="text-brand">y</span> Opina</span>
+    <a href="#top" class="flex items-center gap-2.5 font-display font-extrabold tracking-tightest" aria-label="Toca y Opina">
+      <img src="assets/img/logo-200.webp" alt="" width="38" height="38" class="w-9 h-9 rounded-[10px]">
+      <span class="text-[16px] sm:text-[17px]">Toca <span style="color:var(--brand)">y</span> Opina</span>
     </a>
-    <div class="hidden md:flex items-center gap-7 text-[14px] muted">
-      <a href="#como" class="hover:text-ink transition">Cómo funciona</a>
-      <a href="#tiendas" class="hover:text-ink transition">En tiendas</a>
-      <a href="#fabricacion" class="hover:text-ink transition">Fabricación</a>
-      <a href="#calculadora" class="hover:text-ink transition">Calculadora</a>
-      <a href="#precios" class="hover:text-ink transition">Precios</a>
-      <a href="blog/" class="hover:text-ink transition">Blog</a>
+    <div class="flex items-center gap-2">
+      <details id="langMenu" class="langbtn relative">
+        <summary class="cursor-pointer inline-flex items-center gap-1.5 text-[16px] font-semibold text-ink2 px-3 h-10 rounded-full border border-line bg-white select-none">
+          <span data-i18n-label>🇦🇩</span>
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </summary>
+        <div class="absolute right-0 mt-2 w-40 bg-white border border-line rounded-2xl shadow-xl py-2 z-50">
+          <a href="#" data-lang-opt="ca" class="block px-4 py-2 text-[14px] hover:bg-paper">🇦🇩 Català (Andorra)</a>
+          <a href="#" data-lang-opt="es" class="block px-4 py-2 text-[14px] hover:bg-paper">🇪🇸 Español</a>
+          <a href="#" data-lang-opt="pt" class="block px-4 py-2 text-[14px] hover:bg-paper">🇵🇹 Português</a>
+          <a href="#" data-lang-opt="fr" class="block px-4 py-2 text-[14px] hover:bg-paper">🇫🇷 Français</a>
+        </div>
+      </details>
+      <a href="#packs" class="hidden sm:inline-flex items-center gap-1.5 text-[14px] font-semibold cta-wa h-10 px-5 rounded-full">Pedir</a>
     </div>
-    <a href="#precios" class="hidden sm:inline-flex items-center gap-1.5 text-[13px] sm:text-[14px] font-semibold text-ink2 hover:text-ink transition px-4 h-10 rounded-full border border-line bg-white">
-      Ver precios
-    </a>
   </div>
 </nav>
 
-<!-- ===== HERO (mobile: headline → vídeo del stand → BIG CTA) ===== -->
-<section id="top" class="pt-20 sm:pt-28">
+<!-- ===== HERO ===== -->
+<section id="top" class="pt-24 sm:pt-32 pb-8 sm:pb-16">
   <div class="wrap">
-    <div class="hero-grid">
-
-      <!-- LEFT (desktop) / FIRST (mobile): copy minimalista -->
-      <div class="hero-copy">
-        <div class="reveal flex items-center gap-2 mb-4 sm:mb-6">
-          <span class="inline-flex items-center gap-1.5 text-[12px] font-semibold text-ink2 bg-paper border border-line rounded-full px-3 py-1.5">
-            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-            Hecho a mano · 47 reseñas ★ · 0 devoluciones
+    <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+      <div>
+        <div class="reveal flex items-center gap-2 mb-5">
+          <span class="stars" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="#F5B941"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" fill="#F5B941"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" fill="#F5B941"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" fill="#F5B941"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" fill="#F5B941"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
           </span>
+          <span class="text-[13px] font-semibold text-ink2" data-i18n="hero_badge">Negocios reales en Andorra</span>
         </div>
-
-        <h1 class="display reveal mb-4 sm:mb-5" style="font-size:clamp(38px,9vw,82px); font-weight:800; letter-spacing:-0.045em; line-height:1.0;">
-          Más reseñas<br>en Google.<br>
-          <span class="text-brand">Un solo gesto.</span>
+        <h1 class="display reveal mb-5" style="font-size:clamp(34px,7vw,64px);">
+          <span data-i18n="hero_h1a">Que te elijan a ti,</span><br>
+          <span style="color:var(--brand)" data-i18n="hero_h1b">no al de al lado.</span>
         </h1>
-
-        <p class="reveal text-[16px] sm:text-[19px] muted leading-snug max-w-[480px] mb-3 sm:mb-9">
-          El stand que pones en tu mostrador. Tu cliente acerca el móvil y la reseña se publica en 5 segundos.
+        <p class="reveal text-[17px] sm:text-[19px] muted leading-snug max-w-[480px] mb-6" data-i18n="hero_sub">
+          El stand que pones en tu mostrador y llena tu Google de reseñas sin que pidas nada. Tu cliente acerca el móvil, 5 segundos, sin app. Te llega configurado.
         </p>
-
-        <!-- CTA DESKTOP (visible solo desktop, abajo del copy) -->
-        <div class="reveal mt-7 hidden md:flex flex-wrap items-center gap-3">
-          <a href="https://www.vinted.es/items/8737424361-stand-resenas-google-nfc-qr-personalizado" target="_blank" rel="noopener" class="cta-hero">
-            Pedir el mío · 34,90 €
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        <div class="reveal flex flex-col gap-3 max-w-[480px]">
+          <a href="pedido.html?prod=g1" class="cta-hero">
+            <span data-i18n="hero_cta">Quiero más reseñas · 34,90 €</span>
           </a>
-          <p class="text-[13px] muted">Envío 24–72 h · pago Vinted</p>
+          <a href="pedido.html?prod=combo" class="text-center text-[14.5px] font-semibold" style="color:var(--brand)" data-i18n="hero_cta2">o súmale Instagram (combo) · 54,90 €</a>
         </div>
+        <p class="reveal text-[12.5px] mt-4 muted" data-i18n="hero_trust">Llega configurado con tu enlace · cero apps · no pagas online</p>
       </div>
 
-      <!-- RIGHT (desktop) / SECOND (mobile): scroll-scrub frame-by-frame -->
-      <div class="hero-orbit-track" id="hero-orbit-track">
-        <div class="hero-stage" id="hero-stage" data-orbit-frames="96" data-orbit-pad="3">
-          <div class="hero-halo" aria-hidden="true"></div>
-          <div class="hero-frame">
-            <canvas class="hero-vid" id="orbit-canvas" width="360" height="640"
-                    aria-label="Stand Toca y Opina girando al hacer scroll"></canvas>
-            <img class="hero-vid orbit-fallback" src="assets/img/orbit/frame-001.jpg" alt="" width="360" height="640" aria-hidden="true">
-            <div class="hero-glare" aria-hidden="true"></div>
-            <div class="hero-badge-360" aria-hidden="true">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="7 13 12 18 17 13"/><polyline points="7 6 12 11 17 6"/>
-              </svg>
-              <span>Baja para girarlo</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ===== BIG CTA después del scroll-scrub (mobile-first) ===== -->
-<section class="md:hidden pt-2 pb-14">
-  <div class="wrap text-center">
-    <a href="https://www.vinted.es/items/8737424361-stand-resenas-google-nfc-qr-personalizado" target="_blank" rel="noopener" class="cta-hero w-full" style="max-width: 360px;">
-      Pedir el mío · 34,90 €
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-    </a>
-    <p class="text-[12.5px] muted mt-4">
-      Envío 24–72 h · pago protegido por Vinted · sin app, sin cuotas
-    </p>
-  </div>
-</section>
-<!-- ===== HOW IT WORKS (compact) ===== -->
-<section id="como" class="pt-14 pb-16 sm:pt-20 sm:pb-24">
-  <div class="wrap">
-    <p class="eyebrow text-brand reveal mb-4 text-center">Cómo funciona</p>
-    <h2 class="display reveal mb-3 text-center" style="font-size:clamp(28px,6vw,46px); font-weight:800; letter-spacing:-0.04em; line-height:1.05;">
-      Más reseñas en Google,<br>
-      <span class="text-brand">con un solo gesto.</span>
-    </h2>
-    <p class="reveal text-center text-[14.5px] muted mb-10 sm:mb-12">
-      Sin app · iPhone y Android · 5 segundos
-    </p>
-
-    <div class="grid grid-cols-3 gap-3 sm:gap-5 max-w-[920px] mx-auto">
-
-      <article class="reveal">
-        <div class="rounded-2xl sm:rounded-3xl overflow-hidden bg-brand mb-3 sm:mb-4 aspect-[4/5]">
-          <picture><source srcset="assets/img/paso-1.webp" type="image/webp"><img src="assets/img/paso-1.jpg" alt="Stand sobre mostrador" width="600" height="750" class="w-full h-full object-cover" decoding="async" fetchpriority="high"></picture>
-        </div>
-        <p class="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-brand mb-1">Paso 1</p>
-        <p class="font-display text-[14px] sm:text-[18px] font-extrabold tracking-tightest leading-tight">Coloca el stand.</p>
-      </article>
-
-      <article class="reveal">
-        <div class="rounded-2xl sm:rounded-3xl overflow-hidden bg-brand mb-3 sm:mb-4 aspect-[4/5]">
-          <picture><source srcset="assets/img/paso-2.webp" type="image/webp"><img src="assets/img/paso-2.jpg" alt="Cliente escaneando con el móvil" width="600" height="750" class="w-full h-full object-cover" decoding="async" fetchpriority="high"></picture>
-        </div>
-        <p class="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-brand mb-1">Paso 2</p>
-        <p class="font-display text-[14px] sm:text-[18px] font-extrabold tracking-tightest leading-tight">Toca o escanea.</p>
-      </article>
-
-      <article class="reveal">
-        <div class="rounded-2xl sm:rounded-3xl overflow-hidden bg-brand mb-3 sm:mb-4 aspect-[4/5]">
-          <picture><source srcset="assets/img/paso-3.webp" type="image/webp"><img src="assets/img/paso-3.jpg" alt="Reseña publicada en Google" width="600" height="750" class="w-full h-full object-cover" decoding="async" fetchpriority="high"></picture>
-        </div>
-        <p class="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-brand mb-1">Paso 3</p>
-        <p class="font-display text-[14px] sm:text-[18px] font-extrabold tracking-tightest leading-tight">Reseña publicada.</p>
-      </article>
-
-    </div>
-
-    <!-- NFC accordion debajo de los 3 pasos -->
-    <div class="max-w-[920px] mx-auto mt-8 sm:mt-10 reveal">
-      <details class="group nfc-accordion">
-        <summary>
-          <span class="nfc-accordion__bar">
-            <span class="nfc-accordion__label">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M5 12.55a11 11 0 0 1 14 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/>
-              </svg>
-              <span>¿Cómo funciona con NFC? <span class="nfc-accordion__hint">(aún más rápido)</span></span>
-            </span>
-            <svg class="nfc-accordion__chevron" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true">
-              <polyline points="6 9 12 15 18 9"/>
-            </svg>
-          </span>
-        </summary>
-        <div class="nfc-accordion__panel">
-          <div class="grid sm:grid-cols-2 gap-5 items-center">
-            <div class="rounded-2xl overflow-hidden">
-              <picture><source srcset="assets/img/paso-nfc.webp" type="image/webp"><img src="assets/img/paso-nfc.jpg" alt="Móvil acercándose al stand con ondas NFC" width="800" height="1000" class="w-full h-auto block" loading="lazy" decoding="async"></picture>
-            </div>
-            <div>
-              <p class="font-display text-[22px] sm:text-[26px] font-extrabold tracking-tightest leading-[1.05] mb-3 text-ink">Acerca el móvil. <span class="text-brand">Y ya.</span></p>
-              <p class="text-[15px] muted leading-relaxed mb-3">iPhone 7+ y casi todos los Android tienen NFC. Tu cliente acerca el móvil al stand, le sale la notificación, pulsa las estrellas y listo. <strong class="text-ink">Sin escanear nada.</strong></p>
-              <p class="text-[13px] muted">¿Sin NFC? El QR del mismo stand cubre el resto. <a href="blog/qr-vs-nfc-para-resenas-cual-convierte-mas.html" class="text-brand underline decoration-brand/30 hover:decoration-brand">Comparativa QR vs NFC →</a></p>
-            </div>
-          </div>
-        </div>
-      </details>
-    </div>
-  </div>
-</section>
-<!-- ===== PRICING ===== -->
-<section id="precios" class="section bg-paper border-y border-line">
-  <div class="wrap">
-    <p class="eyebrow text-brand reveal mb-5">Precios</p>
-    <h2 class="display display-lg reveal mb-3 max-w-[760px]">
-      Pago único.<br><span class="muted">Sin cuotas. Para siempre.</span>
-    </h2>
-    <p class="body muted reveal mb-12 max-w-[640px]">
-      La mayoría de mis clientes pide el <strong class="text-ink">Pack 2</strong>: cubre caja + barra al mismo precio que un stand suelto + un par de cafés.
-    </p>
-
-    <div class="grid md:grid-cols-3 gap-4 sm:gap-5 items-stretch">
-
-      <!-- Pack 1 — anchor, smaller visual weight -->
-      <article class="price-card reveal opacity-95 md:scale-[0.97] md:origin-top">
-        <p class="font-semibold text-[14px] muted">Para empezar</p>
-        <p class="font-display text-[19px] font-extrabold tracking-tightest">Pack 1 stand</p>
-        <p class="euros">34,90<span class="text-2xl font-normal align-top">€</span></p>
-        <p class="text-[14px] muted -mt-3">1 stand · pago único</p>
-        <ul class="text-[14.5px] space-y-2 text-ink2 mt-2">
-          <li class="flex gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="mt-1 flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg> 1 stand para tu caja</li>
-          <li class="flex gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="mt-1 flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg> Envío 24–72 h vía Vinted</li>
-          <li class="flex gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="mt-1 flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg> Si te llega defectuoso, te lo reimprimo</li>
-        </ul>
-        <a href="https://www.vinted.es/items/8737424361-stand-resenas-google-nfc-qr-personalizado" target="_blank" rel="noopener" class="cta w-full mt-auto" style="background:#fff;color:#0A0A0A;border:1px solid var(--line);">Pedir 1 → Vinted</a>
-      </article>
-
-      <!-- Pack 2 — HERO -->
-      <article class="price-card feat reveal md:scale-[1.04] md:-mt-2 md:shadow-2xl">
-        <span class="badge">★ EL MÁS RECOMENDADO</span>
-        <p class="font-semibold text-[14px] text-gold">El que más recomiendo</p>
-        <p class="font-display text-[19px] font-extrabold tracking-tightest text-white">Pack 2 stands</p>
-        <div class="flex items-baseline gap-3 flex-wrap">
-          <p class="euros">54,90<span class="text-2xl font-normal align-top">€</span></p>
-          <p class="text-white/40 line-through text-[18px]">69,80€</p>
-        </div>
-        <p class="text-[14px] text-gold -mt-3">27,45 €/stand · ahorras 14,90 €</p>
-
-        <!-- 7 de cada 10 — banner visible -->
-        <div class="pop-stat" aria-label="7 de cada 10 clientes eligen el Pack 2">
-          <p class="pop-stat-num">7<span class="of">/10</span></p>
-          <div class="pop-stat-body">
-            <p class="pop-stat-label">clientes lo eligen sobre el Pack 1 o el 3</p>
-            <div class="pop-stat-dots" aria-hidden="true">
-              <span class="d"></span><span class="d"></span><span class="d"></span><span class="d"></span><span class="d"></span><span class="d"></span><span class="d"></span><span class="d off"></span><span class="d off"></span><span class="d off"></span>
-            </div>
-          </div>
-        </div>
-        <ul class="text-[14.5px] space-y-2 text-white/90 mt-2">
-          <li class="flex gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F5B941" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="mt-1 flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg> <strong class="text-white">Caja + barra</strong> · doble cobertura</li>
-          <li class="flex gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F5B941" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="mt-1 flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg> <strong class="text-white">2× más reseñas</strong> al mes vs Pack 1</li>
-          <li class="flex gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F5B941" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="mt-1 flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg> Misma URL en los dos · envío incluido</li>
-          <li class="flex gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F5B941" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="mt-1 flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg> Si te llega defectuoso, te lo reimprimo</li>
-        </ul>
-        <a href="https://www.vinted.es/items/8737450242-pack-2-stands-resenas-google-nfc-qr-personalizado" target="_blank" rel="noopener" class="cta w-full mt-auto" style="background:#F5B941;color:#0A0A0A;">Pedir 2 → Vinted</a>
-      </article>
-
-      <!-- Pack 3 — for big places -->
-      <article class="price-card reveal opacity-95 md:scale-[0.97] md:origin-top">
-        <p class="font-semibold text-[14px] muted">Para locales grandes</p>
-        <p class="font-display text-[19px] font-extrabold tracking-tightest">Pack 3 stands</p>
-        <div class="flex items-baseline gap-3 flex-wrap">
-          <p class="euros">74,90<span class="text-2xl font-normal align-top">€</span></p>
-          <p class="text-[var(--muted)] line-through text-[17px]">104,70€</p>
-        </div>
-        <p class="text-[14px] muted -mt-3">24,97 €/stand · ahorras 29,80 €</p>
-        <ul class="text-[14.5px] space-y-2 text-ink2 mt-2">
-          <li class="flex gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="mt-1 flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg> Entrada + caja + salida</li>
-          <li class="flex gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="mt-1 flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg> Triple cobertura · ideal hoteles, hostelería</li>
-          <li class="flex gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="mt-1 flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg> Si te llega defectuoso, te lo reimprimo</li>
-        </ul>
-        <a href="https://www.vinted.es/items/8799503624-pack-3-stands-resenas-google-nfc-qr-personalizado" target="_blank" rel="noopener" class="cta w-full mt-auto" style="background:#fff;color:#0A0A0A;border:1px solid var(--line);">Pedir 3 → Vinted</a>
-      </article>
-
-    </div>
-
-    <!-- Contact for more than 3 -->
-    <div class="mt-10 reveal max-w-[640px] mx-auto bg-white border border-line rounded-3xl px-6 py-7 text-center">
-      <p class="font-display text-[22px] sm:text-[26px] font-extrabold tracking-tightest mb-2">¿Necesitas más de 3 stands?</p>
-      <p class="text-[14.5px] muted mb-5 max-w-[480px] mx-auto">Para cadenas, franquicias o pedidos grandes te hago un presupuesto a medida. Te respondo yo mismo, normalmente en menos de 24 h. Sin formularios.</p>
-      <a href="https://www.vinted.es/items/8799503624-pack-3-stands-resenas-google-nfc-qr-personalizado" target="_blank" rel="noopener" class="cta cta-blue inline-flex">
-        Hablar conmigo en Vinted
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- ===== COMPARATIVA: TOCA Y OPINA vs OTRAS EMPRESAS ===== -->
-<section class="section bg-ink text-white">
-  <div class="wrap">
-    <p class="eyebrow text-gold reveal mb-5 text-center">Sin intermediarios</p>
-    <h2 class="display reveal mb-3 text-center text-white" style="font-size:clamp(28px,6vw,46px); font-weight:800; letter-spacing:-0.04em; line-height:1.05;">
-      Tú pagas 34,90€.<br>
-      <span class="text-white/55">Otros te lo cobran a 46-79€.</span>
-    </h2>
-    <p class="reveal text-center text-[14.5px] text-white/60 mb-10 sm:mb-12 max-w-[560px] mx-auto">
-      Yo lo imprimo, lo grabo y te lo envío directamente. Sin China, sin importador, sin mayorista, sin marca con margen del 20×.
-    </p>
-
-    <div class="grid md:grid-cols-2 gap-4 sm:gap-6 max-w-[1100px] mx-auto">
-      <!-- LEFT: Toca y Opina -->
-      <article class="reveal rounded-3xl overflow-hidden border-2 border-gold/50 shadow-[0_24px_60px_-20px_rgba(245,185,65,0.35)] bg-[#0F1733]">
-        <picture><source srcset="assets/img/produccion-tu.webp" type="image/webp"><img src="assets/img/produccion-tu.jpg" alt="Uriel imprimiendo el stand y el stand sobre la barra de un negocio" width="1400" height="788" class="w-full h-auto block" loading="lazy" decoding="async"></picture>
-        <div class="px-5 py-4 flex items-center justify-between gap-3 border-t border-gold/30">
-          <p class="font-display text-[16px] font-extrabold tracking-tight text-white flex items-center gap-2">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="#F5B941"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            Toca y Opina
-          </p>
-          <p class="font-display text-gold text-[18px] font-extrabold tracking-tight">34,90 €</p>
-        </div>
-      </article>
-
-      <!-- RIGHT: Otras empresas -->
-      <article class="reveal rounded-3xl overflow-hidden border border-white/10 bg-[#0F1733] opacity-90">
-        <picture><source srcset="assets/img/supply-chain.webp" type="image/webp"><img src="assets/img/supply-chain.jpg" alt="Cadena de suministro tradicional: fábrica en China → importador → mayorista → marca online, con sobrecoste acumulado" width="1400" height="788" class="w-full h-auto block" loading="lazy" decoding="async"></picture>
-        <div class="px-5 py-4 flex items-center justify-between gap-3 border-t border-white/10">
-          <p class="font-display text-[16px] font-extrabold tracking-tight text-white/70 flex items-center gap-2">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-            Otras empresas
-          </p>
-          <p class="font-display text-white/60 text-[18px] font-extrabold tracking-tight">46-79 €</p>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- ===== REAL BUSINESSES ===== -->
-<section id="tiendas" class="section">
-  <div class="wrap">
-    <p class="eyebrow text-brand reveal mb-5">En tiendas reales</p>
-    <h2 class="display display-lg reveal mb-5 max-w-[760px]">
-      Ya está sobre el<br>
-      <span class="text-brand">mostrador de tus vecinos.</span>
-    </h2>
-    <p class="body muted reveal mb-10 max-w-[640px]">
-      Fotos enviadas por clientes reales. Sin retoques.
-    </p>
-
-    <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
-
-      <figure class="biz reveal">
-        <picture><source srcset="assets/img/negocio-1.webp" type="image/webp"><img src="assets/img/negocio-1.jpg" alt="Stand Toca y Opina NFC + QR sobre mostrador de mármol gris en restaurante kebab" loading="lazy" decoding="async" width="675" height="900" style="object-position:50% 65%"></picture>
-        <figcaption class="cap">
-          <p class="font-semibold text-[14px] leading-tight">Restaurante kebab</p>
-          <p class="text-[11px] text-white/70 mt-0.5">Mostrador de mármol</p>
-        </figcaption>
-      </figure>
-
-      <figure class="biz reveal">
-        <picture><source srcset="assets/img/negocio-2.webp" type="image/webp"><img src="assets/img/negocio-2.jpg" alt="Stand para reseñas en Google junto a la caja registradora del Bricocentre de Amposta, Tarragona" loading="lazy" decoding="async" width="675" height="900" style="object-position:50% 55%"></picture>
-        <figcaption class="cap">
-          <p class="font-semibold text-[14px] leading-tight">Bricocentre Amposta</p>
-          <p class="text-[11px] text-white/70 mt-0.5">Junto al cajero</p>
-        </figcaption>
-      </figure>
-
-      <figure class="biz reveal">
-        <picture><source srcset="assets/img/negocio-3.webp" type="image/webp"><img src="assets/img/negocio-3.jpg" alt="Stand Toca y Opina cara al cliente sobre barra de granito oscuro en bar" loading="lazy" decoding="async" width="675" height="900" style="object-position:50% 60%"></picture>
-        <figcaption class="cap">
-          <p class="font-semibold text-[14px] leading-tight">Bar · barra granito</p>
-          <p class="text-[11px] text-white/70 mt-0.5">Cara al cliente</p>
-        </figcaption>
-      </figure>
-
-      <figure class="biz reveal">
-        <picture><source srcset="assets/img/negocio-4.webp" type="image/webp"><img src="assets/img/negocio-4.jpg" alt="Stand para reseñas Google en mostrador de pastelería gourmet Aaron Caballé en Amposta" loading="lazy" decoding="async" width="675" height="900" style="object-position:60% 55%"></picture>
-        <figcaption class="cap">
-          <p class="font-semibold text-[14px] leading-tight">Aaron Caballé</p>
-          <p class="text-[11px] text-white/70 mt-0.5">Pastelería gourmet</p>
-        </figcaption>
-      </figure>
-
-      <figure class="biz reveal">
-        <picture><source srcset="assets/img/negocio-8.webp" type="image/webp"><img src="assets/img/negocio-8.jpg" alt="Tres stands Toca y Opina alineados sobre barra de mármol burdeos en bar local de Tarragona" loading="lazy" decoding="async" width="675" height="900" style="object-position:50% 55%"></picture>
-        <figcaption class="cap">
-          <p class="font-semibold text-[14px] leading-tight">Bar · 3 stands</p>
-          <p class="text-[11px] text-white/70 mt-0.5">Mármol burdeos</p>
-        </figcaption>
-      </figure>
-
-      <figure class="biz reveal">
-        <picture><source srcset="assets/img/negocio-6.webp" type="image/webp"><img src="assets/img/negocio-6.jpg" alt="Stand de reseñas NFC sobre barra de madera natural en restaurante moderno" loading="lazy" decoding="async" width="675" height="900" style="object-position:50% 60%"></picture>
-        <figcaption class="cap">
-          <p class="font-semibold text-[14px] leading-tight">Restaurante moderno</p>
-          <p class="text-[11px] text-white/70 mt-0.5">Barra de madera</p>
-        </figcaption>
-      </figure>
-
-      <figure class="biz reveal">
-        <picture><source srcset="assets/img/negocio-5.webp" type="image/webp"><img src="assets/img/negocio-5.jpg" alt="Stand Toca y Opina sobre mostrador de herboristería con estanterías de productos naturales" loading="lazy" decoding="async" width="675" height="900" style="object-position:50% 55%"></picture>
-        <figcaption class="cap">
-          <p class="font-semibold text-[14px] leading-tight">Herboristería</p>
-          <p class="text-[11px] text-white/70 mt-0.5">Productos naturales</p>
-        </figcaption>
-      </figure>
-
-      <figure class="biz reveal">
-        <picture><source srcset="assets/img/negocio-7.webp" type="image/webp"><img src="assets/img/negocio-7.jpg" alt="Stand de reseñas Google en mostrador de papelería de barrio con perro de la casa" loading="lazy" decoding="async" width="675" height="900" style="object-position:50% 55%"></picture>
-        <figcaption class="cap">
-          <p class="font-semibold text-[14px] leading-tight">Papelería del barrio</p>
-          <p class="text-[11px] text-white/70 mt-0.5">Con perro de la casa</p>
-        </figcaption>
-      </figure>
-
-    </div>
-
-    <p class="reveal mt-8 text-[14px] muted flex items-center gap-2">
-      <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
-      Llegan fotos nuevas cada semana. Cuando me las envían, las subo.
-    </p>
-  </div>
-</section>
-
-<!-- ===== TESTIMONIALS ===== -->
-<section class="section">
-  <div class="wrap">
-    <p class="eyebrow text-brand reveal mb-5">Lo que dicen los clientes</p>
-    <h2 class="display display-lg reveal mb-12 max-w-[760px]">
-      Reseñas reales,<br>
-      <span class="muted">de negocios reales.</span>
-    </h2>
-
-    <div class="grid md:grid-cols-3 gap-4 sm:gap-5">
-      <article class="reveal bg-paper border border-line rounded-3xl p-7">
-        <div class="stars mb-4">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="#F5B941"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="#F5B941"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="#F5B941"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="#F5B941"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="#F5B941"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        </div>
-        <p class="text-[17px] leading-relaxed mb-6">"En 2 semanas conseguí más reseñas que en todo el año. Lo pongo junto al datáfono y los clientes lo usan solos."</p>
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-amber-300 to-rose-400 grid place-items-center text-white font-bold text-[14px]">A</div>
-          <div>
-            <p class="font-semibold text-[14px] leading-tight">Aaron Caballé</p>
-            <p class="text-[12px] muted">Pastelería gourmet · Amposta</p>
-          </div>
-        </div>
-      </article>
-
-      <article class="reveal bg-paper border border-line rounded-3xl p-7">
-        <div class="stars mb-4">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="#F5B941"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="#F5B941"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="#F5B941"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="#F5B941"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="#F5B941"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        </div>
-        <p class="text-[17px] leading-relaxed mb-6">"Pagué 65€ por tres y se amortizaron en una semana. Antes lo intentaba con tarjetas y nadie las usaba. Esto sí."</p>
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-emerald-400 to-cyan-500 grid place-items-center text-white font-bold text-[14px]">M</div>
-          <div>
-            <p class="font-semibold text-[14px] leading-tight">Mas Prades</p>
-            <p class="text-[12px] muted">Hotel-Restaurante · Tarragona</p>
-          </div>
-        </div>
-      </article>
-
-      <article class="reveal bg-ink text-white rounded-3xl p-7 border border-white/10">
-        <div class="stars mb-4">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="#F5B941"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="#F5B941"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="#F5B941"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="#F5B941"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="#F5B941"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        </div>
-        <p class="text-[17px] leading-relaxed mb-6 text-white/90">"Mis clientes son mayores y me daba miedo que no supieran. Solo digo 'acerca el móvil al cuadrado' y se abre solo. Cero fricción."</p>
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-fuchsia-400 to-rose-500 grid place-items-center text-white font-bold text-[14px]">S</div>
-          <div>
-            <p class="font-semibold text-[14px] leading-tight text-white">Salon Epic</p>
-            <p class="text-[12px] text-white/55">Peluquería · Amposta</p>
-          </div>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- ===== STATS WITH CONTEXT ===== -->
-<section class="section bg-ink text-white">
-  <div class="wrap">
-    <p class="eyebrow text-gold reveal mb-5">Por qué importa</p>
-    <h2 class="display display-lg reveal mb-12 max-w-[760px] text-white">
-      Más reseñas no son vanidad.<br>
-      <span class="text-white/55">Son más clientes nuevos.</span>
-    </h2>
-
-    <div class="grid md:grid-cols-3 gap-4">
-      <div class="stat stat-dark reveal">
-        <div class="num">+62%</div>
-        <p class="mt-3 text-[15px] text-white/80 leading-snug">de reseñas/mes en tiendas reales tras colocar el stand 30 días.</p>
-        <p class="text-[11px] text-white/45 mt-3">Promedio de 14 clientes propios entre julio y diciembre 2025.</p>
-      </div>
-      <div class="stat stat-dark reveal">
-        <div class="num">×2</div>
-        <p class="mt-3 text-[15px] text-white/80 leading-snug">más visibilidad en Google Maps con +30 reseñas frescas recientes.</p>
-        <p class="text-[11px] text-white/45 mt-3">BrightLocal · Local Consumer Review Survey 2024.</p>
-      </div>
-      <div class="stat stat-dark reveal">
-        <div class="num">+14%</div>
-        <p class="mt-3 text-[15px] text-white/80 leading-snug">de aumento de ventas tras 3 meses con reseñas constantes.</p>
-        <p class="text-[11px] text-white/45 mt-3">Harvard Business School · Luca, 2016.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== CALCULATOR ===== -->
-<section id="calculadora" class="section">
-  <div class="wrap">
-    <p class="eyebrow text-brand reveal mb-5">Calculadora rápida</p>
-    <h2 class="display display-lg reveal mb-12 max-w-[760px]">
-      ¿Cuántas reseñas extra<br>
-      <span class="muted">conseguirías al mes?</span>
-    </h2>
-
-    <!-- New compact structural calculator: inputs row above, big comparison below -->
-    <div class="calc reveal">
-      <!-- 3 inputs in a clean 3-col strip -->
-      <div class="grid sm:grid-cols-3 gap-4 mb-7">
-        <label class="block">
-          <span class="text-[11px] eyebrow text-brand mb-2 block">Tu sector</span>
-          <div class="relative">
-            <select id="cal-type" class="w-full bg-white border border-line rounded-xl px-3.5 py-3 pr-9 text-[14.5px] font-semibold text-ink appearance-none cursor-pointer focus:outline-none focus:border-brand">
-              <option value="3.5">Bar · restaurante · cafetería</option>
-              <option value="6">Peluquería · estética</option>
-              <option value="4">Hotel · alojamiento</option>
-              <option value="2">Tienda · retail</option>
-              <option value="3">Pastelería · panadería</option>
-              <option value="5">Gimnasio · deportivo</option>
-              <option value="4">Taller · servicio técnico</option>
-              <option value="3">Otro negocio local</option>
-            </select>
-            <svg class="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#6B6B70" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-          </div>
-        </label>
-
-        <label class="block">
-          <div class="flex items-center justify-between mb-2">
-            <span class="text-[11px] eyebrow text-brand">Clientes/día</span>
-            <span id="cal-clients-v" class="text-[14px] font-bold text-ink tabular-nums">60</span>
-          </div>
-          <input id="cal-clients" type="range" min="10" max="300" step="5" value="60" class="range-input mt-2">
-        </label>
-
-        <label class="block">
-          <div class="flex items-center justify-between mb-2">
-            <span class="text-[11px] eyebrow text-brand">Días/semana</span>
-            <span id="cal-days-v" class="text-[14px] font-bold text-ink tabular-nums">6</span>
-          </div>
-          <input id="cal-days" type="range" min="1" max="7" step="1" value="6" class="range-input mt-2">
-        </label>
-      </div>
-
-      <!-- Big comparison panel: BEFORE → AFTER -->
-      <div class="grid sm:grid-cols-2 gap-3 sm:gap-4">
-        <!-- Sin stand: low baseline (struck through) -->
-        <div class="bg-white border border-line rounded-2xl px-5 py-5">
-          <p class="text-[11px] eyebrow muted mb-2">Sin Toca y Opina</p>
-          <div class="flex items-baseline gap-2">
-            <p id="cal-before" class="font-display text-[40px] sm:text-[52px] font-extrabold tracking-tightest leading-none line-through text-[var(--muted)] tabular-nums">5</p>
-            <p class="text-[14px] muted">reseñas/mes</p>
-          </div>
-          <p class="text-[12px] muted mt-2">Lo que consigues hoy de media, según el BrightLocal 2024 (~8% de los clientes felices reseñan por su cuenta).</p>
-        </div>
-
-        <!-- Con stand: big highlighted -->
-        <div class="bg-ink text-white rounded-2xl px-5 py-5 relative overflow-hidden">
-          <div class="absolute -top-10 -right-10 w-32 h-32 bg-gold/15 rounded-full blur-2xl"></div>
-          <p class="text-[11px] eyebrow text-gold mb-2 relative">Con Toca y Opina</p>
-          <div class="flex items-baseline gap-2 relative">
-            <p id="cal-low" class="font-display text-[40px] sm:text-[56px] font-extrabold tracking-tightest leading-none text-gold tabular-nums">28</p>
-            <p class="text-white/40 text-xl">–</p>
-            <p id="cal-high" class="font-display text-[40px] sm:text-[56px] font-extrabold tracking-tightest leading-none text-gold tabular-nums">56</p>
-          </div>
-          <p class="text-[12px] text-white/70 mt-2 relative">reseñas extra/mes (rango bajo–alto), <span id="cal-multiplier" class="text-white font-semibold">+460%</span> sobre tu base actual.</p>
-        </div>
-      </div>
-
-      <!-- CTA -->
-      <div class="mt-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-        <p id="cal-payback" class="text-[14px] text-ink2 max-w-[520px]">
-          Pagas el stand con <strong class="text-ink">el primer cliente nuevo</strong> que te encuentre por Google.
-        </p>
-        <a href="#precios" class="cta cta-blue inline-flex flex-shrink-0">
-          Ver opciones de compra
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      <div class="reveal">
+        <a href="pedido.html?prod=g1" class="group block rounded-[28px] overflow-hidden border border-line bg-paper shadow-[0_30px_70px_-30px_rgba(0,0,0,.30)] transition-transform duration-300 hover:-translate-y-1 hover:shadow-[0_40px_80px_-30px_rgba(0,0,0,.38)]" aria-label="Pedir 1 stand de Google · 34,90 €">
+          <img src="assets/img/productos/hero-mix.webp" alt="Stands Toca y Opina para Google e Instagram, NFC + QR, sobre mesa de madera" width="1600" height="1195" fetchpriority="high" class="transition-transform duration-500 group-hover:scale-[1.03]">
         </a>
       </div>
     </div>
 
-    <p class="text-[13px] muted mt-5 reveal">
-      ¿Quieres ajustarlo a tu sector exacto? <a href="calculadora.html" class="text-brand hover:underline font-semibold">Calculadora detallada por tipo de negocio →</a>
-    </p>
-
-    <p class="text-[11px] muted mt-6 max-w-[760px] reveal">
-      <strong>Aviso legal:</strong> esta calculadora muestra una estimación ilustrativa, no una promesa contractual. Los resultados reales dependen de tu sector, ubicación, tipo de cliente y otros factores ajenos a Toca y Opina. La única obligación contractual de Toca y Opina es la entrega del producto físico descrito en la sección de precios.
-    </p>
+    <!-- Reseña destacada -->
+    <div class="reveal mt-10 sm:mt-14 max-w-[760px] mx-auto bg-paper border border-line rounded-3xl p-6 sm:p-7 flex items-start gap-4">
+      <div class="w-11 h-11 rounded-full bg-gradient-to-br from-amber-300 to-rose-400 grid place-items-center text-white font-bold text-[15px] shrink-0">Z</div>
+      <div>
+        <span class="stars mb-2" aria-hidden="true"><svg viewBox="0 0 24 24" fill="#F5B941"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" fill="#F5B941"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" fill="#F5B941"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" fill="#F5B941"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" fill="#F5B941"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
+        <p class="text-[16px] sm:text-[17px] leading-relaxed text-ink2" data-i18n="rev_text">"En una semana ya tenía un montón de reseñas nuevas. Me quedé alucinada con lo bien que funciona."</p>
+        <p class="text-[13px] muted mt-2"><strong class="text-ink">Zaida</strong> · <span data-i18n="rev_who">Gaudeix · comida preparada</span></p>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- ===== FOUNDER ===== -->
+<!-- ===== PACKS ===== -->
+<section id="packs" class="section" style="background:var(--paper); border-block:1px solid var(--line);">
+  <div class="wrap">
+    <p class="eyebrow reveal mb-3 text-center" style="color:var(--brand)" data-i18n="packs_eyebrow">Elige tu pack</p>
+    <h2 class="display reveal mb-3 text-center" style="font-size:clamp(28px,6vw,46px); line-height:1.05;">
+      <span data-i18n="packs_h2">Cuantos más, mejor precio.</span>
+    </h2>
+    <p class="reveal text-center text-[15px] muted mb-12 max-w-[560px] mx-auto" data-i18n="packs_sub">
+      Pago único, sin cuotas. No pagas online: lo confirmas por WhatsApp.
+    </p>
+
+    <!-- Personaliza tu paquete (destacado, el más elegido) -->
+    <div class="reveal max-w-[1040px] mx-auto mb-9 rounded-3xl p-6 sm:p-8 relative overflow-hidden" style="background:linear-gradient(135deg,#0A0A0A,#1D1D1F);color:#fff;">
+      <span class="badge inline-block mb-4 sm:mb-0 sm:absolute sm:top-4 sm:right-4">★ <span data-i18n="persa_badge">El más elegido</span></span>
+      <div class="grid sm:grid-cols-[1fr_auto] gap-5 sm:items-center">
+        <div>
+          <p class="eyebrow mb-2" style="color:var(--gold)" data-i18n="persa_eyebrow">Para restaurantes y cadenas</p>
+          <h3 class="display text-white mb-2" style="font-size:clamp(24px,4.6vw,34px);" data-i18n="persa_h">Personaliza tu paquete</h3>
+          <p class="text-white/75 text-[15px] max-w-[460px]" data-i18n="persa_sub">Pide los stands que quieras —10, 20, 50 o más— mezclando Google e Instagram como prefieras. Te hago precio a medida.</p>
+        </div>
+        <a href="pedido.html?prod=custom" class="cta cta-wa whitespace-nowrap self-start sm:self-auto" data-i18n="persa_cta">Personaliza tu pedido</a>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-5 max-w-[1040px] mx-auto items-stretch">
+
+      <!-- Pack 1 -->
+      <article class="price-card reveal">
+        <div class="aspect-[4/5] overflow-hidden bg-white"><img src="assets/img/productos/estudio-google-1.webp" alt="1 stand Toca y Opina" width="900" height="1125" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="p-6 flex flex-col gap-3 flex-1">
+          <p class="text-[13px] muted font-semibold" data-i18n="p1_tag">Para empezar</p>
+          <p class="font-display text-[20px] font-extrabold tracking-tightest"><span data-i18n="p1_name">1 stand</span></p>
+          <p class="font-display text-[40px] font-extrabold tracking-tightest leading-none">34,90<span class="text-xl align-top font-normal">€</span></p>
+          <p class="text-[13px] muted -mt-1" data-i18n="pago_unico">pago único</p>
+          <a href="pedido.html?pack=1" class="cta cta-wa w-full mt-auto" data-i18n="p1_cta">Pedir 1</a>
+        </div>
+      </article>
+
+      <!-- Pack 2 (destacado) -->
+      <article class="price-card feat reveal md:-mt-3">
+        <div class="aspect-[4/5] overflow-hidden bg-white relative">
+          <span class="badge absolute top-3 left-3 z-10" data-i18n="p2_badge">★ El más elegido</span>
+          <img src="assets/img/productos/estudio-google-2.webp" alt="2 stands Toca y Opina" width="900" height="1125" loading="lazy" class="w-full h-full object-cover">
+        </div>
+        <div class="p-6 flex flex-col gap-3 flex-1">
+          <p class="text-[13px] font-semibold" style="color:#C98A12" data-i18n="p2_tag">Caja + barra</p>
+          <p class="font-display text-[20px] font-extrabold tracking-tightest"><span data-i18n="p2_name">2 stands</span></p>
+          <div class="flex items-baseline gap-2">
+            <p class="font-display text-[40px] font-extrabold tracking-tightest leading-none">54,90<span class="text-xl align-top font-normal">€</span></p>
+            <p class="text-[16px] muted line-through">69,80€</p>
+          </div>
+          <p class="text-[13px] -mt-1" style="color:#C98A12" data-i18n="p2_save">27,45 €/stand · ahorras 14,90 €</p>
+          <a href="pedido.html?pack=2" class="cta cta-wa w-full mt-auto" data-i18n="p2_cta">Pedir 2</a>
+        </div>
+      </article>
+
+      <!-- Pack 3 -->
+      <article class="price-card reveal">
+        <div class="aspect-[4/5] overflow-hidden bg-white"><img src="assets/img/productos/estudio-google-3.webp" alt="3 stands Toca y Opina" width="900" height="1125" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="p-6 flex flex-col gap-3 flex-1">
+          <p class="text-[13px] muted font-semibold" data-i18n="p3_tag">Para locales grandes</p>
+          <p class="font-display text-[20px] font-extrabold tracking-tightest"><span data-i18n="p3_name">3 stands</span></p>
+          <div class="flex items-baseline gap-2">
+            <p class="font-display text-[40px] font-extrabold tracking-tightest leading-none">74,90<span class="text-xl align-top font-normal">€</span></p>
+            <p class="text-[16px] muted line-through">104,70€</p>
+          </div>
+          <p class="text-[13px] muted -mt-1" data-i18n="p3_save">24,97 €/stand · ahorras 29,80 €</p>
+          <a href="pedido.html?pack=3" class="cta cta-wa w-full mt-auto" data-i18n="p3_cta">Pedir 3</a>
+        </div>
+      </article>
+    </div>
+
+    <!-- Combos Google + Instagram (con foto) -->
+    <p class="eyebrow reveal mt-16 mb-3 text-center" style="color:#C13584" data-i18n="combo_q">¿Mezclas Google e Instagram?</p>
+    <p class="reveal text-center text-[15px] muted mb-9 max-w-[540px] mx-auto" data-i18n="combo_sub">Sin problema: tú eliges la combinación y el precio es por cantidad.</p>
+    <div class="grid sm:grid-cols-3 gap-5 max-w-[1040px] mx-auto items-stretch">
+      <article class="price-card reveal">
+        <div class="aspect-[4/3] overflow-hidden bg-white"><img src="assets/img/productos/hero-mix.webp" alt="1 stand Google + 1 stand Instagram" width="1000" height="750" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="p-5 flex flex-col gap-2 flex-1">
+          <p class="font-display text-[17px] font-extrabold tracking-tightest">1 Google + 1 Instagram</p>
+          <div class="flex items-baseline gap-2"><p class="font-display text-[30px] font-extrabold tracking-tightest leading-none">54,90<span class="text-lg align-top font-normal">€</span></p><p class="text-[15px] muted line-through">69,80 €</p></div>
+          <a href="pedido.html?prod=combo" class="cta cta-wa w-full mt-auto text-[15px]" data-i18n="combo_cta">Pídeme tu combo</a>
+        </div>
+      </article>
+      <article class="price-card reveal">
+        <div class="aspect-[4/3] overflow-hidden bg-white"><img src="assets/img/productos/combo-2google-1instagram.webp" alt="2 stands Google + 1 stand Instagram" width="1000" height="750" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="p-5 flex flex-col gap-2 flex-1">
+          <p class="font-display text-[17px] font-extrabold tracking-tightest">2 Google + 1 Instagram</p>
+          <div class="flex items-baseline gap-2"><p class="font-display text-[30px] font-extrabold tracking-tightest leading-none">74,90<span class="text-lg align-top font-normal">€</span></p><p class="text-[15px] muted line-through">104,70 €</p></div>
+          <a href="pedido.html?prod=g2i1" class="cta cta-wa w-full mt-auto text-[15px]" data-i18n="combo_cta">Pídeme tu combo</a>
+        </div>
+      </article>
+      <article class="price-card reveal">
+        <div class="aspect-[4/3] overflow-hidden bg-white"><img src="assets/img/productos/combo-1google-2instagram.webp" alt="1 stand Google + 2 stands Instagram" width="1000" height="750" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="p-5 flex flex-col gap-2 flex-1">
+          <p class="font-display text-[17px] font-extrabold tracking-tightest">1 Google + 2 Instagram</p>
+          <div class="flex items-baseline gap-2"><p class="font-display text-[30px] font-extrabold tracking-tightest leading-none">74,90<span class="text-lg align-top font-normal">€</span></p><p class="text-[15px] muted line-through">104,70 €</p></div>
+          <a href="pedido.html?prod=g1i2" class="cta cta-wa w-full mt-auto text-[15px]" data-i18n="combo_cta">Pídeme tu combo</a>
+        </div>
+      </article>
+    </div>
+
+    <p class="reveal text-center text-[13.5px] muted mt-8" data-i18n="packs_foot">Garantía: si te llega defectuoso, te lo reimprimo gratis. · Envío 24–72 h.</p>
+  </div>
+</section>
+
+<!-- ===== TESTIMONIOS REALES ===== -->
+<section class="section" style="padding-block:56px;">
+  <div class="wrap">
+    <p class="eyebrow reveal text-center mb-3" style="color:var(--brand)">Lo que dicen quienes ya lo tienen</p>
+    <h2 class="display reveal text-center mb-10" style="font-size:clamp(24px,5vw,38px);">Negocios reales, <span class="muted">resultados reales.</span></h2>
+    <div class="grid sm:grid-cols-2 gap-4 max-w-[840px] mx-auto">
+      <div class="reveal rounded-3xl border border-line p-6" style="background:var(--paper);">
+        <span class="stars mb-3" aria-hidden="true"><svg viewBox="0 0 24 24" fill="#F5B941"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" fill="#F5B941"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" fill="#F5B941"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" fill="#F5B941"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" fill="#F5B941"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
+        <p class="text-[15.5px] leading-relaxed text-ink2 mb-4">"Flipé con el resultado. La gente lo usa sola, sin que tengamos que estar insistiendo."</p>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-emerald-400 to-cyan-500 grid place-items-center text-white font-bold text-[14px]">A</div>
+          <div><p class="font-semibold text-[14px] leading-tight">Albert Guzmán</p><p class="text-[12px] muted">Restaurante</p></div>
+        </div>
+      </div>
+      <div class="reveal rounded-3xl border border-line p-6" style="background:var(--paper);">
+        <span class="stars mb-3" aria-hidden="true"><svg viewBox="0 0 24 24" fill="#F5B941"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" fill="#F5B941"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" fill="#F5B941"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" fill="#F5B941"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" fill="#F5B941"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
+        <p class="text-[15.5px] leading-relaxed text-ink2 mb-4">"Nos va súper bien: más de 10 reseñas en nada. Me estoy quedando alucinada con cómo funciona."</p>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-fuchsia-400 to-rose-500 grid place-items-center text-white font-bold text-[14px]">S</div>
+          <div><p class="font-semibold text-[14px] leading-tight">Soraya</p><p class="text-[12px] muted">Terraza italiana</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== DATOS REALES (prueba social con fuente) ===== -->
+<section class="section" style="padding-block:60px;">
+  <div class="wrap">
+    <p class="eyebrow reveal text-center mb-3" style="color:var(--brand)">Por qué las reseñas mueven tu negocio</p>
+    <h2 class="display reveal text-center mb-10" style="font-size:clamp(24px,5vw,38px);">No es ego. <span class="muted">Son clientes nuevos.</span></h2>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-[1020px] mx-auto">
+      <div class="reveal rounded-2xl border border-line p-6" style="background:var(--paper);">
+        <p class="font-display font-extrabold tracking-tightest" style="font-size:34px;color:var(--brand);line-height:1;">+5–9%</p>
+        <p class="text-[14.5px] mt-2 leading-snug" style="color:#1D1D1F;">de ingresos por cada estrella que subes en tu nota media (más aún en negocios independientes).</p>
+        <p class="text-[11px] mt-3" style="color:var(--muted);">Harvard Business School · M. Luca, "Reviews, Reputation & Revenue"</p>
+      </div>
+      <div class="reveal rounded-2xl border border-line p-6" style="background:var(--paper);">
+        <p class="font-display font-extrabold tracking-tightest" style="font-size:34px;color:var(--brand);line-height:1;">75%</p>
+        <p class="text-[14.5px] mt-2 leading-snug" style="color:#1D1D1F;">de la gente lee reseñas antes de elegir un negocio local. Y el 81% usa Google para mirarlas.</p>
+        <p class="text-[11px] mt-3" style="color:var(--muted);">BrightLocal · Local Consumer Review Survey 2024</p>
+      </div>
+      <div class="reveal rounded-2xl border border-line p-6" style="background:var(--paper);">
+        <p class="font-display font-extrabold tracking-tightest" style="font-size:34px;color:var(--brand);line-height:1;">+270%</p>
+        <p class="text-[14.5px] mt-2 leading-snug" style="color:#1D1D1F;">más probabilidad de que te elijan con solo 5 reseñas frente a tener ninguna. Las primeras son las que más mueven.</p>
+        <p class="text-[11px] mt-3" style="color:var(--muted);">Spiegel Research Center · Northwestern University (2017)</p>
+      </div>
+      <div class="reveal rounded-2xl border border-line p-6" style="background:var(--paper);">
+        <p class="font-display font-extrabold tracking-tightest" style="font-size:34px;color:var(--brand);line-height:1;">2º</p>
+        <p class="text-[14.5px] mt-2 leading-snug" style="color:#1D1D1F;">factor más importante para salir arriba en Google Maps son las reseñas (16–20% del peso del ranking local).</p>
+        <p class="text-[11px] mt-3" style="color:var(--muted);">Whitespark · Local Search Ranking Factors</p>
+      </div>
+      <div class="reveal rounded-2xl border border-line p-6" style="background:var(--paper);">
+        <p class="font-display font-extrabold tracking-tightest" style="font-size:34px;color:var(--brand);line-height:1;">27%</p>
+        <p class="text-[14.5px] mt-2 leading-snug" style="color:#1D1D1F;">de la gente solo da valor a las reseñas de las últimas 2 semanas. Por eso necesitas un flujo constante, no una campaña suelta.</p>
+        <p class="text-[11px] mt-3" style="color:var(--muted);">BrightLocal · Local Consumer Review Survey 2024</p>
+      </div>
+      <div class="reveal rounded-2xl p-6 flex flex-col justify-center" style="background:var(--ink);color:#fff;">
+        <p class="font-display font-extrabold tracking-tightest text-[20px] leading-tight mb-2">El stand en el mostrador es la forma nº1 de capturar esa reseña en caliente.</p>
+        <p class="text-[13.5px] text-white/65">Pedir de palabra convierte un 1–2%. Con el stand delante, en el momento bueno, sube muchísimo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== OFERTA COMPLETA (honesta · riesgo cero) ===== -->
+<section id="oferta" class="section" style="background:var(--ink);color:#fff;">
+  <div class="wrap" style="max-width:900px;">
+    <p class="eyebrow reveal mb-3 text-center" style="color:var(--gold)">El stand que mata el "luego te la dejo"</p>
+    <h2 class="display reveal mb-4 text-center" style="font-size:clamp(27px,5.4vw,44px); line-height:1.05;">
+      El cliente contento de hoy,<br><span style="color:var(--gold)">en una reseña dejada ahora.</span>
+    </h2>
+    <p class="reveal text-center text-[16px] text-white/70 mb-9 max-w-[630px] mx-auto">
+      El 90 % de tus clientes contentos nunca te deja la reseña: cuando se lo pides ya tienen prisa y dicen "luego desde casa". Ese "luego" no llega. Pones el stand en la barra, tu cliente acerca el móvil o escanea el QR y deja la estrella <strong class="text-white">antes de salir por la puerta</strong>. Sin app, sin que busque nada.
+    </p>
+
+    <!-- Botón único -->
+    <div class="reveal text-center mt-2">
+      <a href="pedido.html?pack=1" class="cta-hero">
+        
+        Pedir el stand · 34,90 €
+      </a>
+    </div>
+
+    <p class="reveal text-[13px] text-white/45 mt-6 text-center">El Kit Lleno de Reseñas (guía + plantillas + cartel imprimible + checklist) te lo ofrezco al pedir, por solo 4,99 € más.</p>
+  </div>
+</section>
+
+<!-- ===== CÓMO FUNCIONA (compacto) ===== -->
+<section class="section" style="background:var(--ink); color:#fff;">
+  <div class="wrap text-center">
+    <p class="eyebrow mb-3 reveal" style="color:var(--gold)" data-i18n="como_eyebrow">Cómo funciona</p>
+    <h2 class="display reveal mb-12" style="font-size:clamp(26px,5.5vw,42px); line-height:1.05;">
+      <span data-i18n="como_h2">Sin app. iPhone y Android. 5 segundos.</span>
+    </h2>
+    <div class="grid sm:grid-cols-3 gap-6 max-w-[820px] mx-auto">
+      <div class="reveal"><div class="text-[40px] font-extrabold mb-2" style="color:var(--gold)">1</div><p class="text-[16px] text-white/85" data-i18n="como_1">Colocas el stand en tu mostrador.</p></div>
+      <div class="reveal"><div class="text-[40px] font-extrabold mb-2" style="color:var(--gold)">2</div><p class="text-[16px] text-white/85" data-i18n="como_2">Tu cliente acerca el móvil (NFC) o escanea el QR.</p></div>
+      <div class="reveal"><div class="text-[40px] font-extrabold mb-2" style="color:var(--gold)">3</div><p class="text-[16px] text-white/85" data-i18n="como_3">Deja su reseña en Google. Listo.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONFIANZA / FUNDADORES ===== -->
 <section class="section">
-  <div class="wrap grid md:grid-cols-2 gap-10 items-center">
+  <div class="wrap grid md:grid-cols-2 gap-10 items-center max-w-[1000px] mx-auto">
     <div class="reveal">
-      <p class="eyebrow text-brand mb-5">Quién está detrás</p>
-      <h2 class="display display-md mb-6">
-        Soy Uriel, <span class="muted">18 años.</span>
-      </h2>
-      <p class="body muted mb-5 max-w-[520px]">
-        Lo diseño, lo imprimo y lo envío yo desde mi taller. No hay distribuidor en medio. Si te llega defectuoso, te lo reimprimo sin preguntas.
+      <div class="rounded-[28px] overflow-hidden bg-paper border border-line"><img src="assets/img/founder.webp" alt="Uriel y Joselí, fundadores de Toca y Opina" width="760" height="1040" loading="lazy"></div>
+    </div>
+    <div class="reveal">
+      <p class="eyebrow mb-3" style="color:var(--brand)" data-i18n="found_eyebrow">Quién está detrás</p>
+      <h2 class="display mb-5" style="font-size:clamp(26px,5vw,40px);"><span data-i18n="found_h2">Lo preparamos nosotros.</span></h2>
+      <p class="text-[16px] muted leading-relaxed mb-4 max-w-[480px]" data-i18n="found_p1">
+        Somos Uriel y Joselí. Lo preparamos y configuramos nosotros mismos: grabamos el chip y te dejamos tu enlace de Google listo, desde Andorra. No hay distribuidor en medio.
       </p>
-      <p class="body muted max-w-[520px]">
-        Empecé vendiendo puerta a puerta. Cada stand que ves en este sitio está sobre un mostrador real de un negocio.
+      <p class="text-[16px] muted leading-relaxed max-w-[480px]" data-i18n="found_p2">
+        Cada stand se prueba con un iPhone y un Android antes de enviarlo. Si te llega defectuoso, te lo reimprimo sin preguntas.
       </p>
     </div>
-    <div class="reveal">
-      <div class="rounded-[28px] overflow-hidden bg-paper border border-line">
-        <picture><source srcset="assets/img/founder.webp" type="image/webp"><img src="assets/img/founder.jpg" alt="Uriel, fundador de Toca y Opina" width="760" height="1100" class="w-full h-auto block" loading="lazy" decoding="async"></picture>
-      </div>
-    </div>
   </div>
 </section>
 
-<!-- ===== MANUFACTURING ===== -->
-<section id="fabricacion" class="section bg-paper border-y border-line">
-  <div class="wrap">
-    <p class="eyebrow text-brand reveal mb-5">Fabricación</p>
-    <h2 class="display display-lg reveal mb-6 max-w-[760px]">
-      Lo imprimo yo,<br>
-      <span class="muted">a mano, en mi taller.</span>
-    </h2>
-    <p class="body muted reveal mb-10 max-w-[640px]">
-      Bambu Lab A1 + H2D · PLA Premium · capa 0,16 mm · color real. Cada chip NFC se graba con la URL de tu ficha de Google y se prueba con un iPhone y un Android antes de salir del taller.
-    </p>
-
-    <div class="manu-video aspect-video reveal mb-10">
-      <video src="assets/img/maquina-a1-1.mp4" poster="assets/img/maquina-a1-1-poster.jpg" muted loop playsinline autoplay preload="metadata"></video>
-      <div class="absolute bottom-4 left-4 right-4 sm:left-6 sm:right-auto bg-black/60 backdrop-blur-md rounded-2xl px-4 py-3 sm:max-w-md">
-        <p class="text-white font-semibold text-[15px] leading-tight">36 stands en una tirada.</p>
-        <p class="text-white/70 text-[12px] mt-0.5">Bambu Lab A1 · plato 350×320 mm.</p>
-      </div>
-      <span class="absolute top-4 left-4 bg-red-500 text-white text-[10px] font-bold px-2.5 py-1 rounded-full flex items-center gap-1.5">
-        <span class="w-1.5 h-1.5 bg-white rounded-full animate-pulse"></span>
-        LOTE EN CURSO
-      </span>
-    </div>
-
-    <!-- 4 specs strip -->
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
-      <div class="bg-white border border-line rounded-2xl px-5 py-4 reveal">
-        <p class="text-[11px] eyebrow text-brand mb-1">Material</p>
-        <p class="font-semibold text-[15px]">PLA Premium</p>
-      </div>
-      <div class="bg-white border border-line rounded-2xl px-5 py-4 reveal">
-        <p class="text-[11px] eyebrow text-brand mb-1">Capa</p>
-        <p class="font-semibold text-[15px]">0,16 mm</p>
-      </div>
-      <div class="bg-white border border-line rounded-2xl px-5 py-4 reveal">
-        <p class="text-[11px] eyebrow text-brand mb-1">Tiempo</p>
-        <p class="font-semibold text-[15px]">24–72 h envío</p>
-      </div>
-      <div class="bg-white border border-line rounded-2xl px-5 py-4 reveal">
-        <p class="text-[11px] eyebrow text-brand mb-1">Garantía</p>
-        <p class="font-semibold text-[15px]">Llega bien o lo reimprimo</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== COMPARISON ===== -->
-<section class="section bg-paper border-y border-line">
-  <div class="wrap">
-    <p class="eyebrow text-brand reveal mb-5">Comparativa honesta</p>
-    <h2 class="display display-lg reveal mb-12 max-w-[760px]">
-      Toca y Opina<br><span class="muted">vs todo lo demás.</span>
-    </h2>
-
-    <div class="grid md:grid-cols-2 gap-4">
-      <div class="cmp cmp-good reveal">
-        <div class="flex items-center gap-3 mb-5">
-          <span class="w-8 h-8 rounded-xl bg-brand grid place-items-center">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-          </span>
-          <p class="font-display text-[22px] font-extrabold tracking-tightest">Toca y Opina</p>
-        </div>
-        <div class="row"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Físico sobre el mostrador, visible</div>
-        <div class="row"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Sin app · sin cuentas · sin búsquedas</div>
-        <div class="row"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 34,90€ pago único · sin cuotas mensuales</div>
-        <div class="row"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Reseña real en 5 segundos</div>
-        <div class="row"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Hecho a mano en España</div>
-      </div>
-
-      <div class="cmp cmp-bad reveal">
-        <div class="flex items-center gap-3 mb-5">
-          <span class="w-8 h-8 rounded-xl bg-paper border border-line grid place-items-center">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-          </span>
-          <p class="font-display text-[22px] font-extrabold tracking-tightest muted">Las alternativas</p>
-        </div>
-        <div class="row muted"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Tarjetas de cartón que nadie escanea</div>
-        <div class="row muted"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Apps de reseñas con cuota mensual</div>
-        <div class="row muted"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Pegatinas que ensucian el mostrador</div>
-        <div class="row muted"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Pedir reseñas verbalmente (rara vez funciona)</div>
-        <div class="row muted"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Comprar reseñas falsas (te penaliza Google)</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== FAQ ===== -->
-<section id="faq" class="section">
-  <div class="wrap max-w-[820px]">
-    <p class="eyebrow text-brand reveal mb-5">Preguntas frecuentes</p>
-    <h2 class="display display-lg reveal mb-10">Lo que la gente pregunta antes de comprar.</h2>
-
-    <div class="reveal">
-      <details class="faq" open>
-        <summary>¿Necesito instalar una app o algún software?
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-        </summary>
-        <p>No. Ni tú ni tus clientes. El stand redirige automáticamente a la ficha de Google de tu negocio en el navegador del móvil. Funciona desde el primer día sin configuración.</p>
-      </details>
-      <details class="faq">
-        <summary>¿Funciona con iPhone y Android?
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-        </summary>
-        <p>Sí. El QR funciona con cualquier móvil con cámara. El NFC funciona en iPhone desde el modelo 7 (2016) y en prácticamente todos los Android modernos.</p>
-      </details>
-      <details class="faq">
-        <summary>¿Es legal? ¿Lo permite Google?
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-        </summary>
-        <p>Sí. Google anima a los negocios a pedir reseñas a sus clientes reales. Lo que prohíbe es pagar reseñas falsas. Toca y Opina solo facilita el camino a tus clientes reales.</p>
-      </details>
-      <details class="faq">
-        <summary>¿En cuánto tiempo lo recibo?
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-        </summary>
-        <p>Habitualmente 24–72 h tras recibir tu pedido en Vinted. Lo imprimo, grabo el chip, lo pruebo y lo envío el mismo día o el siguiente.</p>
-      </details>
-      <details class="faq">
-        <summary>¿Y si me llega defectuoso?
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-        </summary>
-        <p>Te lo reimprimo gratis sin preguntas. Llevo 47 reseñas en Vinted y 0 devoluciones, pero si pasa, te cubro.</p>
-      </details>
-      <details class="faq">
-        <summary>¿Mis clientes mayores van a saber usarlo?
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-        </summary>
-        <p>Sí. Solo dices "acerca el móvil al cuadrado" y se abre solo. No tienen que tocar ningún botón ni saber qué es un QR.</p>
-      </details>
-    </div>
-  </div>
-</section>
-
-<!-- ===== FINAL CTA ===== -->
-<section class="section bg-ink text-white">
-  <div class="wrap text-center max-w-[760px] mx-auto">
-    <p class="eyebrow text-gold reveal mb-5">Empieza hoy</p>
-    <h2 class="display display-lg reveal mb-6">
-      Pago único.<br>
-      <span class="text-white/55">Sin cuotas. Para siempre.</span>
-    </h2>
-    <p class="body-lg text-white/70 reveal mb-10 max-w-[560px] mx-auto">
-      Pagas hoy, lo recibes esta semana, las reseñas empiezan a llegar antes de fin de mes.
-    </p>
-    <a href="#precios" class="cta cta-blue reveal" style="background:#fff;color:#0A0A0A;height:60px;padding-inline:36px;font-size:18px;">
-      Ver opciones de compra
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+<!-- ===== CTA FINAL ===== -->
+<section class="section" style="background:var(--ink); color:#fff;">
+  <div class="wrap text-center max-w-[680px] mx-auto">
+    <h2 class="display reveal mb-5" style="font-size:clamp(28px,6vw,48px); line-height:1.05;"><span data-i18n="final_h2">¿Lo quieres? Escríbeme.</span></h2>
+    <p class="reveal text-[17px] text-white/70 mb-9 max-w-[520px] mx-auto" data-i18n="final_sub">Me escribes hoy, te lo preparo esta semana y empiezas a sumar reseñas antes de fin de mes.</p>
+    <a href="pedido.html?prod=combo" class="cta-hero reveal">
+      
+      <span data-i18n="final_cta">Escríbeme</span>
     </a>
-    <p class="reveal text-[13px] text-white/50 mt-5">Pago protegido por Vinted · envío 24–72 h</p>
+    <p class="reveal text-[13px] text-white/50 mt-5" data-i18n="final_note">Normalmente respondo en menos de 24 h.</p>
   </div>
 </section>
 
 <!-- ===== FOOTER ===== -->
-<footer class="bg-ink text-white/60 pt-14 pb-32 border-t border-white/10">
-  <div class="wrap">
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-10 text-[14px]">
-      <div>
-        <p class="text-white font-semibold mb-3">Producto</p>
-        <ul class="space-y-2">
-          <li><a href="#como" class="hover:text-white">Cómo funciona</a></li>
-          <li><a href="#tiendas" class="hover:text-white">En tiendas</a></li>
-          <li><a href="#fabricacion" class="hover:text-white">Fabricación</a></li>
-          <li><a href="#precios" class="hover:text-white">Precios</a></li>
-        </ul>
-      </div>
-      <div>
-        <p class="text-white font-semibold mb-3">Comprar</p>
-        <ul class="space-y-2">
-          <li><a href="https://www.vinted.es/items/8737424361-stand-resenas-google-nfc-qr-personalizado" target="_blank" rel="noopener" class="hover:text-white">Pack 1 · 34,90 €</a></li>
-          <li><a href="https://www.vinted.es/items/8737450242-pack-2-stands-resenas-google-nfc-qr-personalizado" target="_blank" rel="noopener" class="hover:text-white">Pack 2 · 54,90 €</a></li>
-          <li><a href="https://www.vinted.es/items/8799503624-pack-3-stands-resenas-google-nfc-qr-personalizado" target="_blank" rel="noopener" class="hover:text-white">Pack 3 · 74,90 €</a></li>
-        </ul>
-      </div>
-      <div>
-        <p class="text-white font-semibold mb-3">Más</p>
-        <ul class="space-y-2">
-          <li><a href="#faq" class="hover:text-white">Preguntas frecuentes</a></li>
-          <li><a href="#calculadora" class="hover:text-white">Calculadora</a></li>
-          <li><a href="calculadora.html" class="hover:text-white">Calculadora detallada</a></li>
-          <li><a href="blog/" class="hover:text-white">Blog</a></li>
-        </ul>
-      </div>
-      <div>
-        <p class="text-white font-semibold mb-3">Aprender</p>
-        <ul class="space-y-2">
-          <li><a href="blog/como-conseguir-mas-resenas-en-google.html" class="hover:text-white">Guía completa de reseñas</a></li>
-          <li><a href="blog/resenas-google-delta-del-ebro.html" class="hover:text-white">Para negocios</a></li>
-          <li><a href="blog/sobre-uriel-historia-toca-y-opina.html" class="hover:text-white">Sobre nosotros (Uriel y Joselí)</a></li>
-          <li><a href="blog/qr-vs-nfc-para-resenas-cual-convierte-mas.html" class="hover:text-white">QR vs NFC</a></li>
-          <li><a href="blog/cuanto-vale-una-resena-en-google.html" class="hover:text-white">ROI de una reseña</a></li>
-        </ul>
-      </div>
-      <div>
-        <p class="text-white font-semibold mb-3">Por sector</p>
-        <ul class="space-y-2 text-[13px]">
-          <li><a href="blog/resenas-google-para-restaurantes.html" class="hover:text-white">🍽️ Restaurantes</a></li>
-          <li><a href="blog/resenas-google-para-peluquerias-y-barberias.html" class="hover:text-white">💇 Peluquerías y barberías</a></li>
-          <li><a href="blog/resenas-google-para-talleres-mecanicos.html" class="hover:text-white">🔧 Talleres mecánicos</a></li>
-          <li><a href="blog/resenas-google-para-clinicas-dentales.html" class="hover:text-white">🦷 Clínicas dentales</a></li>
-          <li><a href="blog/resenas-google-para-hoteles-y-casas-rurales.html" class="hover:text-white">🏨 Hoteles y rurales</a></li>
-          <li><a href="blog/resenas-google-para-centros-esteticos.html" class="hover:text-white">💅 Centros estéticos</a></li>
-          <li><a href="blog/resenas-google-para-fisioterapeutas-y-clinicas.html" class="hover:text-white">🧘 Fisios y clínicas</a></li>
-          <li><a href="blog/resenas-google-para-asesorias-y-abogados.html" class="hover:text-white">⚖️ Asesorías y abogados</a></li>
-          <li><a href="blog/resenas-google-para-comercios-de-barrio.html" class="hover:text-white">🥖 Comercios de barrio</a></li>
-          <li><a href="blog/resenas-google-para-servicios-a-domicilio.html" class="hover:text-white">🔌 Servicios a domicilio</a></li>
-        </ul>
-      </div>
-      <div>
-        <p class="text-white font-semibold mb-3">Contacto</p>
-        <p class="text-[13px]">España<br>Vía chat de Vinted</p>
-      </div>
-    </div>
-    <div class="pt-6 border-t border-white/10 text-[12px] text-white/40 flex flex-wrap items-center justify-between gap-3">
-      <p>© 2026 Toca y Opina · Hecho en España 🇪🇸</p>
-      <p class="max-w-[600px] text-right">Google y el logo de Google son marcas registradas de Google LLC. Toca y Opina no está afiliado oficialmente a Google.</p>
+<footer style="background:var(--ink); color:rgba(255,255,255,.6);" class="pt-10 pb-28 md:pb-10 border-t border-white/10">
+  <div class="wrap flex flex-col sm:flex-row items-center justify-between gap-5 text-[13.5px]">
+    <p>© 2026 Toca y Opina · <span data-i18n="foot_made">Andorra</span></p>
+    <div class="flex items-center gap-5">
+      <a href="blog/" class="hover:text-white">Blog</a>
+      <a href="guia-resenas.html" class="hover:text-white">Guía</a>
+      <a href="#packs" class="hover:text-white">Pedir</a>
+      <a href="https://www.instagram.com/tocayopina" target="_blank" rel="noopener" class="hover:text-white">@tocayopina</a>
     </div>
   </div>
 </footer>
 
-<!-- ===== STICKY MOBILE CTA ===== -->
-<a href="https://www.vinted.es/items/8737424361-stand-resenas-google-nfc-qr-personalizado" target="_blank" rel="noopener" class="sticky-cta">
-  <span class="flex items-center gap-2">
-    <span class="w-2 h-2 rounded-full bg-emerald-300 shadow-[0_0_0_4px_rgba(110,231,183,.25)]"></span>
-    Pedir el mío · 34,90 €
-  </span>
-  <span class="bg-white/15 backdrop-blur rounded-full w-8 h-8 inline-flex items-center justify-center">
-    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-  </span>
+<!-- ===== STICKY CTA (móvil) ===== -->
+<a href="pedido.html?prod=g1" class="sticky-cta">
+  
+  <span data-i18n="sticky_cta">Lo quiero · desde 34,90 €</span>
 </a>
 
 <script>
-// Reveal-on-scroll
-const io = new IntersectionObserver((entries)=>{
-  entries.forEach(e=>{
-    if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
-  });
-}, { rootMargin: '-10% 0px' });
-document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+// Reveal on scroll
+const io = new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{rootMargin:'-8% 0px'});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
-// Hero scroll-scrub: 145 frames sobre canvas, stage sticky, scroll → gira
+// i18n
 (function(){
-  const stage = document.getElementById('hero-stage');
-  const canvas = document.getElementById('orbit-canvas');
-  const track = document.getElementById('hero-orbit-track');
-  if (!stage || !canvas || !track) return;
-  const fallback = stage.querySelector('.orbit-fallback');
-  const frame = stage.querySelector('.hero-frame');
-  const FRAMES = parseInt(stage.dataset.orbitFrames || '145', 10);
-  const PAD = parseInt(stage.dataset.orbitPad || '3', 10);
-  const ctx = canvas.getContext('2d', { alpha: false });
-  const images = new Array(FRAMES);
-  let drawnIdx = -1;
-  let lastTarget = 0;
-  let pending = false;
-
-  function pad(n){ const s = ''+n; return s.length >= PAD ? s : ('000'+s).slice(-PAD); }
-  const SUPPORTS_WEBP = (function(){
-    const c = document.createElement('canvas');
-    try { return !!c.toDataURL && c.toDataURL('image/webp').indexOf('data:image/webp') === 0; }
-    catch(e){ return false; }
-  })();
-  const EXT = SUPPORTS_WEBP ? '.webp' : '.jpg';
-  function pathFor(i){ return 'assets/img/orbit/frame-' + pad(i + 1) + EXT; }
-
-  function loadedAt(i){ const im = images[i]; return (im && im.complete && im.naturalWidth) ? im : null; }
-  function nearestLoadedIdx(t){
-    if (loadedAt(t)) return t;
-    for (let d = 1; d < FRAMES; d++){
-      if (loadedAt(t - d)) return t - d;
-      if (loadedAt(t + d)) return t + d;
+  const LANGS=['ca','es','pt','fr'], NAMES={ca:'🇦🇩',es:'🇪🇸',pt:'🇵🇹',fr:'🇫🇷'};
+  const DICT={
+    ca:{
+      "Lo quiero · desde 34,90 €":"El vull · des de 34,90 €","Pago único, sin cuotas. No pagas online: lo confirmas por WhatsApp.":"Pagament únic, sense quotes. No pagues online: ho confirmes per WhatsApp.",
+      "Que te elijan a ti,":"Que t'escullin a tu,","no al de al lado.":"no al del costat.","El stand que pones en tu mostrador y llena tu Google de reseñas sin que pidas nada. Tu cliente acerca el móvil, 5 segundos, sin app. Te llega configurado.":"L'expositor que poses al taulell i omple el teu Google de ressenyes sense que demanis res. El teu client acosta el mòbil, 5 segons, sense app. T'arriba configurat.","Quiero más reseñas · 34,90 €":"Vull més ressenyes · 34,90 €","o súmale Instagram (combo) · 54,90 €":"o suma-li Instagram (combo) · 54,90 €","Llega configurado con tu enlace · cero apps · no pagas online":"Arriba configurat amb el teu enllaç · zero apps · no pagues online",
+      "📦 Envíos solo a Andorra":"📦 Enviaments només a Andorra","Pedir":"Demanar","\"En una semana ya tenía un montón de reseñas nuevas. Me quedé alucinada con lo bien que funciona.\"":"\"En una setmana ja tenia un munt de ressenyes noves. Vaig al·lucinar amb el bé que funciona.\"","Gaudeix · comida preparada":"Gaudeix · menjar preparat","Lo que dicen quienes ya lo tienen":"El que diuen els qui ja el tenen","Negocios reales,":"Negocis reals,","resultados reales.":"resultats reals.","\"Flipé con el resultado. La gente lo usa sola, sin que tengamos que estar insistiendo.\"":"\"Vaig al·lucinar amb el resultat. La gent el fa servir sola, sense que haguem d'estar insistint.\"","Restaurante":"Restaurant","\"Nos va súper bien: más de 10 reseñas en nada. Me estoy quedando alucinada con cómo funciona.\"":"\"Ens va súper bé: més de 10 ressenyes en res. M'estic quedant al·lucinada amb com funciona.\"","Terraza italiana":"Terrassa italiana","Por qué las reseñas mueven tu negocio":"Per què les ressenyes mouen el teu negoci","No es ego.":"No és ego.","Son clientes nuevos.":"Són clients nous.","de ingresos por cada estrella que subes en tu nota media (más aún en negocios independientes).":"d'ingressos per cada estrella que puges en la teva nota mitjana (encara més en negocis independents).","de la gente lee reseñas antes de elegir un negocio local. Y el 81% usa Google para mirarlas.":"de la gent llegeix ressenyes abans de triar un negoci local. I el 81% fa servir Google per mirar-les.","más probabilidad de que te elijan con solo 5 reseñas frente a tener ninguna. Las primeras son las que más mueven.":"més probabilitat que et triïn amb només 5 ressenyes que no pas amb cap. Les primeres són les que més mouen.","factor más importante para salir arriba en Google Maps son las reseñas (16–20% del peso del ranking local).":"factor més important per sortir amunt a Google Maps són les ressenyes (16–20% del pes del rànquing local).","de la gente solo da valor a las reseñas de las últimas 2 semanas. Por eso necesitas un flujo constante, no una campaña suelta.":"de la gent només dóna valor a les ressenyes de les últimes 2 setmanes. Per això necessites un flux constant, no una campanya solta.","El stand en el mostrador es la forma nº1 de capturar esa reseña en caliente.":"L'expositor al taulell és la forma nº1 de capturar aquesta ressenya en calent.","Pedir de palabra convierte un 1–2%. Con el stand delante, en el momento bueno, sube muchísimo.":"Demanar-ho de paraula converteix un 1–2%. Amb l'expositor al davant, en el moment bo, puja moltíssim.","El stand que mata el \"luego te la dejo\"":"L'expositor que mata el \"després te la deixo\"","El cliente contento de hoy,":"El client content d'avui,","en una reseña dejada ahora.":"en una ressenya deixada ara.","El 90 % de tus clientes contentos nunca te deja la reseña: cuando se lo pides ya tienen prisa y dicen \"luego desde casa\". Ese \"luego\" no llega. Pones el stand en la barra, tu cliente acerca el móvil o escanea el QR y deja la estrella":"El 90 % dels teus clients contents no et deixa mai la ressenya: quan els ho demanes ja tenen pressa i diuen \"després des de casa\". Aquest \"després\" no arriba. Poses l'expositor a la barra, el teu client acosta el mòbil o escaneja el QR i deixa l'estrella","antes de salir por la puerta":"abans de sortir per la porta",". Sin app, sin que busque nada.":". Sense app, sense que busqui res.","Pedir el stand · 34,90 €":"Demanar l'expositor · 34,90 €","El Kit Lleno de Reseñas (guía + plantillas + cartel imprimible + checklist) te lo ofrezco al pedir, por solo 4,99 € más.":"El Kit Ple de Ressenyes (guia + plantilles + cartell imprimible + checklist) te l'ofereixo en comandar, per només 4,99 € més.",
+      "Negocios reales en Andorra":"Negocis reals a Andorra","Más reseñas y más seguidores":"Més ressenyes i més seguidors","con un solo gesto.":"amb un sol gest.",
+      "El stand que pones en tu mostrador. Tu cliente acerca el móvil y, en 5 segundos, te deja una reseña en Google o te sigue en Instagram. Sin app.":"L'expositor que poses al taulell. El teu client acosta el mòbil i, en 5 segons, et deixa una ressenya a Google o et segueix a Instagram. Sense app.",
+      "Google + Instagram · 54,90 €":"Google + Instagram · 54,90 €",
+      "\"En 2 semanas conseguí más reseñas que en todo el año. Lo pongo junto al datáfono y los clientes lo usan solos.\"":"\"En 2 setmanes vaig aconseguir més ressenyes que en tot l'any. El poso al costat del datàfon i els clients l'usen sols.\"","Pastelería":"Pastisseria",
+      "Elige tu pack":"Tria el teu pack","Cuantos más, mejor precio.":"Com més, millor preu.","Pago único, sin cuotas. No pagas online: lo confirmas por WhatsApp.":"Pagament únic, sense quotes. T'ho tanco jo mateix.",
+      "Para empezar":"Per començar","1 stand":"1 expositor","pago único":"pagament únic","Pedir 1":"Demanar 1",
+      "★ El más elegido":"★ El més triat","Caja + barra":"Caixa + barra","2 stands":"2 expositors","27,45 €/stand · ahorras 14,90 €":"27,45 €/expositor · estalvies 14,90 €","Pedir 2":"Demanar 2",
+      "Para locales grandes":"Per a locals grans","3 stands":"3 expositors","24,97 €/stand · ahorras 29,80 €":"24,97 €/expositor · estalvies 29,80 €","Pedir 3":"Demanar 3",
+      "Garantía: si te llega defectuoso, te lo reimprimo gratis. · Envío 24–72 h.":"Garantia: si t'arriba defectuós, te'l reimprimeixo gratis. · Enviament 24–72 h.",
+      "¿Prefieres más seguidores?":"Prefereixes més seguidors?","También lo hago en versión Instagram.":"També el faig en versió Instagram.","El mismo stand, mismo precio. Tu cliente acerca el móvil y te sigue en Instagram al instante. Ideal para escaparate y mostrador.":"El mateix expositor, mateix preu. El teu client acosta el mòbil i et segueix a Instagram a l'instant. Ideal per a aparador i taulell.","Quiero el de Instagram":"Vull el d'Instagram",
+      "Cómo funciona":"Com funciona","Sin app. iPhone y Android. 5 segundos.":"Sense app. iPhone i Android. 5 segons.","Colocas el stand en tu mostrador.":"Poses l'expositor al taulell.","Tu cliente acerca el móvil (NFC) o escanea el QR.":"El teu client acosta el mòbil (NFC) o escaneja el QR.","Deja su reseña en Google. Listo.":"Deixa la seva ressenya a Google. Llest.",
+      "Quién está detrás":"Qui hi ha al darrere","Lo preparamos nosotros.":"Ho preparem nosaltres.","Somos Uriel y Joselí. Lo preparamos y configuramos nosotros mismos: grabamos el chip y te dejamos tu enlace de Google listo, desde Andorra. No hay distribuidor en medio.":"Som l'Uriel i en Joselí. El preparem i el configurem nosaltres mateixos: gravem el xip i et deixem el teu enllaç de Google a punt, des d'Andorra. No hi ha distribuïdor pel mig.","Cada stand se prueba con un iPhone y un Android antes de enviarlo. Si te llega defectuoso, te lo reimprimo sin preguntas.":"Cada expositor es prova amb un iPhone i un Android abans d'enviar-lo. Si t'arriba defectuós, te'l reimprimeixo sense preguntes.",
+      "¿Lo quieres? Escríbeme.":"El vols? Escriu-me.","Me escribes hoy, te lo preparo esta semana y empiezas a sumar reseñas antes de fin de mes.":"M'escrius avui, te'l preparo aquesta setmana i comences a sumar ressenyes abans de final de mes.","Escríbeme":"Escriu-me","Normalmente respondo en menos de 24 h.":"Normalment responc en menys de 24 h.",
+      "Andorra":"Andorra",
+      "¿Mezclas Google e Instagram?":"Barreges Google i Instagram?","Sin problema: tú eliges la combinación y el precio es por cantidad.":"Cap problema: tu tries la combinació i el preu és per quantitat.","Pídeme tu combo":"Demana'm el teu combo",
+      "El más elegido":"El més triat","Para restaurantes y cadenas":"Per a restaurants i cadenes","Personaliza tu paquete":"Personalitza el teu paquet","Pide los stands que quieras —10, 20, 50 o más— mezclando Google e Instagram como prefieras. Te hago precio a medida.":"Demana els expositors que vulguis —10, 20, 50 o més— barrejant Google i Instagram com prefereixis. Et faig preu a mida.","Personaliza tu pedido":"Personalitza la teva comanda"
+    },
+    fr:{
+      "Lo quiero · desde 34,90 €":"Je le veux · dès 34,90 €","Pago único, sin cuotas. No pagas online: lo confirmas por WhatsApp.":"Paiement unique, sans abonnement. Tu ne paies rien en ligne : tu confirmes par WhatsApp.",
+      "Que te elijan a ti,":"Qu'on te choisisse toi,","no al de al lado.":"pas le voisin d'à côté.","El stand que pones en tu mostrador y llena tu Google de reseñas sin que pidas nada. Tu cliente acerca el móvil, 5 segundos, sin app. Te llega configurado.":"Le présentoir que tu poses sur ton comptoir et qui remplit ton Google d'avis sans que tu demandes rien. Ton client approche son téléphone, 5 secondes, sans appli. Il arrive configuré.","Quiero más reseñas · 34,90 €":"Je veux plus d'avis · 34,90 €","o súmale Instagram (combo) · 54,90 €":"ou ajoute Instagram (combo) · 54,90 €","Llega configurado con tu enlace · cero apps · no pagas online":"Il arrive configuré avec ton lien · zéro appli · tu ne paies rien en ligne",
+      "📦 Envíos solo a Andorra":"📦 Livraison uniquement en Andorre","Pedir":"Commander","\"En una semana ya tenía un montón de reseñas nuevas. Me quedé alucinada con lo bien que funciona.\"":"« En une semaine, j'avais déjà plein de nouveaux avis. J'ai halluciné de voir comme ça marche bien. »","Gaudeix · comida preparada":"Gaudeix · plats préparés","Lo que dicen quienes ya lo tienen":"Ce que disent ceux qui l'ont déjà","Negocios reales,":"Des commerces réels,","resultados reales.":"des résultats réels.","\"Flipé con el resultado. La gente lo usa sola, sin que tengamos que estar insistiendo.\"":"« J'ai halluciné avec le résultat. Les gens l'utilisent seuls, sans qu'on ait à insister. »","Restaurante":"Restaurant","\"Nos va súper bien: más de 10 reseñas en nada. Me estoy quedando alucinada con cómo funciona.\"":"« Ça marche super bien : plus de 10 avis en un rien de temps. Je suis bluffée par comme ça fonctionne. »","Terraza italiana":"Terrasse italienne","Por qué las reseñas mueven tu negocio":"Pourquoi les avis font bouger votre activité","No es ego.":"Ce n'est pas de l'ego.","Son clientes nuevos.":"Ce sont de nouveaux clients.","de ingresos por cada estrella que subes en tu nota media (más aún en negocios independientes).":"de revenus pour chaque étoile gagnée sur votre note moyenne (encore plus pour les commerces indépendants).","de la gente lee reseñas antes de elegir un negocio local. Y el 81% usa Google para mirarlas.":"des gens lisent des avis avant de choisir un commerce local. Et 81% utilisent Google pour les consulter.","más probabilidad de que te elijan con solo 5 reseñas frente a tener ninguna. Las primeras son las que más mueven.":"de chances qu'on vous choisisse avec seulement 5 avis plutôt qu'aucun. Les premiers sont les plus décisifs.","factor más importante para salir arriba en Google Maps son las reseñas (16–20% del peso del ranking local).":"facteur le plus important pour ressortir en haut sur Google Maps, ce sont les avis (16–20% du poids du classement local).","de la gente solo da valor a las reseñas de las últimas 2 semanas. Por eso necesitas un flujo constante, no una campaña suelta.":"des gens ne tiennent compte que des avis des 2 dernières semaines. C'est pourquoi il faut un flux constant, pas une campagne ponctuelle.","El stand en el mostrador es la forma nº1 de capturar esa reseña en caliente.":"Le présentoir sur le comptoir est le moyen nº1 de capter cet avis à chaud.","Pedir de palabra convierte un 1–2%. Con el stand delante, en el momento bueno, sube muchísimo.":"Demander à l'oral convertit 1–2%. Avec le présentoir devant, au bon moment, ça monte énormément.","El stand que mata el \"luego te la dejo\"":"Le présentoir qui tue le « je le ferai plus tard »","El cliente contento de hoy,":"Le client satisfait d'aujourd'hui,","en una reseña dejada ahora.":"en un avis laissé maintenant.","El 90 % de tus clientes contentos nunca te deja la reseña: cuando se lo pides ya tienen prisa y dicen \"luego desde casa\". Ese \"luego\" no llega. Pones el stand en la barra, tu cliente acerca el móvil o escanea el QR y deja la estrella":"90 % de vos clients satisfaits ne laissent jamais l'avis : quand vous le demandez, ils sont déjà pressés et disent « plus tard, de chez moi ». Ce « plus tard » n'arrive jamais. Vous posez le présentoir sur le comptoir, votre client approche son téléphone ou scanne le QR et laisse l'étoile","antes de salir por la puerta":"avant de passer la porte",". Sin app, sin que busque nada.":". Sans appli, sans rien chercher.","Pedir el stand · 34,90 €":"Commander le présentoir · 34,90 €","El Kit Lleno de Reseñas (guía + plantillas + cartel imprimible + checklist) te lo ofrezco al pedir, por solo 4,99 € más.":"Le Kit Plein d'Avis (guide + modèles + affiche imprimable + checklist), je vous le propose à la commande, pour seulement 4,99 € de plus.",
+      "Negocios reales en Andorra":"Des commerces réels en Andorre","Más reseñas y más seguidores":"Plus d'avis et plus d'abonnés","con un solo gesto.":"d'un seul geste.",
+      "El stand que pones en tu mostrador. Tu cliente acerca el móvil y, en 5 segundos, te deja una reseña en Google o te sigue en Instagram. Sin app.":"Le présentoir que vous posez sur votre comptoir. Votre client approche son téléphone et, en 5 secondes, laisse un avis sur Google ou vous suit sur Instagram. Sans appli.",
+      "Google + Instagram · 54,90 €":"Google + Instagram · 54,90 €",
+      "\"En 2 semanas conseguí más reseñas que en todo el año. Lo pongo junto al datáfono y los clientes lo usan solos.\"":"\"En 2 semaines, j'ai eu plus d'avis que dans toute l'année. Je le mets près du terminal et les clients l'utilisent tout seuls.\"","Pastelería":"Pâtisserie",
+      "Elige tu pack":"Choisissez votre pack","Cuantos más, mejor precio.":"Plus vous en prenez, meilleur est le prix.","Pago único, sin cuotas. No pagas online: lo confirmas por WhatsApp.":"Paiement unique, sans abonnement. Je m'en occupe moi-même.",
+      "Para empezar":"Pour commencer","1 stand":"1 présentoir","pago único":"paiement unique","Pedir 1":"Commander 1",
+      "★ El más elegido":"★ Le plus choisi","Caja + barra":"Caisse + comptoir","2 stands":"2 présentoirs","27,45 €/stand · ahorras 14,90 €":"27,45 €/présentoir · vous économisez 14,90 €","Pedir 2":"Commander 2",
+      "Para locales grandes":"Pour les grands établissements","3 stands":"3 présentoirs","24,97 €/stand · ahorras 29,80 €":"24,97 €/présentoir · vous économisez 29,80 €","Pedir 3":"Commander 3",
+      "Garantía: si te llega defectuoso, te lo reimprimo gratis. · Envío 24–72 h.":"Garantie : s'il arrive défectueux, je le réimprime gratuitement. · Livraison 24–72 h.",
+      "¿Prefieres más seguidores?":"Vous préférez plus d'abonnés ?","También lo hago en versión Instagram.":"Je le fais aussi en version Instagram.","El mismo stand, mismo precio. Tu cliente acerca el móvil y te sigue en Instagram al instante. Ideal para escaparate y mostrador.":"Le même présentoir, le même prix. Votre client approche son téléphone et vous suit sur Instagram instantanément. Idéal pour la vitrine et le comptoir.","Quiero el de Instagram":"Je veux celui d'Instagram",
+      "Cómo funciona":"Comment ça marche","Sin app. iPhone y Android. 5 segundos.":"Sans appli. iPhone et Android. 5 secondes.","Colocas el stand en tu mostrador.":"Vous posez le présentoir sur votre comptoir.","Tu cliente acerca el móvil (NFC) o escanea el QR.":"Votre client approche son téléphone (NFC) ou scanne le QR.","Deja su reseña en Google. Listo.":"Il laisse son avis sur Google. C'est tout.",
+      "Quién está detrás":"Qui est derrière","Lo preparamos nosotros.":"Nous le préparons nous-mêmes.","Somos Uriel y Joselí. Lo preparamos y configuramos nosotros mismos: grabamos el chip y te dejamos tu enlace de Google listo, desde Andorra. No hay distribuidor en medio.":"Nous sommes Uriel et Joselí. Nous le préparons et le configurons nous-mêmes : nous encodons la puce et laissons votre lien Google prêt, depuis l'Andorre. Aucun intermédiaire.","Cada stand se prueba con un iPhone y un Android antes de enviarlo. Si te llega defectuoso, te lo reimprimo sin preguntas.":"Chaque présentoir est testé avec un iPhone et un Android avant l'envoi. S'il arrive défectueux, je le réimprime sans poser de questions.",
+      "¿Lo quieres? Escríbeme.":"Vous le voulez ? Écrivez-moi.","Me escribes hoy, te lo preparo esta semana y empiezas a sumar reseñas antes de fin de mes.":"Vous m'écrivez aujourd'hui, je le prépare cette semaine et vous gagnez des avis avant la fin du mois.","Escríbeme":"Écrivez-moi","Normalmente respondo en menos de 24 h.":"Je réponds généralement en moins de 24 h.",
+      "Andorra":"Andorre",
+      "¿Mezclas Google e Instagram?":"Vous mélangez Google et Instagram ?","Sin problema: tú eliges la combinación y el precio es por cantidad.":"Pas de souci : vous choisissez la combinaison et le prix est par quantité.","Pídeme tu combo":"Demandez-moi votre combo",
+      "El más elegido":"Le plus choisi","Para restaurantes y cadenas":"Pour restaurants et chaînes","Personaliza tu paquete":"Personnalisez votre pack","Pide los stands que quieras —10, 20, 50 o más— mezclando Google e Instagram como prefieras. Te hago precio a medida.":"Commandez autant de présentoirs que vous voulez —10, 20, 50 ou plus— en mélangeant Google et Instagram comme vous préférez. Je vous fais un prix sur mesure.","Personaliza tu pedido":"Personnalisez votre commande"
+    },
+    pt:{
+      "Lo quiero · desde 34,90 €":"Quero-o · desde 34,90 €","Pago único, sin cuotas. No pagas online: lo confirmas por WhatsApp.":"Pagamento único, sem mensalidades. Não pagas online: confirmas por WhatsApp.",
+      "Que te elijan a ti,":"Que te escolham a ti,","no al de al lado.":"não o do lado.","El stand que pones en tu mostrador y llena tu Google de reseñas sin que pidas nada. Tu cliente acerca el móvil, 5 segundos, sin app. Te llega configurado.":"O expositor que pões no balcão e enche o teu Google de avaliações sem teres de pedir nada. O teu cliente aproxima o telemóvel, 5 segundos, sem app. Chega configurado.","Quiero más reseñas · 34,90 €":"Quero mais avaliações · 34,90 €","o súmale Instagram (combo) · 54,90 €":"ou junta o Instagram (combo) · 54,90 €","Llega configurado con tu enlace · cero apps · no pagas online":"Chega configurado com o teu link · zero apps · não pagas online",
+      "📦 Envíos solo a Andorra":"📦 Envios só para Andorra","Pedir":"Pedir","\"En una semana ya tenía un montón de reseñas nuevas. Me quedé alucinada con lo bien que funciona.\"":"\"Numa semana já tinha montes de avaliações novas. Fiquei pasmada com o bem que funciona.\"","Gaudeix · comida preparada":"Gaudeix · refeições preparadas","Lo que dicen quienes ya lo tienen":"O que dizem os que já o têm","Negocios reales,":"Negócios reais,","resultados reales.":"resultados reais.","\"Flipé con el resultado. La gente lo usa sola, sin que tengamos que estar insistiendo.\"":"\"Flipei com o resultado. As pessoas usam-no sozinhas, sem termos de estar a insistir.\"","Restaurante":"Restaurante","\"Nos va súper bien: más de 10 reseñas en nada. Me estoy quedando alucinada con cómo funciona.\"":"\"Está a correr super bem: mais de 10 avaliações num instante. Estou pasmada com como funciona.\"","Terraza italiana":"Esplanada italiana","Por qué las reseñas mueven tu negocio":"Porque as avaliações movem o teu negócio","No es ego.":"Não é ego.","Son clientes nuevos.":"São clientes novos.","de ingresos por cada estrella que subes en tu nota media (más aún en negocios independientes).":"de receita por cada estrela que sobes na tua nota média (ainda mais em negócios independentes).","de la gente lee reseñas antes de elegir un negocio local. Y el 81% usa Google para mirarlas.":"das pessoas leem avaliações antes de escolher um negócio local. E 81% usam o Google para as ver.","más probabilidad de que te elijan con solo 5 reseñas frente a tener ninguna. Las primeras son las que más mueven.":"mais probabilidade de te escolherem com só 5 avaliações do que com nenhuma. As primeiras são as que mais contam.","factor más importante para salir arriba en Google Maps son las reseñas (16–20% del peso del ranking local).":"fator mais importante para aparecer no topo do Google Maps são as avaliações (16–20% do peso do ranking local).","de la gente solo da valor a las reseñas de las últimas 2 semanas. Por eso necesitas un flujo constante, no una campaña suelta.":"das pessoas só dão valor às avaliações das últimas 2 semanas. Por isso precisas de um fluxo constante, não de uma campanha solta.","El stand en el mostrador es la forma nº1 de capturar esa reseña en caliente.":"O expositor no balcão é a forma nº1 de captar essa avaliação a quente.","Pedir de palabra convierte un 1–2%. Con el stand delante, en el momento bueno, sube muchísimo.":"Pedir de viva voz converte 1–2%. Com o expositor à frente, no momento certo, sobe imenso.","El stand que mata el \"luego te la dejo\"":"O expositor que mata o \"depois deixo-ta\"","El cliente contento de hoy,":"O cliente contente de hoje,","en una reseña dejada ahora.":"numa avaliação deixada agora.","El 90 % de tus clientes contentos nunca te deja la reseña: cuando se lo pides ya tienen prisa y dicen \"luego desde casa\". Ese \"luego\" no llega. Pones el stand en la barra, tu cliente acerca el móvil o escanea el QR y deja la estrella":"90 % dos teus clientes contentes nunca te deixam a avaliação: quando lhes pedes já têm pressa e dizem \"depois lá de casa\". Esse \"depois\" não chega. Pões o expositor no balcão, o teu cliente aproxima o telemóvel ou lê o QR e deixa a estrela","antes de salir por la puerta":"antes de sair pela porta",". Sin app, sin que busque nada.":". Sem app, sem ter de procurar nada.","Pedir el stand · 34,90 €":"Pedir o expositor · 34,90 €","El Kit Lleno de Reseñas (guía + plantillas + cartel imprimible + checklist) te lo ofrezco al pedir, por solo 4,99 € más.":"O Kit Cheio de Avaliações (guia + modelos + cartaz imprimível + checklist) ofereço-to ao encomendar, por só 4,99 € mais.",
+      "Negocios reales en Andorra":"Negócios reais em Andorra","Más reseñas y más seguidores":"Mais avaliações e mais seguidores","con un solo gesto.":"com um só gesto.",
+      "El stand que pones en tu mostrador. Tu cliente acerca el móvil y, en 5 segundos, te deja una reseña en Google o te sigue en Instagram. Sin app.":"O expositor que pões no teu balcão. O teu cliente aproxima o telemóvel e, em 5 segundos, deixa uma avaliação no Google ou segue-te no Instagram. Sem app.",
+      "Google + Instagram · 54,90 €":"Google + Instagram · 54,90 €",
+      "\"En 2 semanas conseguí más reseñas que en todo el año. Lo pongo junto al datáfono y los clientes lo usan solos.\"":"\"Em 2 semanas consegui mais avaliações do que no ano inteiro. Ponho-o ao lado do TPA e os clientes usam-no sozinhos.\"","Pastelería":"Pastelaria",
+      "Elige tu pack":"Escolhe o teu pack","Cuantos más, mejor precio.":"Quantos mais, melhor preço.","Pago único, sin cuotas. No pagas online: lo confirmas por WhatsApp.":"Pagamento único, sem mensalidades. Trato disso eu próprio.",
+      "Para empezar":"Para começar","1 stand":"1 expositor","pago único":"pagamento único","Pedir 1":"Pedir 1",
+      "★ El más elegido":"★ O mais escolhido","Caja + barra":"Caixa + balcão","2 stands":"2 expositores","27,45 €/stand · ahorras 14,90 €":"27,45 €/expositor · poupas 14,90 €","Pedir 2":"Pedir 2",
+      "Para locales grandes":"Para espaços grandes","3 stands":"3 expositores","24,97 €/stand · ahorras 29,80 €":"24,97 €/expositor · poupas 29,80 €","Pedir 3":"Pedir 3",
+      "Garantía: si te llega defectuoso, te lo reimprimo gratis. · Envío 24–72 h.":"Garantia: se chegar com defeito, reimprimo grátis. · Envio 24–72 h.",
+      "¿Prefieres más seguidores?":"Preferes mais seguidores?","También lo hago en versión Instagram.":"Também o faço em versão Instagram.","El mismo stand, mismo precio. Tu cliente acerca el móvil y te sigue en Instagram al instante. Ideal para escaparate y mostrador.":"O mesmo expositor, mesmo preço. O teu cliente aproxima o telemóvel e segue-te no Instagram num instante. Ideal para montra e balcão.","Quiero el de Instagram":"Quero o do Instagram",
+      "Cómo funciona":"Como funciona","Sin app. iPhone y Android. 5 segundos.":"Sem app. iPhone e Android. 5 segundos.","Colocas el stand en tu mostrador.":"Colocas o expositor no teu balcão.","Tu cliente acerca el móvil (NFC) o escanea el QR.":"O teu cliente aproxima o telemóvel (NFC) ou lê o QR.","Deja su reseña en Google. Listo.":"Deixa a avaliação no Google. Pronto.",
+      "Quién está detrás":"Quem está por trás","Lo preparamos nosotros.":"Preparamo-lo nós.","Somos Uriel y Joselí. Lo preparamos y configuramos nosotros mismos: grabamos el chip y te dejamos tu enlace de Google listo, desde Andorra. No hay distribuidor en medio.":"Somos o Uriel e o Joselí. Preparamos e configuramos nós próprios: gravamos o chip e deixamos o teu link do Google pronto, a partir de Andorra. Sem distribuidor pelo meio.","Cada stand se prueba con un iPhone y un Android antes de enviarlo. Si te llega defectuoso, te lo reimprimo sin preguntas.":"Cada expositor é testado com um iPhone e um Android antes de enviar. Se chegar com defeito, reimprimo sem perguntas.",
+      "¿Lo quieres? Escríbeme.":"Queres? Escreve-me.","Me escribes hoy, te lo preparo esta semana y empiezas a sumar reseñas antes de fin de mes.":"Escreves-me hoje, preparo-o esta semana e começas a somar avaliações antes do fim do mês.","Escríbeme":"Escreve-me","Normalmente respondo en menos de 24 h.":"Normalmente respondo em menos de 24 h.",
+      "Andorra":"Andorra",
+      "¿Mezclas Google e Instagram?":"Misturas Google e Instagram?","Sin problema: tú eliges la combinación y el precio es por cantidad.":"Sem problema: tu escolhes a combinação e o preço é por quantidade.","Pídeme tu combo":"Pede-me o teu combo",
+      "El más elegido":"O mais escolhido","Para restaurantes y cadenas":"Para restaurantes e cadeias","Personaliza tu paquete":"Personaliza o teu pacote","Pide los stands que quieras —10, 20, 50 o más— mezclando Google e Instagram como prefieras. Te hago precio a medida.":"Pede os expositores que quiseres —10, 20, 50 ou mais— misturando Google e Instagram como preferires. Faço-te preço à medida.","Personaliza tu pedido":"Personaliza o teu pedido"
     }
-    return -1;
+  };
+  let nodes=null;
+  function collect(){
+    const tw=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,{acceptNode(n){
+      if(!n.nodeValue||!n.nodeValue.trim())return NodeFilter.FILTER_REJECT;
+      const p=n.parentElement; if(!p)return NodeFilter.FILTER_REJECT;
+      const t=p.tagName; if(t==='SCRIPT'||t==='STYLE'||t==='NOSCRIPT')return NodeFilter.FILTER_REJECT;
+      if(p.closest('#langMenu'))return NodeFilter.FILTER_REJECT;
+      return NodeFilter.FILTER_ACCEPT;
+    }});
+    const a=[]; let n; while(n=tw.nextNode())a.push({node:n,es:n.nodeValue}); return a;
   }
-  function drawFrame(target){
-    lastTarget = target;
-    const idx = nearestLoadedIdx(target);
-    if (idx < 0) return;
-    if (idx === drawnIdx) return;
-    const img = images[idx];
-    const cw = canvas.width, ch = canvas.height;
-    const iw = img.naturalWidth, ih = img.naturalHeight;
-    const cR = cw / ch, iR = iw / ih;
-    let sx, sy, sw, sh;
-    if (iR > cR){ sh = ih; sw = ih * cR; sx = (iw - sw)/2; sy = 0; }
-    else        { sw = iw; sh = iw / cR; sx = 0; sy = (ih - sh)/2; }
-    ctx.drawImage(img, sx, sy, sw, sh, 0, 0, cw, ch);
-    drawnIdx = idx;
-    if (fallback && !fallback.classList.contains('is-hidden')) fallback.classList.add('is-hidden');
+  function apply(l){
+    if(!LANGS.includes(l))l='es'; document.documentElement.lang=l;
+    if(!nodes)nodes=collect();
+    const m=DICT[l];
+    nodes.forEach(o=>{ if(l==='es'||!m){o.node.nodeValue=o.es;return;} const k=o.es.trim(); const tr=m[k]; o.node.nodeValue=(tr!=null)?o.es.replace(k,tr):o.es; });
+    document.querySelectorAll('[data-i18n-label]').forEach(b=>b.textContent=NAMES[l]);
+    document.querySelectorAll('a[href^="pedido.html"]').forEach(function(a){var hh=a.getAttribute('href').split('?')[0];var sp=new URLSearchParams(a.getAttribute('href').split('?')[1]||'');sp.set('lang',l);a.setAttribute('href',hh+'?'+sp.toString());});
+    try{localStorage.setItem('toi_lang',l);}catch(e){}
   }
-
-  function preload(){
-    const order = [];
-    const seen = new Set();
-    const push = n => { if (n>=0 && n<FRAMES && !seen.has(n)) { seen.add(n); order.push(n); } };
-    push(0); push(FRAMES - 1);
-    for (let step = FRAMES/2; step >= 1; step /= 2){
-      const s = Math.max(1, Math.round(step));
-      for (let n = s; n < FRAMES; n += s*2) push(n);
-    }
-    for (let i = 0; i < FRAMES; i++) push(i);
-    for (const i of order){
-      const img = new Image();
-      img.decoding = 'async';
-      img.src = pathFor(i);
-      img.onload = () => {
-        if (drawnIdx === -1) drawFrame(0);
-        if (Math.abs(i - lastTarget) < Math.abs(drawnIdx - lastTarget)){
-          drawFrame(lastTarget);
-        }
-      };
-      images[i] = img;
-    }
+  let saved=null; try{saved=localStorage.getItem('toi_lang');}catch(e){}
+  const nv=(navigator.language||'es').slice(0,2).toLowerCase();
+  const init=saved||'ca';
+  function boot(){ nodes=collect(); apply(init);
+    document.querySelectorAll('[data-lang-opt]').forEach(o=>o.addEventListener('click',function(e){e.preventDefault();apply(o.getAttribute('data-lang-opt'));const d=document.getElementById('langMenu');if(d)d.open=false;}));
   }
-
-  function update(){
-    const r = track.getBoundingClientRect();
-    const vh = window.innerHeight || document.documentElement.clientHeight;
-    const total = Math.max(1, r.height - vh);
-    const passed = -r.top;
-    let p = passed / total;
-    if (p < 0) p = 0; else if (p > 1) p = 1;
-    const idx = Math.min(FRAMES - 1, Math.max(0, Math.round(p * (FRAMES - 1))));
-    drawFrame(idx);
-  }
-  function schedule(){
-    if (pending) return;
-    pending = true;
-    requestAnimationFrame(() => { update(); pending = false; });
-  }
-
-  preload();
-  window.addEventListener('scroll', schedule, { passive: true });
-  window.addEventListener('resize', schedule, { passive: true });
-  schedule();
-
-  // Parallax 3D — solo desktop con ratón fino
-  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (reduced || !frame || !window.matchMedia('(pointer:fine)').matches) return;
-  let rafId = 0, tx = 0, ty = 0, cx = 0, cy = 0;
-  const MAX = 6;
-  function tick(){
-    cx += (tx - cx) * 0.10;
-    cy += (ty - cy) * 0.10;
-    frame.style.transform = `perspective(1400px) rotateX(${cx.toFixed(2)}deg) rotateY(${cy.toFixed(2)}deg)`;
-    if (Math.abs(tx - cx) > 0.04 || Math.abs(ty - cy) > 0.04) rafId = requestAnimationFrame(tick);
-    else rafId = 0;
-  }
-  stage.addEventListener('mousemove', (e) => {
-    const r = stage.getBoundingClientRect();
-    const dx = (e.clientX - (r.left + r.width/2)) / (r.width/2);
-    const dy = (e.clientY - (r.top + r.height/2)) / (r.height/2);
-    tx = Math.max(-1, Math.min(1, -dy)) * MAX;
-    ty = Math.max(-1, Math.min(1, dx)) * MAX;
-    if (!rafId) tick();
-  }, { passive: true });
-  stage.addEventListener('mouseleave', () => { tx = 0; ty = 0; if (!rafId) tick(); }, { passive: true });
-})();
-
-// Nav becomes dark over dark sections
-const nav = document.querySelector('nav.glass');
-const darkSections = document.querySelectorAll('.bg-ink');
-function updateNav(){
-  const navBottom = 64;
-  let onDark = false;
-  darkSections.forEach(s=>{
-    const r = s.getBoundingClientRect();
-    if (r.top <= navBottom && r.bottom >= navBottom) onDark = true;
-  });
-  nav.classList.toggle('dark', onDark);
-}
-window.addEventListener('scroll', updateNav, { passive: true });
-updateNav();
-
-// Calculator
-(function(){
-  const cl = document.getElementById('cal-clients');
-  const dy = document.getElementById('cal-days');
-  const tp = document.getElementById('cal-type');
-  const clV = document.getElementById('cal-clients-v');
-  const dyV = document.getElementById('cal-days-v');
-  const before = document.getElementById('cal-before');
-  const low = document.getElementById('cal-low');
-  const high = document.getElementById('cal-high');
-  const mult = document.getElementById('cal-multiplier');
-  const pb  = document.getElementById('cal-payback');
-  if (!cl) return;
-  function calc(){
-    const clients = +cl.value;
-    const days = +dy.value;
-    const rate = +tp.value / 100;
-    clV.textContent = clients;
-    dyV.textContent = days;
-    // monthly potential reseñas if the stand captures `rate`% of clients
-    const monthly = clients * days * 4.3 * rate;
-    const lo = Math.max(1, Math.round(monthly * 0.6));
-    const hi = Math.round(monthly * 1.2);
-    low.textContent = lo;
-    high.textContent = hi;
-    // Baseline ~8% of those who'd convert without the stand (BrightLocal-style)
-    const baseline = Math.max(1, Math.round(monthly * 0.08));
-    if (before) before.textContent = baseline;
-    if (mult){
-      const multiplier = Math.round(((lo + hi)/2 / baseline - 1) * 100);
-      mult.textContent = '+' + multiplier + '%';
-    }
-    if (pb){
-      if (lo >= 5) pb.innerHTML = 'Pagas el stand con <strong class="text-ink">el primer cliente nuevo</strong> que te encuentre por Google.';
-      else pb.innerHTML = 'Tu primer cliente nuevo gracias a Google ya paga el stand.';
-    }
-  }
-  ['input','change'].forEach(ev => {
-    cl.addEventListener(ev, calc);
-    dy.addEventListener(ev, calc);
-    tp.addEventListener(ev, calc);
-  });
-  calc();
-})();
-
-// Google Business verifier — opens Google Maps in a new tab with the query
-function checkBusiness(){
-  const q = (document.getElementById('biz-q').value || '').trim();
-  if (!q) return;
-  const url = 'https://www.google.com/maps/search/' + encodeURIComponent(q);
-  window.open(url, '_blank', 'noopener');
-}
-
-// Live-sync the phone mockup with the search input
-(function(){
-  const input = document.getElementById('biz-q');
-  const phoneQ = document.getElementById('phone-q');
-  const phoneName = document.getElementById('phone-name');
-  const phoneCount = document.getElementById('phone-count');
-  if (!input || !phoneQ) return;
-  function sync(){
-    const v = (input.value || '').trim();
-    const display = v || 'tu negocio';
-    phoneQ.textContent = display;
-    if (phoneName) phoneName.textContent = v || 'Tu negocio';
-    if (phoneCount) phoneCount.textContent = v ? Math.max(3, Math.min(280, v.length * 7 + 12)) : 47;
-  }
-  input.addEventListener('input', sync);
-  sync();
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot); else boot();
 })();
 </script>
 
