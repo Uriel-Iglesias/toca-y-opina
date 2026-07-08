@@ -52,7 +52,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Inter","Sego
       <img id="foto" src="assets/img/productos/estudio-google-1.webp" alt="" width="72" height="72" style="width:72px;height:72px;border-radius:14px;object-fit:cover;flex-shrink:0;background:#EEF3FF;">
       <div>
         <p class="display" style="font-size:22px;"><span id="resumen">1 stand</span></p>
-        <p class="text-[14px]" style="color:var(--muted);"><span id="precio">34,90 €</span> · <span id="payNote">pago único · pagas al recibirlo</span></p>
+        <p class="text-[14px]" style="color:var(--muted);"><span id="precio">34,90 €</span> · <span id="payNote">pago único · sin pagar online</span></p>
       </div>
     </div>
 
@@ -80,12 +80,12 @@ body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Inter","Sego
         <span class="display" style="font-size:24px;color:#1D1D1F;white-space:nowrap;" id="totKit">59,89 €</span>
       </div>
 
-      <button id="btnKit" type="button" class="cta cta-gold" style="justify-content:space-between;"><span id="btnKitTxt">Pedir con el Kit</span><span id="totKitBtn" style="white-space:nowrap;">59,89 €</span></button>
+      <button id="btnKit" type="button" class="cta cta-gold" data-goatcounter-click="pedido-con-kit" style="justify-content:space-between;"><span id="btnKitTxt">Pedir con el Kit</span><span id="totKitBtn" style="white-space:nowrap;">59,89 €</span></button>
     </div>
 
-    <button id="btnSolo" type="button" class="cta cta-line" style="justify-content:space-between;"><span id="btnSoloTxt">Pedir sin el Kit</span><span id="precioBtn" style="white-space:nowrap;">34,90 €</span></button>
+    <button id="btnSolo" type="button" class="cta cta-line" data-goatcounter-click="pedido-sin-kit" style="justify-content:space-between;"><span id="btnSoloTxt">Pedir sin el Kit</span><span id="precioBtn" style="white-space:nowrap;">34,90 €</span></button>
 
-    <p id="footNote" class="text-[12.5px] text-center mt-7" style="color:var(--muted);">Sin pagar nada todavía: pagas al recibirlo en mano. 📦 Entrega en mano en toda Andorra · 24–72 h.</p>
+    <p id="footNote" class="text-[12.5px] text-center mt-7" style="color:var(--muted);">Sin pagar nada online: lo confirmas por WhatsApp. 📦 En mano en Andorra · envíos a toda España.</p>
   </div>
 
   <!-- ===== VISTA DATOS ===== -->
@@ -105,11 +105,11 @@ body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Inter","Sego
       <input id="fBiz" class="fld" type="text" autocomplete="organization" placeholder="Ej. Bar La Plaça">
     </div>
 
-    <a id="btnSend" href="#" class="cta cta-wa">
+    <a id="btnSend" href="#" class="cta cta-wa" data-goatcounter-click="whatsapp-enviar">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.748-.957z"/></svg>
       <span id="sendTxt">Enviar por WhatsApp</span>
     </a>
-    <p id="formNote" class="text-[12.5px] text-center mt-5" style="color:var(--muted);">Te lo confirmamos por WhatsApp, te lo llevamos en mano en 24–72 h y pagas al recibirlo. Si algo falla, te lo reimprimimos gratis.</p>
+    <p id="formNote" class="text-[12.5px] text-center mt-5" style="color:var(--muted);">Te lo confirmamos por WhatsApp y en 24–72 h lo tienes: en mano en Andorra (pagas al recibirlo) o por envío en España. Si algo falla, te lo reimprimimos gratis.</p>
   </div>
 
 </main>
@@ -134,62 +134,62 @@ body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Inter","Sego
   var P=PRODUCTS[prod];
 
   var L={
-    es:{eyebrow:'Casi está · solo confirmar', payNote:'pago único · pagas al recibirlo',
+    es:{eyebrow:'Casi está · solo confirmar', payNote:'pago único · sin pagar online',
         bumpBadge:'🎁 Oferta solo al pedir', saveBadge:'Ahorras 10 €',
         bumpTitle:'Suma el <span style="color:#C98A12;">Kit Lleno de Reseñas</span>',
         li1:'Guía <strong>"Cómo conseguir más reseñas"</strong> + 30 plantillas para pedirlas',
         li2:'<strong>Cartel + QR imprimible</strong> para puerta, caja, baño y ticket',
         li3:'<strong>Checklist "Ficha de Google perfecta en 15 min"</strong>',
         kitWord:'Kit', total:'Total', sendKit:'Pedir con el Kit', sendSolo:'Pedir sin el Kit', totalKit:'Total con el Kit',
-        footNote:'Sin pagar nada todavía: pagas al recibirlo en mano. 📦 Entrega en mano en toda Andorra · 24–72 h.',
+        footNote:'Sin pagar nada online: lo confirmas por WhatsApp. 📦 En mano en Andorra · envíos a toda España.',
         back:'← Volver', formEyebrow:'Último paso', formTitle:'¿A quién preparamos el pedido?',
         lblName:'Tu nombre', phName:'Ej. María', lblBiz:'Nombre de tu negocio', phBiz:'Ej. Bar La Plaça',
-        send:'Enviar por WhatsApp', formNote:'Te lo confirmamos por WhatsApp, te lo llevamos en mano en 24–72 h y pagas al recibirlo. Si algo falla, te lo reimprimimos gratis.',
+        send:'Enviar por WhatsApp', formNote:'Te lo confirmamos por WhatsApp y en 24–72 h lo tienes: en mano en Andorra (pagas al recibirlo) o por envío en España. Si algo falla, te lo reimprimimos gratis.',
         kitName:'el Kit Lleno de Reseñas', customQty:'varias unidades',
         names:{g1:'1 expositor Google',g2:'2 expositores Google',g3:'3 expositores Google',combo:'1 Google + 1 Instagram',g2i1:'2 Google + 1 Instagram',g1i2:'1 Google + 2 Instagram',custom:'Pedido personalizado'},
         msg:function(u,b,order,total){return 'Hola, soy '+u+' de '+b+'. Quiero '+order+' — total '+total+'.';},
         msgCustom:function(u,b){return 'Hola, soy '+u+' de '+b+'. Quiero un pedido personalizado (varias unidades, mezclando Google e Instagram).';}},
-    ca:{eyebrow:'Gairebé fet · només confirmar', payNote:"pagament únic · pagues en rebre'l",
+    ca:{eyebrow:'Gairebé fet · només confirmar', payNote:"pagament únic · sense pagar online",
         bumpBadge:'🎁 Oferta només en comandar', saveBadge:'Estalvies 10 €',
         bumpTitle:'Suma el <span style="color:#C98A12;">Kit Ple de Ressenyes</span>',
         li1:'Guia <strong>"Com aconseguir més ressenyes"</strong> + 30 plantilles per demanar-les',
         li2:'<strong>Cartell + QR imprimible</strong> per a porta, caixa, lavabo i tiquet',
         li3:'<strong>Checklist "Fitxa de Google perfecta en 15 min"</strong>',
         kitWord:'Kit', total:'Total', sendKit:'Demanar amb el Kit', sendSolo:'Demanar sense el Kit', totalKit:'Total amb el Kit',
-        footNote:"Sense pagar res encara: pagues en rebre'l en mà. 📦 Lliurament en mà a tot Andorra · 24–72 h.",
+        footNote:"Sense pagar res online: ho confirmes per WhatsApp. 📦 En mà a Andorra · enviaments a tota Espanya.",
         back:'← Tornar', formEyebrow:'Últim pas', formTitle:'Per a qui preparem la comanda?',
         lblName:'El teu nom', phName:'Ex. Maria', lblBiz:'Nom del teu negoci', phBiz:'Ex. Bar La Plaça',
-        send:'Enviar per WhatsApp', formNote:"T'ho confirmem per WhatsApp, t'ho portem en mà en 24–72 h i pagues en rebre-ho. Si alguna cosa falla, t'ho reimprimim gratis.",
+        send:'Enviar per WhatsApp', formNote:"T'ho confirmem per WhatsApp i en 24–72 h ho tens: en mà a Andorra (pagues en rebre-ho) o per enviament a Espanya. Si alguna cosa falla, t'ho reimprimim gratis.",
         kitName:'el Kit Ple de Ressenyes', customQty:'diverses unitats',
         names:{g1:'1 expositor Google',g2:'2 expositors Google',g3:'3 expositors Google',combo:'1 Google + 1 Instagram',g2i1:'2 Google + 1 Instagram',g1i2:'1 Google + 2 Instagram',custom:'Comanda personalitzada'},
         msg:function(u,b,order,total){return 'Hola, soc '+u+' de '+b+'. Vull '+order+' — total '+total+'.';},
         msgCustom:function(u,b){return 'Hola, soc '+u+' de '+b+'. Vull una comanda personalitzada (diverses unitats, barrejant Google i Instagram).';}},
-    fr:{eyebrow:'Presque fini · juste confirmer', payNote:'paiement unique · payé à la réception',
+    fr:{eyebrow:'Presque fini · juste confirmer', payNote:'paiement unique · rien à payer en ligne',
         bumpBadge:'🎁 Offre seulement à la commande', saveBadge:'Vous économisez 10 €',
         bumpTitle:'Ajoutez le <span style="color:#C98A12;">Kit Plein d\'Avis</span>',
         li1:'Guide <strong>« Comment obtenir plus d\'avis »</strong> + 30 modèles pour les demander',
         li2:'<strong>Affiche + QR imprimable</strong> pour porte, caisse, toilettes et ticket',
         li3:'<strong>Checklist « Fiche Google parfaite en 15 min »</strong>',
         kitWord:'Kit', total:'Total', sendKit:'Commander avec le Kit', sendSolo:'Commander sans le Kit', totalKit:'Total avec le Kit',
-        footNote:"Rien à payer pour l'instant : vous payez à la réception, en main propre. 📦 Livraison en main propre dans toute l'Andorre · 24–72 h.",
+        footNote:"Rien à payer en ligne : vous confirmez par WhatsApp. 📦 En main propre en Andorre · envoi dans toute l'Espagne.",
         back:'← Retour', formEyebrow:'Dernière étape', formTitle:'Pour qui préparons-nous la commande ?',
         lblName:'Votre nom', phName:'Ex. Marie', lblBiz:'Nom de votre établissement', phBiz:'Ex. Bar La Plaça',
-        send:'Envoyer par WhatsApp', formNote:"On vous confirme tout par WhatsApp, on vous le livre en main propre sous 24–72 h et vous payez à la réception. Si quelque chose ne va pas, on le réimprime gratuitement.",
+        send:'Envoyer par WhatsApp', formNote:"On vous confirme tout par WhatsApp et sous 24–72 h c'est chez vous : en main propre en Andorre (payé à la réception) ou par envoi en Espagne. Si quelque chose ne va pas, on le réimprime gratuitement.",
         kitName:"le Kit Plein d'Avis", customQty:'plusieurs unités',
         names:{g1:'1 présentoir Google',g2:'2 présentoirs Google',g3:'3 présentoirs Google',combo:'1 Google + 1 Instagram',g2i1:'2 Google + 1 Instagram',g1i2:'1 Google + 2 Instagram',custom:'Commande personnalisée'},
         msg:function(u,b,order,total){return 'Bonjour, je suis '+u+' de '+b+'. Je veux '+order+' — total '+total+'.';},
         msgCustom:function(u,b){return 'Bonjour, je suis '+u+' de '+b+'. Je veux une commande personnalisée (plusieurs unités, en mélangeant Google et Instagram).';}},
-    pt:{eyebrow:'Quase pronto · só confirmar', payNote:'pagamento único · pagas ao receber',
+    pt:{eyebrow:'Quase pronto · só confirmar', payNote:'pagamento único · sem pagar online',
         bumpBadge:'🎁 Oferta só ao encomendar', saveBadge:'Poupas 10 €',
         bumpTitle:'Junta o <span style="color:#C98A12;">Kit Cheio de Avaliações</span>',
         li1:'Guia <strong>"Como conseguir mais avaliações"</strong> + 30 modelos para as pedir',
         li2:'<strong>Cartaz + QR imprimível</strong> para porta, caixa, casa de banho e talão',
         li3:'<strong>Checklist "Ficha de Google perfeita em 15 min"</strong>',
         kitWord:'Kit', total:'Total', sendKit:'Pedir com o Kit', sendSolo:'Pedir sem o Kit', totalKit:'Total com o Kit',
-        footNote:'Sem pagar nada ainda: pagas ao receber em mãos. 📦 Entrega em mãos em toda Andorra · 24–72 h.',
+        footNote:'Sem pagar nada online: confirmas por WhatsApp. 📦 Em mãos em Andorra · envios para toda a Espanha.',
         back:'← Voltar', formEyebrow:'Último passo', formTitle:'Para quem preparamos o pedido?',
         lblName:'O teu nome', phName:'Ex. Maria', lblBiz:'Nome do teu negócio', phBiz:'Ex. Bar La Plaça',
-        send:'Enviar por WhatsApp', formNote:'Confirmamos tudo por WhatsApp, levamos-to em mãos em 24–72 h e pagas ao receber. Se algo falhar, reimprimimos grátis.',
+        send:'Enviar por WhatsApp', formNote:'Confirmamos tudo por WhatsApp e em 24–72 h tens: em mãos em Andorra (pagas ao receber) ou por envio em Espanha. Se algo falhar, reimprimimos grátis.',
         kitName:'o Kit Cheio de Avaliações', customQty:'várias unidades',
         names:{g1:'1 expositor Google',g2:'2 expositores Google',g3:'3 expositores Google',combo:'1 Google + 1 Instagram',g2i1:'2 Google + 1 Instagram',g1i2:'1 Google + 2 Instagram',custom:'Pedido personalizado'},
         msg:function(u,b,order,total){return 'Olá, sou '+u+' de '+b+'. Quero '+order+' — total '+total+'.';},
@@ -273,5 +273,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Inter","Sego
   ['fName','fBiz'].forEach(function(id){ $(id).addEventListener('input',function(){this.classList.remove('err');}); });
 })();
 </script>
+<script data-goatcounter="https://tocayopina.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>

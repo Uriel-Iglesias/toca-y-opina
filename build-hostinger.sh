@@ -24,6 +24,7 @@ zip -r "$OUT" \
   apple-touch-icon.png \
   favicon.ico \
   index.html \
+  index.php \
   calculadora.html \
   guia-resenas.html \
   pedido.html \

@@ -98,3 +98,17 @@ Además: deriva de contenido en el blog (9 footers decían "Amposta", un artícu
 3. **Testimonios verificables**: pedir permiso a Zaida (Gaudeix) y 2-3 clientes más para enlazar su ficha de Google — "negocios de aquí" con nombre y parroquia es el disparador nº1 en un mercado pequeño.
 4. **Foto real de un stand en un bar de Andorra** para el hero/testimonios (las actuales de estudio son buenas, pero una en contexto real de Andorra ancla el "somos de aquí").
 5. Enlazado cruzado del blog + og-image.webp para compartir más ligero.
+
+---
+
+## 7 · Actualización 8-jul (decisiones de Uriel aplicadas + incidente de producción)
+
+**Decisiones aplicadas:**
+- **Garantía de devolución 30 días: RETIRADA** de toda la web (quedaba en 2 puntos del artículo del Delta y 1 en "sobre Uriel"). Se mantiene solo reimpresión gratis + regrabado gratis.
+- **Ámbito de entrega: "En mano en Andorra · Envíos a toda España"** en banner, hero, packs, proceso, FAQ (+nueva pregunta "¿Dónde entregáis?"), pedido (4 idiomas), JSON-LD (areaServed AD+ES), aviso legal y aviso del artículo del Delta.
+- **Medición sin coste: GoatCounter** (gratis, sin cookies, sin banner de consentimiento) en las 29 páginas públicas, con eventos en los botones clave: cta-hero, packs 1/2/3, oferta, sticky, FAQ-WhatsApp, final, y en pedido: pedido-con-kit, pedido-sin-kit y **whatsapp-enviar** (la conversión real). ⚠️ **Requiere 1 paso de Uriel:** crear cuenta gratis en goatcounter.com con el código exacto `tocayopina` (URL `tocayopina.goatcounter.com`). Hasta entonces los eventos se descartan sin romper nada.
+
+**Incidente de producción diagnosticado (el "no se ve nada" en Safari):**
+- `https://tocayopina.es/` devuelve **HTTP 500 vacío**. Causa: existe un **`index.php` roto en public_html** que LiteSpeed prioriza sobre index.html, y el `.htaccess` del servidor no está aplicando `DirectoryIndex` (por eso también `/blog/` da 403 y las URLs inexistentes dan 500 en vez del 404 propio). `/index.html` directo funciona (200) — el contenido está, pero nadie que entre por la raíz lo ve.
+- **Blindaje incluido en este build:** el zip ahora lleva un `index.php` propio que sirve `index.html` — al extraerlo machaca el roto y la raíz vuelve a funcionar aunque el DirectoryIndex siga sin aplicarse.
+- **Al desplegar, verificar:** (1) extraer el zip EN `public_html/` con "sobrescribir"; (2) confirmar que `.htaccess` existe en public_html tras extraer (los gestores de archivos a veces esconden los archivos con punto — activar "mostrar archivos ocultos"); (3) probar `https://tocayopina.es/` y `https://tocayopina.es/blog/` → deben dar 200.
