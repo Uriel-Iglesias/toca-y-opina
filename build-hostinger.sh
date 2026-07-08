@@ -27,6 +27,7 @@ zip -r "$OUT" \
   calculadora.html \
   guia-resenas.html \
   pedido.html \
+  aviso-legal.html \
   robots.txt \
   sitemap.xml \
   assets \
@@ -36,6 +37,9 @@ zip -r "$OUT" \
   -x "assets/img/_originals/*" \
   -x "assets/img/.tmp/*" \
   -x "assets/img/shots/*" \
+  -x "assets/img/ads/*" \
+  -x "assets/img/orbit/*" \
+  -x "assets/img/*.mp4" \
   -x "assets/img/.DS_Store" \
   -x "blog/.DS_Store" \
   -x "*.DS_Store" \

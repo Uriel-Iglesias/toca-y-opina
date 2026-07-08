@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#105BF5">
-<title>Reseñas en Google y seguidores en Instagram en Andorra · Toca y Opina</title>
-<meta name="description" content="Expositor NFC + QR para negocios de Andorra: tu cliente acerca el móvil y deja su reseña en Google o te sigue en Instagram en 5 segundos, sin app. Desde 34,90 €.">
+<title>Reseñas en Google para tu negocio en Andorra · Toca y Opina</title>
+<meta name="description" content="Stand NFC + QR para negocios de Andorra: tu cliente acerca el móvil y deja su reseña en Google en 5 segundos, sin app. Entrega en mano. 34,90 € una vez.">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="format-detection" content="telephone=no">
 
@@ -16,20 +16,19 @@
 <meta property="og:site_name" content="Toca y Opina">
 <meta property="og:locale" content="es_ES">
 <meta property="og:title" content="Toca y Opina · Más reseñas en Google en 5 segundos">
-<meta property="og:description" content="Stand NFC + QR. Tu cliente acerca el móvil y deja su reseña. 34,90 € · Andorra.">
+<meta property="og:description" content="Stand NFC + QR entregado en mano en Andorra. Pagas al recibirlo. 34,90 € una vez.">
 <meta property="og:image" content="https://tocayopina.es/assets/img/productos/hero-mix.jpg">
 <meta property="og:url" content="https://tocayopina.es/">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Toca y Opina · Más reseñas en Google en 5 segundos">
-<meta name="twitter:description" content="Stand NFC + QR. 34,90 €. Andorra.">
+<meta name="twitter:description" content="Stand NFC + QR. 34,90 €. Entrega en mano en Andorra.">
 <meta name="twitter:image" content="https://tocayopina.es/assets/img/productos/hero-mix.jpg">
 
-<link rel="preload" as="image" href="assets/img/productos/hero-mix.jpg" fetchpriority="high">
-
+<link rel="preload" as="image" type="image/webp" href="assets/img/productos/hero-mix.webp" fetchpriority="high">
 
 <style>
-:root{ --ink:#0A0A0A; --ink2:#1D1D1F; --muted:#6B6B70; --brand:#105BF5; --gold:#F5B941; --paper:#FAFAFA; --line:#E5E5E7; }
+:root{ --ink:#0A0A0A; --ink2:#1D1D1F; --muted:#6B6B70; --brand:#105BF5; --gold:#F5B941; --gold-text:#8A5E0A; --paper:#FAFAFA; --line:#E5E5E7; }
 *{ -webkit-tap-highlight-color:transparent; box-sizing:border-box; }
 html{ scroll-behavior:smooth; overflow-x:clip; }
 body{ font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Inter","Segoe UI",Helvetica,Arial,sans-serif; color:var(--ink); background:#fff; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; overflow-x:clip; }
@@ -56,29 +55,44 @@ img{ max-width:100%; display:block; }
 .badge{ background:var(--gold); color:#1D1D1F; font-size:11px; font-weight:800; padding:5px 12px; border-radius:999px; letter-spacing:.05em; text-transform:uppercase; }
 .reveal{ opacity:0; transform:translateY(18px); transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1); }
 .reveal.in{ opacity:1; transform:none; }
-@media(prefers-reduced-motion:reduce){ .reveal{ opacity:1!important; transform:none!important; } }
+@media(prefers-reduced-motion:reduce){ .reveal{ opacity:1!important; transform:none!important; } .cta-hero::before{ animation:none; } }
 nav.glass{ background:rgba(255,255,255,.82); -webkit-backdrop-filter:saturate(180%) blur(20px); backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid rgba(0,0,0,.06); }
 .stars{ display:inline-flex; gap:2px; }
 .stars svg{ width:18px; height:18px; }
 .sticky-cta{ position:fixed; left:12px; right:12px; bottom:12px; background:#25D366; color:#06351A; border-radius:999px; padding:15px 22px; display:flex; align-items:center; justify-content:center; gap:10px; box-shadow:0 16px 40px rgba(37,211,102,.45); z-index:80; font-weight:800; font-size:15.5px; white-space:nowrap; }
 @media(min-width:768px){ .sticky-cta{ display:none; } }
 .langbtn summary{ list-style:none; } .langbtn summary::-webkit-details-marker{ display:none; }
-  @media(max-width:640px){ .price-card .aspect-\[4\/5\]{aspect-ratio:4/3;} }
-  .price-card .font-display{ white-space:nowrap; }
+@media(max-width:640px){ .price-card .aspect-\[4\/5\]{aspect-ratio:4/3;} }
+.price-card .font-display{ white-space:nowrap; }
+.step-num{ width:44px; height:44px; border-radius:999px; background:var(--brand); color:#fff; font-weight:800; font-size:19px; display:grid; place-items:center; flex-shrink:0; }
+.faq details{ border-bottom:1px solid var(--line); }
+.faq summary{ list-style:none; cursor:pointer; display:flex; align-items:center; justify-content:space-between; gap:14px; padding-block:18px; font-weight:700; font-size:16.5px; }
+.faq summary::-webkit-details-marker{ display:none; }
+.faq summary::after{ content:'+'; font-size:22px; font-weight:400; color:var(--muted); transition:transform .25s; flex-shrink:0; }
+.faq details[open] summary::after{ transform:rotate(45deg); }
+.faq details p{ padding-bottom:18px; margin:0; }
 </style>
 
 <!-- JSON-LD -->
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Product","name":"Toca y Opina — Stand NFC + QR para reseñas en Google","image":["https://tocayopina.es/assets/img/productos/estudio-google-1.jpg"],"description":"Stand físico de sobremesa con código QR y chip NFC que lleva al cliente a dejar su reseña en Google en 5 segundos.","brand":{"@type":"Brand","name":"Toca y Opina"},"offers":{"@type":"Offer","price":"34.90","priceCurrency":"EUR","availability":"https://schema.org/InStock","url":"https://tocayopina.es/","itemCondition":"https://schema.org/NewCondition"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Product","name":"Toca y Opina — Stand NFC + QR para reseñas en Google","image":["https://tocayopina.es/assets/img/productos/estudio-google-1.jpg"],"description":"Stand físico de sobremesa con código QR y chip NFC que lleva al cliente a dejar su reseña en Google en 5 segundos. Entregado en mano y configurado en Andorra.","brand":{"@type":"Brand","name":"Toca y Opina"},"offers":{"@type":"Offer","price":"34.90","priceCurrency":"EUR","availability":"https://schema.org/InStock","url":"https://tocayopina.es/","itemCondition":"https://schema.org/NewCondition"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "LocalBusiness", "name": "Toca y Opina", "url": "https://tocayopina.es/", "image": "https://tocayopina.es/assets/img/productos/estudio-google-1.jpg", "logo": "https://tocayopina.es/assets/img/logo-200.jpg", "telephone": "+34690390557", "priceRange": "34,90 €–74,90 €", "address": {"@type": "PostalAddress", "addressLocality": "Andorra la Vella", "addressCountry": "AD"}, "areaServed": {"@type": "Country", "name": "Andorra"}, "founder": [{"@type": "Person", "name": "Uriel Iglesias Segura"}, {"@type": "Person", "name": "Joselí"}], "sameAs": ["https://www.instagram.com/tocayopina"]}</script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Cómo funciona el expositor de Toca y Opina?", "acceptedAnswer": {"@type": "Answer", "text": "Lo pones en tu mostrador. Tu cliente acerca el móvil (NFC) o escanea el código QR y deja su reseña en Google o te sigue en Instagram en 5 segundos. Sin app y sin registrarse."}}, {"@type": "Question", "name": "¿Hacéis envíos en Andorra?", "acceptedAnswer": {"@type": "Answer", "text": "Sí, enviamos a toda Andorra. Te lo entregamos configurado con tu enlace de Google, listo para usar."}}, {"@type": "Question", "name": "¿Cuánto cuesta el expositor?", "acceptedAnswer": {"@type": "Answer", "text": "34,90 € por expositor con pago único, sin cuotas. El combo Google + Instagram cuesta 54,90 €."}}, {"@type": "Question", "name": "¿Funciona con iPhone y Android?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. Funciona con iPhone y Android, por NFC o por el código QR. No hace falta instalar ninguna aplicación."}}, {"@type": "Question", "name": "¿Necesito conocimientos técnicos?", "acceptedAnswer": {"@type": "Answer", "text": "No. Te lo dejamos configurado con tu enlace de Google. Solo tienes que ponerlo en el mostrador."}}]}</script>
-  <link rel="stylesheet" href="assets/app.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"¿Google penaliza esto?","acceptedAnswer":{"@type":"Answer","text":"No. Google penaliza comprar o incentivar reseñas falsas. El stand solo le pone fácil a un cliente real dejar su opinión real: no toca ni condiciona lo que escribe."}},
+{"@type":"Question","name":"¿Cuándo y cómo pago?","acceptedAnswer":{"@type":"Answer","text":"Al recibirlo, en mano. Confirmas por WhatsApp, te lo llevamos en 24–72 h y pagas ahí. Nada por adelantado ni online."}},
+{"@type":"Question","name":"¿Funciona con todos los móviles?","acceptedAnswer":{"@type":"Answer","text":"Sí. iPhone y Android, acercando el móvil (NFC) o escaneando el QR con la cámara. Sin instalar nada."}},
+{"@type":"Question","name":"¿Y si mi cliente es mayor o turista?","acceptedAnswer":{"@type":"Answer","text":"Lleva las dos opciones: acercar el móvil o escanear el QR. Y quien no lo use no pierde nada: el stand no molesta."}},
+{"@type":"Question","name":"No sé cuál es mi enlace de Google","acceptedAnswer":{"@type":"Answer","text":"Dinos el nombre de tu negocio y te lo dejamos listo. Es parte del servicio."}},
+{"@type":"Question","name":"¿Y si se rompe o cambio de local?","acceptedAnswer":{"@type":"Answer","text":"Si llega defectuoso lo reimprimimos gratis. Si cambias de enlace o de cuenta, te regrabamos el chip gratis."}}
+]}</script>
+<link rel="stylesheet" href="assets/app.css">
+<script defer src="assets/i18n.js"></script>
 </head>
 
 <body>
 
 <!-- ===== NAV ===== -->
 <nav class="glass fixed top-0 inset-x-0 z-50">
-  <div class="text-center text-[12px] font-bold py-1.5" style="background:var(--gold);color:#1D1D1F;">📦 Envíos solo a Andorra</div>
+  <div class="text-center text-[12px] font-bold py-1.5" style="background:var(--gold);color:#1D1D1F;">📦 Entrega en mano en toda Andorra · 24–72 h</div>
   <div class="wrap flex items-center justify-between h-14 sm:h-16">
     <a href="#top" class="flex items-center gap-2.5 font-display font-extrabold tracking-tightest" aria-label="Toca y Opina">
       <img src="assets/img/logo-200.webp" alt="" width="38" height="38" class="w-9 h-9 rounded-[10px]">
@@ -86,8 +100,8 @@ nav.glass{ background:rgba(255,255,255,.82); -webkit-backdrop-filter:saturate(18
     </a>
     <div class="flex items-center gap-2">
       <details id="langMenu" class="langbtn relative">
-        <summary class="cursor-pointer inline-flex items-center gap-1.5 text-[16px] font-semibold text-ink2 px-3 h-10 rounded-full border border-line bg-white select-none">
-          <span data-i18n-label>🇦🇩</span>
+        <summary class="cursor-pointer inline-flex items-center gap-1.5 text-[16px] font-semibold text-ink2 px-3 h-11 rounded-full border border-line bg-white select-none">
+          <span data-i18n-label>🇪🇸</span>
           <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
         </summary>
         <div class="absolute right-0 mt-2 w-40 bg-white border border-line rounded-2xl shadow-xl py-2 z-50">
@@ -111,22 +125,22 @@ nav.glass{ background:rgba(255,255,255,.82); -webkit-backdrop-filter:saturate(18
           <span class="stars" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="#F5B941"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" fill="#F5B941"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" fill="#F5B941"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" fill="#F5B941"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" fill="#F5B941"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
           </span>
-          <span class="text-[13px] font-semibold text-ink2" data-i18n="hero_badge">Negocios reales en Andorra</span>
+          <span class="text-[13px] font-semibold text-ink2">Negocios reales en Andorra</span>
         </div>
         <h1 class="display reveal mb-5" style="font-size:clamp(34px,7vw,64px);">
-          <span data-i18n="hero_h1a">Que te elijan a ti,</span><br>
-          <span style="color:var(--brand)" data-i18n="hero_h1b">no al de al lado.</span>
+          <span>Que te elijan a ti,</span><br>
+          <span style="color:var(--brand)">no al de al lado.</span>
         </h1>
-        <p class="reveal text-[17px] sm:text-[19px] muted leading-snug max-w-[480px] mb-6" data-i18n="hero_sub">
+        <p class="reveal text-[17px] sm:text-[19px] muted leading-snug max-w-[480px] mb-6">
           El stand que pones en tu mostrador y llena tu Google de reseñas sin que pidas nada. Tu cliente acerca el móvil, 5 segundos, sin app. Te llega configurado.
         </p>
         <div class="reveal flex flex-col gap-3 max-w-[480px]">
           <a href="pedido.html?prod=g1" class="cta-hero">
-            <span data-i18n="hero_cta">Quiero más reseñas · 34,90 €</span>
+            <span>Quiero más reseñas · 34,90 €</span>
           </a>
-          <a href="pedido.html?prod=combo" class="text-center text-[14.5px] font-semibold" style="color:var(--brand)" data-i18n="hero_cta2">o súmale Instagram (combo) · 54,90 €</a>
+          <a href="pedido.html?prod=combo" class="text-center text-[14.5px] font-semibold" style="color:var(--brand)">o súmale Instagram (combo) · 54,90 €</a>
         </div>
-        <p class="reveal text-[12.5px] mt-4 muted" data-i18n="hero_trust">Llega configurado con tu enlace · cero apps · no pagas online</p>
+        <p class="reveal text-[12.5px] mt-4 muted">Llega configurado con tu enlace · pagas al recibirlo · cero apps</p>
       </div>
 
       <div class="reveal">
@@ -141,36 +155,41 @@ nav.glass{ background:rgba(255,255,255,.82); -webkit-backdrop-filter:saturate(18
       <div class="w-11 h-11 rounded-full bg-gradient-to-br from-amber-300 to-rose-400 grid place-items-center text-white font-bold text-[15px] shrink-0">Z</div>
       <div>
         <span class="stars mb-2" aria-hidden="true"><svg viewBox="0 0 24 24" fill="#F5B941"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" fill="#F5B941"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" fill="#F5B941"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" fill="#F5B941"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" fill="#F5B941"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
-        <p class="text-[16px] sm:text-[17px] leading-relaxed text-ink2" data-i18n="rev_text">"En una semana ya tenía un montón de reseñas nuevas. Me quedé alucinada con lo bien que funciona."</p>
-        <p class="text-[13px] muted mt-2"><strong class="text-ink">Zaida</strong> · <span data-i18n="rev_who">Gaudeix · comida preparada</span></p>
+        <p class="text-[16px] sm:text-[17px] leading-relaxed text-ink2">"En una semana ya tenía un montón de reseñas nuevas. Me quedé alucinada con lo bien que funciona."</p>
+        <p class="text-[13px] muted mt-2"><strong class="text-ink">Zaida</strong> · <span>Gaudeix · comida preparada</span></p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== PACKS ===== -->
-<section id="packs" class="section" style="background:var(--paper); border-block:1px solid var(--line);">
-  <div class="wrap">
-    <p class="eyebrow reveal mb-3 text-center" style="color:var(--brand)" data-i18n="packs_eyebrow">Elige tu pack</p>
-    <h2 class="display reveal mb-3 text-center" style="font-size:clamp(28px,6vw,46px); line-height:1.05;">
-      <span data-i18n="packs_h2">Cuantos más, mejor precio.</span>
+<!-- ===== CÓMO FUNCIONA (arriba: el visitante frío entiende el producto antes de ver precios) ===== -->
+<section class="section" style="background:var(--paper); border-block:1px solid var(--line); padding-block:56px;">
+  <div class="wrap text-center">
+    <p class="eyebrow mb-3 reveal" style="color:var(--brand)">Cómo funciona</p>
+    <h2 class="display reveal mb-12" style="font-size:clamp(26px,5.5vw,42px); line-height:1.05;">
+      <span>Sin app. iPhone y Android. 5 segundos.</span>
     </h2>
-    <p class="reveal text-center text-[15px] muted mb-12 max-w-[560px] mx-auto" data-i18n="packs_sub">
-      Pago único, sin cuotas. No pagas online: lo confirmas por WhatsApp.
-    </p>
-
-    <!-- Personaliza tu paquete (destacado, el más elegido) -->
-    <div class="reveal max-w-[1040px] mx-auto mb-9 rounded-3xl p-6 sm:p-8 relative overflow-hidden" style="background:linear-gradient(135deg,#0A0A0A,#1D1D1F);color:#fff;">
-      <span class="badge inline-block mb-4 sm:mb-0 sm:absolute sm:top-4 sm:right-4">★ <span data-i18n="persa_badge">El más elegido</span></span>
-      <div class="grid sm:grid-cols-[1fr_auto] gap-5 sm:items-center">
-        <div>
-          <p class="eyebrow mb-2" style="color:var(--gold)" data-i18n="persa_eyebrow">Para restaurantes y cadenas</p>
-          <h3 class="display text-white mb-2" style="font-size:clamp(24px,4.6vw,34px);" data-i18n="persa_h">Personaliza tu paquete</h3>
-          <p class="text-white/75 text-[15px] max-w-[460px]" data-i18n="persa_sub">Pide los stands que quieras —10, 20, 50 o más— mezclando Google e Instagram como prefieras. Te hago precio a medida.</p>
-        </div>
-        <a href="pedido.html?prod=custom" class="cta cta-wa whitespace-nowrap self-start sm:self-auto" data-i18n="persa_cta">Personaliza tu pedido</a>
-      </div>
+    <div class="grid sm:grid-cols-3 gap-6 max-w-[820px] mx-auto">
+      <div class="reveal"><div class="text-[40px] font-extrabold mb-2" style="color:var(--brand)">1</div><p class="text-[16px] text-ink2">Colocas el stand en tu mostrador.</p></div>
+      <div class="reveal"><div class="text-[40px] font-extrabold mb-2" style="color:var(--brand)">2</div><p class="text-[16px] text-ink2">Tu cliente acerca el móvil (NFC) o escanea el QR.</p></div>
+      <div class="reveal"><div class="text-[40px] font-extrabold mb-2" style="color:var(--brand)">3</div><p class="text-[16px] text-ink2">Deja su reseña en Google. Listo.</p></div>
     </div>
+  </div>
+</section>
+
+<!-- ===== PACKS ===== -->
+<section id="packs" class="section">
+  <div class="wrap">
+    <p class="eyebrow reveal mb-3 text-center" style="color:var(--brand)">Elige tu pack</p>
+    <h2 class="display reveal mb-3 text-center" style="font-size:clamp(28px,6vw,46px); line-height:1.05;">
+      <span>Cuantos más, mejor precio.</span>
+    </h2>
+    <p class="reveal text-center text-[15px] muted mb-2 max-w-[560px] mx-auto">
+      Pago único, sin cuotas. Pagas al recibirlo en mano.
+    </p>
+    <p class="reveal text-center text-[14px] font-semibold mb-12 max-w-[560px] mx-auto" style="color:var(--gold-text);">
+      Con que te traiga un solo cliente nuevo, ya está pagado.
+    </p>
 
     <div class="grid md:grid-cols-3 gap-5 max-w-[1040px] mx-auto items-stretch">
 
@@ -178,29 +197,29 @@ nav.glass{ background:rgba(255,255,255,.82); -webkit-backdrop-filter:saturate(18
       <article class="price-card reveal">
         <div class="aspect-[4/5] overflow-hidden bg-white"><img src="assets/img/productos/estudio-google-1.webp" alt="1 stand Toca y Opina" width="900" height="1125" loading="lazy" class="w-full h-full object-cover"></div>
         <div class="p-6 flex flex-col gap-3 flex-1">
-          <p class="text-[13px] muted font-semibold" data-i18n="p1_tag">Para empezar</p>
-          <p class="font-display text-[20px] font-extrabold tracking-tightest"><span data-i18n="p1_name">1 stand</span></p>
+          <p class="text-[13px] muted font-semibold">Para empezar</p>
+          <p class="font-display text-[20px] font-extrabold tracking-tightest"><span>1 stand</span></p>
           <p class="font-display text-[40px] font-extrabold tracking-tightest leading-none">34,90<span class="text-xl align-top font-normal">€</span></p>
-          <p class="text-[13px] muted -mt-1" data-i18n="pago_unico">pago único</p>
-          <a href="pedido.html?pack=1" class="cta cta-wa w-full mt-auto" data-i18n="p1_cta">Pedir 1</a>
+          <p class="text-[13px] muted -mt-1">pago único</p>
+          <a href="pedido.html?pack=1" class="cta cta-wa w-full mt-auto">Pedir 1</a>
         </div>
       </article>
 
       <!-- Pack 2 (destacado) -->
       <article class="price-card feat reveal md:-mt-3">
         <div class="aspect-[4/5] overflow-hidden bg-white relative">
-          <span class="badge absolute top-3 left-3 z-10" data-i18n="p2_badge">★ El más elegido</span>
+          <span class="badge absolute top-3 left-3 z-10">★ El más elegido</span>
           <img src="assets/img/productos/estudio-google-2.webp" alt="2 stands Toca y Opina" width="900" height="1125" loading="lazy" class="w-full h-full object-cover">
         </div>
         <div class="p-6 flex flex-col gap-3 flex-1">
-          <p class="text-[13px] font-semibold" style="color:#C98A12" data-i18n="p2_tag">Caja + barra</p>
-          <p class="font-display text-[20px] font-extrabold tracking-tightest"><span data-i18n="p2_name">2 stands</span></p>
+          <p class="text-[13px] font-semibold" style="color:var(--gold-text)">Caja + barra</p>
+          <p class="font-display text-[20px] font-extrabold tracking-tightest"><span>2 stands</span></p>
           <div class="flex items-baseline gap-2">
             <p class="font-display text-[40px] font-extrabold tracking-tightest leading-none">54,90<span class="text-xl align-top font-normal">€</span></p>
             <p class="text-[16px] muted line-through">69,80€</p>
           </div>
-          <p class="text-[13px] -mt-1" style="color:#C98A12" data-i18n="p2_save">27,45 €/stand · ahorras 14,90 €</p>
-          <a href="pedido.html?pack=2" class="cta cta-wa w-full mt-auto" data-i18n="p2_cta">Pedir 2</a>
+          <p class="text-[13px] -mt-1" style="color:var(--gold-text)">27,45 €/stand · ahorras 14,90 €</p>
+          <a href="pedido.html?pack=2" class="cta cta-wa w-full mt-auto">Pedir 2</a>
         </div>
       </article>
 
@@ -208,28 +227,28 @@ nav.glass{ background:rgba(255,255,255,.82); -webkit-backdrop-filter:saturate(18
       <article class="price-card reveal">
         <div class="aspect-[4/5] overflow-hidden bg-white"><img src="assets/img/productos/estudio-google-3.webp" alt="3 stands Toca y Opina" width="900" height="1125" loading="lazy" class="w-full h-full object-cover"></div>
         <div class="p-6 flex flex-col gap-3 flex-1">
-          <p class="text-[13px] muted font-semibold" data-i18n="p3_tag">Para locales grandes</p>
-          <p class="font-display text-[20px] font-extrabold tracking-tightest"><span data-i18n="p3_name">3 stands</span></p>
+          <p class="text-[13px] muted font-semibold">Para locales grandes</p>
+          <p class="font-display text-[20px] font-extrabold tracking-tightest"><span>3 stands</span></p>
           <div class="flex items-baseline gap-2">
             <p class="font-display text-[40px] font-extrabold tracking-tightest leading-none">74,90<span class="text-xl align-top font-normal">€</span></p>
             <p class="text-[16px] muted line-through">104,70€</p>
           </div>
-          <p class="text-[13px] muted -mt-1" data-i18n="p3_save">24,97 €/stand · ahorras 29,80 €</p>
-          <a href="pedido.html?pack=3" class="cta cta-wa w-full mt-auto" data-i18n="p3_cta">Pedir 3</a>
+          <p class="text-[13px] muted -mt-1">24,97 €/stand · ahorras 29,80 €</p>
+          <a href="pedido.html?pack=3" class="cta cta-wa w-full mt-auto">Pedir 3</a>
         </div>
       </article>
     </div>
 
     <!-- Combos Google + Instagram (con foto) -->
-    <p class="eyebrow reveal mt-16 mb-3 text-center" style="color:#C13584" data-i18n="combo_q">¿Mezclas Google e Instagram?</p>
-    <p class="reveal text-center text-[15px] muted mb-9 max-w-[540px] mx-auto" data-i18n="combo_sub">Sin problema: tú eliges la combinación y el precio es por cantidad.</p>
+    <p class="eyebrow reveal mt-16 mb-3 text-center" style="color:#C13584">¿Mezclas Google e Instagram?</p>
+    <p class="reveal text-center text-[15px] muted mb-9 max-w-[540px] mx-auto">Sin problema: tú eliges la combinación y el precio es por cantidad.</p>
     <div class="grid sm:grid-cols-3 gap-5 max-w-[1040px] mx-auto items-stretch">
       <article class="price-card reveal">
         <div class="aspect-[4/3] overflow-hidden bg-white"><img src="assets/img/productos/hero-mix.webp" alt="1 stand Google + 1 stand Instagram" width="1000" height="750" loading="lazy" class="w-full h-full object-cover"></div>
         <div class="p-5 flex flex-col gap-2 flex-1">
           <p class="font-display text-[17px] font-extrabold tracking-tightest">1 Google + 1 Instagram</p>
           <div class="flex items-baseline gap-2"><p class="font-display text-[30px] font-extrabold tracking-tightest leading-none">54,90<span class="text-lg align-top font-normal">€</span></p><p class="text-[15px] muted line-through">69,80 €</p></div>
-          <a href="pedido.html?prod=combo" class="cta cta-wa w-full mt-auto text-[15px]" data-i18n="combo_cta">Pídeme tu combo</a>
+          <a href="pedido.html?prod=combo" class="cta cta-wa w-full mt-auto text-[15px]">Pídeme tu combo</a>
         </div>
       </article>
       <article class="price-card reveal">
@@ -237,7 +256,7 @@ nav.glass{ background:rgba(255,255,255,.82); -webkit-backdrop-filter:saturate(18
         <div class="p-5 flex flex-col gap-2 flex-1">
           <p class="font-display text-[17px] font-extrabold tracking-tightest">2 Google + 1 Instagram</p>
           <div class="flex items-baseline gap-2"><p class="font-display text-[30px] font-extrabold tracking-tightest leading-none">74,90<span class="text-lg align-top font-normal">€</span></p><p class="text-[15px] muted line-through">104,70 €</p></div>
-          <a href="pedido.html?prod=g2i1" class="cta cta-wa w-full mt-auto text-[15px]" data-i18n="combo_cta">Pídeme tu combo</a>
+          <a href="pedido.html?prod=g2i1" class="cta cta-wa w-full mt-auto text-[15px]">Pídeme tu combo</a>
         </div>
       </article>
       <article class="price-card reveal">
@@ -245,12 +264,49 @@ nav.glass{ background:rgba(255,255,255,.82); -webkit-backdrop-filter:saturate(18
         <div class="p-5 flex flex-col gap-2 flex-1">
           <p class="font-display text-[17px] font-extrabold tracking-tightest">1 Google + 2 Instagram</p>
           <div class="flex items-baseline gap-2"><p class="font-display text-[30px] font-extrabold tracking-tightest leading-none">74,90<span class="text-lg align-top font-normal">€</span></p><p class="text-[15px] muted line-through">104,70 €</p></div>
-          <a href="pedido.html?prod=g1i2" class="cta cta-wa w-full mt-auto text-[15px]" data-i18n="combo_cta">Pídeme tu combo</a>
+          <a href="pedido.html?prod=g1i2" class="cta cta-wa w-full mt-auto text-[15px]">Pídeme tu combo</a>
         </div>
       </article>
     </div>
 
-    <p class="reveal text-center text-[13.5px] muted mt-8" data-i18n="packs_foot">Garantía: si te llega defectuoso, te lo reimprimo gratis. · Envío 24–72 h.</p>
+    <!-- Personaliza tu paquete (B2B, después de los packs: la entrada es 34,90) -->
+    <div class="reveal max-w-[1040px] mx-auto mt-9 rounded-3xl p-6 sm:p-8 relative overflow-hidden" style="background:linear-gradient(135deg,#0A0A0A,#1D1D1F);color:#fff;">
+      <div class="grid sm:grid-cols-[1fr_auto] gap-5 sm:items-center">
+        <div>
+          <p class="eyebrow mb-2" style="color:var(--gold)">Para restaurantes y cadenas</p>
+          <h3 class="display text-white mb-2" style="font-size:clamp(24px,4.6vw,34px);">Personaliza tu paquete</h3>
+          <p class="text-white/75 text-[15px] max-w-[460px]">Pide los stands que quieras —10, 20, 50 o más— mezclando Google e Instagram como prefieras. Te hacemos precio a medida.</p>
+        </div>
+        <a href="pedido.html?prod=custom" class="cta cta-wa whitespace-nowrap self-start sm:self-auto">Personaliza tu pedido</a>
+      </div>
+    </div>
+
+    <p class="reveal text-center text-[13.5px] muted mt-8">Pagas al recibirlo en mano. Nada por adelantado ni online.</p>
+  </div>
+</section>
+
+<!-- ===== ASÍ VA TU PEDIDO + GARANTÍA ===== -->
+<section class="section" style="background:var(--paper); border-block:1px solid var(--line); padding-block:64px;">
+  <div class="wrap" style="max-width:900px;">
+    <p class="eyebrow reveal mb-3 text-center" style="color:var(--brand)">Así va tu pedido</p>
+    <h2 class="display reveal mb-10 text-center" style="font-size:clamp(26px,5.5vw,42px); line-height:1.05;">
+      <span>Del WhatsApp a tu barra</span> <span class="muted">en 72 horas.</span>
+    </h2>
+    <ol class="space-y-5 max-w-[620px] mx-auto" style="list-style:none; padding:0; margin:0;">
+      <li class="reveal flex items-center gap-4"><span class="step-num">1</span><p class="text-[16px] text-ink2 leading-snug">Nos escribes por WhatsApp. El mensaje va prellenado: solo le das a enviar.</p></li>
+      <li class="reveal flex items-center gap-4"><span class="step-num">2</span><p class="text-[16px] text-ink2 leading-snug">Te confirmamos tu enlace de Google y el idioma del stand.</p></li>
+      <li class="reveal flex items-center gap-4"><span class="step-num">3</span><p class="text-[16px] text-ink2 leading-snug">Lo grabamos y lo probamos con un iPhone y un Android.</p></li>
+      <li class="reveal flex items-center gap-4"><span class="step-num">4</span><p class="text-[16px] text-ink2 leading-snug font-semibold">Te lo llevamos en mano en 24–72 h. Pagas al recibirlo.</p></li>
+    </ol>
+    <div class="reveal max-w-[620px] mx-auto mt-9 rounded-3xl border border-line bg-white p-6 sm:p-7 flex items-start gap-4">
+      <div class="w-11 h-11 rounded-full grid place-items-center shrink-0" style="background:#E8FBF0;">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0B8A4B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+      </div>
+      <div>
+        <p class="font-display text-[17px] font-extrabold tracking-tightest mb-1">Sin riesgo</p>
+        <p class="text-[14.5px] text-ink2 leading-relaxed">Si llega defectuoso, lo reimprimimos gratis. Si algún día cambias tu enlace de Google o tu cuenta de Instagram, te regrabamos el chip gratis. Sin cuotas: es tuyo para siempre.</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -326,34 +382,21 @@ nav.glass{ background:rgba(255,255,255,.82); -webkit-backdrop-filter:saturate(18
     <h2 class="display reveal mb-4 text-center" style="font-size:clamp(27px,5.4vw,44px); line-height:1.05;">
       El cliente contento de hoy,<br><span style="color:var(--gold)">en una reseña dejada ahora.</span>
     </h2>
-    <p class="reveal text-center text-[16px] text-white/70 mb-9 max-w-[630px] mx-auto">
+    <p class="reveal text-center text-[16px] text-white/70 mb-6 max-w-[630px] mx-auto">
       El 90 % de tus clientes contentos nunca te deja la reseña: cuando se lo pides ya tienen prisa y dicen "luego desde casa". Ese "luego" no llega. Pones el stand en la barra, tu cliente acerca el móvil o escanea el QR y deja la estrella <strong class="text-white">antes de salir por la puerta</strong>. Sin app, sin que busque nada.
+    </p>
+    <p class="reveal text-center text-[15px] font-semibold mb-9 max-w-[630px] mx-auto" style="color:var(--gold);">
+      Una agencia te cobraría esto cada mes. El stand lo pagas una vez y es tuyo.
     </p>
 
     <!-- Botón único -->
     <div class="reveal text-center mt-2">
       <a href="pedido.html?pack=1" class="cta-hero">
-        
         Pedir el stand · 34,90 €
       </a>
     </div>
 
-    <p class="reveal text-[13px] text-white/45 mt-6 text-center">El Kit Lleno de Reseñas (guía + plantillas + cartel imprimible + checklist) te lo ofrezco al pedir, por solo 4,99 € más.</p>
-  </div>
-</section>
-
-<!-- ===== CÓMO FUNCIONA (compacto) ===== -->
-<section class="section" style="background:var(--ink); color:#fff;">
-  <div class="wrap text-center">
-    <p class="eyebrow mb-3 reveal" style="color:var(--gold)" data-i18n="como_eyebrow">Cómo funciona</p>
-    <h2 class="display reveal mb-12" style="font-size:clamp(26px,5.5vw,42px); line-height:1.05;">
-      <span data-i18n="como_h2">Sin app. iPhone y Android. 5 segundos.</span>
-    </h2>
-    <div class="grid sm:grid-cols-3 gap-6 max-w-[820px] mx-auto">
-      <div class="reveal"><div class="text-[40px] font-extrabold mb-2" style="color:var(--gold)">1</div><p class="text-[16px] text-white/85" data-i18n="como_1">Colocas el stand en tu mostrador.</p></div>
-      <div class="reveal"><div class="text-[40px] font-extrabold mb-2" style="color:var(--gold)">2</div><p class="text-[16px] text-white/85" data-i18n="como_2">Tu cliente acerca el móvil (NFC) o escanea el QR.</p></div>
-      <div class="reveal"><div class="text-[40px] font-extrabold mb-2" style="color:var(--gold)">3</div><p class="text-[16px] text-white/85" data-i18n="como_3">Deja su reseña en Google. Listo.</p></div>
-    </div>
+    <p class="reveal text-[13px] text-white/60 mt-6 text-center">El Kit Lleno de Reseñas (guía + plantillas + cartel imprimible + checklist) te lo ofrezco al pedir, por solo 4,99 € más.</p>
   </div>
 </section>
 
@@ -364,14 +407,51 @@ nav.glass{ background:rgba(255,255,255,.82); -webkit-backdrop-filter:saturate(18
       <div class="rounded-[28px] overflow-hidden bg-paper border border-line"><img src="assets/img/founder.webp" alt="Uriel y Joselí, fundadores de Toca y Opina" width="760" height="1040" loading="lazy"></div>
     </div>
     <div class="reveal">
-      <p class="eyebrow mb-3" style="color:var(--brand)" data-i18n="found_eyebrow">Quién está detrás</p>
-      <h2 class="display mb-5" style="font-size:clamp(26px,5vw,40px);"><span data-i18n="found_h2">Lo preparamos nosotros.</span></h2>
-      <p class="text-[16px] muted leading-relaxed mb-4 max-w-[480px]" data-i18n="found_p1">
+      <p class="eyebrow mb-3" style="color:var(--brand)">Quién está detrás</p>
+      <h2 class="display mb-5" style="font-size:clamp(26px,5vw,40px);"><span>Lo preparamos nosotros.</span></h2>
+      <p class="text-[16px] muted leading-relaxed mb-4 max-w-[480px]">
         Somos Uriel y Joselí. Lo preparamos y configuramos nosotros mismos: grabamos el chip y te dejamos tu enlace de Google listo, desde Andorra. No hay distribuidor en medio.
       </p>
-      <p class="text-[16px] muted leading-relaxed max-w-[480px]" data-i18n="found_p2">
-        Cada stand se prueba con un iPhone y un Android antes de enviarlo. Si te llega defectuoso, te lo reimprimo sin preguntas.
+      <p class="text-[16px] muted leading-relaxed max-w-[480px]">
+        Cada stand se prueba con un iPhone y un Android antes de entregarlo. Si te llega defectuoso, te lo reimprimimos sin preguntas. Y como somos de aquí, te lo llevamos en mano y te lo dejamos funcionando en tu mostrador.
       </p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section id="faq" class="section" style="background:var(--paper); border-block:1px solid var(--line); padding-block:64px;">
+  <div class="wrap" style="max-width:760px;">
+    <p class="eyebrow reveal mb-3 text-center" style="color:var(--brand)">Preguntas rápidas</p>
+    <h2 class="display reveal mb-8 text-center" style="font-size:clamp(24px,5vw,38px);"><span>Lo que todo el mundo pregunta.</span></h2>
+    <div class="faq reveal" style="border-top:1px solid var(--line);">
+      <details>
+        <summary>¿Google penaliza esto?</summary>
+        <p class="text-[15px] muted leading-relaxed">No. Google penaliza comprar o incentivar reseñas falsas. El stand solo le pone fácil a un cliente real dejar su opinión real: no toca ni condiciona lo que escribe.</p>
+      </details>
+      <details>
+        <summary>¿Cuándo y cómo pago?</summary>
+        <p class="text-[15px] muted leading-relaxed">Al recibirlo, en mano. Confirmas por WhatsApp, te lo llevamos en 24–72 h y pagas ahí. Nada por adelantado ni online.</p>
+      </details>
+      <details>
+        <summary>¿Funciona con todos los móviles?</summary>
+        <p class="text-[15px] muted leading-relaxed">Sí. iPhone y Android, acercando el móvil (NFC) o escaneando el QR con la cámara. Sin instalar nada.</p>
+      </details>
+      <details>
+        <summary>¿Y si mi cliente es mayor o turista?</summary>
+        <p class="text-[15px] muted leading-relaxed">Lleva las dos opciones: acercar el móvil o escanear el QR. Y quien no lo use no pierde nada: el stand no molesta.</p>
+      </details>
+      <details>
+        <summary>No sé cuál es mi enlace de Google</summary>
+        <p class="text-[15px] muted leading-relaxed">Dinos el nombre de tu negocio y te lo dejamos listo. Es parte del servicio.</p>
+      </details>
+      <details>
+        <summary>¿Y si se rompe o cambio de local?</summary>
+        <p class="text-[15px] muted leading-relaxed">Si llega defectuoso lo reimprimimos gratis. Si cambias de enlace o de cuenta, te regrabamos el chip gratis.</p>
+      </details>
+    </div>
+    <div class="reveal text-center mt-9">
+      <a href="https://wa.me/34690390557?text=Hola%2C%20tengo%20una%20duda%20sobre%20el%20stand" target="_blank" rel="noopener" class="cta cta-wa">¿Otra duda? Escríbenos por WhatsApp</a>
     </div>
   </div>
 </section>
@@ -379,136 +459,39 @@ nav.glass{ background:rgba(255,255,255,.82); -webkit-backdrop-filter:saturate(18
 <!-- ===== CTA FINAL ===== -->
 <section class="section" style="background:var(--ink); color:#fff;">
   <div class="wrap text-center max-w-[680px] mx-auto">
-    <h2 class="display reveal mb-5" style="font-size:clamp(28px,6vw,48px); line-height:1.05;"><span data-i18n="final_h2">¿Lo quieres? Escríbeme.</span></h2>
-    <p class="reveal text-[17px] text-white/70 mb-9 max-w-[520px] mx-auto" data-i18n="final_sub">Me escribes hoy, te lo preparo esta semana y empiezas a sumar reseñas antes de fin de mes.</p>
+    <h2 class="display reveal mb-5" style="font-size:clamp(28px,6vw,48px); line-height:1.05;"><span>¿Lo quieres? Escríbenos.</span></h2>
+    <p class="reveal text-[17px] text-white/70 mb-9 max-w-[520px] mx-auto">Nos escribes hoy, te lo preparamos esta semana y empiezas a sumar reseñas antes de fin de mes.</p>
     <a href="pedido.html?prod=combo" class="cta-hero reveal">
-      
-      <span data-i18n="final_cta">Escríbeme</span>
+      <span>Escríbenos</span>
     </a>
-    <p class="reveal text-[13px] text-white/50 mt-5" data-i18n="final_note">Normalmente respondo en menos de 24 h.</p>
+    <p class="reveal text-[13px] text-white/50 mt-5">Normalmente respondemos en menos de 24 h.</p>
   </div>
 </section>
 
 <!-- ===== FOOTER ===== -->
 <footer style="background:var(--ink); color:rgba(255,255,255,.6);" class="pt-10 pb-28 md:pb-10 border-t border-white/10">
   <div class="wrap flex flex-col sm:flex-row items-center justify-between gap-5 text-[13.5px]">
-    <p>© 2026 Toca y Opina · <span data-i18n="foot_made">Andorra</span></p>
-    <div class="flex items-center gap-5">
+    <p>© 2026 Toca y Opina · <span>Andorra</span></p>
+    <div class="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
       <a href="blog/" class="hover:text-white">Blog</a>
       <a href="guia-resenas.html" class="hover:text-white">Guía</a>
       <a href="#packs" class="hover:text-white">Pedir</a>
       <a href="https://www.instagram.com/tocayopina" target="_blank" rel="noopener" class="hover:text-white">@tocayopina</a>
+      <a href="https://wa.me/34690390557" target="_blank" rel="noopener" class="hover:text-white">WhatsApp +34 690 390 557</a>
+      <a href="aviso-legal.html" class="hover:text-white">Aviso legal y privacidad</a>
     </div>
   </div>
 </footer>
 
 <!-- ===== STICKY CTA (móvil) ===== -->
 <a href="pedido.html?prod=g1" class="sticky-cta">
-  
-  <span data-i18n="sticky_cta">Lo quiero · desde 34,90 €</span>
+  <span>Lo quiero · desde 34,90 €</span>
 </a>
 
 <script>
 // Reveal on scroll
 const io = new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{rootMargin:'-8% 0px'});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-
-// i18n
-(function(){
-  const LANGS=['ca','es','pt','fr'], NAMES={ca:'🇦🇩',es:'🇪🇸',pt:'🇵🇹',fr:'🇫🇷'};
-  const DICT={
-    ca:{
-      "Lo quiero · desde 34,90 €":"El vull · des de 34,90 €","Pago único, sin cuotas. No pagas online: lo confirmas por WhatsApp.":"Pagament únic, sense quotes. No pagues online: ho confirmes per WhatsApp.",
-      "Que te elijan a ti,":"Que t'escullin a tu,","no al de al lado.":"no al del costat.","El stand que pones en tu mostrador y llena tu Google de reseñas sin que pidas nada. Tu cliente acerca el móvil, 5 segundos, sin app. Te llega configurado.":"L'expositor que poses al taulell i omple el teu Google de ressenyes sense que demanis res. El teu client acosta el mòbil, 5 segons, sense app. T'arriba configurat.","Quiero más reseñas · 34,90 €":"Vull més ressenyes · 34,90 €","o súmale Instagram (combo) · 54,90 €":"o suma-li Instagram (combo) · 54,90 €","Llega configurado con tu enlace · cero apps · no pagas online":"Arriba configurat amb el teu enllaç · zero apps · no pagues online",
-      "📦 Envíos solo a Andorra":"📦 Enviaments només a Andorra","Pedir":"Demanar","\"En una semana ya tenía un montón de reseñas nuevas. Me quedé alucinada con lo bien que funciona.\"":"\"En una setmana ja tenia un munt de ressenyes noves. Vaig al·lucinar amb el bé que funciona.\"","Gaudeix · comida preparada":"Gaudeix · menjar preparat","Lo que dicen quienes ya lo tienen":"El que diuen els qui ja el tenen","Negocios reales,":"Negocis reals,","resultados reales.":"resultats reals.","\"Flipé con el resultado. La gente lo usa sola, sin que tengamos que estar insistiendo.\"":"\"Vaig al·lucinar amb el resultat. La gent el fa servir sola, sense que haguem d'estar insistint.\"","Restaurante":"Restaurant","\"Nos va súper bien: más de 10 reseñas en nada. Me estoy quedando alucinada con cómo funciona.\"":"\"Ens va súper bé: més de 10 ressenyes en res. M'estic quedant al·lucinada amb com funciona.\"","Terraza italiana":"Terrassa italiana","Por qué las reseñas mueven tu negocio":"Per què les ressenyes mouen el teu negoci","No es ego.":"No és ego.","Son clientes nuevos.":"Són clients nous.","de ingresos por cada estrella que subes en tu nota media (más aún en negocios independientes).":"d'ingressos per cada estrella que puges en la teva nota mitjana (encara més en negocis independents).","de la gente lee reseñas antes de elegir un negocio local. Y el 81% usa Google para mirarlas.":"de la gent llegeix ressenyes abans de triar un negoci local. I el 81% fa servir Google per mirar-les.","más probabilidad de que te elijan con solo 5 reseñas frente a tener ninguna. Las primeras son las que más mueven.":"més probabilitat que et triïn amb només 5 ressenyes que no pas amb cap. Les primeres són les que més mouen.","factor más importante para salir arriba en Google Maps son las reseñas (16–20% del peso del ranking local).":"factor més important per sortir amunt a Google Maps són les ressenyes (16–20% del pes del rànquing local).","de la gente solo da valor a las reseñas de las últimas 2 semanas. Por eso necesitas un flujo constante, no una campaña suelta.":"de la gent només dóna valor a les ressenyes de les últimes 2 setmanes. Per això necessites un flux constant, no una campanya solta.","El stand en el mostrador es la forma nº1 de capturar esa reseña en caliente.":"L'expositor al taulell és la forma nº1 de capturar aquesta ressenya en calent.","Pedir de palabra convierte un 1–2%. Con el stand delante, en el momento bueno, sube muchísimo.":"Demanar-ho de paraula converteix un 1–2%. Amb l'expositor al davant, en el moment bo, puja moltíssim.","El stand que mata el \"luego te la dejo\"":"L'expositor que mata el \"després te la deixo\"","El cliente contento de hoy,":"El client content d'avui,","en una reseña dejada ahora.":"en una ressenya deixada ara.","El 90 % de tus clientes contentos nunca te deja la reseña: cuando se lo pides ya tienen prisa y dicen \"luego desde casa\". Ese \"luego\" no llega. Pones el stand en la barra, tu cliente acerca el móvil o escanea el QR y deja la estrella":"El 90 % dels teus clients contents no et deixa mai la ressenya: quan els ho demanes ja tenen pressa i diuen \"després des de casa\". Aquest \"després\" no arriba. Poses l'expositor a la barra, el teu client acosta el mòbil o escaneja el QR i deixa l'estrella","antes de salir por la puerta":"abans de sortir per la porta",". Sin app, sin que busque nada.":". Sense app, sense que busqui res.","Pedir el stand · 34,90 €":"Demanar l'expositor · 34,90 €","El Kit Lleno de Reseñas (guía + plantillas + cartel imprimible + checklist) te lo ofrezco al pedir, por solo 4,99 € más.":"El Kit Ple de Ressenyes (guia + plantilles + cartell imprimible + checklist) te l'ofereixo en comandar, per només 4,99 € més.",
-      "Negocios reales en Andorra":"Negocis reals a Andorra","Más reseñas y más seguidores":"Més ressenyes i més seguidors","con un solo gesto.":"amb un sol gest.",
-      "El stand que pones en tu mostrador. Tu cliente acerca el móvil y, en 5 segundos, te deja una reseña en Google o te sigue en Instagram. Sin app.":"L'expositor que poses al taulell. El teu client acosta el mòbil i, en 5 segons, et deixa una ressenya a Google o et segueix a Instagram. Sense app.",
-      "Google + Instagram · 54,90 €":"Google + Instagram · 54,90 €",
-      "\"En 2 semanas conseguí más reseñas que en todo el año. Lo pongo junto al datáfono y los clientes lo usan solos.\"":"\"En 2 setmanes vaig aconseguir més ressenyes que en tot l'any. El poso al costat del datàfon i els clients l'usen sols.\"","Pastelería":"Pastisseria",
-      "Elige tu pack":"Tria el teu pack","Cuantos más, mejor precio.":"Com més, millor preu.","Pago único, sin cuotas. No pagas online: lo confirmas por WhatsApp.":"Pagament únic, sense quotes. T'ho tanco jo mateix.",
-      "Para empezar":"Per començar","1 stand":"1 expositor","pago único":"pagament únic","Pedir 1":"Demanar 1",
-      "★ El más elegido":"★ El més triat","Caja + barra":"Caixa + barra","2 stands":"2 expositors","27,45 €/stand · ahorras 14,90 €":"27,45 €/expositor · estalvies 14,90 €","Pedir 2":"Demanar 2",
-      "Para locales grandes":"Per a locals grans","3 stands":"3 expositors","24,97 €/stand · ahorras 29,80 €":"24,97 €/expositor · estalvies 29,80 €","Pedir 3":"Demanar 3",
-      "Garantía: si te llega defectuoso, te lo reimprimo gratis. · Envío 24–72 h.":"Garantia: si t'arriba defectuós, te'l reimprimeixo gratis. · Enviament 24–72 h.",
-      "¿Prefieres más seguidores?":"Prefereixes més seguidors?","También lo hago en versión Instagram.":"També el faig en versió Instagram.","El mismo stand, mismo precio. Tu cliente acerca el móvil y te sigue en Instagram al instante. Ideal para escaparate y mostrador.":"El mateix expositor, mateix preu. El teu client acosta el mòbil i et segueix a Instagram a l'instant. Ideal per a aparador i taulell.","Quiero el de Instagram":"Vull el d'Instagram",
-      "Cómo funciona":"Com funciona","Sin app. iPhone y Android. 5 segundos.":"Sense app. iPhone i Android. 5 segons.","Colocas el stand en tu mostrador.":"Poses l'expositor al taulell.","Tu cliente acerca el móvil (NFC) o escanea el QR.":"El teu client acosta el mòbil (NFC) o escaneja el QR.","Deja su reseña en Google. Listo.":"Deixa la seva ressenya a Google. Llest.",
-      "Quién está detrás":"Qui hi ha al darrere","Lo preparamos nosotros.":"Ho preparem nosaltres.","Somos Uriel y Joselí. Lo preparamos y configuramos nosotros mismos: grabamos el chip y te dejamos tu enlace de Google listo, desde Andorra. No hay distribuidor en medio.":"Som l'Uriel i en Joselí. El preparem i el configurem nosaltres mateixos: gravem el xip i et deixem el teu enllaç de Google a punt, des d'Andorra. No hi ha distribuïdor pel mig.","Cada stand se prueba con un iPhone y un Android antes de enviarlo. Si te llega defectuoso, te lo reimprimo sin preguntas.":"Cada expositor es prova amb un iPhone i un Android abans d'enviar-lo. Si t'arriba defectuós, te'l reimprimeixo sense preguntes.",
-      "¿Lo quieres? Escríbeme.":"El vols? Escriu-me.","Me escribes hoy, te lo preparo esta semana y empiezas a sumar reseñas antes de fin de mes.":"M'escrius avui, te'l preparo aquesta setmana i comences a sumar ressenyes abans de final de mes.","Escríbeme":"Escriu-me","Normalmente respondo en menos de 24 h.":"Normalment responc en menys de 24 h.",
-      "Andorra":"Andorra",
-      "¿Mezclas Google e Instagram?":"Barreges Google i Instagram?","Sin problema: tú eliges la combinación y el precio es por cantidad.":"Cap problema: tu tries la combinació i el preu és per quantitat.","Pídeme tu combo":"Demana'm el teu combo",
-      "El más elegido":"El més triat","Para restaurantes y cadenas":"Per a restaurants i cadenes","Personaliza tu paquete":"Personalitza el teu paquet","Pide los stands que quieras —10, 20, 50 o más— mezclando Google e Instagram como prefieras. Te hago precio a medida.":"Demana els expositors que vulguis —10, 20, 50 o més— barrejant Google i Instagram com prefereixis. Et faig preu a mida.","Personaliza tu pedido":"Personalitza la teva comanda"
-    },
-    fr:{
-      "Lo quiero · desde 34,90 €":"Je le veux · dès 34,90 €","Pago único, sin cuotas. No pagas online: lo confirmas por WhatsApp.":"Paiement unique, sans abonnement. Tu ne paies rien en ligne : tu confirmes par WhatsApp.",
-      "Que te elijan a ti,":"Qu'on te choisisse toi,","no al de al lado.":"pas le voisin d'à côté.","El stand que pones en tu mostrador y llena tu Google de reseñas sin que pidas nada. Tu cliente acerca el móvil, 5 segundos, sin app. Te llega configurado.":"Le présentoir que tu poses sur ton comptoir et qui remplit ton Google d'avis sans que tu demandes rien. Ton client approche son téléphone, 5 secondes, sans appli. Il arrive configuré.","Quiero más reseñas · 34,90 €":"Je veux plus d'avis · 34,90 €","o súmale Instagram (combo) · 54,90 €":"ou ajoute Instagram (combo) · 54,90 €","Llega configurado con tu enlace · cero apps · no pagas online":"Il arrive configuré avec ton lien · zéro appli · tu ne paies rien en ligne",
-      "📦 Envíos solo a Andorra":"📦 Livraison uniquement en Andorre","Pedir":"Commander","\"En una semana ya tenía un montón de reseñas nuevas. Me quedé alucinada con lo bien que funciona.\"":"« En une semaine, j'avais déjà plein de nouveaux avis. J'ai halluciné de voir comme ça marche bien. »","Gaudeix · comida preparada":"Gaudeix · plats préparés","Lo que dicen quienes ya lo tienen":"Ce que disent ceux qui l'ont déjà","Negocios reales,":"Des commerces réels,","resultados reales.":"des résultats réels.","\"Flipé con el resultado. La gente lo usa sola, sin que tengamos que estar insistiendo.\"":"« J'ai halluciné avec le résultat. Les gens l'utilisent seuls, sans qu'on ait à insister. »","Restaurante":"Restaurant","\"Nos va súper bien: más de 10 reseñas en nada. Me estoy quedando alucinada con cómo funciona.\"":"« Ça marche super bien : plus de 10 avis en un rien de temps. Je suis bluffée par comme ça fonctionne. »","Terraza italiana":"Terrasse italienne","Por qué las reseñas mueven tu negocio":"Pourquoi les avis font bouger votre activité","No es ego.":"Ce n'est pas de l'ego.","Son clientes nuevos.":"Ce sont de nouveaux clients.","de ingresos por cada estrella que subes en tu nota media (más aún en negocios independientes).":"de revenus pour chaque étoile gagnée sur votre note moyenne (encore plus pour les commerces indépendants).","de la gente lee reseñas antes de elegir un negocio local. Y el 81% usa Google para mirarlas.":"des gens lisent des avis avant de choisir un commerce local. Et 81% utilisent Google pour les consulter.","más probabilidad de que te elijan con solo 5 reseñas frente a tener ninguna. Las primeras son las que más mueven.":"de chances qu'on vous choisisse avec seulement 5 avis plutôt qu'aucun. Les premiers sont les plus décisifs.","factor más importante para salir arriba en Google Maps son las reseñas (16–20% del peso del ranking local).":"facteur le plus important pour ressortir en haut sur Google Maps, ce sont les avis (16–20% du poids du classement local).","de la gente solo da valor a las reseñas de las últimas 2 semanas. Por eso necesitas un flujo constante, no una campaña suelta.":"des gens ne tiennent compte que des avis des 2 dernières semaines. C'est pourquoi il faut un flux constant, pas une campagne ponctuelle.","El stand en el mostrador es la forma nº1 de capturar esa reseña en caliente.":"Le présentoir sur le comptoir est le moyen nº1 de capter cet avis à chaud.","Pedir de palabra convierte un 1–2%. Con el stand delante, en el momento bueno, sube muchísimo.":"Demander à l'oral convertit 1–2%. Avec le présentoir devant, au bon moment, ça monte énormément.","El stand que mata el \"luego te la dejo\"":"Le présentoir qui tue le « je le ferai plus tard »","El cliente contento de hoy,":"Le client satisfait d'aujourd'hui,","en una reseña dejada ahora.":"en un avis laissé maintenant.","El 90 % de tus clientes contentos nunca te deja la reseña: cuando se lo pides ya tienen prisa y dicen \"luego desde casa\". Ese \"luego\" no llega. Pones el stand en la barra, tu cliente acerca el móvil o escanea el QR y deja la estrella":"90 % de vos clients satisfaits ne laissent jamais l'avis : quand vous le demandez, ils sont déjà pressés et disent « plus tard, de chez moi ». Ce « plus tard » n'arrive jamais. Vous posez le présentoir sur le comptoir, votre client approche son téléphone ou scanne le QR et laisse l'étoile","antes de salir por la puerta":"avant de passer la porte",". Sin app, sin que busque nada.":". Sans appli, sans rien chercher.","Pedir el stand · 34,90 €":"Commander le présentoir · 34,90 €","El Kit Lleno de Reseñas (guía + plantillas + cartel imprimible + checklist) te lo ofrezco al pedir, por solo 4,99 € más.":"Le Kit Plein d'Avis (guide + modèles + affiche imprimable + checklist), je vous le propose à la commande, pour seulement 4,99 € de plus.",
-      "Negocios reales en Andorra":"Des commerces réels en Andorre","Más reseñas y más seguidores":"Plus d'avis et plus d'abonnés","con un solo gesto.":"d'un seul geste.",
-      "El stand que pones en tu mostrador. Tu cliente acerca el móvil y, en 5 segundos, te deja una reseña en Google o te sigue en Instagram. Sin app.":"Le présentoir que vous posez sur votre comptoir. Votre client approche son téléphone et, en 5 secondes, laisse un avis sur Google ou vous suit sur Instagram. Sans appli.",
-      "Google + Instagram · 54,90 €":"Google + Instagram · 54,90 €",
-      "\"En 2 semanas conseguí más reseñas que en todo el año. Lo pongo junto al datáfono y los clientes lo usan solos.\"":"\"En 2 semaines, j'ai eu plus d'avis que dans toute l'année. Je le mets près du terminal et les clients l'utilisent tout seuls.\"","Pastelería":"Pâtisserie",
-      "Elige tu pack":"Choisissez votre pack","Cuantos más, mejor precio.":"Plus vous en prenez, meilleur est le prix.","Pago único, sin cuotas. No pagas online: lo confirmas por WhatsApp.":"Paiement unique, sans abonnement. Je m'en occupe moi-même.",
-      "Para empezar":"Pour commencer","1 stand":"1 présentoir","pago único":"paiement unique","Pedir 1":"Commander 1",
-      "★ El más elegido":"★ Le plus choisi","Caja + barra":"Caisse + comptoir","2 stands":"2 présentoirs","27,45 €/stand · ahorras 14,90 €":"27,45 €/présentoir · vous économisez 14,90 €","Pedir 2":"Commander 2",
-      "Para locales grandes":"Pour les grands établissements","3 stands":"3 présentoirs","24,97 €/stand · ahorras 29,80 €":"24,97 €/présentoir · vous économisez 29,80 €","Pedir 3":"Commander 3",
-      "Garantía: si te llega defectuoso, te lo reimprimo gratis. · Envío 24–72 h.":"Garantie : s'il arrive défectueux, je le réimprime gratuitement. · Livraison 24–72 h.",
-      "¿Prefieres más seguidores?":"Vous préférez plus d'abonnés ?","También lo hago en versión Instagram.":"Je le fais aussi en version Instagram.","El mismo stand, mismo precio. Tu cliente acerca el móvil y te sigue en Instagram al instante. Ideal para escaparate y mostrador.":"Le même présentoir, le même prix. Votre client approche son téléphone et vous suit sur Instagram instantanément. Idéal pour la vitrine et le comptoir.","Quiero el de Instagram":"Je veux celui d'Instagram",
-      "Cómo funciona":"Comment ça marche","Sin app. iPhone y Android. 5 segundos.":"Sans appli. iPhone et Android. 5 secondes.","Colocas el stand en tu mostrador.":"Vous posez le présentoir sur votre comptoir.","Tu cliente acerca el móvil (NFC) o escanea el QR.":"Votre client approche son téléphone (NFC) ou scanne le QR.","Deja su reseña en Google. Listo.":"Il laisse son avis sur Google. C'est tout.",
-      "Quién está detrás":"Qui est derrière","Lo preparamos nosotros.":"Nous le préparons nous-mêmes.","Somos Uriel y Joselí. Lo preparamos y configuramos nosotros mismos: grabamos el chip y te dejamos tu enlace de Google listo, desde Andorra. No hay distribuidor en medio.":"Nous sommes Uriel et Joselí. Nous le préparons et le configurons nous-mêmes : nous encodons la puce et laissons votre lien Google prêt, depuis l'Andorre. Aucun intermédiaire.","Cada stand se prueba con un iPhone y un Android antes de enviarlo. Si te llega defectuoso, te lo reimprimo sin preguntas.":"Chaque présentoir est testé avec un iPhone et un Android avant l'envoi. S'il arrive défectueux, je le réimprime sans poser de questions.",
-      "¿Lo quieres? Escríbeme.":"Vous le voulez ? Écrivez-moi.","Me escribes hoy, te lo preparo esta semana y empiezas a sumar reseñas antes de fin de mes.":"Vous m'écrivez aujourd'hui, je le prépare cette semaine et vous gagnez des avis avant la fin du mois.","Escríbeme":"Écrivez-moi","Normalmente respondo en menos de 24 h.":"Je réponds généralement en moins de 24 h.",
-      "Andorra":"Andorre",
-      "¿Mezclas Google e Instagram?":"Vous mélangez Google et Instagram ?","Sin problema: tú eliges la combinación y el precio es por cantidad.":"Pas de souci : vous choisissez la combinaison et le prix est par quantité.","Pídeme tu combo":"Demandez-moi votre combo",
-      "El más elegido":"Le plus choisi","Para restaurantes y cadenas":"Pour restaurants et chaînes","Personaliza tu paquete":"Personnalisez votre pack","Pide los stands que quieras —10, 20, 50 o más— mezclando Google e Instagram como prefieras. Te hago precio a medida.":"Commandez autant de présentoirs que vous voulez —10, 20, 50 ou plus— en mélangeant Google et Instagram comme vous préférez. Je vous fais un prix sur mesure.","Personaliza tu pedido":"Personnalisez votre commande"
-    },
-    pt:{
-      "Lo quiero · desde 34,90 €":"Quero-o · desde 34,90 €","Pago único, sin cuotas. No pagas online: lo confirmas por WhatsApp.":"Pagamento único, sem mensalidades. Não pagas online: confirmas por WhatsApp.",
-      "Que te elijan a ti,":"Que te escolham a ti,","no al de al lado.":"não o do lado.","El stand que pones en tu mostrador y llena tu Google de reseñas sin que pidas nada. Tu cliente acerca el móvil, 5 segundos, sin app. Te llega configurado.":"O expositor que pões no balcão e enche o teu Google de avaliações sem teres de pedir nada. O teu cliente aproxima o telemóvel, 5 segundos, sem app. Chega configurado.","Quiero más reseñas · 34,90 €":"Quero mais avaliações · 34,90 €","o súmale Instagram (combo) · 54,90 €":"ou junta o Instagram (combo) · 54,90 €","Llega configurado con tu enlace · cero apps · no pagas online":"Chega configurado com o teu link · zero apps · não pagas online",
-      "📦 Envíos solo a Andorra":"📦 Envios só para Andorra","Pedir":"Pedir","\"En una semana ya tenía un montón de reseñas nuevas. Me quedé alucinada con lo bien que funciona.\"":"\"Numa semana já tinha montes de avaliações novas. Fiquei pasmada com o bem que funciona.\"","Gaudeix · comida preparada":"Gaudeix · refeições preparadas","Lo que dicen quienes ya lo tienen":"O que dizem os que já o têm","Negocios reales,":"Negócios reais,","resultados reales.":"resultados reais.","\"Flipé con el resultado. La gente lo usa sola, sin que tengamos que estar insistiendo.\"":"\"Flipei com o resultado. As pessoas usam-no sozinhas, sem termos de estar a insistir.\"","Restaurante":"Restaurante","\"Nos va súper bien: más de 10 reseñas en nada. Me estoy quedando alucinada con cómo funciona.\"":"\"Está a correr super bem: mais de 10 avaliações num instante. Estou pasmada com como funciona.\"","Terraza italiana":"Esplanada italiana","Por qué las reseñas mueven tu negocio":"Porque as avaliações movem o teu negócio","No es ego.":"Não é ego.","Son clientes nuevos.":"São clientes novos.","de ingresos por cada estrella que subes en tu nota media (más aún en negocios independientes).":"de receita por cada estrela que sobes na tua nota média (ainda mais em negócios independentes).","de la gente lee reseñas antes de elegir un negocio local. Y el 81% usa Google para mirarlas.":"das pessoas leem avaliações antes de escolher um negócio local. E 81% usam o Google para as ver.","más probabilidad de que te elijan con solo 5 reseñas frente a tener ninguna. Las primeras son las que más mueven.":"mais probabilidade de te escolherem com só 5 avaliações do que com nenhuma. As primeiras são as que mais contam.","factor más importante para salir arriba en Google Maps son las reseñas (16–20% del peso del ranking local).":"fator mais importante para aparecer no topo do Google Maps são as avaliações (16–20% do peso do ranking local).","de la gente solo da valor a las reseñas de las últimas 2 semanas. Por eso necesitas un flujo constante, no una campaña suelta.":"das pessoas só dão valor às avaliações das últimas 2 semanas. Por isso precisas de um fluxo constante, não de uma campanha solta.","El stand en el mostrador es la forma nº1 de capturar esa reseña en caliente.":"O expositor no balcão é a forma nº1 de captar essa avaliação a quente.","Pedir de palabra convierte un 1–2%. Con el stand delante, en el momento bueno, sube muchísimo.":"Pedir de viva voz converte 1–2%. Com o expositor à frente, no momento certo, sobe imenso.","El stand que mata el \"luego te la dejo\"":"O expositor que mata o \"depois deixo-ta\"","El cliente contento de hoy,":"O cliente contente de hoje,","en una reseña dejada ahora.":"numa avaliação deixada agora.","El 90 % de tus clientes contentos nunca te deja la reseña: cuando se lo pides ya tienen prisa y dicen \"luego desde casa\". Ese \"luego\" no llega. Pones el stand en la barra, tu cliente acerca el móvil o escanea el QR y deja la estrella":"90 % dos teus clientes contentes nunca te deixam a avaliação: quando lhes pedes já têm pressa e dizem \"depois lá de casa\". Esse \"depois\" não chega. Pões o expositor no balcão, o teu cliente aproxima o telemóvel ou lê o QR e deixa a estrela","antes de salir por la puerta":"antes de sair pela porta",". Sin app, sin que busque nada.":". Sem app, sem ter de procurar nada.","Pedir el stand · 34,90 €":"Pedir o expositor · 34,90 €","El Kit Lleno de Reseñas (guía + plantillas + cartel imprimible + checklist) te lo ofrezco al pedir, por solo 4,99 € más.":"O Kit Cheio de Avaliações (guia + modelos + cartaz imprimível + checklist) ofereço-to ao encomendar, por só 4,99 € mais.",
-      "Negocios reales en Andorra":"Negócios reais em Andorra","Más reseñas y más seguidores":"Mais avaliações e mais seguidores","con un solo gesto.":"com um só gesto.",
-      "El stand que pones en tu mostrador. Tu cliente acerca el móvil y, en 5 segundos, te deja una reseña en Google o te sigue en Instagram. Sin app.":"O expositor que pões no teu balcão. O teu cliente aproxima o telemóvel e, em 5 segundos, deixa uma avaliação no Google ou segue-te no Instagram. Sem app.",
-      "Google + Instagram · 54,90 €":"Google + Instagram · 54,90 €",
-      "\"En 2 semanas conseguí más reseñas que en todo el año. Lo pongo junto al datáfono y los clientes lo usan solos.\"":"\"Em 2 semanas consegui mais avaliações do que no ano inteiro. Ponho-o ao lado do TPA e os clientes usam-no sozinhos.\"","Pastelería":"Pastelaria",
-      "Elige tu pack":"Escolhe o teu pack","Cuantos más, mejor precio.":"Quantos mais, melhor preço.","Pago único, sin cuotas. No pagas online: lo confirmas por WhatsApp.":"Pagamento único, sem mensalidades. Trato disso eu próprio.",
-      "Para empezar":"Para começar","1 stand":"1 expositor","pago único":"pagamento único","Pedir 1":"Pedir 1",
-      "★ El más elegido":"★ O mais escolhido","Caja + barra":"Caixa + balcão","2 stands":"2 expositores","27,45 €/stand · ahorras 14,90 €":"27,45 €/expositor · poupas 14,90 €","Pedir 2":"Pedir 2",
-      "Para locales grandes":"Para espaços grandes","3 stands":"3 expositores","24,97 €/stand · ahorras 29,80 €":"24,97 €/expositor · poupas 29,80 €","Pedir 3":"Pedir 3",
-      "Garantía: si te llega defectuoso, te lo reimprimo gratis. · Envío 24–72 h.":"Garantia: se chegar com defeito, reimprimo grátis. · Envio 24–72 h.",
-      "¿Prefieres más seguidores?":"Preferes mais seguidores?","También lo hago en versión Instagram.":"Também o faço em versão Instagram.","El mismo stand, mismo precio. Tu cliente acerca el móvil y te sigue en Instagram al instante. Ideal para escaparate y mostrador.":"O mesmo expositor, mesmo preço. O teu cliente aproxima o telemóvel e segue-te no Instagram num instante. Ideal para montra e balcão.","Quiero el de Instagram":"Quero o do Instagram",
-      "Cómo funciona":"Como funciona","Sin app. iPhone y Android. 5 segundos.":"Sem app. iPhone e Android. 5 segundos.","Colocas el stand en tu mostrador.":"Colocas o expositor no teu balcão.","Tu cliente acerca el móvil (NFC) o escanea el QR.":"O teu cliente aproxima o telemóvel (NFC) ou lê o QR.","Deja su reseña en Google. Listo.":"Deixa a avaliação no Google. Pronto.",
-      "Quién está detrás":"Quem está por trás","Lo preparamos nosotros.":"Preparamo-lo nós.","Somos Uriel y Joselí. Lo preparamos y configuramos nosotros mismos: grabamos el chip y te dejamos tu enlace de Google listo, desde Andorra. No hay distribuidor en medio.":"Somos o Uriel e o Joselí. Preparamos e configuramos nós próprios: gravamos o chip e deixamos o teu link do Google pronto, a partir de Andorra. Sem distribuidor pelo meio.","Cada stand se prueba con un iPhone y un Android antes de enviarlo. Si te llega defectuoso, te lo reimprimo sin preguntas.":"Cada expositor é testado com um iPhone e um Android antes de enviar. Se chegar com defeito, reimprimo sem perguntas.",
-      "¿Lo quieres? Escríbeme.":"Queres? Escreve-me.","Me escribes hoy, te lo preparo esta semana y empiezas a sumar reseñas antes de fin de mes.":"Escreves-me hoje, preparo-o esta semana e começas a somar avaliações antes do fim do mês.","Escríbeme":"Escreve-me","Normalmente respondo en menos de 24 h.":"Normalmente respondo em menos de 24 h.",
-      "Andorra":"Andorra",
-      "¿Mezclas Google e Instagram?":"Misturas Google e Instagram?","Sin problema: tú eliges la combinación y el precio es por cantidad.":"Sem problema: tu escolhes a combinação e o preço é por quantidade.","Pídeme tu combo":"Pede-me o teu combo",
-      "El más elegido":"O mais escolhido","Para restaurantes y cadenas":"Para restaurantes e cadeias","Personaliza tu paquete":"Personaliza o teu pacote","Pide los stands que quieras —10, 20, 50 o más— mezclando Google e Instagram como prefieras. Te hago precio a medida.":"Pede os expositores que quiseres —10, 20, 50 ou mais— misturando Google e Instagram como preferires. Faço-te preço à medida.","Personaliza tu pedido":"Personaliza o teu pedido"
-    }
-  };
-  let nodes=null;
-  function collect(){
-    const tw=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,{acceptNode(n){
-      if(!n.nodeValue||!n.nodeValue.trim())return NodeFilter.FILTER_REJECT;
-      const p=n.parentElement; if(!p)return NodeFilter.FILTER_REJECT;
-      const t=p.tagName; if(t==='SCRIPT'||t==='STYLE'||t==='NOSCRIPT')return NodeFilter.FILTER_REJECT;
-      if(p.closest('#langMenu'))return NodeFilter.FILTER_REJECT;
-      return NodeFilter.FILTER_ACCEPT;
-    }});
-    const a=[]; let n; while(n=tw.nextNode())a.push({node:n,es:n.nodeValue}); return a;
-  }
-  function apply(l){
-    if(!LANGS.includes(l))l='es'; document.documentElement.lang=l;
-    if(!nodes)nodes=collect();
-    const m=DICT[l];
-    nodes.forEach(o=>{ if(l==='es'||!m){o.node.nodeValue=o.es;return;} const k=o.es.trim(); const tr=m[k]; o.node.nodeValue=(tr!=null)?o.es.replace(k,tr):o.es; });
-    document.querySelectorAll('[data-i18n-label]').forEach(b=>b.textContent=NAMES[l]);
-    document.querySelectorAll('a[href^="pedido.html"]').forEach(function(a){var hh=a.getAttribute('href').split('?')[0];var sp=new URLSearchParams(a.getAttribute('href').split('?')[1]||'');sp.set('lang',l);a.setAttribute('href',hh+'?'+sp.toString());});
-    try{localStorage.setItem('toi_lang',l);}catch(e){}
-  }
-  let saved=null; try{saved=localStorage.getItem('toi_lang');}catch(e){}
-  const nv=(navigator.language||'es').slice(0,2).toLowerCase();
-  const init=saved||'ca';
-  function boot(){ nodes=collect(); apply(init);
-    document.querySelectorAll('[data-lang-opt]').forEach(o=>o.addEventListener('click',function(e){e.preventDefault();apply(o.getAttribute('data-lang-opt'));const d=document.getElementById('langMenu');if(d)d.open=false;}));
-  }
-  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot); else boot();
-})();
 </script>
 
 </body>

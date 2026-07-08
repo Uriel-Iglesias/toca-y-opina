@@ -4,13 +4,11 @@
   "private": true,
   "description": "Landing page de Toca y Opina (stands NFC + QR para reseñas en Google).",
   "scripts": {
-    "build": "tailwindcss -i src/input.css -o assets/tailwind.css --minify",
-    "dev": "tailwindcss -i src/input.css -o assets/tailwind.css --watch"
+    "build:css": "tailwindcss -c tailwind.config.js -i tailwind-input.css -o assets/app.css --minify",
+    "watch:css": "tailwindcss -c tailwind.config.js -i tailwind-input.css -o assets/app.css --watch",
+    "build": "./build-hostinger.sh"
   },
   "devDependencies": {
     "tailwindcss": "^3.4.0"
-  },
-  "dependencies": {
-    "framer-motion": "^12.38.0"
   }
 }

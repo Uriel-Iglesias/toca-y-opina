@@ -5,7 +5,7 @@
  *  (Nota: calculadora.html usa su propio assets/tailwind.css, no este.)
  */
 module.exports = {
-  content: ["./index.html", "./pedido.html", "./guia-resenas.html"],
+  content: ["./index.html", "./pedido.html", "./guia-resenas.html", "./aviso-legal.html", "./blog/**/*.html"],
   theme: {
     extend: {
       fontFamily: { display: ["-apple-system", "BlinkMacSystemFont", '"SF Pro Display"', '"Inter"', "sans-serif"] },
