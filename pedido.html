@@ -56,7 +56,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Inter","Sego
       </div>
     </div>
 
-    <div class="rounded-[26px] p-6 sm:p-7 mb-4" style="background:linear-gradient(180deg,#FFFDF6,#fff);border:2px solid var(--gold);box-shadow:0 24px 60px -26px rgba(245,185,65,.65);">
+    <div id="bumpBox" class="rounded-[26px] p-6 sm:p-7 mb-4" style="background:linear-gradient(180deg,#FFFDF6,#fff);border:2px solid var(--gold);box-shadow:0 24px 60px -26px rgba(245,185,65,.65);">
       <div class="flex items-center justify-between gap-2 mb-4 flex-wrap">
         <span id="bumpBadge" class="text-[11px] font-extrabold uppercase tracking-wider px-3 py-1.5 rounded-full" style="background:var(--gold);color:#1D1D1F;">🎁 Oferta solo al pedir</span>
         <span id="saveBadge" class="text-[12px] font-extrabold px-3 py-1.5 rounded-full" style="background:#E8FBF0;color:#0B8A4B;">Ahorras 10 €</span>
@@ -81,6 +81,19 @@ body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Inter","Sego
       </div>
 
       <button id="btnKit" type="button" class="cta cta-gold" data-goatcounter-click="pedido-con-kit" style="justify-content:space-between;"><span id="btnKitTxt">Pedir con el Kit</span><span id="totKitBtn" style="white-space:nowrap;">59,89 €</span></button>
+    </div>
+
+    <div id="kitFreeBand" class="rounded-2xl px-4 py-3.5 mb-4" style="background:#E8FBF0;border:1.5px solid #9FE3BE;display:none;font-weight:700;color:#0B8A4B;font-size:14.5px;">🎁 <span id="kitFreeTxt">Kit Lleno de Reseñas incluido GRATIS</span></div>
+
+    <div id="upsellCard" class="rounded-2xl p-4 mb-4" style="background:#F5F9FF;border:1.5px solid #BFD4FE;display:none;">
+      <label style="display:flex;align-items:center;gap:12px;cursor:pointer;">
+        <input id="upChk" type="checkbox" style="width:22px;height:22px;accent-color:#105BF5;flex-shrink:0;cursor:pointer;">
+        <span style="flex:1;min-width:0;">
+          <span id="upTitle" style="font-weight:800;font-size:15.5px;display:block;">➕ 1 stand más por solo 20 €</span>
+          <span id="upHint" style="font-size:13px;color:#4A5568;display:block;margin-top:2px;">Añade el 2º y el Kit te sale GRATIS.</span>
+        </span>
+        <span style="font-weight:800;white-space:nowrap;color:#105BF5;">+20 €</span>
+      </label>
     </div>
 
     <button id="btnSolo" type="button" class="cta cta-line" data-goatcounter-click="pedido-sin-kit" style="justify-content:space-between;"><span id="btnSoloTxt">Pedir sin el Kit</span><span id="precioBtn" style="white-space:nowrap;">34,90 €</span></button>
@@ -122,12 +135,12 @@ body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Inter","Sego
   var lang=params.get('lang'); if(!lang){try{lang=localStorage.getItem('toi_lang');}catch(e){}}
 
   var PRODUCTS={
-    g1:{p:'34,90 €', pk:'39,89 €', img:'estudio-google-1.webp'},
-    g2:{p:'54,90 €', pk:'59,89 €', img:'estudio-google-2.webp'},
-    g3:{p:'74,90 €', pk:'79,89 €', img:'estudio-google-3.webp'},
-    combo:{p:'54,90 €', pk:'59,89 €', img:'hero-mix.webp'},
-    g2i1:{p:'74,90 €', pk:'79,89 €', img:'combo-2google-1instagram.webp'},
-    g1i2:{p:'74,90 €', pk:'79,89 €', img:'combo-1google-2instagram.webp'},
+    g1:{base:34.90, units:1, img:'estudio-google-1.webp'},
+    g2:{base:54.90, units:2, img:'estudio-google-2.webp'},
+    g3:{base:74.90, units:3, img:'estudio-google-3.webp'},
+    combo:{base:54.90, units:2, mix:true, img:'hero-mix.webp'},
+    g2i1:{base:74.90, units:3, mix:true, img:'combo-2google-1instagram.webp'},
+    g1i2:{base:74.90, units:3, mix:true, img:'combo-1google-2instagram.webp'},
     custom:{custom:true, img:'hero-mix.webp'}
   };
   if(!PRODUCTS[prod])prod='g1';
@@ -146,7 +159,9 @@ body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Inter","Sego
         lblName:'Tu nombre', phName:'Ej. María', lblBiz:'Nombre de tu negocio', phBiz:'Ej. Bar La Plaça',
         send:'Enviar por WhatsApp', formNote:'Te lo confirmamos por WhatsApp y en 24–72 h lo tienes: en mano en Andorra (pagas al recibirlo) o por envío en España. Si algo falla, te lo reimprimimos gratis.',
         kitName:'el Kit Lleno de Reseñas', customQty:'varias unidades',
-        names:{g1:'1 expositor Google',g2:'2 expositores Google',g3:'3 expositores Google',combo:'1 Google + 1 Instagram',g2i1:'2 Google + 1 Instagram',g1i2:'1 Google + 2 Instagram',custom:'Pedido personalizado'},
+        one:'Pedir', gratis:'gratis', kitFree:'Kit Lleno de Reseñas incluido GRATIS',
+        upTitle:'➕ 1 stand más por solo 20 €', upHintKit:'Añade el 2º y el Kit te sale GRATIS.', upHintMore:'Para la otra caja, la entrada o la terraza.', upNote:'El tipo del stand extra lo confirmas por WhatsApp.', extra:'+ 1 stand extra (tipo a confirmar)',
+        names:{g1:'1 expositor Google',g2:'2 expositores Google',g3:'3 expositores Google',g4:'4 expositores Google',combo:'1 Google + 1 Instagram',g2i1:'2 Google + 1 Instagram',g1i2:'1 Google + 2 Instagram',custom:'Pedido personalizado'},
         msg:function(u,b,order,total){return 'Hola, soy '+u+' de '+b+'. Quiero '+order+' — total '+total+'.';},
         msgCustom:function(u,b){return 'Hola, soy '+u+' de '+b+'. Quiero un pedido personalizado (varias unidades, mezclando Google e Instagram).';}},
     ca:{eyebrow:'Gairebé fet · només confirmar', payNote:"pagament únic · sense pagar online",
@@ -161,7 +176,9 @@ body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Inter","Sego
         lblName:'El teu nom', phName:'Ex. Maria', lblBiz:'Nom del teu negoci', phBiz:'Ex. Bar La Plaça',
         send:'Enviar per WhatsApp', formNote:"T'ho confirmem per WhatsApp i en 24–72 h ho tens: en mà a Andorra (pagues en rebre-ho) o per enviament a Espanya. Si alguna cosa falla, t'ho reimprimim gratis.",
         kitName:'el Kit Ple de Ressenyes', customQty:'diverses unitats',
-        names:{g1:'1 expositor Google',g2:'2 expositors Google',g3:'3 expositors Google',combo:'1 Google + 1 Instagram',g2i1:'2 Google + 1 Instagram',g1i2:'1 Google + 2 Instagram',custom:'Comanda personalitzada'},
+        one:'Demanar', gratis:'gratis', kitFree:'Kit Ple de Ressenyes inclòs GRATIS',
+        upTitle:'➕ 1 expositor més per només 20 €', upHintKit:'Afegeix el 2n i el Kit et surt GRATIS.', upHintMore:"Per a l'altra caixa, l'entrada o la terrassa.", upNote:"El tipus de l'expositor extra el confirmes per WhatsApp.", extra:'+ 1 expositor extra (tipus a confirmar)',
+        names:{g1:'1 expositor Google',g2:'2 expositors Google',g3:'3 expositors Google',g4:'4 expositors Google',combo:'1 Google + 1 Instagram',g2i1:'2 Google + 1 Instagram',g1i2:'1 Google + 2 Instagram',custom:'Comanda personalitzada'},
         msg:function(u,b,order,total){return 'Hola, soc '+u+' de '+b+'. Vull '+order+' — total '+total+'.';},
         msgCustom:function(u,b){return 'Hola, soc '+u+' de '+b+'. Vull una comanda personalitzada (diverses unitats, barrejant Google i Instagram).';}},
     fr:{eyebrow:'Presque fini · juste confirmer', payNote:'paiement unique · rien à payer en ligne',
@@ -176,7 +193,9 @@ body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Inter","Sego
         lblName:'Votre nom', phName:'Ex. Marie', lblBiz:'Nom de votre établissement', phBiz:'Ex. Bar La Plaça',
         send:'Envoyer par WhatsApp', formNote:"On vous confirme tout par WhatsApp et sous 24–72 h c'est chez vous : en main propre en Andorre (payé à la réception) ou par envoi en Espagne. Si quelque chose ne va pas, on le réimprime gratuitement.",
         kitName:"le Kit Plein d'Avis", customQty:'plusieurs unités',
-        names:{g1:'1 présentoir Google',g2:'2 présentoirs Google',g3:'3 présentoirs Google',combo:'1 Google + 1 Instagram',g2i1:'2 Google + 1 Instagram',g1i2:'1 Google + 2 Instagram',custom:'Commande personnalisée'},
+        one:'Commander', gratis:'gratuit', kitFree:"Kit Plein d'Avis inclus GRATUIT",
+        upTitle:'➕ 1 présentoir de plus pour seulement 20 €', upHintKit:'Ajoutez le 2e et le Kit est GRATUIT.', upHintMore:"Pour l'autre caisse, l'entrée ou la terrasse.", upNote:'Le type du présentoir extra se confirme par WhatsApp.', extra:'+ 1 présentoir extra (type à confirmer)',
+        names:{g1:'1 présentoir Google',g2:'2 présentoirs Google',g3:'3 présentoirs Google',g4:'4 présentoirs Google',combo:'1 Google + 1 Instagram',g2i1:'2 Google + 1 Instagram',g1i2:'1 Google + 2 Instagram',custom:'Commande personnalisée'},
         msg:function(u,b,order,total){return 'Bonjour, je suis '+u+' de '+b+'. Je veux '+order+' — total '+total+'.';},
         msgCustom:function(u,b){return 'Bonjour, je suis '+u+' de '+b+'. Je veux une commande personnalisée (plusieurs unités, en mélangeant Google et Instagram).';}},
     pt:{eyebrow:'Quase pronto · só confirmar', payNote:'pagamento único · sem pagar online',
@@ -191,7 +210,9 @@ body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Inter","Sego
         lblName:'O teu nome', phName:'Ex. Maria', lblBiz:'Nome do teu negócio', phBiz:'Ex. Bar La Plaça',
         send:'Enviar por WhatsApp', formNote:'Confirmamos tudo por WhatsApp e em 24–72 h tens: em mãos em Andorra (pagas ao receber) ou por envio em Espanha. Se algo falhar, reimprimimos grátis.',
         kitName:'o Kit Cheio de Avaliações', customQty:'várias unidades',
-        names:{g1:'1 expositor Google',g2:'2 expositores Google',g3:'3 expositores Google',combo:'1 Google + 1 Instagram',g2i1:'2 Google + 1 Instagram',g1i2:'1 Google + 2 Instagram',custom:'Pedido personalizado'},
+        one:'Pedir', gratis:'grátis', kitFree:'Kit Cheio de Avaliações incluído GRÁTIS',
+        upTitle:'➕ mais 1 expositor por só 20 €', upHintKit:'Junta o 2º e o Kit sai GRÁTIS.', upHintMore:'Para a outra caixa, a entrada ou a esplanada.', upNote:'O tipo do expositor extra confirmas por WhatsApp.', extra:'+ 1 expositor extra (tipo a confirmar)',
+        names:{g1:'1 expositor Google',g2:'2 expositores Google',g3:'3 expositores Google',g4:'4 expositores Google',combo:'1 Google + 1 Instagram',g2i1:'2 Google + 1 Instagram',g1i2:'1 Google + 2 Instagram',custom:'Pedido personalizado'},
         msg:function(u,b,order,total){return 'Olá, sou '+u+' de '+b+'. Quero '+order+' — total '+total+'.';},
         msgCustom:function(u,b){return 'Olá, sou '+u+' de '+b+'. Quero um pedido personalizado (várias unidades, misturando Google e Instagram).';}}
   };
@@ -212,12 +233,46 @@ body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Inter","Sego
   $('fName').placeholder=t.phName; $('fBiz').placeholder=t.phBiz;
 
   var IMG='assets/img/productos/';
+  var KIT=4.99, UPP=20, up=false;
+  function fmt(n){ return n.toFixed(2).replace('.',',')+' €'; }
+  function calc(){
+    var u=(P.units||1)+(up?1:0);
+    var base=(P.base||0)+(up?UPP:0);
+    return { units:u, base:base, kitFree:u>=2, withKit:base+KIT };
+  }
+  function orderName(){
+    if(!up) return t.names[prod];
+    if(prod==='g1') return t.names.g2;
+    if(prod==='g2') return t.names.g3;
+    if(prod==='g3') return t.names.g4;
+    return t.names[prod]+' '+t.extra;
+  }
+  function render(){
+    if(P.custom) return;
+    var c=calc();
+    set('resumen',orderName());
+    set('precio',fmt(c.base));
+    if(c.kitFree){
+      $('bumpBox').style.display='none';
+      $('kitFreeBand').style.display='block';
+      $('btnSolo').className='cta cta-wa';
+      $('btnSolo').innerHTML='<span>'+t.one+'</span><span style="white-space:nowrap;">'+fmt(c.base)+'</span>';
+    } else {
+      $('bumpBox').style.display='block';
+      $('kitFreeBand').style.display='none';
+      $('btnSolo').className='cta cta-line';
+      $('btnSolo').innerHTML='<span>'+t.sendSolo+'</span><span style="white-space:nowrap;">'+fmt(c.base)+'</span>';
+      set('totKit',fmt(c.withKit)); set('totKitBtn',fmt(c.withKit));
+    }
+    $('btnSolo').style.justifyContent='space-between';
+    set('upHint', prod==='g1' ? t.upHintKit : (P.mix ? t.upNote : t.upHintMore));
+  }
 
   function showForm(mode){
-    var order, right;
+    var order, right, c=calc();
     if(mode==='custom'){ order=pname; right=t.customQty; }
-    else if(mode==='kit'){ order=pname+' + '+t.kitWord; right=t.total+' '+P.pk; }
-    else { order=pname; right=P.p; }
+    else if(mode==='kit'){ order=orderName()+' + '+t.kitWord; right=t.total+' '+fmt(c.withKit); }
+    else { order=orderName()+(c.kitFree?' + '+t.kitWord+' ('+t.gratis+')':''); right=fmt(c.base); }
     $('orderSummary').innerHTML='<span style="flex:1;min-width:0;padding-right:10px;">'+order+'</span><span style="white-space:nowrap;">'+right+'</span>';
     $('btnSend').setAttribute('data-mode',mode);
     $('offerView').style.display='none';
@@ -247,13 +302,19 @@ body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Inter","Sego
     set('bumpBadge',t.bumpBadge); set('saveBadge',t.saveBadge);
     setH('bumpTitle',t.bumpTitle); setH('li1',t.li1); setH('li2',t.li2); setH('li3',t.li3);
     set('kitWord',t.kitWord); set('totWord1',t.total);
-    set('btnKitTxt',t.sendKit); set('btnSoloTxt',t.sendSolo);
+    set('btnKitTxt',t.sendKit);
     set('footNote',t.footNote);
-    set('resumen',pname); set('totLbl',t.totalKit);
-    set('precio',P.p); set('totKit',P.pk); set('totKitBtn',P.pk); set('precioBtn',P.p);
+    set('totLbl',t.totalKit);
+    set('kitFreeTxt',t.kitFree); set('upTitle',t.upTitle);
     $('foto').src=IMG+P.img;
+    $('upsellCard').style.display='block';
+    render();
+    $('upChk').addEventListener('change',function(){
+      up=this.checked; render();
+      if(window.goatcounter&&goatcounter.count)goatcounter.count({path:'upsell-'+(up?'on':'off'),event:true});
+    });
     $('btnKit').addEventListener('click',function(){showForm('kit');});
-    $('btnSolo').addEventListener('click',function(){showForm('solo');});
+    $('btnSolo').addEventListener('click',function(){showForm(calc().kitFree?'free':'solo');});
     $('backToOffer').addEventListener('click',showOffer);
   }
 
@@ -267,7 +328,14 @@ body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Inter","Sego
     var mode=this.getAttribute('data-mode')||'solo';
     var msg;
     if(mode==='custom'){ msg=t.msgCustom(uname,biz); }
-    else { var order=(mode==='kit')?(pname+' + '+t.kitName):pname; var total=(mode==='kit')?P.pk:P.p; msg=t.msg(uname,biz,order,total); }
+    else {
+      var c=calc();
+      var order=orderName();
+      if(mode==='kit'){ order+=' + '+t.kitName; }
+      else if(c.kitFree){ order+=' + '+t.kitName+' ('+t.gratis+')'; }
+      var total=(mode==='kit')?fmt(c.withKit):fmt(c.base);
+      msg=t.msg(uname,biz,order,total);
+    }
     window.location.href='https://wa.me/34690390557?text='+encodeURIComponent(msg);
   });
   ['fName','fBiz'].forEach(function(id){ $(id).addEventListener('input',function(){this.classList.remove('err');}); });

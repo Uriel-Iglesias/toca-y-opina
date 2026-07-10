@@ -112,3 +112,22 @@ Además: deriva de contenido en el blog (9 footers decían "Amposta", un artícu
 - `https://tocayopina.es/` devuelve **HTTP 500 vacío**. Causa: existe un **`index.php` roto en public_html** que LiteSpeed prioriza sobre index.html, y el `.htaccess` del servidor no está aplicando `DirectoryIndex` (por eso también `/blog/` da 403 y las URLs inexistentes dan 500 en vez del 404 propio). `/index.html` directo funciona (200) — el contenido está, pero nadie que entre por la raíz lo ve.
 - **Blindaje incluido en este build:** el zip ahora lleva un `index.php` propio que sirve `index.html` — al extraerlo machaca el roto y la raíz vuelve a funcionar aunque el DirectoryIndex siga sin aplicarse.
 - **Al desplegar, verificar:** (1) extraer el zip EN `public_html/` con "sobrescribir"; (2) confirmar que `.htaccess` existe en public_html tras extraer (los gestores de archivos a veces esconden los archivos con punto — activar "mostrar archivos ocultos"); (3) probar `https://tocayopina.es/` y `https://tocayopina.es/blog/` → deben dar 200.
+
+---
+
+## 8 · Actualización 10-jul: variantes A/B/C y motor de upsell
+
+Se construyeron y renderizaron 3 variantes completas de la landing (guardadas en `Desechos/variantes-jul2026/`):
+- **A · Base + capa de oferta** — estructura actual + "Kit GRATIS con 2-3 stands" + urgencia honesta de tanda semanal.
+- **B · Oferta primero** — H1 "Tu Google lleno de reseñas. 34,90 €. Una vez.", página 12% más corta, sin sección de datos.
+- **C · WhatsApp directo** — todos los CTAs a wa.me prellenado, saltándose pedido.html.
+
+**Veredicto (juez: criterios de claridad, disparador de compra, respaldo, AOV, fricción): gana la A.** B pierde el disparador nº1 (miedo competitivo local) y el respaldo racional con fuentes; C pierde el bump, el upsell y la medición de conversión, y WhatsApp Web en escritorio añade fricción real.
+
+**Motor de upsell implementado en pedido.html (4 idiomas):**
+- **"+1 stand por solo 20 €"** en todos los productos (coherente con la escalera: 34,90→54,90→74,90→94,90).
+- **"Kit Lleno de Reseñas GRATIS con 2+ stands"** — el bump de 4,99 € solo se cobra con 1 stand; con 2+ aparece como regalo incluido. En el caso estrella (1 stand + upsell), el comprador ve: "añade el 2º por 20 € y el Kit te sale gratis" — doble incentivo a duplicar el ticket.
+- El mensaje de WhatsApp final refleja pedido, extras y total exactos. Eventos GoatCounter: `upsell-on/off`, `pedido-con-kit`, `pedido-sin-kit`, `whatsapp-enviar`.
+- Verificado en navegador: g1±upsell (ES), g2 (Kit gratis de serie), combo±upsell (CA), mensajes correctos en todos los casos.
+
+**Impacto esperado en AOV:** el camino 34,90 → 54,90 ahora tiene dos empujones (ahorro 14,90 + Kit gratis) y cuesta un clic. La landing lo anuncia (badge en packs 2-3) y el pedido lo cumple.
