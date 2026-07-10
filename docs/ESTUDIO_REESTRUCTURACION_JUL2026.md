@@ -131,3 +131,22 @@ Se construyeron y renderizaron 3 variantes completas de la landing (guardadas en
 - Verificado en navegador: g1±upsell (ES), g2 (Kit gratis de serie), combo±upsell (CA), mensajes correctos en todos los casos.
 
 **Impacto esperado en AOV:** el camino 34,90 → 54,90 ahora tiene dos empujones (ahorro 14,90 + Kit gratis) y cuesta un clic. La landing lo anuncia (badge en packs 2-3) y el pedido lo cumple.
+
+---
+
+## 9 · Actualización 10-jul (2): pase de diseño con la colección taste-skill
+
+Instaladas 13 skills de diseño (`Leonxlnx/taste-skill`) y aplicadas las 4 relevantes a una landing codificada (design-taste-frontend, redesign-existing-projects, high-end-visual-design, minimalist-ui). Design read: *rediseño-preserve, premium Apple-like, modo claro* (dials 5/5/4). Cambios de capa visual, sin tocar copy con traducciones ni estructura CRO:
+
+- **Eyebrows de 10 → 4** (tope de la skill: 1 por cada 3 secciones; era el ritmo-plantilla nº1).
+- **Sombras teñidas** del azul de marca en cards + hover lift con cubic-bezier custom.
+- **Feedback háptico**: `:active scale(.98)` y `:focus-visible` en todos los CTAs (landing + pedido).
+- **Double-bezel** en la imagen del hero (marco hairline con radio concéntrico).
+- **Flecha anidada** en el CTA del hero (button-in-button).
+- **Profundidad ambiental**: luz radial azul en el hero, dorada en las secciones oscuras.
+- **Stagger** en cascada para las celdas de los grids.
+- **Tipografía**: `text-wrap:balance/pretty`, `tabular-nums` en precios.
+- **Em-dashes eliminados** del copy visible (клave Personaliza reescrita en 4 idiomas).
+- Decisiones contextuales documentadas: se mantiene la fuente del sistema (SF Pro = elección Apple correcta y 0 ms de carga) y los emojis del banner (voz de marca WhatsApp-local).
+
+No aplicadas (no encajan): industrial-brutalist (estética opuesta), stitch (para Google Stitch), brandkit/imagegen-web/imagegen-mobile/image-to-code (generación de imágenes de referencia; la web ya usa fotografía real del producto).

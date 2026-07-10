@@ -93,7 +93,7 @@
       "Pídeme tu combo":"Demana'm el teu combo",
       "El más elegido":"El més triat","Para restaurantes y cadenas":"Per a restaurants i cadenes",
       "Personaliza tu paquete":"Personalitza el teu paquet",
-      "Pide los stands que quieras —10, 20, 50 o más— mezclando Google e Instagram como prefieras. Te hacemos precio a medida.":"Demana els expositors que vulguis —10, 20, 50 o més— barrejant Google i Instagram com prefereixis. Et fem preu a mida.",
+      "Pide los stands que quieras: 10, 20, 50 o más, mezclando Google e Instagram como prefieras. Te hacemos precio a medida.":"Demana els expositors que vulguis: 10, 20, 50 o més, barrejant Google i Instagram com prefereixis. Et fem preu a mida.",
       "Personaliza tu pedido":"Personalitza la teva comanda"
     },
     fr:{
@@ -185,7 +185,7 @@
       "Pídeme tu combo":"Demandez-moi votre combo",
       "El más elegido":"Le plus choisi","Para restaurantes y cadenas":"Pour restaurants et chaînes",
       "Personaliza tu paquete":"Personnalisez votre pack",
-      "Pide los stands que quieras —10, 20, 50 o más— mezclando Google e Instagram como prefieras. Te hacemos precio a medida.":"Commandez autant de présentoirs que vous voulez —10, 20, 50 ou plus— en mélangeant Google et Instagram comme vous préférez. On vous fait un prix sur mesure.",
+      "Pide los stands que quieras: 10, 20, 50 o más, mezclando Google e Instagram como prefieras. Te hacemos precio a medida.":"Commandez autant de présentoirs que vous voulez : 10, 20, 50 ou plus, en mélangeant Google et Instagram comme vous préférez. On vous fait un prix sur mesure.",
       "Personaliza tu pedido":"Personnalisez votre commande"
     },
     pt:{
@@ -277,7 +277,7 @@
       "Pídeme tu combo":"Pede-me o teu combo",
       "El más elegido":"O mais escolhido","Para restaurantes y cadenas":"Para restaurantes e cadeias",
       "Personaliza tu paquete":"Personaliza o teu pacote",
-      "Pide los stands que quieras —10, 20, 50 o más— mezclando Google e Instagram como prefieras. Te hacemos precio a medida.":"Pede os expositores que quiseres —10, 20, 50 ou mais— misturando Google e Instagram como preferires. Faço-te preço à medida.",
+      "Pide los stands que quieras: 10, 20, 50 o más, mezclando Google e Instagram como prefieras. Te hacemos precio a medida.":"Pede os expositores que quiseres: 10, 20, 50 ou mais, misturando Google e Instagram como preferires. Fazemos-te preço à medida.",
       "Personaliza tu pedido":"Personaliza o teu pedido"
     }
   };

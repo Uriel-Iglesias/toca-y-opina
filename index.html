@@ -71,6 +71,29 @@ nav.glass{ background:rgba(255,255,255,.82); -webkit-backdrop-filter:saturate(18
 .faq summary::after{ content:'+'; font-size:22px; font-weight:400; color:var(--muted); transition:transform .25s; flex-shrink:0; }
 .faq details[open] summary::after{ transform:rotate(45deg); }
 .faq details p{ padding-bottom:18px; margin:0; }
+.faq summary{ transition:color .2s; } .faq summary:hover{ color:var(--brand); }
+/* Refinamiento (skills de diseño): tipografía, sombras teñidas, feedback háptico, profundidad */
+h1,h2,h3{ text-wrap:balance; }
+p{ text-wrap:pretty; }
+.font-display,.display{ font-variant-numeric:tabular-nums; }
+.price-card{ box-shadow:0 1px 2px rgba(13,32,84,.04),0 14px 34px -18px rgba(13,32,84,.12); transition:transform .5s cubic-bezier(.32,.72,0,1),box-shadow .5s cubic-bezier(.32,.72,0,1); }
+.price-card:hover{ transform:translateY(-4px); box-shadow:0 2px 4px rgba(13,32,84,.05),0 26px 52px -20px rgba(13,32,84,.18); }
+.price-card.feat:hover{ box-shadow:0 30px 64px -22px rgba(245,185,65,.6); }
+.cta,.cta-hero,.sticky-cta{ transition:transform .35s cubic-bezier(.32,.72,0,1),background .35s cubic-bezier(.32,.72,0,1),box-shadow .35s cubic-bezier(.32,.72,0,1); }
+.cta:active,.cta-hero:active,.sticky-cta:active{ transform:scale(.98); }
+.cta:focus-visible,.cta-hero:focus-visible,.sticky-cta:focus-visible,.faq summary:focus-visible{ outline:3px solid rgba(16,91,245,.45); outline-offset:3px; }
+.cta-arr{ width:30px; height:30px; border-radius:999px; background:rgba(6,53,26,.14); display:inline-flex; align-items:center; justify-content:center; font-size:16px; flex-shrink:0; transition:transform .35s cubic-bezier(.32,.72,0,1); }
+.cta-hero:hover .cta-arr{ transform:translateX(3px); }
+.bezel{ padding:6px; border-radius:32px; background:rgba(10,10,10,.04); box-shadow:inset 0 0 0 1px rgba(10,10,10,.05); }
+.bezel>*{ border-radius:26px; }
+.hero-glow{ background:radial-gradient(1100px 520px at 12% -8%, rgba(16,91,245,.06), transparent 62%), #fff; }
+.dark-glow{ background:radial-gradient(900px 460px at 50% -10%, rgba(245,185,65,.09), transparent 60%), var(--ink) !important; }
+.grid>.reveal:nth-child(2){ transition-delay:.07s; }
+.grid>.reveal:nth-child(3){ transition-delay:.14s; }
+.grid>.reveal:nth-child(4){ transition-delay:.07s; }
+.grid>.reveal:nth-child(5){ transition-delay:.14s; }
+.grid>.reveal:nth-child(6){ transition-delay:.21s; }
+@media(prefers-reduced-motion:reduce){ .grid>.reveal{ transition-delay:0s!important; } .price-card,.price-card:hover{ transform:none; } }
 </style>
 
 <!-- JSON-LD -->
@@ -117,7 +140,7 @@ nav.glass{ background:rgba(255,255,255,.82); -webkit-backdrop-filter:saturate(18
 </nav>
 
 <!-- ===== HERO ===== -->
-<section id="top" class="pt-24 sm:pt-32 pb-8 sm:pb-16">
+<section id="top" class="hero-glow pt-24 sm:pt-32 pb-8 sm:pb-16">
   <div class="wrap">
     <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
       <div>
@@ -136,15 +159,15 @@ nav.glass{ background:rgba(255,255,255,.82); -webkit-backdrop-filter:saturate(18
         </p>
         <div class="reveal flex flex-col gap-3 max-w-[480px]">
           <a href="pedido.html?prod=g1" class="cta-hero" data-goatcounter-click="cta-hero-pedido">
-            <span>Quiero más reseñas · 34,90 €</span>
+            <span>Quiero más reseñas · 34,90 €</span><span class="cta-arr" aria-hidden="true">→</span>
           </a>
           <a href="pedido.html?prod=combo" class="text-center text-[14.5px] font-semibold" style="color:var(--brand)" data-goatcounter-click="cta-hero-combo">o súmale Instagram (combo) · 54,90 €</a>
         </div>
         <p class="reveal text-[12.5px] mt-4 muted">Pedidos de esta semana, entregados esta semana · sin pagar nada online</p>
       </div>
 
-      <div class="reveal">
-        <a href="pedido.html?prod=g1" class="group block rounded-[28px] overflow-hidden border border-line bg-paper shadow-[0_30px_70px_-30px_rgba(0,0,0,.30)] transition-transform duration-300 hover:-translate-y-1 hover:shadow-[0_40px_80px_-30px_rgba(0,0,0,.38)]" aria-label="Pedir 1 stand de Google · 34,90 €">
+      <div class="reveal bezel">
+        <a href="pedido.html?prod=g1" class="group block overflow-hidden bg-paper shadow-[0_30px_70px_-30px_rgba(13,32,84,.30)] transition-transform duration-500 hover:-translate-y-1 hover:shadow-[0_40px_80px_-30px_rgba(13,32,84,.38)]" aria-label="Pedir 1 stand de Google · 34,90 €">
           <img src="assets/img/productos/hero-mix.webp" alt="Stands Toca y Opina para Google e Instagram, NFC + QR, sobre mesa de madera" width="1600" height="1195" fetchpriority="high" class="transition-transform duration-500 group-hover:scale-[1.03]">
         </a>
       </div>
@@ -165,7 +188,6 @@ nav.glass{ background:rgba(255,255,255,.82); -webkit-backdrop-filter:saturate(18
 <!-- ===== CÓMO FUNCIONA (arriba: el visitante frío entiende el producto antes de ver precios) ===== -->
 <section class="section" style="background:var(--paper); border-block:1px solid var(--line); padding-block:56px;">
   <div class="wrap text-center">
-    <p class="eyebrow mb-3 reveal" style="color:var(--brand)">Cómo funciona</p>
     <h2 class="display reveal mb-12" style="font-size:clamp(26px,5.5vw,42px); line-height:1.05;">
       <span>Sin app. iPhone y Android. 5 segundos.</span>
     </h2>
@@ -242,7 +264,7 @@ nav.glass{ background:rgba(255,255,255,.82); -webkit-backdrop-filter:saturate(18
     </div>
 
     <!-- Combos Google + Instagram (con foto) -->
-    <p class="eyebrow reveal mt-16 mb-3 text-center" style="color:#C13584">¿Mezclas Google e Instagram?</p>
+    <p class="reveal mt-16 mb-2 text-center font-display font-extrabold tracking-tightest text-[22px]">¿Mezclas Google e Instagram?</p>
     <p class="reveal text-center text-[15px] muted mb-9 max-w-[540px] mx-auto">Sin problema: tú eliges la combinación y el precio es por cantidad.</p>
     <div class="grid sm:grid-cols-3 gap-5 max-w-[1040px] mx-auto items-stretch">
       <article class="price-card reveal">
@@ -277,7 +299,7 @@ nav.glass{ background:rgba(255,255,255,.82); -webkit-backdrop-filter:saturate(18
         <div>
           <p class="eyebrow mb-2" style="color:var(--gold)">Para restaurantes y cadenas</p>
           <h3 class="display text-white mb-2" style="font-size:clamp(24px,4.6vw,34px);">Personaliza tu paquete</h3>
-          <p class="text-white/75 text-[15px] max-w-[460px]">Pide los stands que quieras —10, 20, 50 o más— mezclando Google e Instagram como prefieras. Te hacemos precio a medida.</p>
+          <p class="text-white/75 text-[15px] max-w-[460px]">Pide los stands que quieras: 10, 20, 50 o más, mezclando Google e Instagram como prefieras. Te hacemos precio a medida.</p>
         </div>
         <a href="pedido.html?prod=custom" class="cta cta-wa whitespace-nowrap self-start sm:self-auto">Personaliza tu pedido</a>
       </div>
@@ -315,7 +337,6 @@ nav.glass{ background:rgba(255,255,255,.82); -webkit-backdrop-filter:saturate(18
 <!-- ===== TESTIMONIOS REALES ===== -->
 <section class="section" style="padding-block:56px;">
   <div class="wrap">
-    <p class="eyebrow reveal text-center mb-3" style="color:var(--brand)">Lo que dicen quienes ya lo tienen</p>
     <h2 class="display reveal text-center mb-10" style="font-size:clamp(24px,5vw,38px);">Negocios reales, <span class="muted">resultados reales.</span></h2>
     <div class="grid sm:grid-cols-2 gap-4 max-w-[840px] mx-auto">
       <div class="reveal rounded-3xl border border-line p-6" style="background:var(--paper);">
@@ -341,7 +362,6 @@ nav.glass{ background:rgba(255,255,255,.82); -webkit-backdrop-filter:saturate(18
 <!-- ===== DATOS REALES (prueba social con fuente) ===== -->
 <section class="section" style="padding-block:60px;">
   <div class="wrap">
-    <p class="eyebrow reveal text-center mb-3" style="color:var(--brand)">Por qué las reseñas mueven tu negocio</p>
     <h2 class="display reveal text-center mb-10" style="font-size:clamp(24px,5vw,38px);">No es ego. <span class="muted">Son clientes nuevos.</span></h2>
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-[1020px] mx-auto">
       <div class="reveal rounded-2xl border border-line p-6" style="background:var(--paper);">
@@ -378,7 +398,7 @@ nav.glass{ background:rgba(255,255,255,.82); -webkit-backdrop-filter:saturate(18
 </section>
 
 <!-- ===== OFERTA COMPLETA (honesta · riesgo cero) ===== -->
-<section id="oferta" class="section" style="background:var(--ink);color:#fff;">
+<section id="oferta" class="section dark-glow" style="background:var(--ink);color:#fff;">
   <div class="wrap" style="max-width:900px;">
     <p class="eyebrow reveal mb-3 text-center" style="color:var(--gold)">El stand que mata el "luego te la dejo"</p>
     <h2 class="display reveal mb-4 text-center" style="font-size:clamp(27px,5.4vw,44px); line-height:1.05;">
@@ -410,7 +430,6 @@ nav.glass{ background:rgba(255,255,255,.82); -webkit-backdrop-filter:saturate(18
       <div class="rounded-[28px] overflow-hidden bg-paper border border-line"><img src="assets/img/founder-uriel.webp" alt="Uriel, cofundador de Toca y Opina" width="1000" height="1333" loading="lazy"></div>
     </div>
     <div class="reveal">
-      <p class="eyebrow mb-3" style="color:var(--brand)">Quién está detrás</p>
       <h2 class="display mb-5" style="font-size:clamp(26px,5vw,40px);"><span>Lo preparamos nosotros.</span></h2>
       <p class="text-[16px] muted leading-relaxed mb-4 max-w-[480px]">
         Somos Uriel y Joselí. Lo preparamos y configuramos nosotros mismos: grabamos el chip y te dejamos tu enlace de Google listo, desde Andorra. No hay distribuidor en medio.
@@ -464,7 +483,7 @@ nav.glass{ background:rgba(255,255,255,.82); -webkit-backdrop-filter:saturate(18
 </section>
 
 <!-- ===== CTA FINAL ===== -->
-<section class="section" style="background:var(--ink); color:#fff;">
+<section class="section dark-glow" style="background:var(--ink); color:#fff;">
   <div class="wrap text-center max-w-[680px] mx-auto">
     <h2 class="display reveal mb-5" style="font-size:clamp(28px,6vw,48px); line-height:1.05;"><span>¿Lo quieres? Escríbenos.</span></h2>
     <p class="reveal text-[17px] text-white/70 mb-9 max-w-[520px] mx-auto">Nos escribes hoy, te lo preparamos esta semana y empiezas a sumar reseñas antes de fin de mes.</p>
