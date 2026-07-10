@@ -3,8 +3,10 @@ Allow: /
 Disallow: /Desechos/
 Disallow: /node_modules/
 Disallow: /instagram/
+# Página de reseñas de un cliente (servicio aparte): que no compita con el SEO del dominio
+Disallow: /joieria-nova-joia/
 
-Sitemap: https://tocayopina.com/sitemap.xml
+Sitemap: https://tocayopina.es/sitemap.xml
 
 # Cluster SEO
 Allow: /blog/

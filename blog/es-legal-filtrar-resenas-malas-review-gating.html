@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0A0A0A">
+
+<title>¿Es legal filtrar las reseñas malas? La verdad sobre el "review gating"</title>
+<meta name="description" content="Filtrar reseñas malas con review gating (mandar a Google solo a los contentos) es ilegal: lo prohíbe Google, la FTC y la Directiva Omnibus. Cómo hacerlo bien sin esconder Google a nadie.">
+<meta name="author" content="Uriel — Toca y Opina">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://tocayopina.es/blog/es-legal-filtrar-resenas-malas-review-gating.html">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="¿Es legal filtrar las reseñas malas? La verdad sobre el review gating">
+<meta property="og:description" content="Esconder Google a los clientes descontentos es ilegal (Google, FTC, Omnibus). Tener una página propia de feedback que ofrece Google a todos, no. Te explico la diferencia.">
+<meta property="og:image" content="https://tocayopina.es/assets/img/pro-1stand.jpg">
+<meta property="og:url" content="https://tocayopina.es/blog/es-legal-filtrar-resenas-malas-review-gating.html">
+<meta property="og:locale" content="es_ES">
+<meta property="article:published_time" content="2026-06-19">
+<meta property="article:modified_time" content="2026-06-19">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="¿Es legal filtrar las reseñas malas? (review gating)">
+<meta name="twitter:description" content="El review gating que esconde Google a los descontentos es ilegal. Una página de feedback que ofrece Google a todos, no. La diferencia es clave.">
+
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cpath d='M8 4h24a4 4 0 0 1 4 4v16a4 4 0 0 1-4 4H22l-7 6v-6h-7a4 4 0 0 1-4-4V8a4 4 0 0 1 4-4z' fill='%23105BF5'/%3E%3C/svg%3E">
+
+
+<link rel="stylesheet" href="../assets/app.css">
+<link rel="stylesheet" href="blog.css">
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"BlogPosting",
+  "headline":"¿Es legal filtrar las reseñas malas? La verdad sobre el review gating",
+  "description":"Qué es el review gating, por qué esconder Google a los clientes descontentos es ilegal y cómo montar una página de feedback que cumple sin filtrar a nadie.",
+  "image":["https://tocayopina.es/assets/img/pro-1stand.jpg"],
+  "author":{"@type":"Person","name":"Uriel"},
+  "publisher":{"@type":"Organization","name":"Toca y Opina","logo":{"@type":"ImageObject","url":"https://tocayopina.es/assets/img/logo-200.jpg"}},
+  "datePublished":"2026-06-19",
+  "dateModified":"2026-06-19",
+  "mainEntityOfPage":"https://tocayopina.es/blog/es-legal-filtrar-resenas-malas-review-gating.html",
+  "inLanguage":"es-ES"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Inicio","item":"https://tocayopina.es/"},
+    {"@type":"ListItem","position":2,"name":"Blog","item":"https://tocayopina.es/blog/"},
+    {"@type":"ListItem","position":3,"name":"¿Es legal filtrar las reseñas malas?","item":"https://tocayopina.es/blog/es-legal-filtrar-resenas-malas-review-gating.html"}
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Organization",
+  "name":"Toca y Opina",
+  "url":"https://tocayopina.es/",
+  "logo":"https://tocayopina.es/assets/img/logo-200.jpg",
+  "founder":[{"@type":"Person","name":"Uriel"},{"@type":"Person","name":"Joselí"}],
+  "foundingDate":"2025",
+  "areaServed":{"@type":"Country","name":"España"}
+}
+</script>
+</head>
+<body>
+
+<div class="reading-progress" aria-hidden="true"><div class="reading-progress-bar" id="readingProgressBar"></div></div>
+<script>
+(function(){
+  var bar = document.getElementById('readingProgressBar');
+  if (!bar) return;
+  function update(){
+    var h = document.documentElement;
+    var scrolled = h.scrollTop || document.body.scrollTop;
+    var height = h.scrollHeight - h.clientHeight;
+    var pct = height > 0 ? Math.min(100, (scrolled / height) * 100) : 0;
+    bar.style.width = pct + '%';
+  }
+  window.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update, { passive: true });
+  update();
+})();
+</script>
+
+
+<header class="fixed top-0 inset-x-0 z-50 glass">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between">
+    <a href="../index.html" class="flex items-center gap-2.5">
+      <span class="w-10 h-10 inline-flex rounded-xl overflow-hidden shadow-sm">
+        <img src="../assets/img/logo-200.webp" alt="Toca y Opina" width="40" height="40" class="w-full h-full object-cover">
+      </span>
+      <span class="font-bold tracking-tight text-[15px]">Toca <span style="color:var(--brand)">y</span> Opina</span>
+    </a>
+    <nav class="hidden md:flex items-center gap-7 text-[14px] font-medium" style="color:var(--ink-2)">
+      <a href="../index.html#como-funciona">Cómo funciona</a>
+      <a href="../index.html#oferta">Producto</a>
+      <a href="../index.html#packs">Precios</a>
+      <a href="index.html" class="font-semibold" style="color:var(--brand)">Blog</a>
+    </nav>
+    <a href="../index.html#packs" class="btn btn-primary !py-2 !px-4 !text-sm">Ver stand</a>
+  </div>
+</header>
+
+<main class="pt-24 sm:pt-28">
+
+  <section class="hero-bg pt-12 pb-10">
+    <div class="max-w-3xl mx-auto px-5 sm:px-8">
+      <nav class="breadcrumb mb-8">
+        <a href="../index.html">Inicio</a><span class="sep">›</span>
+        <a href="index.html">Blog</a><span class="sep">›</span>
+        <span style="color:var(--ink-2)">¿Es legal filtrar las reseñas malas?</span>
+      </nav>
+
+      <span class="tag tag-strategy mb-5">Legal</span>
+
+      <h1 class="display display-xl mt-4 mb-6">
+        ¿Es legal filtrar las reseñas malas?<br>
+        <span class="text-gradient-brand">La verdad sobre el "review gating".</span>
+      </h1>
+
+      <p class="lead" style="color:var(--muted)">
+        La respuesta corta: <strong>encuestar al cliente antes y mandar a Google solo a los contentos es ilegal</strong> — lo prohíben Google, la FTC y la normativa europea. Pero hay una versión legal y recomendable que mucha gente confunde con esto. La diferencia es la línea entre una multa y una buena práctica, así que vamos a trazarla con precisión.
+      </p>
+
+      <div class="meta-strip">
+        <div class="author">
+          <span class="author-avatar">U</span>
+          <span>Uriel · Toca y Opina</span>
+        </div>
+        <span>·</span><span>12 min</span>
+        <span>·</span><span>Google · FTC · Omnibus</span>
+      </div>
+    </div>
+  </section>
+
+  <article class="max-w-3xl mx-auto px-5 sm:px-8 pb-16">
+    <div class="prose-blog">
+
+      <p>Te vendieron un "embudo de reseñas": un código QR que primero pregunta al cliente si está contento. Si dice que sí, le manda a Google. Si dice que no, le abre un formulario privado para que se desahogue contigo "y así su queja no acaba pública". Suena listo. Suena a marketing inteligente. <strong>Y es exactamente lo que la ley persigue.</strong> Lo que te han vendido tiene nombre — <em>review gating</em> — y hay empresas que han pagado millones por hacerlo.</p>
+
+      <div class="callout callout-brand">
+        <p class="callout-title">⚡ Resumen ejecutivo</p>
+        <ul style="margin:0">
+          <li>El <strong>review gating</strong> es filtrar a los clientes por sentimiento <em>antes</em> de la reseña y enviar a Google solo a los satisfechos.</li>
+          <li>Eso es <strong>ilegal</strong>: lo prohíbe la política de Google, la regla de la FTC de EE. UU. (2024) y, en la UE, la Directiva Omnibus; en España, la Ley de Competencia Desleal y la LGDCU.</li>
+          <li>La FTC multó a <strong>Fashion Nova con 4,2 M$ (2022)</strong> precisamente por ocultar las reseñas de menos de 4★.</li>
+          <li>Lo ilegal es <strong>esconder Google a los descontentos</strong>, no tener una página propia de feedback.</li>
+          <li>Lo legal y recomendable: una página que ofrece <strong>Google a TODOS</strong> y, además, un canal privado opcional — sin filtrar a nadie.</li>
+        </ul>
+      </div>
+
+      <h2 id="que-es-review-gating">Qué es exactamente el "review gating"</h2>
+
+      <p>El review gating (literalmente, "poner una puerta a las reseñas") es un proceso en dos pasos diseñado para maquillar tu valoración:</p>
+
+      <ol>
+        <li><strong>Paso 1 — el filtro.</strong> Antes de dejar que el cliente reseñe, le haces una pregunta: "¿Qué tal tu experiencia?" o "¿Nos pondrías 5 estrellas?". A veces con caritas, a veces con un selector de estrellas.</li>
+        <li><strong>Paso 2 — la bifurcación.</strong> Si la respuesta es positiva, le llevas a Google a publicar. Si es negativa, le desvías a un formulario interno, un email o un WhatsApp privado — y su opinión <em>nunca llega a Google</em>.</li>
+      </ol>
+
+      <p>El resultado es una ficha de Google artificialmente buena: solo se publican las experiencias felices, y las malas quedan enterradas en tu bandeja de entrada. El cliente medio que mira tu ficha cree estar viendo una muestra representativa de la realidad. <strong>No lo es.</strong> Y ahí está el problema legal: no estás solo "gestionando" tu reputación, estás <em>engañando al consumidor</em> sobre lo que opina de verdad la gente.</p>
+
+      <p>Conviene distinguirlo de algo legítimo. Pedir reseñas solo a clientes contentos a los que <em>de verdad</em> les ha ido bien no es gating — la clave del gating es <strong>preguntar primero el sentimiento y usar esa respuesta como puerta</strong> para decidir quién ve Google y quién no.</p>
+
+      <h2 id="por-que-es-ilegal">Por qué es ilegal: cuatro frentes a la vez</h2>
+
+      <p>No es "una zona gris". El review gating choca de frente con cuatro marcos distintos, y basta con uno para meterte en problemas.</p>
+
+      <h3 id="google" style="font-weight:700;font-size:1.25em;margin-top:1.5em;margin-bottom:0.5em">1. La política de Google</h3>
+
+      <p>La política de <em>Contenido prohibido y restringido</em> de las reseñas de Google prohíbe expresamente las prácticas que distorsionan el conjunto de reseñas, incluido <strong>desincentivar o impedir selectivamente las reseñas negativas</strong>. Google lo considera una forma de reseñas falsas o engañosas. ¿La sanción? No es una multa, es algo que para muchos negocios duele más: <strong>Google puede filtrar tus reseñas, retirar tu valoración media de la ficha o, en casos graves, suspender tu perfil de empresa</strong>. Todo el "trabajo" de meses puede evaporarse de un día para otro.</p>
+
+      <h3 id="ftc" style="font-weight:700;font-size:1.25em;margin-top:1.5em;margin-bottom:0.5em">2. La FTC (EE. UU.)</h3>
+
+      <p>En 2024 entró en vigor la regla de la <strong>Federal Trade Commission</strong> sobre reseñas falsas y testimonios, que prohíbe de forma explícita suprimir reseñas por su valoración o sentimiento. El caso que marcó el camino es anterior: en 2022, la FTC multó a <strong>Fashion Nova con 4,2 millones de dólares</strong> por haber ocultado en su web las reseñas de menos de 4 estrellas durante años, mostrando solo las de 4★ y 5★. Aunque la FTC es estadounidense, marca tendencia regulatoria global y afecta a cualquier negocio que venda al mercado de EE. UU.</p>
+
+      <h3 id="omnibus" style="font-weight:700;font-size:1.25em;margin-top:1.5em;margin-bottom:0.5em">3. La Directiva Omnibus (UE)</h3>
+
+      <p>La <strong>Directiva Omnibus</strong>, que modifica la Directiva 2005/29/CE sobre prácticas comerciales desleales, obliga desde 2022 a las empresas que muestran reseñas a garantizar que <strong>reflejan opiniones reales y representativas</strong>, y a informar de cómo se recogen y si se verifica que provienen de clientes reales. Ocultar selectivamente las negativas es justo lo que pretende impedir: presentar una imagen falseada que induce a error en la decisión de compra.</p>
+
+      <h3 id="espana" style="font-weight:700;font-size:1.25em;margin-top:1.5em;margin-bottom:0.5em">4. En España: Competencia Desleal y LGDCU</h3>
+
+      <p>La transposición española se apoya en la <strong>Ley de Competencia Desleal</strong> y en el <strong>texto refundido de la Ley General para la Defensa de los Consumidores y Usuarios (LGDCU)</strong>. Manipular reseñas para dar una impresión engañosa al consumidor encaja en la categoría de <em>prácticas comerciales engañosas</em>, que son sancionables. No hace falta que la queja sea falsa: basta con ocultar opiniones reales para distorsionar lo que ve el cliente.</p>
+
+      <div class="callout callout-gold">
+        <p class="callout-title">⚠️ Aviso importante</p>
+        <p>Este artículo es <strong>divulgación, no asesoramiento legal</strong>. Las normas cambian y su aplicación depende de cada caso concreto. Antes de tomar decisiones, consulta las fuentes oficiales (la <a href="https://support.google.com/contributionpolicy/answer/7400114" target="_blank" rel="noopener">política de reseñas de Google</a>, la web de la FTC, el texto de la Directiva Omnibus y la legislación española vigente) o a un profesional. No interpretes nada de aquí como una garantía sobre la legalidad de una práctica concreta en tu negocio.</p>
+      </div>
+
+      <h2 id="la-distincion-clave">La distinción clave: ocultar Google ≠ tener una página de feedback</h2>
+
+      <p>Aquí es donde casi todo el mundo se lía, y es el corazón de este post. <strong>Lo ilegal no es tener una página propia. Lo ilegal es esconder Google a quien no está contento.</strong> Son dos cosas distintas:</p>
+
+      <ul>
+        <li><strong>Filtrar por sentimiento para decidir quién ve Google</strong> → ilegal. El descontento nunca llega a la ficha pública.</li>
+        <li><strong>Ofrecer a todos la misma opción de reseñar en Google</strong>, y además poner a su alcance un canal privado para resolver problemas → legal y, de hecho, buena práctica de atención al cliente.</li>
+      </ul>
+
+      <p>La frontera es un detalle aparentemente pequeño pero jurídicamente enorme: <strong>¿a un cliente insatisfecho le ofreces el botón de Google o se lo escondes?</strong> Si todos los clientes —contentos y descontentos— ven exactamente la misma opción de dejar su reseña pública en Google, no estás filtrando nada. Estás dando un servicio. Lo que la ley castiga es la <em>puerta</em>: usar el sentimiento del cliente para decidir si Google existe o no para él.</p>
+
+      <p>Un canal privado de feedback <strong>como añadido</strong> es perfectamente legítimo. Que un cliente que tuvo un problema pueda escribirte directamente para que lo arregles es buena atención. El delito no es ofrecerle ese canal — es <em>quitarle</em> el de Google a cambio.</p>
+
+      <h2 id="tabla-comparativa">Review gating ilegal vs. página compliant</h2>
+
+      <p>La diferencia, lado a lado:</p>
+
+      <table>
+        <thead>
+          <tr><th>Aspecto</th><th>Review gating (ILEGAL)</th><th>Página de feedback (LEGAL)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Pregunta el sentimiento antes</td><td><strong>Sí</strong>, para filtrar</td><td>No es un filtro</td></tr>
+          <tr><td>Botón de Google para el cliente contento</td><td>Sí</td><td>Sí</td></tr>
+          <tr><td>Botón de Google para el cliente descontento</td><td><strong>No — se lo esconde</strong></td><td><strong>Sí — mismo botón para todos</strong></td></tr>
+          <tr><td>Canal privado para resolver problemas</td><td>Sustituye a Google</td><td>Se añade a Google, no lo reemplaza</td></tr>
+          <tr><td>Lo que ve el visitante de tu ficha</td><td>Imagen falseada (solo positivas)</td><td>Imagen real (positivas y negativas)</td></tr>
+          <tr><td>Política de Google</td><td>Infringida</td><td>Cumplida</td></tr>
+          <tr><td>FTC / Omnibus / Comp. Desleal</td><td>Infringidas</td><td>Cumplidas</td></tr>
+          <tr><td>Riesgo</td><td>Multa + suspensión de ficha</td><td>Ninguno por este motivo</td></tr>
+        </tbody>
+      </table>
+
+      <p>Fíjate en la única fila que importa de verdad: <strong>el botón de Google para el cliente descontento</strong>. Si está, cumples. Si no está, no cumples. Todo lo demás es decoración.</p>
+
+      <h2 id="ejemplo-hipotetico">Un ejemplo para verlo claro</h2>
+
+      <p>Imagina dos restaurantes hipotéticos, cada uno con un QR en la mesa.</p>
+
+      <p><strong>Restaurante A (gating).</strong> El QR abre una pantalla: "¿Cómo ha ido todo?" con caritas. Si el cliente toca la carita feliz, salta a Google. Si toca la triste, aparece un formulario: "Cuéntanos qué ha fallado" que va al correo del dueño. Las quejas mueren en ese correo. Su ficha de Google luce un 4,9★ inmaculado que no se parece a la experiencia real de medio comedor. <strong>Esto es exactamente lo que sanciona la FTC.</strong></p>
+
+      <p><strong>Restaurante B (compliant).</strong> El QR abre una página con el logo del restaurante y un botón claro: "Déjanos tu reseña en Google" — visible para todo el mundo, sin preguntar antes nada. Debajo, un segundo enlace opcional y más pequeño: "¿Algo no salió bien? Escríbenos directamente y lo arreglamos". El cliente enfadado elige: puede ir a Google (y lo verá ahí) o escribir en privado, o ambas cosas. <strong>Nadie le esconde Google.</strong> Esto cumple, y además mejora la atención.</p>
+
+      <p>El restaurante B tendrá alguna reseña de 3★ o 4★ de vez en cuando. Y está perfectamente. Una ficha con un 4,6★ creíble y respuestas educadas del dueño <strong>convierte mejor</strong> que un 5,0★ que huele a maquillado. Sobre eso último, mira <a href="cuanto-vale-una-resena-en-google.html">cuánto vale realmente una reseña</a> y por qué el 5★ perfecto no siempre es el objetivo.</p>
+
+      <h2 id="que-hacer-con-las-malas">Entonces, ¿qué hago con las reseñas malas?</h2>
+
+      <p>La respuesta honesta: <strong>no las filtras, las respondes.</strong> Una reseña negativa bien gestionada vale más que diez positivas anónimas, porque demuestra públicamente que detrás del negocio hay alguien que escucha. El protocolo es sencillo:</p>
+
+      <ul>
+        <li><strong>Responde rápido y en público</strong>, con calma, sin discutir. Reconoce, disculpa si toca, y ofrece arreglarlo.</li>
+        <li><strong>Lleva el detalle a privado</strong> (ahí sí entra tu canal directo): "te escribo por privado para solucionarlo".</li>
+        <li><strong>Aprende del patrón.</strong> Tres quejas sobre lo mismo no son mala suerte: son un problema operativo que ningún filtro va a tapar.</li>
+        <li><strong>Genera volumen de reseñas reales</strong> para que una mala se diluya de forma natural entre muchas buenas auténticas.</li>
+      </ul>
+
+      <p>Tienes el protocolo completo en la guía <a href="como-responder-resenas-negativas-google.html">cómo responder reseñas negativas en Google</a>. Y si lo que te frena es que <em>nadie</em> te deja reseñas, el problema no es el filtro — es el flujo; eso se arregla pidiéndolas bien, como cuento en <a href="como-pedir-resenas-a-clientes-sin-parecer-pesado.html">cómo pedir reseñas sin parecer pesado</a>.</p>
+
+      <h2 id="como-lo-hace-toca-y-opina">Cómo lo resolvemos en Toca y Opina (sin filtrar a nadie)</h2>
+
+      <p>Cuando montamos una página de reseñas para un negocio, partimos de un principio innegociable: <strong>Google siempre visible, para todos, sin pregunta-filtro previa.</strong> No vendemos embudos de sentimiento. No los venderíamos aunque convirtieran mejor, porque el riesgo legal es del negocio, no nuestro, y eso no se hace.</p>
+
+      <p>Lo que sí montamos es una <strong>página de reseñas personalizada por negocio</strong>, en <strong>tocayopina.es/tu-negocio</strong>, con el logo de tu local y un diseño pensado para cumplir:</p>
+
+      <ul>
+        <li>Botón principal a tu ficha de Google, <strong>idéntico para todos los clientes</strong>, sin caritas ni encuestas previas que decidan quién entra.</li>
+        <li>Un canal privado <strong>opcional y secundario</strong> para quien quiera contarte algo directamente — como extra, no como sustituto de Google.</li>
+        <li>Multilenguaje (ES / CA / FR / PT) para que cada cliente reseñe en su idioma.</li>
+        <li>Vinculada al <a href="como-conseguir-mas-resenas-en-google.html#enlace-directo">enlace directo</a> de tu Google Business Profile, para que la reseña salga en dos toques.</li>
+      </ul>
+
+      <p>Y para llevar esa página al mundo físico está el stand NFC + QR: el cliente acerca el móvil o escanea, y aterriza en tu página. Un único producto, <strong>34,90 € pago único</strong>, sin cuotas. La herramienta que convierte "deberíamos pedir más reseñas" en reseñas reales sobre tu mostrador — y lo hace por el camino legal, que a la larga es el único que aguanta.</p>
+
+      <div class="cta-card">
+        <p style="font-size:0.75em;font-weight:700;text-transform:uppercase;letter-spacing:0.18em;opacity:0.7;margin-bottom:0.75em">
+          La forma legal de pedir reseñas
+        </p>
+        <h3 style="font-size:1.65em;font-weight:800;letter-spacing:-0.025em;line-height:1.2;margin-bottom:0.75em">
+          Tu página en tocayopina.es/tu-negocio + el stand físico.
+        </h3>
+        <p style="opacity:0.85;margin-bottom:1.5em">
+          Página personalizada con tu logo, Google visible para todos, canal privado opcional como extra. Cero filtros, cero riesgo, cumple con Google y con la normativa. Y un stand de 34,90 € que la pone sobre tu mostrador.
+        </p>
+        <div style="display:flex;gap:0.75em;flex-wrap:wrap">
+          <a href="../index.html#packs" class="btn btn-brand">Ver el stand →</a>
+          <a href="../index.html#oferta" class="btn btn-ghost" style="background:rgba(255,255,255,0.08);color:#fff;border-color:rgba(255,255,255,0.15)">Cómo funciona</a>
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="callout callout-green">
+        <p class="callout-title">📚 Sigue en el cluster</p>
+        <ul style="margin:0">
+          <li><a href="como-conseguir-mas-resenas-en-google.html">Pillar: Cómo conseguir más reseñas en Google</a></li>
+          <li><a href="como-responder-resenas-negativas-google.html">Cómo responder reseñas negativas en Google</a></li>
+          <li><a href="regalar-sorteo-resena-google-es-legal.html">¿Es legal regalar algo o sortear por dejar una reseña?</a></li>
+          <li><a href="cuanto-vale-una-resena-en-google.html">Cuánto vale, en euros, una reseña en Google</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </article>
+
+  <footer class="site-footer">
+    <div class="max-w-6xl mx-auto px-5 sm:px-8">
+      <div class="grid md:grid-cols-4 gap-8 mb-10">
+        <div>
+          <p style="font-weight:800;font-size:1.1em;margin-bottom:0.5em">Toca <span style="color:var(--brand)">y</span> Opina</p>
+          <p style="color:#A1A1A6;font-size:0.9em">Stands NFC + QR para reseñas en Google.</p>
+        </div>
+        <div>
+          <p style="font-weight:700;margin-bottom:0.75em">Producto</p>
+          <ul style="list-style:none;padding:0;margin:0;font-size:0.9em;line-height:2">
+            <li><a href="../index.html#oferta">El stand</a></li>
+            <li><a href="../index.html#packs">Precios</a></li>
+            <li><a href="../calculadora.html">Calculadora ROI</a></li>
+          </ul>
+        </div>
+        <div>
+          <p style="font-weight:700;margin-bottom:0.75em">Blog</p>
+          <ul style="list-style:none;padding:0;margin:0;font-size:0.9em;line-height:2">
+            <li><a href="index.html">Todos los posts</a></li>
+            <li><a href="como-conseguir-mas-resenas-en-google.html">Guía pilar</a></li>
+          </ul>
+        </div>
+        <div>
+          <p style="font-weight:700;margin-bottom:0.75em">Legal</p>
+          <ul style="list-style:none;padding:0;margin:0;font-size:0.9em;line-height:2">
+            <li><a href="../aviso-legal.html">Aviso legal</a></li>
+            <li><a href="../aviso-legal.html#privacidad">Privacidad</a></li>
+          </ul>
+        </div>
+      </div>
+      <div style="padding-top:2em;border-top:1px solid rgba(255,255,255,0.1);font-size:0.85em;color:#86868B">
+        <p>© 2026 Toca y Opina</p>
+      </div>
+    </div>
+  </footer>
+
+</main>
+<!-- Sticky mobile CTA (visible al scroll) -->
+<a id="stickyMobileCTA" class="sticky-mobile-cta" href="../index.html#packs">
+  <span class="label">
+    <span>Quiero el stand</span>
+    <small>NFC + QR · Vinculado a tu Google</small>
+  </span>
+  <span class="price-tag">
+    34,90€
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+  </span>
+</a>
+<script>
+(function(){
+  var cta = document.getElementById('stickyMobileCTA');
+  if (!cta) return;
+  var threshold = 600;
+  var lastShown = false;
+  function check(){
+    var y = window.scrollY || window.pageYOffset;
+    var show = y > threshold;
+    if (show !== lastShown){
+      cta.classList.toggle('visible', show);
+      lastShown = show;
+    }
+  }
+  window.addEventListener('scroll', check, { passive: true });
+  check();
+})();
+</script>
+
+
+<!-- Auto-generated TOC sticky (desktop ≥1280px only) -->
+<script>
+(function(){
+  if (window.innerWidth < 1280) return;
+  var article = document.querySelector('article.prose-blog, article .prose-blog');
+  if (!article) {
+    article = document.querySelector('article');
+    if (!article) return;
+  }
+  var headings = article.querySelectorAll('h2[id], h3[id]');
+  if (headings.length < 3) return;
+  var aside = document.createElement('aside');
+  aside.className = 'toc-fixed';
+  aside.setAttribute('aria-label', 'Índice del artículo');
+  var html = '<p class="toc-fixed-title">En este post</p><ul>';
+  var ids = [];
+  headings.forEach(function(h){
+    var level = h.tagName.toLowerCase();
+    var text = h.textContent.replace(/\s+/g, ' ').trim();
+    var truncated = text.length > 48 ? text.slice(0, 46) + '…' : text;
+    html += '<li class="toc-' + level + '"><a href="#' + h.id + '">' + truncated + '</a></li>';
+    ids.push(h.id);
+  });
+  html += '</ul>';
+  aside.innerHTML = html;
+  document.body.appendChild(aside);
+  // Scroll spy
+  var links = aside.querySelectorAll('a');
+  function spy(){
+    var pos = window.scrollY + 120;
+    var activeIdx = 0;
+    for (var i = 0; i < ids.length; i++){
+      var el = document.getElementById(ids[i]);
+      if (el && el.offsetTop <= pos) activeIdx = i;
+    }
+    links.forEach(function(a, i){
+      a.classList.toggle('active', i === activeIdx);
+    });
+  }
+  window.addEventListener('scroll', spy, { passive: true });
+  spy();
+})();
+</script>
+
+<script data-goatcounter="https://tocayopina.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

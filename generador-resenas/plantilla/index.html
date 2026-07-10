@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="{{LANG}}">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="robots" content="noindex, nofollow" />
+<meta name="theme-color" content="{{BG}}" />
+<title>Valora'ns · {{NOMBRE}}</title>
+<link rel="icon" href="{{FAVICON}}" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:{{BG}}; --on-dark:{{ON_DARK}}; --muted:{{MUTED}}; --subtle:{{SUBTLE}};
+    --gold:{{GOLD}}; --gold-bright:{{GOLD_BRIGHT}};
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  html,body{margin:0;padding:0;}
+  body{
+    font-family:'Inter',ui-sans-serif,system-ui,sans-serif;
+    background:
+      radial-gradient(120% 75% at 50% -5%, rgba(230,190,105,.16), transparent 55%),
+      radial-gradient(90% 60% at 50% 115%, rgba(196,154,74,.10), transparent 60%),
+      var(--bg);
+    color:var(--on-dark);
+    min-height:100svh;
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    text-align:center;
+    padding:max(2rem,env(safe-area-inset-top)) 1.5rem max(2rem,env(safe-area-inset-bottom));
+    -webkit-font-smoothing:antialiased;
+    overflow:hidden;
+  }
+  .font-display{font-family:'Cormorant Garamond',Georgia,serif;}
+  ::selection{background:var(--gold);color:#fff;}
+  .wrap{width:100%;max-width:30rem;}
+
+  .logo{height:2.5rem;width:auto;margin:0 auto;display:block;}
+  .logo-mono{width:3.4rem;height:3.4rem;margin:0 auto;border-radius:15px;display:grid;place-items:center;
+    background:linear-gradient(135deg,var(--gold-bright),#8a6a24);color:#1A140A;font-weight:800;font-size:1.35rem;letter-spacing:.02em;
+    box-shadow:0 12px 28px -10px rgba(230,190,105,.5);}
+  .eyebrow{margin-top:2rem;font-size:.72rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-bright);}
+  .title{margin:1rem 0 0;font-weight:500;line-height:1.08;font-size:clamp(2rem,9vw,2.9rem);}
+  .foil{background:linear-gradient(168deg,#F6DFA0,#E6BE69 40%,#B8902F 70%,#E9C77A);-webkit-background-clip:text;background-clip:text;color:transparent;}
+  .lede{margin:1rem auto 0;max-width:22rem;color:var(--muted);line-height:1.6;font-size:1rem;}
+
+  .stars{margin-top:2.5rem;display:flex;align-items:center;justify-content:center;gap:.4rem;}
+  .star{
+    width:clamp(3rem,15vw,3.6rem);height:clamp(3rem,15vw,3.6rem);
+    flex:0 0 auto;cursor:pointer;color:var(--subtle);
+    background:none;border:0;padding:.25rem;margin:0;
+    transition:transform .18s cubic-bezier(.16,1,.3,1), color .15s ease, filter .2s ease;
+  }
+  .star svg{width:100%;height:100%;display:block;}
+  .star.lit{color:var(--gold-bright);filter:drop-shadow(0 6px 16px rgba(230,190,105,.4));}
+  .star:active{transform:scale(.9);}
+  @media (hover:hover){ .star:hover{transform:translateY(-4px) scale(1.08);} }
+
+  .hint{margin-top:1.6rem;min-height:1.5rem;font-size:.95rem;color:var(--subtle);transition:color .2s ease;}
+  .foot{margin-top:2.75rem;font-size:.72rem;color:var(--subtle);opacity:.8;}
+  .credit{margin-top:.6rem;font-size:.66rem;color:var(--subtle);opacity:.55;letter-spacing:.01em;}
+  .credit a{color:inherit;text-decoration:none;border-bottom:1px solid rgba(133,124,107,.4);}
+  .credit .heart{color:var(--gold);opacity:.85;}
+
+  @keyframes pop{from{transform:scale(.94);opacity:0}to{transform:scale(1);opacity:1}}
+  .wrap{animation:pop .5s cubic-bezier(.16,1,.3,1) both;}
+  @media (prefers-reduced-motion: reduce){ .wrap,.star{animation:none!important;transition:none!important;} }
+</style>
+</head>
+<body>
+  <main class="wrap">
+    {{LOGO}}
+    {{ESLOGAN_BLOCK}}
+    <h1 class="title font-display">{{PREGUNTA1}}<br><span class="foil" style="font-style:italic">{{PREGUNTA2}}</span></h1>
+    <p class="lede">{{LEDE}}</p>
+
+    <div class="stars" id="stars" role="radiogroup" aria-label="Valoració d'1 a 5 estrelles"></div>
+    <p class="hint" id="hint">Tria d'1 a 5 estrelles</p>
+
+    <p class="foot">{{DIRECCION}}</p>
+    <p class="credit">Fet amb <span class="heart" aria-hidden="true">♥</span> per <a href="https://tocayopina.es" target="_blank" rel="noopener">Toca y Opina</a></p>
+  </main>
+
+  <script>
+    // 4-5★ → ressenya a Google · 1-3★ → pàgina privada (amb les estrelles triades)
+    const GOOGLE_REVIEW = '{{GOOGLE_URL}}';
+    const PRIVATE_FORM  = 'opinion.html';
+    const HINTS = {1:'Ens sap molt greu',2:'Volem millorar',3:'Gràcies, ho tindrem en compte',4:'Genial! Ens encanta',5:'Moltíssimes gràcies!'};
+    const PATH  = (v)=> v>=4 ? GOOGLE_REVIEW : (PRIVATE_FORM + '?stars=' + v);
+
+    const wrap = document.getElementById('stars');
+    const hint = document.getElementById('hint');
+    const starBtn = (i)=>`<button class="star" type="button" data-v="${i}" role="radio" aria-checked="false" aria-label="${i} ${i==1?'estrella':'estrelles'}">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="m12 2.6 2.95 6.1 6.65.95-4.8 4.7 1.15 6.6L12 18.9 6.1 21l1.15-6.6-4.8-4.7 6.65-.95L12 2.6Z"/></svg>
+    </button>`;
+    wrap.innerHTML = [1,2,3,4,5].map(starBtn).join('');
+    const stars = [...wrap.querySelectorAll('.star')];
+
+    const paint = (n)=> stars.forEach((s,idx)=>{
+      const on = idx < n;
+      s.classList.toggle('lit', on);
+      s.querySelector('svg').setAttribute('fill', on ? 'currentColor' : 'none');
+      s.setAttribute('aria-checked', String(idx === n-1));
+    });
+
+    let locked = false;
+    function choose(v){
+      if(locked) return; locked = true;
+      paint(v);
+      hint.textContent = HINTS[v]; hint.style.color = 'var(--on-dark)';
+      setTimeout(()=>{ window.location.href = PATH(v); }, 460);
+    }
+
+    stars.forEach(s=>{
+      const v = +s.dataset.v;
+      s.addEventListener('mouseenter', ()=>{ if(!locked){ paint(v); hint.textContent = HINTS[v]; } });
+      s.addEventListener('mouseleave', ()=>{ if(!locked){ paint(0); hint.textContent = "Tria d'1 a 5 estrelles"; hint.style.color=''; } });
+      s.addEventListener('click', ()=> choose(v));
+    });
+  </script>
+</body>
+</html>

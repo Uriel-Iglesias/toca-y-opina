@@ -9,13 +9,13 @@
 <meta name="description" content="Quiénes están detrás de Toca y Opina. Cómo dos amigos del Delta del Ebro acabaron imprimiendo stands NFC en Amposta y vendiéndolos puerta a puerta a negocios de la comarca.">
 <meta name="author" content="Uriel y Joselí — Toca y Opina">
 <meta name="robots" content="index, follow, max-image-preview:large">
-<link rel="canonical" href="https://tocayopina.com/blog/sobre-uriel-historia-toca-y-opina.html">
+<link rel="canonical" href="https://tocayopina.es/blog/sobre-uriel-historia-toca-y-opina.html">
 
 <meta property="og:type" content="article">
 <meta property="og:title" content="Sobre nosotros: Uriel y Joselí, creadores de Toca y Opina">
 <meta property="og:description" content="La historia detrás del stand de reseñas. Dos amigos del Delta del Ebro. Sin filtros, sin marketing, lo que de verdad pasó.">
-<meta property="og:image" content="https://tocayopina.com/assets/img/founder.jpg">
-<meta property="og:url" content="https://tocayopina.com/blog/sobre-uriel-historia-toca-y-opina.html">
+<meta property="og:image" content="https://tocayopina.es/assets/img/founder.jpg">
+<meta property="og:url" content="https://tocayopina.es/blog/sobre-uriel-historia-toca-y-opina.html">
 <meta property="og:locale" content="es_ES">
 <meta property="article:published_time" content="2026-05-21">
 <meta property="article:modified_time" content="2026-05-22">
@@ -26,24 +26,25 @@
 
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cpath d='M8 4h24a4 4 0 0 1 4 4v16a4 4 0 0 1-4 4H22l-7 6v-6h-7a4 4 0 0 1-4-4V8a4 4 0 0 1 4-4z' fill='%23105BF5'/%3E%3C/svg%3E">
 
-<script src="https://cdn.tailwindcss.com"></script>
+
+<link rel="stylesheet" href="../assets/app.css">
 <link rel="stylesheet" href="blog.css">
 
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
-  "@type":"Article",
+  "@type":"BlogPosting",
   "headline":"Sobre nosotros: Uriel y Joselí, creadores de Toca y Opina — la historia detrás del proyecto",
   "description":"La historia de los dos fundadores de Toca y Opina, los stands NFC + QR para reseñas en Google fabricados en el Delta del Ebro.",
-  "image":["https://tocayopina.com/assets/img/founder.jpg"],
+  "image":["https://tocayopina.es/assets/img/founder.jpg"],
   "author":[
     {"@type":"Person","name":"Uriel"},
     {"@type":"Person","name":"Joselí"}
   ],
-  "publisher":{"@type":"Organization","name":"Toca y Opina","logo":{"@type":"ImageObject","url":"https://tocayopina.com/assets/img/logo-200.jpg"}},
+  "publisher":{"@type":"Organization","name":"Toca y Opina","logo":{"@type":"ImageObject","url":"https://tocayopina.es/assets/img/logo-200.jpg"}},
   "datePublished":"2026-05-21",
   "dateModified":"2026-05-22",
-  "mainEntityOfPage":"https://tocayopina.com/blog/sobre-uriel-historia-toca-y-opina.html",
+  "mainEntityOfPage":"https://tocayopina.es/blog/sobre-uriel-historia-toca-y-opina.html",
   "inLanguage":"es-ES",
   "about":[
     {
@@ -67,8 +68,8 @@
   "@context":"https://schema.org",
   "@type":"Organization",
   "name":"Toca y Opina",
-  "url":"https://tocayopina.com/",
-  "logo":"https://tocayopina.com/assets/img/logo-200.jpg",
+  "url":"https://tocayopina.es/",
+  "logo":"https://tocayopina.es/assets/img/logo-200.jpg",
   "founder":[
     {"@type":"Person","name":"Uriel"},
     {"@type":"Person","name":"Joselí"}
@@ -85,30 +86,49 @@
   "@context":"https://schema.org",
   "@type":"BreadcrumbList",
   "itemListElement":[
-    {"@type":"ListItem","position":1,"name":"Inicio","item":"https://tocayopina.com/"},
-    {"@type":"ListItem","position":2,"name":"Blog","item":"https://tocayopina.com/blog/"},
-    {"@type":"ListItem","position":3,"name":"Sobre Uriel","item":"https://tocayopina.com/blog/sobre-uriel-historia-toca-y-opina.html"}
+    {"@type":"ListItem","position":1,"name":"Inicio","item":"https://tocayopina.es/"},
+    {"@type":"ListItem","position":2,"name":"Blog","item":"https://tocayopina.es/blog/"},
+    {"@type":"ListItem","position":3,"name":"Sobre Uriel","item":"https://tocayopina.es/blog/sobre-uriel-historia-toca-y-opina.html"}
   ]
 }
 </script>
 </head>
 <body>
 
+<div class="reading-progress" aria-hidden="true"><div class="reading-progress-bar" id="readingProgressBar"></div></div>
+<script>
+(function(){
+  var bar = document.getElementById('readingProgressBar');
+  if (!bar) return;
+  function update(){
+    var h = document.documentElement;
+    var scrolled = h.scrollTop || document.body.scrollTop;
+    var height = h.scrollHeight - h.clientHeight;
+    var pct = height > 0 ? Math.min(100, (scrolled / height) * 100) : 0;
+    bar.style.width = pct + '%';
+  }
+  window.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update, { passive: true });
+  update();
+})();
+</script>
+
+
 <header class="fixed top-0 inset-x-0 z-50 glass">
   <div class="max-w-6xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between">
     <a href="../index.html" class="flex items-center gap-2.5">
       <span class="w-10 h-10 inline-flex rounded-xl overflow-hidden shadow-sm">
-        <img src="../assets/img/og-image.jpg" alt="Stand Toca y Opina sobre mostrador de cafetería" width="1200" height="630" loading="eager" fetchpriority="high" decoding="async" class="w-full h-full object-cover">
+        <img src="../assets/img/logo-200.webp" alt="Toca y Opina" width="40" height="40" class="w-full h-full object-cover">
       </span>
       <span class="font-bold tracking-tight text-[15px]">Toca <span style="color:var(--brand)">y</span> Opina</span>
     </a>
     <nav class="hidden md:flex items-center gap-7 text-[14px] font-medium" style="color:var(--ink-2)">
       <a href="../index.html#como-funciona">Cómo funciona</a>
-      <a href="../index.html#producto">Producto</a>
-      <a href="../index.html#precios">Precios</a>
+      <a href="../index.html#oferta">Producto</a>
+      <a href="../index.html#packs">Precios</a>
       <a href="index.html" class="font-semibold" style="color:var(--brand)">Blog</a>
     </nav>
-    <a href="../index.html#precios" class="btn btn-primary !py-2 !px-4 !text-sm">Ver stand</a>
+    <a href="../index.html#packs" class="btn btn-primary !py-2 !px-4 !text-sm">Ver stand</a>
   </div>
 </header>
 
@@ -130,7 +150,7 @@
       </h1>
 
       <p class="lead" style="color:var(--muted)">
-        Somos <strong>Uriel y Joselí</strong>, dos amigos del Delta del Ebro que fabricamos los stands desde nuestro taller en Amposta. No hay inversores, no hay distribuidor, no hay agencia detrás. Esto es lo que pasó para que existiera Toca y Opina, contado sin filtros — porque ya hay demasiada gente vendiendo "humo" en este sector y no queremos ser dos más.
+        Somos <strong>Uriel y Joselí</strong>, dos amigos del Delta del Ebro. Empezamos fabricando los stands en un taller casero en Amposta y hoy operamos desde Andorra. No hay inversores, no hay distribuidor, no hay agencia detrás. Esto es lo que pasó para que existiera Toca y Opina, contado sin filtros — porque ya hay demasiada gente vendiendo "humo" en este sector y no queremos ser dos más.
       </p>
 
       <div class="meta-strip">
@@ -171,7 +191,7 @@
 
       <h2 id="puerta-puerta">Vender puerta a puerta por el Delta</h2>
 
-      <p>Antes de tener web, antes de tener Vinted, antes de tener nada, lo que teníamos era una bolsa con 30 stands y una moto. Pasamos meses yendo a bares, peluquerías y talleres de Amposta, Sant Jaume y Deltebre. Tocábamos la puerta, enseñábamos el stand, lo probábamos en su mostrador con nuestros móviles, y si les interesaba nos lo compraban en efectivo.</p>
+      <p>Antes de tener web, antes de tener nada, lo que teníamos era una bolsa con 30 stands y una moto. Pasamos meses yendo a bares, peluquerías y talleres de Amposta, Sant Jaume y Deltebre. Tocábamos la puerta, enseñábamos el stand, lo probábamos en su mostrador con nuestros móviles, y si les interesaba nos lo compraban en efectivo.</p>
 
       <p>De cada 10 puertas a las que llamábamos:</p>
       <ul>
@@ -199,7 +219,7 @@
       <p>El proceso de imprimir 36 stands en lote, programar los NFC chip a chip, hacer el QC visual de cada uno, empaquetar — es trabajo manual, repetitivo, casi meditativo. No nos cansa. Es lo que hacemos mientras escuchamos podcasts y pensamos en cómo mejorarlo.</p>
 
       <h3>3. Porque nos da margen para vivir bien sin pisar a nadie</h3>
-      <p>Lo vamos a decir tal cual: a 33 €/stand, restando coste de material, chip NFC, envío y comisión Vinted, nos quedan ~18-22 € por unidad. No es Apple. Pero a 60-100 unidades/mes, repartido entre los dos, es un margen decente que nos permite vivir en Amposta sin estresarnos y sin tener que estafar a nadie. <strong>El precio es justo para el producto, y el producto es justo para el precio.</strong> No queremos más.</p>
+      <p>Lo vamos a decir tal cual: a 34,90 €/stand, restando coste de material, chip NFC, envío, nos quedan ~18-22 € por unidad. No es Apple. Pero a 60-100 unidades/mes, repartido entre los dos, es un margen decente que nos permite vivir sin estresarnos y sin tener que estafar a nadie. <strong>El precio es justo para el producto, y el producto es justo para el precio.</strong> No queremos más.</p>
 
       <h2 id="como-trabajo">Cómo trabajamos (la parte menos glamorosa)</h2>
 
@@ -208,9 +228,9 @@
       <ul>
         <li><strong>Diseño</strong>: en Fusion 360. La geometría del stand la hemos iterado 14 veces para optimizar peso, resistencia, ángulo de visión y facilidad de impresión.</li>
         <li><strong>Impresión</strong>: dos máquinas, Bambu Lab A1 y H2D. La A1 saca tandas de 36 stands en blanco. La H2D hace los multicolor (logo G de Google con sus 4 colores reales). PLA Premium, capa 0,16 mm en las caras visibles.</li>
-        <li><strong>Programación NFC</strong>: cada chip NFC NTAG215 lo grabamos a mano con la URL exacta de tu Google Reviews antes de pegarlo. Lo probamos desde un iPhone Y un Android Samsung antes de etiquetarlo.</li>
+        <li><strong>Programación NFC</strong>: cada chip NFC NTAG215 lo grabamos con la URL exacta de tu Google Reviews antes de pegarlo. Lo probamos desde un iPhone Y un Android Samsung antes de etiquetarlo.</li>
         <li><strong>QC final</strong>: cada stand lo probamos físicamente. Si no abre tu ficha de Google al primer intento desde ambos móviles, no sale del taller.</li>
-        <li><strong>Envío</strong>: Vinted con seguimiento (24-72 h). Si vives en el Delta, te lo llevamos en mano (gratis).</li>
+        <li><strong>Envío</strong>: mensajería con seguimiento (24-72 h). Si vives en el Delta, te lo llevamos en mano (gratis).</li>
         <li><strong>Soporte post-venta</strong>: si algo falla, te lo reimprimimos gratis. Si pierdes el stand, te lo reemplazamos a coste material (~5 €).</li>
       </ul>
 
@@ -233,18 +253,18 @@
       <ul>
         <li><strong>Mantener la entrega en mano por el Delta</strong>. Sigue siendo lo que más cierra ventas.</li>
         <li><strong>Sacar una versión Pro</strong> con la cara del stand personalizable con el logo del negocio. Para hoteles boutique y peluquerías que quieren branding. Va a costar ~60 € y tener 3-4 semanas de plazo.</li>
-        <li><strong>Mantener el precio del stand básico en 33 €</strong>. No queremos subirlo. Es justo y nos da margen.</li>
+        <li><strong>Mantener el precio del stand básico en 34,90 €</strong>. No queremos subirlo. Es justo y nos da margen.</li>
         <li><strong>Publicar más contenido aquí en el blog</strong>. Probablemente 2 posts al mes. Es la única forma de que Google nos encuentre y de que los dueños de negocios entiendan que sabemos de lo que hablamos antes de comprar.</li>
         <li><strong>NO escalar a equipo si no es necesario</strong>. Si nos sale rentable mantenerlo siendo los dos, lo vamos a mantener así. Más gente = más complejidad = más estrés = peor producto. Lo decimos en serio.</li>
       </ul>
 
       <h2 id="contacto-directo">Contacto directo</h2>
 
-      <p>Si quieres hablar con nosotros antes de comprar, escríbenos por el chat de Vinted desde cualquiera de los packs:</p>
+      <p>Si quieres hablar con nosotros antes de comprar, escríbenos por WhatsApp:</p>
       <ul>
-        <li><a href="../index.html#precios">Pack 1 (33 €)</a></li>
-        <li><a href="../index.html#precios">Pack 2 (55 €)</a></li>
-        <li><a href="../index.html#precios">Pack 3 (65 €)</a></li>
+        <li><a href="../index.html#packs">Pack 1 (34,90 €)</a></li>
+        <li><a href="../index.html#packs">Pack 2 (54,90 €)</a></li>
+        <li><a href="../index.html#packs">Pack 3 (74,90 €)</a></li>
       </ul>
 
       <p>Contestamos en el mismo día, en horario decente. Si tu negocio está en el Delta del Ebro, te podemos llevar el stand en mano y montarlo contigo en tu mostrador para que veas que funciona antes de pagar.</p>
@@ -254,13 +274,13 @@
           La forma más rápida de probarlo
         </p>
         <h3 style="font-size:1.65em;font-weight:800;letter-spacing:-0.025em;line-height:1.2;margin-bottom:0.75em">
-          33 € pago único.<br>
-          Si no funciona, te devuelvo el dinero.
+          34,90 € pago único.<br>
+          Si llega defectuoso, lo reimprimimos gratis.
         </h3>
         <p style="opacity:0.85;margin-bottom:1.5em">
-          Sin cuotas, sin app, sin letra pequeña. Hecho a mano en Amposta. Vinculado a tu Google antes de salir del taller.
+          Sin cuotas, sin app, sin letra pequeña. Vinculado a tu Google antes de salir del taller.
         </p>
-        <a href="../index.html#precios" class="btn btn-brand">Ver el stand →</a>
+        <a href="../index.html#packs" class="btn btn-brand">Ver el stand →</a>
       </div>
 
       <hr>
@@ -283,13 +303,13 @@
       <div class="grid md:grid-cols-4 gap-8 mb-10">
         <div>
           <p style="font-weight:800;font-size:1.1em;margin-bottom:0.5em">Toca <span style="color:var(--brand)">y</span> Opina</p>
-          <p style="color:#A1A1A6;font-size:0.9em">Stands NFC + QR para reseñas en Google. Hechos a mano en Amposta.</p>
+          <p style="color:#A1A1A6;font-size:0.9em">Stands NFC + QR para reseñas en Google.</p>
         </div>
         <div>
           <p style="font-weight:700;margin-bottom:0.75em">Producto</p>
           <ul style="list-style:none;padding:0;margin:0;font-size:0.9em;line-height:2">
-            <li><a href="../index.html#producto">El stand</a></li>
-            <li><a href="../index.html#precios">Precios</a></li>
+            <li><a href="../index.html#oferta">El stand</a></li>
+            <li><a href="../index.html#packs">Precios</a></li>
             <li><a href="../calculadora.html">Calculadora ROI</a></li>
           </ul>
         </div>
@@ -304,13 +324,13 @@
         <div>
           <p style="font-weight:700;margin-bottom:0.75em">Legal</p>
           <ul style="list-style:none;padding:0;margin:0;font-size:0.9em;line-height:2">
-            <li><a href="../index.html#aviso-legal">Aviso legal</a></li>
-            <li><a href="../index.html#privacidad">Privacidad</a></li>
+            <li><a href="../aviso-legal.html">Aviso legal</a></li>
+            <li><a href="../aviso-legal.html#privacidad">Privacidad</a></li>
           </ul>
         </div>
       </div>
       <div style="padding-top:2em;border-top:1px solid rgba(255,255,255,0.1);font-size:0.85em;color:#86868B">
-        <p>© 2026 Toca y Opina · Hecho a mano en Amposta</p>
+        <p>© 2026 Toca y Opina</p>
       </div>
     </div>
   </footer>
@@ -318,13 +338,13 @@
 </main>
 
 <!-- Sticky mobile CTA (visible al scroll) -->
-<a id="stickyMobileCTA" class="sticky-mobile-cta" href="../index.html#precios">
+<a id="stickyMobileCTA" class="sticky-mobile-cta" href="../index.html#packs">
   <span class="label">
     <span>Quiero el stand</span>
     <small>NFC + QR · Vinculado a tu Google</small>
   </span>
   <span class="price-tag">
-    33€
+    34,90€
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
   </span>
 </a>
@@ -347,5 +367,51 @@
 })();
 </script>
 
+
+<!-- Auto-generated TOC sticky (desktop ≥1280px only) -->
+<script>
+(function(){
+  if (window.innerWidth < 1280) return;
+  var article = document.querySelector('article.prose-blog, article .prose-blog');
+  if (!article) {
+    article = document.querySelector('article');
+    if (!article) return;
+  }
+  var headings = article.querySelectorAll('h2[id], h3[id]');
+  if (headings.length < 3) return;
+  var aside = document.createElement('aside');
+  aside.className = 'toc-fixed';
+  aside.setAttribute('aria-label', 'Índice del artículo');
+  var html = '<p class="toc-fixed-title">En este post</p><ul>';
+  var ids = [];
+  headings.forEach(function(h){
+    var level = h.tagName.toLowerCase();
+    var text = h.textContent.replace(/\s+/g, ' ').trim();
+    var truncated = text.length > 48 ? text.slice(0, 46) + '…' : text;
+    html += '<li class="toc-' + level + '"><a href="#' + h.id + '">' + truncated + '</a></li>';
+    ids.push(h.id);
+  });
+  html += '</ul>';
+  aside.innerHTML = html;
+  document.body.appendChild(aside);
+  // Scroll spy
+  var links = aside.querySelectorAll('a');
+  function spy(){
+    var pos = window.scrollY + 120;
+    var activeIdx = 0;
+    for (var i = 0; i < ids.length; i++){
+      var el = document.getElementById(ids[i]);
+      if (el && el.offsetTop <= pos) activeIdx = i;
+    }
+    links.forEach(function(a, i){
+      a.classList.toggle('active', i === activeIdx);
+    });
+  }
+  window.addEventListener('scroll', spy, { passive: true });
+  spy();
+})();
+</script>
+
+<script data-goatcounter="https://tocayopina.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>

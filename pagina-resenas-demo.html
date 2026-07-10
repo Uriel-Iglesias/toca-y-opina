@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>¿Qué tal tu experiencia? · Bar La Plaça</title>
+<style>
+/* ====== CONFIG por negocio (esto es lo único que cambia para cada cliente) ====== */
+/* NEGOCIO: "Bar La Plaça" · GOOGLE: enlace de reseña · WHATSAPP: nº del negocio */
+:root{--ink:#0A0A0A;--muted:#6B6B70;--brand:#105BF5;--gold:#F5B941;--line:#ECECEF;--green:#25D366;}
+*{margin:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Inter","Segoe UI",sans-serif;
+  background:linear-gradient(180deg,#F6F7FB,#EEF1F8);color:var(--ink);min-height:100vh;
+  display:flex;align-items:center;justify-content:center;padding:24px;-webkit-font-smoothing:antialiased;}
+.card{width:100%;max-width:420px;background:#fff;border-radius:30px;padding:40px 30px 26px;
+  box-shadow:0 30px 80px -30px rgba(20,30,60,.35);text-align:center;}
+.logo{width:88px;height:88px;border-radius:24px;margin:0 auto 18px;display:grid;place-items:center;
+  background:linear-gradient(135deg,#1D1D1F,#3a3a40);color:#fff;font-weight:800;font-size:34px;
+  letter-spacing:-.02em;box-shadow:0 14px 30px -10px rgba(0,0,0,.4);}
+.biz{font-weight:800;font-size:22px;letter-spacing:-.02em;}
+.loc{color:var(--muted);font-size:14px;margin-top:2px;}
+.q{font-size:20px;font-weight:700;letter-spacing:-.02em;margin:26px 0 4px;}
+.sub{color:var(--muted);font-size:14.5px;margin-bottom:20px;}
+.stars{display:flex;justify-content:center;gap:8px;margin-bottom:8px;}
+.star{font-size:46px;line-height:1;cursor:pointer;color:#E3E5EC;transition:transform .12s,color .12s;background:none;border:none;padding:2px;}
+.star:hover{transform:scale(1.12);} .star.on{color:var(--gold);}
+.hint{color:#A0A3AD;font-size:13px;margin-top:4px;}
+.panel{display:none;animation:fade .4s ease both;}
+@keyframes fade{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:none;}}
+.emoji{font-size:46px;margin:6px 0 8px;}
+.ptitle{font-size:21px;font-weight:800;letter-spacing:-.02em;margin-bottom:6px;}
+.ptext{color:var(--muted);font-size:15px;line-height:1.5;margin-bottom:20px;}
+.btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;min-height:58px;
+  border-radius:16px;font-weight:800;font-size:17px;border:none;cursor:pointer;text-decoration:none;}
+.btn-google{background:#fff;border:1.6px solid var(--line);color:#1D1D1F;box-shadow:0 8px 20px -8px rgba(0,0,0,.12);}
+.btn-google:hover{border-color:#d4d6dd;}
+.btn-wa{background:var(--green);color:#06351A;box-shadow:0 14px 30px -12px rgba(37,211,102,.6);margin-top:4px;}
+.gstar{color:var(--gold);}
+.fld{width:100%;border:1.5px solid var(--line);border-radius:14px;padding:13px 15px;font-size:15px;
+  font-family:inherit;margin-bottom:12px;outline:none;resize:none;color:var(--ink);background:#FBFBFD;}
+.fld:focus{border-color:var(--brand);background:#fff;}
+.also{display:inline-block;margin-top:16px;color:var(--muted);font-size:13.5px;text-decoration:none;}
+.also b{color:var(--ink);}
+.foot{margin-top:24px;padding-top:16px;border-top:1px solid var(--line);}
+.foot a{color:var(--muted);font-size:12.5px;text-decoration:none;}
+.foot b{color:var(--ink);}
+.g-logo{width:22px;height:22px;}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="logo">LP</div>
+  <div class="biz">Bar La Plaça</div>
+  <div class="loc">Andorra la Vella</div>
+
+  <!-- PASO 1: valorar -->
+  <div id="ask">
+    <div class="q">¿Qué tal tu experiencia?</div>
+    <div class="sub">Tu opinión nos ayuda muchísimo 🙏</div>
+    <div class="stars" id="stars">
+      <button class="star" data-n="1">★</button>
+      <button class="star" data-n="2">★</button>
+      <button class="star" data-n="3">★</button>
+      <button class="star" data-n="4">★</button>
+      <button class="star" data-n="5">★</button>
+    </div>
+    <div class="hint">Toca las estrellas</div>
+  </div>
+
+  <!-- RAMAL A: contento (4-5★) -> Google -->
+  <div class="panel" id="good">
+    <div class="emoji">🤩</div>
+    <div class="ptitle">¡Nos alegra un montón!</div>
+    <div class="ptext">¿Nos dejas tu reseña en Google? Son 5 segundos y nos ayuda a seguir aquí.</div>
+    <a class="btn btn-google" id="googleBtn" href="#" target="_blank" rel="noopener">
+      <svg class="g-logo" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.27-4.74 3.27-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84A11 11 0 0 0 12 23z"/><path fill="#FBBC05" d="M5.84 14.1a6.6 6.6 0 0 1 0-4.2V7.06H2.18a11 11 0 0 0 0 9.88l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1A11 11 0 0 0 2.18 7.06l3.66 2.84C6.71 7.31 9.14 5.38 12 5.38z"/></svg>
+      Escribir reseña en Google
+    </a>
+  </div>
+
+  <!-- RAMAL B: descontento (1-3★) -> privado (Google sigue visible abajo) -->
+  <div class="panel" id="bad">
+    <div class="emoji">🙏</div>
+    <div class="ptitle">Sentimos no haber estado a la altura</div>
+    <div class="ptext">Cuéntanos qué ha pasado y lo arreglamos. Nos llega al momento.</div>
+    <input class="fld" id="fName" type="text" placeholder="Tu nombre (opcional)">
+    <textarea class="fld" id="fMsg" rows="4" placeholder="¿Qué ha pasado? ¿Qué podríamos mejorar?"></textarea>
+    <button class="btn btn-wa" id="sendBtn">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24z"/></svg>
+      Enviar a Bar La Plaça
+    </button>
+    <a class="also" id="alsoGoogle" href="#" target="_blank" rel="noopener">o deja tu opinión pública en <b>Google →</b></a>
+  </div>
+
+  <div class="foot">
+    <a href="https://tocayopina.es" target="_blank" rel="noopener">Hecho con ❤ por <b>Toca y Opina</b> · tocayopina.es</a>
+  </div>
+</div>
+
+<script>
+(function(){
+  // ===== CONFIG del negocio =====
+  var GOOGLE_URL = 'https://search.google.com/local/writereview?placeid=DEMO';
+  var WHATSAPP   = '34690390557'; // nº del negocio
+  var NEGOCIO    = 'Bar La Plaça';
+
+  var stars=[].slice.call(document.querySelectorAll('.star'));
+  function paint(n){stars.forEach(function(s,i){s.classList.toggle('on',i<n);});}
+  function show(id){document.getElementById('ask').style.display='none';document.getElementById(id).style.display='block';}
+  stars.forEach(function(s){
+    s.addEventListener('mouseenter',function(){paint(+s.dataset.n);});
+    s.addEventListener('click',function(){
+      var n=+s.dataset.n; paint(n);
+      document.getElementById('googleBtn').href=GOOGLE_URL;
+      document.getElementById('alsoGoogle').href=GOOGLE_URL;
+      setTimeout(function(){ n>=4 ? show('good') : show('bad'); },220);
+    });
+  });
+  document.getElementById('stars').addEventListener('mouseleave',function(){paint(0);});
+  document.getElementById('sendBtn').addEventListener('click',function(){
+    var name=document.getElementById('fName').value.trim();
+    var msg=document.getElementById('fMsg').value.trim();
+    var t='Hola '+NEGOCIO+', te dejo mi opinión'+(name?' (soy '+name+')':'')+': '+(msg||'(sin detalle)');
+    window.location.href='https://wa.me/'+WHATSAPP+'?text='+encodeURIComponent(t);
+  });
+  // para la demo: ?stars=5 o ?stars=2 fuerza un estado
+  var p=new URLSearchParams(location.search).get('stars');
+  if(p){var n=+p;paint(n);document.getElementById('googleBtn').href=GOOGLE_URL;document.getElementById('alsoGoogle').href=GOOGLE_URL;n>=4?show('good'):show('bad');}
+})();
+</script>
+</body>
+</html>
