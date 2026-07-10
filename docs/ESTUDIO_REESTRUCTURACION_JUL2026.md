@@ -146,7 +146,7 @@ Instaladas 13 skills de diseño (`Leonxlnx/taste-skill`) y aplicadas las 4 relev
 - **Profundidad ambiental**: luz radial azul en el hero, dorada en las secciones oscuras.
 - **Stagger** en cascada para las celdas de los grids.
 - **Tipografía**: `text-wrap:balance/pretty`, `tabular-nums` en precios.
-- **Em-dashes eliminados** del copy visible (клave Personaliza reescrita en 4 idiomas).
+- **Em-dashes eliminados** del copy visible (clave Personaliza reescrita en 4 idiomas).
 - Decisiones contextuales documentadas: se mantiene la fuente del sistema (SF Pro = elección Apple correcta y 0 ms de carga) y los emojis del banner (voz de marca WhatsApp-local).
 
 No aplicadas (no encajan): industrial-brutalist (estética opuesta), stitch (para Google Stitch), brandkit/imagegen-web/imagegen-mobile/image-to-code (generación de imágenes de referencia; la web ya usa fotografía real del producto).
